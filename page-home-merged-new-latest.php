@@ -56,7 +56,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                 <?php
 
-                $paramid = $_GET['idx'];
+                if (isset($_GET['idx']) && $_GET['idx'] != '') {
+                       $paramid = $_GET['idx'];}
                 if ($paramid != "") {
 
 
