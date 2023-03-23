@@ -372,8 +372,13 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     </div>
 
                     <div class="kd-form-group">
-                        <label>Date Time</label>
-                        <input type="text" id="kd-date-time-field" onchange="get_available_dates(event)">
+                        <label>From</label>
+                        <input type="date" id="kd-from-date" onchange="get_available_dates(event)">
+                    </div>
+
+                    <div class="kd-form-group">
+                        <label>To</label>
+                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)">
                     </div>
 
                     <div class="kd-form-group">
