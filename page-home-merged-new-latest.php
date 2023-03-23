@@ -1,6 +1,6 @@
 <?php /* Template Name: Page_home_merged_new_latest */ ?>
 
-// Preloader 
+ <!--Load Preloader-->
 
 <div id="preloader">
   <h4 id="loading-text">LiveLND is loading for you
@@ -778,7 +778,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         </div>
 
                 </div>
-            //Unload Preloader
+            <!--Unload Preloader-->
             <script>
             window.addEventListener("load", function(){
             var preloader = document.getElementById('preloader');
