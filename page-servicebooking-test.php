@@ -105,6 +105,7 @@ if (get_field('inactive', $worduser)) {
                                     <div class="rate">
                                         <?php
                                         $average = 0;
+                                        $rate;
                                         $reviewresult = $wpdb->get_results("SELECT * FROM `review_details` where service_id='$serviceid'");
                                         foreach ($reviewresult as $row) {
                                             $count = count($reviewresult);
@@ -352,6 +353,7 @@ if (get_field('inactive', $worduser)) {
                                 <h5> <?php echo $employee[0]->position; ?></h5>
                                 <div class="rate">
                                     <?php
+                                    $rate1;
                                     $average1 = 0;
                                     $reviewresult1 = $wpdb->get_results("SELECT * FROM `review_details` where service_id='$serviceid'");
                                     foreach ($reviewresult1 as $row) {
