@@ -731,9 +731,10 @@ $worduser = 'user_' . $externalid;
                                                 // echo $formattedPrice; 
                                                 ?>
 
-                                                <!-- </p> -->
+                                               /*comment out Roy
+                                                 
                                                 <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
-
+                                                   */
                                             </div>
                                             <a href=<?php echo $url; ?>></a>
                                         </div>
@@ -756,21 +757,21 @@ $worduser = 'user_' . $externalid;
 
                                                 <div class="container">
                                                     <?php
-                                                    $wordpressuserid = $employeedetails->externalId;
-                                                    $worduser = 'user_' . $wordpressuserid;
+                                                   /* $wordpressuserid = $employeedetails->externalId;
+                                                    $worduser = 'user_' . $wordpressuserid;*/
 
                                                     ?>
                                                     <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
                                                         <?php if (get_field('verifed', $worduser)) : ?>
                                                             <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Vector-Stroke.png" ?>"></span>
                                                         <?php endif; ?>
-                                                    </p>
+                                                    </p>/*
                                                     <h4 class="sessionttile"><b><?php echo $row->name; ?></b></h4>
                                                     <p class="pricesession">60 minutes/<?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></p>
-
+                                                        
 
                                                     <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
-                                                    <p class="paratext"><?php echo $row->short_excerpt; ?></p>
+                                                    <p class="paratext"><?php echo $row->short_excerpt; ?></p>*/
                                                 </div>
                                             </div>
                                         </a>
