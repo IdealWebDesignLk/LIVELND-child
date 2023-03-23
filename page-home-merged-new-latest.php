@@ -496,7 +496,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                         <h4 class="sessionttile-thumb"><b><?php echo $row->name; ?></b></h4>
 
                                                         <div class="viewsandpricediv">
-                                                            <?php if (!empty($row->videoViews) && intval($row->videoViews) > 0) { ?>
+                                                            <?php if (!empty($row->videoViews) && intval($row->videoViews) > 1000) { ?>
                                                                 <span class="views"><?php echo number_format($row->videoViews, 0, '.', ','); ?></span> <span class="viewstext">Youtube Views</span>
                                                             <?php } ?>
                                                             <span class="session-price"><?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></span>
