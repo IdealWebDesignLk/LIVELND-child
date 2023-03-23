@@ -259,7 +259,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                     </div>
                                     <p class="staticlabeltop">60 minutes including Q&A</p>
                                     <div class="views">
-                                        <?php if (intval($service[0]->videoViews) > 0) { ?>
+                                        <?php if (intval($service[0]->videoViews) > 1000) { ?>
                                             <h3 class="viewscount"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> Youtube views</h3>
                                         <?php } ?>
                                     </div>
