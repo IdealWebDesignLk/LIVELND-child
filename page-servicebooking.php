@@ -33,7 +33,7 @@ body.preloader-active {
   z-index: 9999;
 }
 
-#preloader #loading-text {
+#loading-text {
   font-size: 24px !important;
   font-weight: bold !important;
   text-align: center !important;
@@ -43,7 +43,7 @@ body.preloader-active {
   position: relative; /* Change position to relative */
 }
 
-#preloader .dot-container {
+.dot-container {
   display: inline-flex;
   position: absolute;
   top: 0;
@@ -52,24 +52,24 @@ body.preloader-active {
   width: 50px; /* Add a fixed width */
   height: 24px; /* Add a fixed height */
 }
-#preloader .dot-animation {
+.dot-animation {
   position: absolute;
   animation: dot-bounce 1.2s linear infinite;
   margin-left: 2px;
   will-change: transform;
 }
 
-#preloader .dot-animation:nth-child(2) {
+.dot-animation:nth-child(2) {
   margin-left: 14px;
   animation-delay: 0.2s;
 }
 
-#preloader .dot-animation:nth-child(3) {
+.dot-animation:nth-child(3) {
   margin-left: 26px;
   animation-delay: 0.4s;
 }
 
-#preloader .dot-animation:nth-child(4) {
+.dot-animation:nth-child(4) {
   margin-left: 38px;
   animation-delay: 0.6s;
 }
