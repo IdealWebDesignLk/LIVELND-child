@@ -84,6 +84,12 @@ body.preloader-active {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  #loading-text {
+    font-size: 20px !important;
+  }
+}
+
 </style>
 
 
