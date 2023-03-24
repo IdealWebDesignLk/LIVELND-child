@@ -686,8 +686,7 @@ $worduser = 'user_' . $externalid;
                         </div>
                     </div>
 
-                /* 
-                */
+                
                     <!-- add relevent sessions here -->
                     <div class="container-fluidx MoreSessions mobile-hide">
                         <div class="home-demo">
