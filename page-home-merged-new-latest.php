@@ -786,6 +786,14 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             document.body.classList.remove("preloader-active");
             });
             </script>
+            <noscript>
+            <style>
+            #preloader {
+            display: none;
+            }
+            </style>
+            <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+            </noscript>
 
                 <div class="home-demo mobicarosel">
 
