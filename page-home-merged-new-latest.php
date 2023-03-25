@@ -503,10 +503,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     <div class="kd-search-single-popup-inner">
                     </div>
                 </div>
-            </div>
 
-
-            <div class="kd-searchbox-loading-overlay">
+                <div class="kd-searchbox-loading-overlay">
                 <h4 id="loading-text">Searching
                     <span class="dot-container">
                         <span class="dot-animation">.</span>
@@ -515,6 +513,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         <span class="dot-animation">.</span>
                     </span>
                 </h4>
+            </div>
             </div>
         </div>
     </div>
