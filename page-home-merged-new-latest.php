@@ -190,7 +190,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                     <div class="rate">
                                         <?php
                                         $average = 0;
-										$rate = 0;
+                                        $rate = 0;
                                         $reviewresult = $wpdb->get_results("SELECT * FROM `review_details` where user='$employeefullname'");
                                         foreach ($reviewresult as $row) {
                                             $count = count($reviewresult);
@@ -399,6 +399,18 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     </div>
                 </div>
             </div>
+
+
+            <div class="kd-searchbox-loading-overlay">
+                <h4 id="loading-text">Searching
+                    <span class="dot-container">
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                        <span class="dot-animation">.</span>
+                    </span>
+                </h4>
+            </div>
         </div>
     </div>
 
@@ -414,9 +426,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
         $catResults = $wpdb->get_results($categoriesSql);
         //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
         $exclude_cat_id = array();
-   		 if (ot_get_option('exclude_category_id_s')) {
-        $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-    	}
+        if (ot_get_option('exclude_category_id_s')) {
+            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+        }
         foreach ($catResults as $catResult) {
             if (!in_array(intval($catResult->id), $exclude_cat_id)) {
 
@@ -571,7 +583,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                         <div class="rate">
                                                             <?php
                                                             $employeefullnamecard = $employeedetails->full_name;
-															$rate1 = 0;
+                                                            $rate1 = 0;
                                                             $average1 = 0;
                                                             $reviewresult1 = $wpdb->get_results("SELECT * FROM `review_details` where user='$employeefullnamecard'");
                                                             foreach ($reviewresult1 as $row1) {
@@ -872,10 +884,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
     <script>
         function muteCurrentVideo(e) {
             let muteSeperated = e.target.previousElementSibling.src.split("&mute=1")
-            muteSeperated.splice(1,1)
-            e.target.previousElementSibling.src=muteSeperated.join()
+            muteSeperated.splice(1, 1)
+            e.target.previousElementSibling.src = muteSeperated.join()
             let muteOverlays = Array.from(document.getElementsByClassName('mute-button-overlay'))
-            muteOverlays.forEach(mutebtn=>{
+            muteOverlays.forEach(mutebtn => {
                 mutebtn.remove()
             })
         }
