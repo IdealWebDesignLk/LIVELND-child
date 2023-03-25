@@ -46,7 +46,7 @@ function my_custom_url_handler()
 		global $wpdb;
 		$tbprefix1 = $wpdb->prefix;
 
-		$bio = $_POST["bio"];
+		$bio = urldecode($_POST["bio"]);
 		//$bio = sanitize_text_field($_POST["bio"]);
 		$bio = stripslashes($bio);
 		$email = $_POST["email"];

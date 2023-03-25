@@ -1,5 +1,98 @@
 <?php /* Template Name: Page_home_merged_new_latest */ ?>
 
+ <!--Load Preloader-->
+
+<div id="preloader">
+  <h4 id="loading-text">LiveLND is loading for you
+    <span class="dot-container">
+      <span class="dot-animation">.</span>
+      <span class="dot-animation">.</span>
+      <span class="dot-animation">.</span>
+      <span class="dot-animation">.</span>
+    </span>
+  </h4>
+</div>
+
+<script>
+document.body.classList.add("preloader-active");	
+</script>
+<style>
+body.preloader-active {
+  overflow: hidden;
+}
+
+#preloader {
+  display: flex; /* Add flexbox to the preloader */
+  align-items: center; /* Center the loading text vertically */
+  justify-content: center; /* Center the loading text horizontally */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 9999;
+}
+
+#loading-text {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  white-space: nowrap;
+  letter-spacing: 0.15em !important;
+  color: #ff8250;
+  position: relative; /* Change position to relative */
+}
+
+.dot-container {
+  display: inline-flex;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
+  width: 50px; /* Add a fixed width */
+  height: 24px; /* Add a fixed height */
+}
+.dot-animation {
+  position: absolute;
+  animation: dot-bounce 1.2s linear infinite;
+  margin-left: 2px;
+  will-change: transform;
+}
+
+.dot-animation:nth-child(2) {
+  margin-left: 14px;
+  animation-delay: 0.2s;
+}
+
+.dot-animation:nth-child(3) {
+  margin-left: 26px;
+  animation-delay: 0.4s;
+}
+
+.dot-animation:nth-child(4) {
+  margin-left: 38px;
+  animation-delay: 0.6s;
+}
+
+@keyframes dot-bounce {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #loading-text {
+    font-size: 20px !important;
+  }
+}
+
+</style>
+
+
 <?php
 get_header();
 
@@ -55,8 +148,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 <!-- taken from rajika -->
 
                 <?php
-
-                $paramid = $_GET['idx'];
+                $paramid = '';
+                if (isset($_GET['idx']) && $_GET['idx'] != '') {
+                       $paramid = $_GET['idx'];}
                 if ($paramid != "") {
 
 
@@ -258,7 +352,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                     </div>
                                     <p class="staticlabeltop">60 minutes including Q&A</p>
                                     <div class="views">
-                                        <?php if (intval($service[0]->videoViews) > 0) { ?>
+                                        <?php if (intval($service[0]->videoViews) > 1000) { ?>
                                             <h3 class="viewscount"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> Youtube views</h3>
                                         <?php } ?>
                                     </div>
@@ -507,7 +601,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                         <h4 class="sessionttile-thumb"><b><?php echo $row->name; ?></b></h4>
 
                                                         <div class="viewsandpricediv">
-                                                            <?php if (!empty($row->videoViews) && intval($row->videoViews) > 0) { ?>
+                                                            <?php if (!empty($row->videoViews) && intval($row->videoViews) > 1000) { ?>
                                                                 <span class="views"><?php echo number_format($row->videoViews, 0, '.', ','); ?></span> <span class="viewstext">Youtube Views</span>
                                                             <?php } ?>
                                                             <span class="session-price"><?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></span>
@@ -702,7 +796,22 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         </div>
 
                 </div>
-
+            <!--Unload Preloader-->
+            <script>
+            window.addEventListener("load", function(){
+            var preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+            document.body.classList.remove("preloader-active");
+            });
+            </script>
+            <noscript>
+            <style>
+            #preloader {
+            display: none;
+            }
+            </style>
+            <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+            </noscript>
 
                 <div class="home-demo mobicarosel">
 

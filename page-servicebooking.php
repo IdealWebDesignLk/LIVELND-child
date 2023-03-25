@@ -247,6 +247,7 @@ $worduser = 'user_' . $externalid;
                                                 <?php
                                                 $empfullname = $employee[0]->full_name;
                                                 $average = 0;
+                                                $rate = 0;
                                                 $reviewresult = $wpdb->get_results("SELECT * FROM `review_details` where user='$empfullname'");
                                                 foreach ($reviewresult as $row) {
                                                     $count = count($reviewresult);
@@ -450,6 +451,7 @@ $worduser = 'user_' . $externalid;
                                         <?php
                                         $empfullname2 = $employee[0]->full_name;
                                         $average1 = 0;
+                                        $rate1 = 0;
                                         $reviewresult1 = $wpdb->get_results("SELECT * FROM `review_details` where user='$empfullname2'");
                                         foreach ($reviewresult1 as $row) {
                                             $count = count($reviewresult1);
@@ -510,6 +512,9 @@ $worduser = 'user_' . $externalid;
                             </div>
                         </div>
                     </div>
+                    
+              
+
                     <div class="row testisec ">
                         <div class="fulltestirow">
                             <div class="row">
@@ -681,109 +686,7 @@ $worduser = 'user_' . $externalid;
                         </div>
                     </div>
 
-
-                    <div class="container-fluidx MoreSessions">
-
-                        <div class="home-demo">
-                            <h3 id="myList" class="hometitle">More Sessions From This Expert</h3>
-
-                            <div class="owl-carousel owl-theme">
-
-                                <?php
-
-                                $result5 =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.firstName, " . $tbprefix . "amelia_users.lastName, " . $tbprefix . "amelia_services.* FROM " . $tbprefix . "amelia_providers_to_services INNER JOIN " . $tbprefix . "amelia_services INNER JOIN " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id and " . $tbprefix . "amelia_providers_to_services.serviceId=" . $tbprefix . "amelia_services.id where " . $tbprefix . "amelia_users.id='" . $empid . "'");
-
-                                $count = 1;
-                                // echo $count;
-                                foreach ($result5 as $employeedetails) {
-                                    $sid =  $employeedetails->id;
-                                    $url = $server_name . "/single-service/?sid=" . $sid;
-
-                                ?>
-                                    <div class="item">
-                                        <div class="gallery-video-thumb">
-                                            <a href="">
-                                                <?php
-                                                if ($employeedetails->pictureFullPath != "") {
-                                                ?>
-                                                    <img src=<?php echo $employeedetails->pictureFullPath; ?> alt="">
-                                                <?php
-                                                } else {
-                                                ?>
-                                                    <img src="<?php echo $server_name . "/wp-content/uploads/2022/10/defaultimg.png" ?>" alt="">
-                                                <?php
-                                                }
-                                                ?>
-                                            </a>
-                                            <div class="thumb-info">
-                                                <h4 class="sessionttile-thumb new1"><b><?php echo $employeedetails->name; ?></b></h4>
-
-                                                <p class="pricesession-thumb"><?php echo do_shortcode('[woo_multi_currency_exchange price="' . $employeedetails->price . '" currency="' . $curr . '"]'); ?></p>
-
-                                                <!-- <p class="pricesession-thumb"> -->
-                                                <?php
-
-                                                //  $oFormatter = new \NumberFormatter('de_DE', \NumberFormatter::CURRENCY);
-                                                // $formattedPrice = $oFormatter->formatCurrency($employeedetails->price, 'EUR');
-
-                                                // echo $formattedPrice; 
-                                                ?>
-
-                                                <!-- </p> -->
-                                                <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
-
-                                            </div>
-                                            <a href=<?php echo $url; ?>></a>
-                                        </div>
-                                        <a href=<?php echo $url; ?>>
-                                            <div class="card">
-                                                <?php
-                                                $videourl1 =  "https://www.youtube.com/embed/" . $employeedetails->video;
-                                                $parameters1 = "?controls=1&showinfo=0&rel=0&loop=1&autoplay=1";
-                                                $finalurl1 = $videourl1 . $parameters1;
-                                                // $video_id1 = explode("https://www.youtube.com/embed/", $videourl1)[1];                                                    
-                                                ?>
-
-                                                <!-- <img data-finalurl="<?php //echo $finalurl1; 
-                                                                            ?>" class="kd-yt-video-img" src="https://img.youtube.com/vi/<?php //echo $video_id1;  
-                                                                                                                                    ?>/1.jpg"/> -->
-                                                <img data-videoid="<?php echo $employeedetails->video; ?>" data-finalurl="<?php echo $finalurl1; ?>" class="kd-yt-video-img" src=<?php echo $employeedetails->pictureFullPath; ?> />
-                                                <!-- <iframe class="carouselvideo" src=<?php //echo $finalurl1; 
-                                                                                        ?>></iframe> -->
-
-
-                                                <div class="container">
-                                                    <?php
-                                                    $wordpressuserid = $employeedetails->externalId;
-                                                    $worduser = 'user_' . $wordpressuserid;
-
-                                                    ?>
-                                                    <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
-                                                        <?php if (get_field('verifed', $worduser)) : ?>
-                                                            <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Vector-Stroke.png" ?>"></span>
-                                                        <?php endif; ?>
-                                                    </p>
-                                                    <h4 class="sessionttile"><b><?php echo $row->name; ?></b></h4>
-                                                    <p class="pricesession">60 minutes/<?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></p>
-
-
-                                                    <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
-                                                    <p class="paratext"><?php echo $row->short_excerpt; ?></p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-
-                                <?php
-                                    $count++;
-                                }
-
-                                ?>
-                            </div>
-                        </div>
-
-                    </div>
-
+                
                     <!-- add relevent sessions here -->
                     <div class="container-fluidx MoreSessions mobile-hide">
                         <div class="home-demo">
