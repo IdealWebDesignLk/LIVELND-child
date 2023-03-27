@@ -929,3 +929,32 @@ function custom_query_vars( $vars ) {
 }
 add_filter( 'query_vars', 'custom_query_vars' );
 
+function my_custom_js() {
+    if ( is_page( 'speakers-panel' ) ) {
+        echo '<script>
+        document.addEventListener("DOMContentLoaded", function() {
+          console.log("DOMContentLoaded");
+          setTimeout(() => {
+            const dropdown = document.querySelector(".am-cabinet-user-email.el-dropdown");
+            if (dropdown) {
+              console.log("Dropdown found");
+              dropdown.click();
+            } else {
+              console.log("Dropdown not found");
+            }
+    
+            const myProfileLink = document.querySelector(".el-dropdown-menu__item");
+            if (myProfileLink) {
+              console.log("My Profile link found");
+              myProfileLink.click();
+            } else {
+              console.log("My Profile link not found");
+            }
+          }, 5000);
+        });
+        </script>';
+    }
+}
+add_action( 'wp_footer', 'my_custom_js' );
+
+
