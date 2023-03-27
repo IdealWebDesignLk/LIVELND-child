@@ -149,7 +149,7 @@ $worduser = 'user_' . $externalid;
                     ?>
 
                     <?php
-                    if ($employee[0]->trustedbrand1 !== null) {
+                    if ($employee[0]->trustedbrand1 != null) {
                     ?>
                         <div class="mainbody logosec">
                             <div class="subrow">
