@@ -864,7 +864,7 @@ function wpdocs_custom_login()
 			echo $user->get_error_message();
 			return false;
 		} else {
-			wp_redirect('/wp-admin/admin.php?page=wpamelia-employees#/employees', 301);
+			wp_redirect(home_url('/speakers-panel'), 301);
 			exit;
 		}
 	}
