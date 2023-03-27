@@ -2,7 +2,7 @@
 
 <!--Load Preloader-->
 
-<!--<div id="preloader">
+<div id="preloader">
     <h4 id="loading-text">LiveLND is loading for you
         <span class="dot-container">
             <span class="dot-animation">.</span>
@@ -11,7 +11,7 @@
             <span class="dot-animation">.</span>
         </span>
     </h4>
-</div>-->
+</div>
 
 <script>
     document.body.classList.add("preloader-active");
