@@ -444,7 +444,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                         <label>Category</label>
 
-                        <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)" placeholder="Category">
+                        <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)">
                             <option value="select-category">Select Category</option>
                             <?php
 
