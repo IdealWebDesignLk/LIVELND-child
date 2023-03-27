@@ -444,7 +444,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                         <label>Category</label>
 
-                        <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)">
+                        <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)" placeholder="Category">
                             <option value="select-category">Select Category</option>
                             <?php
 
@@ -469,21 +469,21 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                     <div class="kd-form-group">
                         <label>Max Price</label>
-                        <input type="number" id="kd-price-to" onchange="selectResultBasedPrice(event)" onkeyup="selectResultBasedPrice(event)">
+                        <input type="number" id="kd-price-to" onchange="selectResultBasedPrice(event)" onkeyup="selectResultBasedPrice(event)" placeholder="Max Price">
                     </div>
                     <div class="kd-form-group">
                         <label>Search</label>
-                        <input type="text" id="kd-search-field" onkeyup="selectResultBasedTitle(event)">
+                        <input type="text" id="kd-search-field" onkeyup="selectResultBasedTitle(event)" placeholder="Search">
                     </div>
 
                     <div class="kd-form-group">
                         <label>From</label>
-                        <input type="date" id="kd-from-date" onchange="get_available_dates(event)">
+                        <input type="date" id="kd-from-date" onchange="get_available_dates(event)" placeholder="From">
                     </div>
 
                     <div class="kd-form-group">
                         <label>To</label>
-                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)">
+                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)" placeholder="To">
                     </div>
 
                     <div class="kd-form-group">
