@@ -486,7 +486,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         <input type="date" id="kd-to-date" onchange="get_available_dates(event)">
                     </div>
 
-                    <div class="kd-form-group">
+                    <div class="kd-form-group reset-button">
                         <label>&nbsp;</label>
                         <button class="kd-reset-btn" onclick="resetSearch(event)">Reset Filters</button>
                     </div>
