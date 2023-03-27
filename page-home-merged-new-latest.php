@@ -476,14 +476,14 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         <input type="text" id="kd-search-field" onkeyup="selectResultBasedTitle(event)" placeholder="Search">
                     </div>
 
-                    <div class="kd-form-group">
+                    <div class="kd-form-group from-to-dates">
                         <label>From</label>
-                        <input type="date" id="kd-from-date" onchange="get_available_dates(event)" placeholder="From">
+                        <input type="date" id="kd-from-date" onchange="get_available_dates(event)">
                     </div>
 
-                    <div class="kd-form-group">
+                    <div class="kd-form-group from-to-dates">
                         <label>To</label>
-                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)" placeholder="To">
+                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)">
                     </div>
 
                     <div class="kd-form-group">
