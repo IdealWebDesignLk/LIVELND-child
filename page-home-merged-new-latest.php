@@ -15,6 +15,47 @@
 
 <script>
     document.body.classList.add("preloader-active");
+
+    
+    var categories = [];
+    <?php
+    global $wpdb;
+    $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+    $catResults = $wpdb->get_results($categoriesSql);
+
+    $exclude_cat_id;
+    if (ot_get_option('exclude_category_id_s')) {
+        $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+    }
+
+    foreach ($catResults as $catResult) {
+        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+            echo "categories.push('{$catResult->name}');";
+        }
+    }
+    ?>
+
+function scrollCategories() {
+    var preloader = document.getElementById('preloader');
+    var loadingText = document.getElementById('loading-text');
+    var categoryIndex = 0;
+
+    function updateCategory() {
+        if (categoryIndex >= categories.length) {
+            categoryIndex = 0;
+        }
+        loadingText.innerHTML = 'LiveLND is loading ' + categories[categoryIndex];
+        categoryIndex++;
+    }
+
+    updateCategory();
+    setInterval(updateCategory, 2000); // Change the duration (2000ms = 2 seconds) to adjust the scrolling speed
+}
+
+scrollCategories();
+
+
+
 </script>
 <style>
     body.preloader-active {
@@ -45,8 +86,18 @@
         letter-spacing: 0.15em !important;
         color: #ff8250;
         position: relative;
+        animation: fadeInOut 2s linear infinite; 
         /* Change position to relative */
     }
+
+    @keyframes fadeInOut {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
 
     .dot-container {
         display: inline-flex;
