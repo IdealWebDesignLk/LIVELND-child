@@ -3,7 +3,7 @@
 <!--Load Preloader-->
 
 <div id="preloader">
-    <h4 id="loading-text">LiveLND is loading for you
+    <h4 id="loading-text">Live LnD is loading for you
         <span class="dot-container">
             <span class="dot-animation">.</span>
             <span class="dot-animation">.</span>
