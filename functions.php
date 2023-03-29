@@ -958,3 +958,13 @@ function my_custom_js() {
 add_action( 'wp_footer', 'my_custom_js' );
 
 
+function add_custom_link_to_admin_bar($wp_admin_bar) {
+    $args = array(
+        'id' => 'custom_link',
+        'title' => 'Experts Profiles',
+        'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-employees#/employees',
+        'parent' => 'top-secondary',
+    );
+    $wp_admin_bar->add_node($args);
+}
+add_action('admin_bar_menu', 'add_custom_link_to_admin_bar', 999);
