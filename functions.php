@@ -958,13 +958,24 @@ function my_custom_js() {
 add_action( 'wp_footer', 'my_custom_js' );
 
 
-function add_custom_link_to_admin_bar($wp_admin_bar) {
-    $args = array(
-        'id' => 'custom_link',
-        'title' => 'Experts Profiles',
+function add_custom_links_to_admin_bar($wp_admin_bar) {
+    // Add link for Amelia Employees
+    $args_employees = array(
+        'id' => 'amelia_employees_link',
+        'title' => 'Amelia Experts',
         'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-employees#/employees',
         'parent' => 'top-secondary',
     );
-    $wp_admin_bar->add_node($args);
+    $wp_admin_bar->add_node($args_employees);
+
+    // Add link for Amelia Services
+    $args_services = array(
+        'id' => 'amelia_services_link',
+        'title' => 'Amelia Sessions',
+        'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-services#/services',
+        'parent' => 'top-secondary',
+    );
+    $wp_admin_bar->add_node($args_services);
 }
-add_action('admin_bar_menu', 'add_custom_link_to_admin_bar', 999);
+add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
+
