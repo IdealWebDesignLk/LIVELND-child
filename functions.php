@@ -950,7 +950,7 @@ function my_custom_js() {
             } else {
               console.log("My Profile link not found");
             }
-          }, 4000);
+          }, 5000);
         });
         </script>';
     }
