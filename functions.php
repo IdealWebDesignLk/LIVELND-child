@@ -850,25 +850,29 @@ add_action('wp_ajax_noppriv_return_card_content', 'kd_return_card_content');
  */
 function wpdocs_custom_login()
 {
-	if (isset($_GET['username']) && isset($_GET['pass'])) {
-		$creds = array(
-			'user_login'    => $_GET['username'],
-			'user_password' => $_GET['pass'],
-			'remember'      => true
-		);
+    if (isset($_GET['username']) && isset($_GET['pass'])) {
+        // Log the values of username and pass
+        error_log('Username: ' . $_GET['username']);
+        error_log('Password: ' . $_GET['pass']);
 
-		$user = wp_signon($creds, true);
+        $creds = array(
+            'user_login'    => $_GET['username'],
+            'user_password' => $_GET['pass'],
+            'remember'      => true
+        );
 
-		if (is_wp_error($user)) {
+        $user = wp_signon($creds, true);
 
-			echo $user->get_error_message();
-			return false;
-		} else {
-			wp_redirect(home_url('/speakers-panel'), 301);
-			exit;
-		}
-	}
+        if (is_wp_error($user)) {
+            echo $user->get_error_message();
+            return false;
+        } else {
+            wp_redirect(home_url('/speakers-panel'), 301);
+            exit;
+        }
+    }
 }
+
 
 // Run before the headers and cookies are sent.
 add_action('after_setup_theme', 'wpdocs_custom_login');
