@@ -852,8 +852,8 @@ function wpdocs_custom_login()
 {
     if (isset($_GET['username']) && isset($_GET['pass'])) {
         // Log the values of username and pass
-        error_log('Username: ' . $_GET['username']);
-        error_log('Password: ' . $_GET['pass']);
+        console.log('Username: ' . $_GET['username']);
+        console.log('Password: ' . $_GET['pass']);
 
         $creds = array(
             'user_login'    => $_GET['username'],
