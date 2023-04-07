@@ -847,7 +847,7 @@ add_action('wp_ajax_noppriv_return_card_content', 'kd_return_card_content');
 
 /**
  * Perform automatic login.
- */
+ 
 function wpdocs_custom_login()
 {
     if (isset($_GET['username']) && isset($_GET['pass'])) {
@@ -871,6 +871,16 @@ function wpdocs_custom_login()
             exit;
         }
     }
+}*/
+
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 // Run before the headers and cookies are sent.
