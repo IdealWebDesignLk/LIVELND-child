@@ -171,7 +171,7 @@ if (get_field('inactive', $worduser)) {
 
                         <div class="col-md-6">
 
-                            <a class="w3-bar-item w3-button bookingbtn booktypebtn">Booking</a>
+                            <a class="w3-bar-item w3-button bookingbtn booktypebtn">Book this session</a>
 
                             <?php
                             if ($preTalkId != "") {
@@ -516,6 +516,7 @@ if (get_field('inactive', $worduser)) {
                         </div>
                     </div>
                 </div>
+
 
                 <div class="mainbody logosec">
                     <div class="subrow">
