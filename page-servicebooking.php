@@ -34,35 +34,35 @@ $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where
 
 
 $sessionId = $serviceid;
+// Get the serviceId and employeeId based on sessionId
+$session_info_sql = "SELECT serviceId, providerId FROM amelia_appointments WHERE id = $sessionId";
+$session_info = $wpdb->get_row($session_info_sql);
 
-$sql = "SELECT 
-            pre_talk_services.*
-        FROM
-            amelia_services AS pre_talk_services
-                JOIN
-            amelia_providers_to_services AS pre_talk_providers_to_services ON pre_talk_services.id = pre_talk_providers_to_services.serviceId
-                JOIN
-            amelia_users ON pre_talk_providers_to_services.userId = amelia_users.id
-        WHERE
-            amelia_users.id IN (
-                SELECT 
-                    session_providers_to_services.userId
-                FROM
-                    amelia_services AS session_services
-                        JOIN
-                    amelia_providers_to_services AS session_providers_to_services ON session_services.id = session_providers_to_services.serviceId
-                WHERE
-                    session_services.id = $sessionId
-            )
-            AND pre_talk_services.categoryId = 45";
+if ($session_info) {
+    $serviceId = $session_info->serviceId;
+    $employeeId = $session_info->providerId;
 
+    // Retrieve the pre-talk service for the same employee who provides the session service
+    $sql = "SELECT 
+                pre_talk_services.*
+            FROM
+                amelia_services AS pre_talk_services
+                    JOIN
+                amelia_providers_to_services AS pre_talk_providers_to_services ON pre_talk_services.id = pre_talk_providers_to_services.serviceId
+            WHERE
+                pre_talk_providers_to_services.userId = $employeeId
+                AND pre_talk_services.categoryId = 45";
 
-$results = $wpdb->get_results($sql);
+    $results = $wpdb->get_results($sql);
 
-if (count($results) > 0) {
-    $preTalkId = $results[0]->id;
+    if (!empty($results)) {
+        $preTalkId = $results[0]->id;
+        echo "Pre-talk ID: " . $preTalkId;
+    } else {
+        echo "No pre-talk found for the given employee and service.";
+    }
 } else {
-    $preTalkId = null;
+    echo "Session not found.";
 }
 
 
