@@ -59,7 +59,7 @@ if ($session_info) {
         $preTalkId = $results[0]->id;
         echo "Pre-talk ID: " . $preTalkId;
     } else {
-        echo "No pre-talk found for the given employee and service.";
+        $preTalkId = null;
     }
 } else {
     echo "Session not found.";
