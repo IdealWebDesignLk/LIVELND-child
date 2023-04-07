@@ -1,5 +1,107 @@
 <?php /* Template Name: Page_service_boking */ ?>
 
+<!--Load Preloader-->
+
+<div id="preloader">
+    <h4 id="loading-text">Live L&D is loading for you
+        <span class="dot-container">
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+        </span>
+    </h4>
+</div>
+
+<script>
+    document.body.classList.add("preloader-active");
+</script>
+<style>
+    body.preloader-active {
+        overflow: hidden;
+    }
+
+    #preloader {
+        display: flex;
+        /* Add flexbox to the preloader */
+        align-items: center;
+        /* Center the loading text vertically */
+        justify-content: center;
+        /* Center the loading text horizontally */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 9999;
+    }
+
+    #loading-text {
+        font-size: 24px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        white-space: nowrap;
+        letter-spacing: 0.15em !important;
+        color: #ff8250;
+        position: relative;
+        /* Change position to relative */
+    }
+
+    .dot-container {
+        display: inline-flex;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-left: 5px;
+        width: 50px;
+        /* Add a fixed width */
+        height: 24px;
+        /* Add a fixed height */
+    }
+
+    .dot-animation {
+        position: absolute;
+        animation: dot-bounce 1.2s linear infinite;
+        margin-left: 2px;
+        will-change: transform;
+    }
+
+    .dot-animation:nth-child(2) {
+        margin-left: 14px;
+        animation-delay: 0.2s;
+    }
+
+    .dot-animation:nth-child(3) {
+        margin-left: 26px;
+        animation-delay: 0.4s;
+    }
+
+    .dot-animation:nth-child(4) {
+        margin-left: 38px;
+        animation-delay: 0.6s;
+    }
+
+    @keyframes dot-bounce {
+
+        0%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        #loading-text {
+            font-size: 20px !important;
+        }
+    }
+</style>
+
 <?php
 $server_name = "";
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -358,6 +460,23 @@ $worduser = 'user_' . $externalid;
                                 </div>
 
                             </div>
+
+                             <!--Unload Preloader-->
+                                <script>
+                                    window.addEventListener("load", function() {
+                                        var preloader = document.getElementById('preloader');
+                                        preloader.style.display = 'none';
+                                        document.body.classList.remove("preloader-active");
+                                    });
+                                </script>
+                                <noscript>
+                                    <style>
+                                        #preloader {
+                                            display: none;
+                                        }
+                                    </style>
+                                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+                                </noscript>
 
 
                             <div class="col-md-6" id="calenderbooking">
