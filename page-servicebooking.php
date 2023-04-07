@@ -34,37 +34,22 @@ $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where
 
 
 $sessionId = $serviceid;
-// Get the serviceId and employeeId based on sessionId
-$session_info_sql = "SELECT serviceId, providerId FROM amelia_providers_to_services WHERE id = $sessionId";
-$session_info = $wpdb->get_row($session_info_sql);
 
-if ($session_info) {
-    $serviceId = $session_info->serviceId;
-    $employeeId = $session_info->providerId;
 
-    // Retrieve the pre-talk service for the same employee who provides the session service
-    $sql = "SELECT 
-                pre_talk_services.*
-            FROM
-                amelia_services AS pre_talk_services
-                    JOIN
-                amelia_providers_to_services AS pre_talk_providers_to_services ON pre_talk_services.id = pre_talk_providers_to_services.serviceId
-            WHERE
-                pre_talk_providers_to_services.userId = $employeeId
-                AND pre_talk_services.categoryId = 45";
+// Get the user ID of the employee associated with the current service ID
+$employee_user_id = $wpdb->get_var("SELECT userId FROM {$tbprefix}amelia_providers_to_services WHERE serviceId = {$serviceid}");
 
-    $results = $wpdb->get_results($sql);
+// Find the pre-talk session ID by checking the same employee in category 45
+$preTalkId = $wpdb->get_var("SELECT aserv.id FROM {$tbprefix}amelia_services as aserv
+    INNER JOIN {$tbprefix}amelia_providers_to_services as aps ON aserv.id = aps.serviceId
+    WHERE aserv.categoryId = 45 AND aps.userId = {$employee_user_id}");
 
-    if (!empty($results)) {
-        $preTalkId = $results[0]->id;
-        echo "Pre-talk ID: " . $preTalkId;
-    } else {
-        $preTalkId = null;
-    }
-} else {
-    echo "Session not found.";
-    $preTalkId = null;
+// If no pre-talk session is found, set the preTalkId to 0
+if ($preTalkId === NULL) {
+    $preTalkId = 0;
 }
+
+echo "Pre-talk session ID: " . $preTalkId;
 
 
 
