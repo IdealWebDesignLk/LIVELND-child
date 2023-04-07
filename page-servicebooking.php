@@ -345,7 +345,7 @@ $worduser = 'user_' . $externalid;
 
                             <div class="col-md-6" id="calenderbooking">
 
-                                <a class="w3-bar-item w3-button bookingbtn booktypebtn">Booking</a>
+                                <a class="w3-bar-item w3-button bookingbtn booktypebtn">Book this session</a>
 
                                 <?php
                                 if ($preTalkId != "") {
@@ -374,7 +374,7 @@ $worduser = 'user_' . $externalid;
                                 </div>
                                 <!-- 
                         <div class="w3-bar w3-black">
-                            <button class="w3-bar-item w3-button" onclick="openCity('London')">Booking</button>
+                            <button class="w3-bar-item w3-button" onclick="openCity('London')">Book this session</button>
                             <?php
                             //  if ($preTalkId != "") {
 
