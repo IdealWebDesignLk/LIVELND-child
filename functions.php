@@ -1015,17 +1015,13 @@ function custom_login_button( $user ) {
     <?php
 }
 
-function add_custom_login_button_to_user_profile() {
-    $screen = get_current_screen();
-
-    if ( 'user-edit' === $screen->base || 'profile' === $screen->base ) {
-        $user_id = isset( $_GET['user_id'] ) ? intval( $_GET['user_id'] ) : get_current_user_id();
-        $user = get_userdata( $user_id );
-
-        echo '<div class="notice notice-info" style="position: fixed; top: 50%; right: 20px; z-index: 1000;">';
-        echo '<h3>Custom Login Button</h3>';
-        custom_login_button( $user );
-        echo '</div>';
-    }
+function add_custom_login_button_to_account_management( $user ) {
+    echo '<tr class="user-custom-login-wrap">';
+    echo '<th scope="row">Custom Login Button</th>';
+    echo '<td>';
+    custom_login_button( $user );
+    echo '</td>';
+    echo '</tr>';
 }
-add_action( 'admin_notices', 'add_custom_login_button_to_user_profile' );
+add_action( 'personal_options', 'add_custom_login_button_to_account_management' );
+
