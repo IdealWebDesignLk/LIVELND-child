@@ -461,22 +461,7 @@ $worduser = 'user_' . $externalid;
 
                             </div>
 
-                             <!--Unload Preloader-->
-                                <script>
-                                    window.addEventListener("load", function() {
-                                        var preloader = document.getElementById('preloader');
-                                        preloader.style.display = 'none';
-                                        document.body.classList.remove("preloader-active");
-                                    });
-                                </script>
-                                <noscript>
-                                    <style>
-                                        #preloader {
-                                            display: none;
-                                        }
-                                    </style>
-                                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                                </noscript>
+                    
 
 
                             <div class="col-md-6" id="calenderbooking">
@@ -508,30 +493,7 @@ $worduser = 'user_' . $externalid;
                                     echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]');
                                     ?>
                                 </div>
-                                <!-- 
-                        <div class="w3-bar w3-black">
-                            <button class="w3-bar-item w3-button" onclick="openCity('London')">Book this session</button>
-                            <?php
-                            //  if ($preTalkId != "") {
-
-                            ?>
-                                <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Pre-Talk</button>
-                            <?php
-                            //   }
-                            ?>
-                        </div>
-
-                        <div id="London" class="w3-container city">
-                            <?php
-                            //  echo do_shortcode('[ameliastepbooking service="' . $serviceid . '"]');
-                            ?>
-                        </div>
-
-                        <div id="Paris" class="w3-container city" style="display:none">
-                            <?php
-                            //   echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]');
-                            ?>
-                        </div> -->
+                            
 
 
 
@@ -649,7 +611,22 @@ $worduser = 'user_' . $externalid;
                         </div>
                     </div>
                     
-              
+                       <!--Unload Preloader-->
+                       <script>
+                                    window.addEventListener("load", function() {
+                                        var preloader = document.getElementById('preloader');
+                                        preloader.style.display = 'none';
+                                        document.body.classList.remove("preloader-active");
+                                    });
+                                </script>
+                                <noscript>
+                                    <style>
+                                        #preloader {
+                                            display: none;
+                                        }
+                                    </style>
+                                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+                                </noscript>
 
                     <div class="row testisec ">
                         <div class="fulltestirow">
