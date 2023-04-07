@@ -35,7 +35,7 @@ $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where
 
 $sessionId = $serviceid;
 // Get the serviceId and employeeId based on sessionId
-$session_info_sql = "SELECT serviceId, providerId FROM amelia_appointments WHERE id = $sessionId";
+$session_info_sql = "SELECT serviceId, providerId FROM amelia_services WHERE id = $sessionId";
 $session_info = $wpdb->get_row($session_info_sql);
 
 if ($session_info) {
