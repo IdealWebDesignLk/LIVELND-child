@@ -1,107 +1,5 @@
 <?php /* Template Name: Page_service_boking */ ?>
 
-<!--Load Preloader-->
-
-<div id="preloader">
-    <h4 id="loading-text">Live L&D is loading for you
-        <span class="dot-container">
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-        </span>
-    </h4>
-</div>
-
-<script>
-    document.body.classList.add("preloader-active");
-</script>
-<style>
-    body.preloader-active {
-        overflow: hidden;
-    }
-
-    #preloader {
-        display: flex;
-        /* Add flexbox to the preloader */
-        align-items: center;
-        /* Center the loading text vertically */
-        justify-content: center;
-        /* Center the loading text horizontally */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-        z-index: 9999;
-    }
-
-    #loading-text {
-        font-size: 24px !important;
-        font-weight: bold !important;
-        text-align: center !important;
-        white-space: nowrap;
-        letter-spacing: 0.15em !important;
-        color: #ff8250;
-        position: relative;
-        /* Change position to relative */
-    }
-
-    .dot-container {
-        display: inline-flex;
-        position: absolute;
-        top: 0;
-        left: 100%;
-        margin-left: 5px;
-        width: 50px;
-        /* Add a fixed width */
-        height: 24px;
-        /* Add a fixed height */
-    }
-
-    .dot-animation {
-        position: absolute;
-        animation: dot-bounce 1.2s linear infinite;
-        margin-left: 2px;
-        will-change: transform;
-    }
-
-    .dot-animation:nth-child(2) {
-        margin-left: 14px;
-        animation-delay: 0.2s;
-    }
-
-    .dot-animation:nth-child(3) {
-        margin-left: 26px;
-        animation-delay: 0.4s;
-    }
-
-    .dot-animation:nth-child(4) {
-        margin-left: 38px;
-        animation-delay: 0.6s;
-    }
-
-    @keyframes dot-bounce {
-
-        0%,
-        80%,
-        100% {
-            transform: translateY(0);
-        }
-
-        40% {
-            transform: translateY(-10px);
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        #loading-text {
-            font-size: 20px !important;
-        }
-    }
-</style>
-
 <?php
 $server_name = "";
 if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
@@ -461,8 +359,6 @@ $worduser = 'user_' . $externalid;
 
                             </div>
 
-                    
-
 
                             <div class="col-md-6" id="calenderbooking">
 
@@ -493,7 +389,30 @@ $worduser = 'user_' . $externalid;
                                     echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]');
                                     ?>
                                 </div>
-                            
+                                <!-- 
+                        <div class="w3-bar w3-black">
+                            <button class="w3-bar-item w3-button" onclick="openCity('London')">Book this session</button>
+                            <?php
+                            //  if ($preTalkId != "") {
+
+                            ?>
+                                <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Pre-Talk</button>
+                            <?php
+                            //   }
+                            ?>
+                        </div>
+
+                        <div id="London" class="w3-container city">
+                            <?php
+                            //  echo do_shortcode('[ameliastepbooking service="' . $serviceid . '"]');
+                            ?>
+                        </div>
+
+                        <div id="Paris" class="w3-container city" style="display:none">
+                            <?php
+                            //   echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]');
+                            ?>
+                        </div> -->
 
 
 
@@ -512,26 +431,106 @@ $worduser = 'user_' . $externalid;
                         </div>
 
                     </div>
-                    
-                    
-                   
-                    
-                       <!--Unload Preloader-->
-                       <script>
-                                    window.addEventListener("load", function() {
-                                        var preloader = document.getElementById('preloader');
-                                        preloader.style.display = 'none';
-                                        document.body.classList.remove("preloader-active");
-                                    });
-                                </script>
-                                <noscript>
-                                    <style>
-                                        #preloader {
-                                            display: none;
+                    <div class="mainbody bookthissec">
+                        <div class="subrow">
+                            <div class="row">
+                                <div class="ab-title" style="margin:0 auto;">Book this session</div>
+                            </div>
+                            <div class="row">
+                                <div class="amiliyabooking">
+                                    <?php
+                                    //   echo do_shortcode('[ameliastepbooking service="' . $serviceid . '"]');
+
+                                    ?>
+                                </div>
+                            </div>
+                            </br>
+                        </div>
+                    </div>
+                    <div class="mainbody abtexprt">
+                        <div class="subrow">
+                            <div class="row">
+                                <div class="ab-title" style="margin:0 auto;">About the Expert</div>
+                            </div>
+                            <div class="row author-box">
+
+
+                                <div class="imgdiv desktop">
+                                    <img class="abexpt" src=<?php echo $employee[0]->pictureFullPath ?>>
+                                </div>
+                                <div class="author-boxcol">
+                                    <h3><?php echo $employee[0]->firstName . " " . $employee[0]->lastName; ?></h3>
+
+
+
+                                    <h5> <?php echo $employee[0]->position; ?></h5>
+                                    <div class="rate">
+                                        <?php
+                                        $empfullname2 = $employee[0]->full_name;
+                                        $average1 = 0;
+                                        $rate1 = 0;
+                                        $reviewresult1 = $wpdb->get_results("SELECT * FROM `review_details` where user='$empfullname2'");
+                                        foreach ($reviewresult1 as $row) {
+                                            $count = count($reviewresult1);
+                                            $review1 = $row->starreview;
+
+                                            $rate1 += $review1;
+                                            $average1 = $rate1 / $count;
                                         }
-                                    </style>
-                                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                                </noscript>
+                                        $rating1 = round($average1);
+                                        if ($rating1 == "1") {
+                                        ?>
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/09/star-3-1.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+
+
+                                        <?php
+                                        } else if ($rating1 == "2") {
+                                        ?>
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/09/star-3-1.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/09/star-3-1.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/10/emptystar.png" ?>">
+                                        <?php
+                                        } else if ($rating == "3") {
+                                        ?>
+                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starseke.png" ?>"></a>
+                                        <?php
+                                        } else if ($rating == "4") {
+                                        ?>
+                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsyanti.png" ?>"></a>
+                                        <?php
+                                        } else if ($rating == "5") {
+                                        ?>
+                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsdanielle.png" ?>"></a>
+
+                                        <?php
+                                        }
+                                        ?>
+
+
+                                    </div>
+                                    <div class="imgdiv mobile">
+                                        <img class="abexpt" src=<?php echo $employee[0]->pictureFullPath ?>>
+                                    </div>
+                                    <div class="description">
+                                        <?php echo do_shortcode(str_replace('\\', '', $employee[0]->bio)); ?>
+                                    </div>
+
+                                    <button type="button" class="btn btn-dark hidebtn">Get in contact</button>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+              
 
                     <div class="row testisec ">
                         <div class="fulltestirow">
@@ -612,11 +611,329 @@ $worduser = 'user_' . $externalid;
 
 
 
-                 
-                
-                  
+                    <div class="mainbody reviewsecl" style="display:none;">
+                        <div class="subrow">
+                            <div class="review row">
+                                <div class="ab-title" style="margin:0 auto;">Reviews</div>
+                                <div class="ab-sub_title" style="margin:0 auto;">Lorem ipsum dolor sit amet, quando inimicus patrioque quo ex, est ut putent ceteros vulputate, phaedrum liberavisse ut vis. Mei delenit forensibus reformidans eu, te sumo ipsum dissentiet quo. Per ei enim nullam audiam, sea laboramus.</div>
+                            </div>
+                            <div class="row newrow">
+                                <div class="col-lg-3 col-sm-12">
+                                    <div class="revew">
+                                        <div class="absec-title">Stewart Gilbert</div>
+                                        <div class="revew-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
+                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
+                                                eros urna, egestas sit amet rhoncus</p>
+                                        </div>
+                                        <div class="date">
+                                            23 Aug 2022
+                                        </div>
+                                        <div class="rate testirate">
 
-                    
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-12">
+                                    <div class="revew">
+                                        <div class="absec-title">Clement Burgess</div>
+                                        <div class="revew-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
+                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
+                                                eros urna, egestas sit amet rhoncus</p>
+                                        </div>
+                                        <div class="date">
+                                            23 Aug 2022
+                                        </div>
+                                        <div class="rate testirate">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-12">
+                                    <div class="revew">
+                                        <div class="absec-title">Emma Hill</div>
+                                        <div class="revew-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
+                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
+                                                eros urna, egestas sit amet rhoncus</p>
+                                        </div>
+                                        <div class="date">
+                                            23 Aug 2022
+                                        </div>
+                                        <div class="rate testirate">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-12">
+                                    <div class="revew">
+                                        <div class="absec-title">Tony DDD</div>
+                                        <div class="revew-description">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
+                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
+                                                eros urna, egestas sit amet rhoncus</p>
+                                        </div>
+                                        <div class="date">
+
+                                            23 Aug 2022
+                                        </div>
+                                        <div class="rate testirate">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2022/08/star-3.png" ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                
+                    <!-- add relevent sessions here -->
+                    <div class="container-fluidx MoreSessions mobile-hide">
+                        <div class="home-demo">
+                            <h3 id="myList" class="hometitle">More Relevant Sessions</h3>
+
+                            <div class="owl-carousel owl-theme">
+
+
+                                <?php
+
+                                $results = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and categoryId='$catgoryid'");
+                                if (!empty($results)) {
+
+                                    foreach ($results as $row) {
+                                        $servicesingleid = $row->id;
+
+                                        $employee =  $wpdb->get_results("SELECT " . $tbprefix . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$servicesingleid'");
+
+
+
+
+                                        foreach ($employee as $employeedetails) {
+
+                                            $url = $server_name . "/single-service/?sid=" . $servicesingleid;
+                                ?>
+                                            <div class="item">
+                                                <div class="gallery-video-thumb">
+                                                    <a href="">
+                                                        <?php
+                                                        if ($row->pictureFullPath != "") {
+                                                        ?>
+                                                            <img src=<?php echo $row->pictureFullPath; ?> alt="">
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <img src="<?php echo $server_name . "/wp-content/uploads/2022/10/defaultimg.png" ?>" alt="">
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </a>
+                                                    <div class="thumb-info">
+                                                        <h4 class="sessionttile-thumb"><b><?php echo $row->name; ?></b></h4>
+
+                                                        <p class="pricesession-thumb newprice">
+
+                                                            <span class="session-price">60 minutes / <?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></span>
+
+                                                            <?php
+
+                                                            $oFormatter = new \NumberFormatter('de_DE', \NumberFormatter::CURRENCY);
+                                                            $formattedPrice = $oFormatter->formatCurrency($row->price, 'EUR');
+
+                                                            //echo $formattedPrice; 
+
+                                                            ?>
+                                                        </p>
+                                                        <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
+
+                                                    </div>
+                                                    <a href=<?php echo $url; ?>></a>
+                                                </div>
+                                                <a href=<?php echo $url; ?>>
+                                                    <div class="card">
+                                                        <?php
+                                                        $videourl1 =  "https://www.youtube.com/embed/" . $row->video;
+                                                        $parameters1 = "?controls=1&showinfo=0&start=" . $row->videoStartTime . "&rel=0&loop=1&autoplay=1";
+                                                        $finalurl1 = $videourl1 . $parameters1;
+                                                        // $video_id1 = explode("https://www.youtube.com/embed/", $videourl1)[1];  
+
+                                                        // print_r($row);
+                                                        ?>
+
+                                                        <!-- <img data-finalurl="<?php //echo $finalurl1; 
+                                                                                    ?>" class="kd-yt-video-img" src="https://img.youtube.com/vi/<?php //echo $video_id1;  
+                                                                                                                                            ?>/1.jpg"/> -->
+                                                        <img data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl1; ?>" class="kd-yt-video-img" src=<?php echo $row->pictureFullPath; ?> />
+                                                        <!-- <iframe class="carouselvideo" src=<?php //echo $finalurl1; 
+                                                                                                ?>></iframe> -->
+
+
+                                                        <div class="container">
+                                                            <?php
+                                                            $wordpressuserid = $employeedetails->externalId;
+                                                            $worduser = 'user_' . $wordpressuserid;
+
+                                                            ?>
+                                                            <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
+                                                                <?php if (get_field('verifed', $worduser)) : ?>
+                                                                    <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . "/wp-content/uploads/2022/10/checked.png" ?>"></span>
+                                                                <?php endif; ?>
+                                                            </p>
+                                                            <h4 class="sessionttile"><b><?php echo $row->name; ?></b></h4>
+                                                            <p class="pricesession">60 minutes / <?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></p>
+
+
+                                                            <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo number_format($row->videoViews, 0, '.', ',');  ?></p>
+                                                            <p class="paratext"><?php echo $row->short_excerpt; ?></p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                <?php
+
+                                        }
+                                    }
+                                }
+                                ?>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- relevent sessions mobile -->
+                    <div class="mobile-desplay MoreSessions">
+                        <div class="home-demo">
+                            <h3 id="myList" class="hometitle">More Relevant Sessions</h3>
+
+                            <div class="mobile-display">
+
+                                <?php
+
+                                $results = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and categoryId='$catgoryid'");
+                                if (!empty($results)) {
+
+                                    foreach ($results as $row) {
+                                        $servicesingleid = $row->id;
+
+                                        $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$servicesingleid'");
+
+
+
+
+                                        foreach ($employee as $employeedetails) {
+
+                                            $url = $server_name . "/single-service/?sid=" . $servicesingleid;
+                                ?>
+                                            <div class="item">
+                                                <div class="gallery-video-thumb">
+                                                    <a href="">
+                                                        <?php
+                                                        if ($row->pictureFullPath != "") {
+                                                        ?>
+                                                            <img src=<?php echo $row->pictureFullPath; ?> alt="">
+                                                        <?php
+                                                        } else {
+                                                        ?>
+                                                            <img src="<?php echo $server_name . "/wp-content/uploads/2022/10/defaultimg.png" ?>" alt="">
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </a>
+
+                                                    <div class="thumb-info">
+                                                        <h4 class="sessionttile-thumb"><b><?php echo $row->name; ?></b></h4>
+
+                                                        <p class="pricesession-thumb newprice">
+
+                                                            <span class="session-price">60 minutes / <?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></span>
+
+                                                            <?php
+
+                                                            $oFormatter = new \NumberFormatter('de_DE', \NumberFormatter::CURRENCY);
+                                                            $formattedPrice = $oFormatter->formatCurrency($row->price, 'EUR');
+
+                                                            //echo $formattedPrice; 
+
+                                                            ?>
+                                                        </p>
+                                                        <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo $row->videoViews; ?></p>
+
+                                                    </div>
+                                                    <a href=<?php echo $url; ?>></a>
+                                                </div>
+                                                <a href=<?php echo $url; ?>>
+                                                    <div class="card">
+                                                        <?php
+                                                        $videourl1 =  "https://www.youtube.com/embed/" . $row->video;
+                                                        $parameters1 = "?controls=1&showinfo=0&start=" . $row->videoStartTime . "&rel=0&loop=1&autoplay=1";
+                                                        $finalurl1 = $videourl1 . $parameters1;
+                                                        // $video_id1 = explode("https://www.youtube.com/embed/", $videourl1)[1];  
+
+                                                        // print_r($row);
+                                                        ?>
+
+                                                        <!-- <img data-finalurl="<?php //echo $finalurl1; 
+                                                                                    ?>" class="kd-yt-video-img" src="https://img.youtube.com/vi/<?php //echo $video_id1;  
+                                                                                                                                            ?>/1.jpg"/> -->
+                                                        <img data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl1; ?>" class="kd-yt-video-img" src=<?php echo $row->pictureFullPath; ?> />
+                                                        <!-- <iframe class="carouselvideo" src=<?php //echo $finalurl1; 
+                                                                                                ?>></iframe> -->
+
+
+                                                        <div class="container">
+                                                            <?php
+                                                            $wordpressuserid = $employeedetails->externalId;
+                                                            $worduser = 'user_' . $wordpressuserid;
+
+                                                            ?>
+                                                            <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
+                                                                <?php if (get_field('verifed', $worduser)) : ?>
+                                                                    <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . "/wp-content/uploads/2022/10/checked.png" ?>"></span>
+                                                                <?php endif; ?>
+                                                            </p>
+                                                            <h4 class="sessionttile"><b><?php echo $row->name; ?></b></h4>
+                                                            <p class="pricesession">60 minutes / <?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></p>
+
+
+                                                            <p class="views"><img class="views-icon" src="<?php echo $server_name . "/wp-content/uploads/2022/10/eyeball.png" ?>" /> <?php echo number_format($row->videoViews, 0, '.', ',');  ?></p>
+                                                            <p class="paratext"><?php echo $row->short_excerpt; ?></p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                <?php
+
+                                        }
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- add relevent sessions here -->
 
                 </div>
         </div><!-- containerend -->
@@ -659,7 +976,64 @@ $worduser = 'user_' . $externalid;
             document.getElementById(cityName).style.display = "block";
         }
 
-      
+        var owl = $('.logosec .owl-carousel');
+        owl.owlCarousel({
+
+            loop: true,
+            margin: 10,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+
+                600: {
+                    items: 3
+                },
+
+                1024: {
+                    items: 4
+                },
+
+                1366: {
+                    items: 4
+                }
+            }
+        });
+
+    });
+
+    $(document).ready(function() {
+        var owl = $('.MoreSessions .owl-carousel');
+        owl.owlCarousel({
+            margin: 10,
+            loop: false,
+            nav: true,
+            mouseDrag: true,
+            responsiveClass: true,
+            responsiveRefreshRate: 200,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1024: {
+                    items: 4
+                },
+                1366: {
+                    items: 6
+                },
+                2080: {
+                    items: 7
+                }
+            }
+        });
+
+    });
 </script>
 <?php get_sidebar('content-bottom'); ?>
 </div><!-- .content-area -->
