@@ -1037,3 +1037,11 @@ function add_custom_login_button_to_account_management( $user ) {
     echo '</tr>';
 }
 add_action( 'personal_options', 'add_custom_login_button_to_account_management' );
+
+
+//Disbale Wordpress email notification for users
+if ( ! function_exists( 'wp_new_user_notification' ) ) {
+    function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) {
+        return;
+    }
+}
