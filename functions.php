@@ -1028,8 +1028,12 @@ function custom_login_button( $user ) {
 
 
 function add_custom_login_button_to_account_management( $user ) {
-    echo '<h3>Custom Login Button</h3>';
+    echo '<tr class="user-custom-login-wrap">';
+    echo '<th scope="row">Custom Login Button</th>';
+    echo '<td>';
     custom_login_button( $user );
+    echo '</td>';
+    echo '</tr>';
 }
-add_action( 'user_profile_picture_description', 'add_custom_login_button_to_account_management' );
+add_action( 'personal_options', 'add_custom_login_button_to_account_management' );
 
