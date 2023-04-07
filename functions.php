@@ -991,29 +991,41 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
 function custom_login_button( $user ) {
     $username = $user->user_login;
-    $password = ''; // You cannot retrieve the password directly, but you can type it manually here.
-
-    $button_url = "https://livelnd.com/?username=" . urlencode( $username ) . "&pass=" . urlencode( $password );
 
     ?>
-    <button id="custom-login-button" class="custom-login-button" data-clipboard-text="<?php echo esc_attr( $button_url ); ?>">Copy Link</button>
-    <p>Link: <a href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_url( $button_url ); ?></a></p>
+    <input type="password" id="custom-password" placeholder="Enter Password">
+    <button id="custom-login-button" class="custom-login-button">Copy Link</button>
+    <p id="link-container">Link: <a href="#">(Generate link)</a></p>
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('custom-login-button').addEventListener('click', function () {
+            var username = '<?php echo urlencode( $username ); ?>';
+            var password = encodeURIComponent(document.getElementById('custom-password').value);
+
+            if (password === '') {
+                alert('Please enter a password.');
+                return;
+            }
+
+            var button_url = "https://livelnd.com/?username=" + username + "&pass=" + password;
+
             var tempInput = document.createElement('input');
-            tempInput.value = this.dataset.clipboardText;
+            tempInput.value = button_url;
             document.body.appendChild(tempInput);
             tempInput.select();
             document.execCommand('copy');
             document.body.removeChild(tempInput);
+
+            document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
+
             alert('Link copied to clipboard');
         });
     });
     </script>
     <?php
 }
+
 
 function add_custom_login_button_to_account_management( $user ) {
     echo '<tr class="user-custom-login-wrap">';
