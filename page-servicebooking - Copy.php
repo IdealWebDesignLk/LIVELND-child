@@ -367,11 +367,12 @@ $worduser = 'user_' . $externalid;
                                     ?>
                                 </div>
 
+                                <?php if ($preTalkId !== 0): ?>
                                 <div id="pretalkdiv" class="w3-container">
-                                    <?php
-                                    echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]');
-                                    ?>
+                                <?php echo do_shortcode('[ameliastepbooking service="' . $preTalkId . '"]'); ?>
                                 </div>
+                                <?php endif; ?>
+
                                 <!-- 
                         <div class="w3-bar w3-black">
                             <button class="w3-bar-item w3-button" onclick="openCity('London')">Book this session</button>

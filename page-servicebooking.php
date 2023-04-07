@@ -44,12 +44,7 @@ $preTalkId = $wpdb->get_var("SELECT aserv.id FROM {$tbprefix}amelia_services as 
     INNER JOIN {$tbprefix}amelia_providers_to_services as aps ON aserv.id = aps.serviceId
     WHERE aserv.categoryId = 45 AND aps.userId = {$employee_user_id}");
 
-// If no pre-talk session is found, set the preTalkId to 0
-if ($preTalkId === NULL) {
-    $preTalkId = 0;
-}
 
-echo "Pre-talk session ID: " . $preTalkId;
 
 
 
