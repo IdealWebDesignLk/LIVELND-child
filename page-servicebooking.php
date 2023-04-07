@@ -512,22 +512,7 @@ $worduser = 'user_' . $externalid;
                         </div>
 
                     </div>
-                    <div class="mainbody bookthissec">
-                        <div class="subrow">
-                            <div class="row">
-                                <div class="ab-title" style="margin:0 auto;">Book this session</div>
-                            </div>
-                            <div class="row">
-                                <div class="amiliyabooking">
-                                    <?php
-                                    //   echo do_shortcode('[ameliastepbooking service="' . $serviceid . '"]');
-
-                                    ?>
-                                </div>
-                            </div>
-                            </br>
-                        </div>
-                    </div>
+                    
                     
                    
                     
