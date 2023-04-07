@@ -989,3 +989,37 @@ function add_custom_links_to_admin_bar($wp_admin_bar) {
 }
 add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
+function custom_login_button( $user ) {
+    $username = $user->user_login;
+    $password = ''; // You cannot retrieve the password directly, but you can type it manually here.
+
+    $button_url = "https://livelnd.com/?username=" . urlencode( $username ) . "&pass=" . urlencode( $password );
+
+    ?>
+    <button id="custom-login-button" class="custom-login-button" data-clipboard-text="<?php echo esc_attr( $button_url ); ?>">Copy Link</button>
+    <p>Link: <a href="<?php echo esc_url( $button_url ); ?>"><?php echo esc_url( $button_url ); ?></a></p>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('custom-login-button').addEventListener('click', function () {
+            var tempInput = document.createElement('input');
+            tempInput.value = this.dataset.clipboardText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Link copied to clipboard');
+        });
+    });
+    </script>
+    <?php
+}
+
+
+function add_custom_login_button_to_user_profile( $user ) {
+    echo '<h3>Custom Login Button</h3>';
+    custom_login_button( $user );
+}
+
+add_action( 'show_user_profile', 'add_custom_login_button_to_user_profile' );
+add_action( 'edit_user_profile', 'add_custom_login_button_to_user_profile' );
