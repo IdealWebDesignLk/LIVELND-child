@@ -845,33 +845,79 @@ add_action('wp_ajax_return_card_content', 'kd_return_card_content');
 add_action('wp_ajax_noppriv_return_card_content', 'kd_return_card_content');
 
 
-/**
- * Perform automatic login.
- */
-function wpdocs_custom_login()
-{
-    if (isset($_GET['username']) && isset($_GET['pass'])) {
-        // Log the values of username and pass
-        error_log('Username: ' . $_GET['username']);
-        error_log('Password: ' . $_GET['pass']);
+// Register the custom API endpoint, automatic login to speakers-panel page
+add_action('rest_api_init', function () {
+	register_rest_route('wp/v2/users', '/login', array(
+	  'methods' => 'POST',
+	  'callback' => 'wpdocs_custom_login_ajax'
+	));
+  });
+  
+  // Handle the custom login request from the Ajax call
+  function wpdocs_custom_login_ajax(WP_REST_Request $request) {
+	$username = $request->get_param('username');
+	$password = $request->get_param('password');
+  
+	// Log the values of username and pass
+	error_log('Username: ' . $username);
+	error_log('Password: ' . $password);
+  
+	$creds = array(
+	  'user_login'    => $username,
+	  'user_password' => $password,
+	  'remember'      => true
+	);
+  
+	$user = wp_signon($creds, true);
+  
+	if (is_wp_error($user)) {
+	  return new WP_Error('login_failed', $user->get_error_message(), array('status' => 403));
+	} else {
+	  return array(
+		'success' => true,
+		'message' => 'Login successful',
+		'redirect_url' => home_url('/speakers-panel')
+	  );
+	}
+  }
+  
 
-        $creds = array(
-            'user_login'    => $_GET['username'],
-            'user_password' => $_GET['pass'],
-            'remember'      => true
-        );
-
-        $user = wp_signon($creds, true);
-
-        if (is_wp_error($user)) {
-            echo $user->get_error_message();
-            return false;
-        } else {
-            wp_redirect(home_url('/speakers-panel'), 301);
-            exit;
-        }
-    }
-}
+// Register the custom API endpoint
+add_action('rest_api_init', function () {
+	register_rest_route('wp/v2/users', '/login', array(
+	  'methods' => 'POST',
+	  'callback' => 'wpdocs_custom_login_ajax'
+	));
+  });
+  
+  // Handle the custom login request from the Ajax call
+  function wpdocs_custom_login_ajax(WP_REST_Request $request) {
+	$username = $request->get_param('username');
+	$password = $request->get_param('password');
+  
+	// Log the values of username and pass
+	error_log('Username: ' . $username);
+	error_log('Password: ' . $password);
+  
+	$creds = array(
+	  'user_login'    => $username,
+	  'user_password' => $password,
+	  'remember'      => true
+	);
+  
+	$user = wp_signon($creds, true);
+  
+	if (is_wp_error($user)) {
+	  return new WP_Error('login_failed', $user->get_error_message(), array('status' => 403));
+	} else {
+	  return array(
+		'success' => true,
+		'message' => 'Login successful',
+		'redirect_url' => home_url('/speakers-panel')
+	  );
+	}
+  }
+  
 
 
 // Run before the headers and cookies are sent.
