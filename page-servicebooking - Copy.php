@@ -30,46 +30,7 @@ $serviceid = get_query_var('sid');
 $homepageurl = $server_name . "/expert-home/?id=" . $serviceid;
 $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where id='$serviceid'");
 
-//$preTalkId = $service[0]->preTalkSessionId;
-
-
-$sessionId = $serviceid;
-
-$sql = "SELECT 
-            amelia_services.*,
-            amelia_users.*,
-            amelia_providers_to_services.*
-        FROM
-            amelia_services
-                JOIN
-            amelia_providers_to_services ON amelia_services.id = amelia_providers_to_services.serviceId
-                JOIN
-            amelia_users ON amelia_providers_to_services.userId = amelia_users.id
-        WHERE
-            amelia_users.id IN (
-                SELECT 
-                    amelia_users.id
-                FROM
-                    amelia_services AS session_services
-                        JOIN
-                    amelia_providers_to_services AS session_providers_to_services ON session_services.id = session_providers_to_services.serviceId
-                        JOIN
-                    amelia_users ON session_providers_to_services.userId = amelia_users.id
-                WHERE
-                    session_services.id = $sessionId
-            )
-            AND amelia_services.categoryId = 45";
-
-$results = $wpdb->get_results($sql);
-
-if (count($results) > 0) {
-    $preTalkId = $results[0]->id;
-} else {
-    $preTalkId = null;
-}
-
-
-
+$preTalkId = $service[0]->preTalkSessionId;
 $catgoryid = $service[0]->categoryId;
 global $servicename;
 $servicename = $service[0]->name;
