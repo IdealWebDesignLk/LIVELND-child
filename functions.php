@@ -989,3 +989,39 @@ function add_custom_links_to_admin_bar($wp_admin_bar) {
 }
 add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
+function custom_login_button( $user ) {
+    $username = $user->user_login;
+    $password = ''; // You cannot retrieve the password directly, but you can type it manually here.
+
+    $button_url = "https://livelnd.com/?username=" . urlencode( $username ) . "&pass=" . urlencode( $password );
+
+    echo '<button id="custom-login-button" class="custom-login-button" data-clipboard-text="' . esc_attr( $button_url ) . '">Copy Link</button>';
+    echo '<p>Link: <a href="' . esc_url( $button_url ) . '">' . esc_url( $button_url ) . '</a></p>';
+
+    echo <<<HTML
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('custom-login-button').addEventListener('click', function () {
+        var tempInput = document.createElement('input');
+        tempInput.value = this.dataset.clipboardText;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('Link copied to clipboard');
+    });
+});
+</script>
+HTML;
+}
+
+function custom_login_button( $user ) {
+    $username = $user->user_login;
+    $password = ''; // You cannot retrieve the password directly, but you can type it manually here.
+
+    $button_url = "https://livelnd.com/?username=" . urlencode( $username ) . "&pass=" . urlencode( $password );
+
+    echo '<a href="' . esc_url( $button_url ) . '" class="custom-login-button">Custom Login Button</a>';
+    echo '<p>Link: <a href="' . esc_url( $button_url ) . '">' . esc_url( $button_url ) . '</a></p>';
+}
+
