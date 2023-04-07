@@ -63,6 +63,7 @@ if ($session_info) {
     }
 } else {
     echo "Session not found.";
+    $preTalkId = null;
 }
 
 
