@@ -36,29 +36,26 @@ $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where
 $sessionId = $serviceid;
 
 $sql = "SELECT 
-            amelia_services.*,
-            amelia_users.*,
-            amelia_providers_to_services.*
+            pre_talk_services.*
         FROM
-            amelia_services
+            amelia_services AS pre_talk_services
                 JOIN
-            amelia_providers_to_services ON amelia_services.id = amelia_providers_to_services.serviceId
+            amelia_providers_to_services AS pre_talk_providers_to_services ON pre_talk_services.id = pre_talk_providers_to_services.serviceId
                 JOIN
-            amelia_users ON amelia_providers_to_services.userId = amelia_users.id
+            amelia_users ON pre_talk_providers_to_services.userId = amelia_users.id
         WHERE
             amelia_users.id IN (
                 SELECT 
-                    amelia_users.id
+                    session_providers_to_services.userId
                 FROM
                     amelia_services AS session_services
                         JOIN
                     amelia_providers_to_services AS session_providers_to_services ON session_services.id = session_providers_to_services.serviceId
-                        JOIN
-                    amelia_users ON session_providers_to_services.userId = amelia_users.id
                 WHERE
                     session_services.id = $sessionId
             )
-            AND amelia_services.categoryId = 45";
+            AND pre_talk_services.categoryId = 45";
+
 
 $results = $wpdb->get_results($sql);
 
@@ -357,7 +354,7 @@ $worduser = 'user_' . $externalid;
 
                                             <div class="askquediv">
 
-                                                <h4>Got a question about the speaker?</h4>
+                                                <h4>Got a question?</h4>
                                                 <?php
                                                 echo do_shortcode('[quform id="4" name="single page form"]');
 
