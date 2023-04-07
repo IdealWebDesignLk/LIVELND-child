@@ -100,7 +100,7 @@ function my_services_handler()
 
 		global $wpdb;
 
-		
+
 		$videourl = $_POST["videourl"];
 		$videoStartTime = $_POST["videoStartTime"];
 		$videoViews = $_POST["videoViews"];
@@ -229,7 +229,7 @@ function duplicateService()
 		global $userserviceid;
 		global $userserviceprice;
 		global $latestserviceid;
-		
+
 
 
 		$userforservice = $wpdb->get_results(
@@ -237,7 +237,7 @@ function duplicateService()
 		);
 
 		if ($userforservice > 0) {
-			
+
 			foreach ($userforservice as $row) {
 				$userserviceid = $row->userId;
 				$userserviceprice = $row->price;
@@ -273,7 +273,7 @@ function duplicateService()
 			);
 			// echo $userserviceid . "+" . $latestserviceid . "+" . $userserviceprice;
 			echo "DuplicateSuccess";
-		} 
+		}
 // 		else {
 //  			echo "Failed";
 //  		}
@@ -287,7 +287,7 @@ function getservicetags()
 {
 	if ($_SERVER["REQUEST_URI"] == '/get_service_tags') {
 		global $wpdb;
-		
+
 
 
 		$sql = "SELECT * FROM services_tags";
@@ -372,7 +372,7 @@ function hs_admin_menu()
 }
 add_action('admin_menu', 'hs_admin_menu');
 
-// global $wpdb;  
+// global $wpdb;
 function my_admin_page_contents()
 {
 
@@ -538,19 +538,19 @@ function my_admin_review_page_contents()
 									$expertname = $wpdb->get_results(
 										$wpdb->prepare("SELECT full_name FROM ".$tbprefix6."amelia_users")
 									);
-							
+
 									if (count($expertname) > 0) {
 										echo '<datalist id="expert-list">';
 										foreach ($expertname as $row) {
-											
+
 											echo '<option value="'.$row->full_name.'">';
-										
+
 										}
 										echo '</datalist>';
 									}
-							
-									
-							
+
+
+
 
 									?>
 
@@ -813,7 +813,7 @@ function kd_return_card_content()
 	// $return_html .= '</p>
 	// 			<h4 class="sessionttile"><b>' . $name . '</b></h4>
 	// 			<p class="pricesession">60 minutes / ' . $exchange_price_widget . '</p>
-	// 			<p class="views"><img class="views-icon" src="https://deisessions.com/wp-content/uploads/2022/10/eyeball.png" /> 
+	// 			<p class="views"><img class="views-icon" src="https://deisessions.com/wp-content/uploads/2022/10/eyeball.png" />
 	// 			' . $video_views . '</p>
 	// 			<p class="paratext">' . $short_excerpt . '</p>
 	// 		</div>';
@@ -873,7 +873,6 @@ function wpdocs_custom_login()
     }
 }
 
-
 // Run before the headers and cookies are sent.
 add_action('after_setup_theme', 'wpdocs_custom_login');
 
@@ -912,11 +911,11 @@ if ( !function_exists( 'chld_thm_cfg_locale_css' ) ):
     }
 endif;
 add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
-         
+
 if ( !function_exists( 'child_theme_configurator_css' ) ):
     function child_theme_configurator_css() {
         wp_enqueue_style( 'chld_thm_cfg_child', trailingslashit( get_stylesheet_directory_uri() ) . 'style.css', array( 'hello-elementor','hello-elementor','hello-elementor-theme-style' ) );
-    
+
 	// jquery time picker
 	wp_enqueue_style( 'jquery-time-picker-by-kd', get_stylesheet_directory_uri().'/kd-date-time-picker/jquery.datetimepicker.css');
 	wp_enqueue_script( 'jquery-time-picker-sript-by-kd', get_stylesheet_directory_uri().'/kd-date-time-picker/jquery.datetimepicker.js');
@@ -925,7 +924,7 @@ endif;
 add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 100 );
 
 // END ENQUEUE PARENT ACTION
-// 
+//
 
 function custom_query_vars( $vars ) {
     $vars[] = 'sid';
@@ -1036,4 +1035,3 @@ function add_custom_login_button_to_account_management( $user ) {
     echo '</tr>';
 }
 add_action( 'personal_options', 'add_custom_login_button_to_account_management' );
-
