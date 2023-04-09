@@ -1,23 +1,30 @@
 <?php /* Template Name: Page_home_merged_new_latest */ ?>
 
 <!--Load Preloader-->
-
-
-<!--Load Preloader-->
 <div id="preloader">
     <h4 id="loading-text">Live L&D</h4>
-    <div class="w-hwrapper align_left valign_top preloader-hidden" id="animated-roll-text">
+    <div class="w-hwrapper align_left valign_top" style="display: none;" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
                 <ul id="test">
-                    <li>design</li>
-                    <li>build</li>
-                    <li>check</li>
+                    <li>Unconscious Bias</li>
+                    <li>Allyship</li>
+                    <li>Gender Gap</li>
+                    <li>Equity in the Workplace</li>
+                    <li>Female Leadership</li>
+                    <li>Feminism</li>
+                    <li>Education</li>
+                    <li>Female Entrepreneurship</li>
+                    <li>Women in STEM</li>
+                    <li>Sexism</li>
+                    <li>Women's Rights</li>
+                    <li>...</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
+
 
 
 
