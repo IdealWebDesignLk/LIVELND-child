@@ -100,10 +100,16 @@
     @media only screen and (max-width: 768px) {
         #loading-text {
             font-size: 15px !important;
+            margin-right: 35px !important;
         }
         #test li{
         font-size: 14px !important;
         margin: 5 0 5 0 !important;
+    }
+    #animated-roll-text {
+        
+        right: 2%;
+        margin-right: 10px;
     }
     }
 
@@ -119,7 +125,7 @@
         display:none;
         position: absolute;
         bottom: 0;
-        right: 15%;
+        right: 13%;
         margin-right: 10px;
     }
    
