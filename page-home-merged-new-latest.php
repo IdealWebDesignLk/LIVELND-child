@@ -119,7 +119,7 @@
         display:none;
         position: absolute;
         bottom: 0;
-        right: 20%;
+        right: 15%;
         margin-right: 10px;
     }
    
