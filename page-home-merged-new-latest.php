@@ -125,7 +125,7 @@
         display:none;
         position: absolute;
         bottom: 0;
-        right: 13%;
+        right: 10%;
         margin-right: 10px;
     }
    
