@@ -99,23 +99,18 @@
 
     @media only screen and (max-width: 768px) {
         #loading-text {
-            font-size: 15px !important;
+            font-size: 13px !important;
             margin-right: 35px !important;
+            text-align: left !important;
         }
         #test li{
-        font-size: 14px !important;
+        font-size: 11px !important;
         margin: 5 0 5 0 !important;
     }
     #animated-roll-text {
-        
-        right: 2%;
-        margin-right: 10px;
-    }#loading-text {
-        font-size: 15px !important;
-        text-align: left !important;
-        margin-right: 30%;
-       }
-
+        right: 0 !important;
+        margin-right: 0 !important;
+    }
     }
 
     .w-hwrapper.valign_bottom {
