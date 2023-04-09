@@ -101,6 +101,10 @@
         #loading-text {
             font-size: 15px !important;
         }
+        #test li{
+        font-size: 14px !important;
+        margin: 5 0 5 0 !important;
+    }
     }
 
     .w-hwrapper.valign_bottom {
