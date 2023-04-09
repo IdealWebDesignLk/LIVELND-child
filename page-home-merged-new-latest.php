@@ -109,10 +109,10 @@
     }
     #animated-roll-text {
         right: -3% !important;
-        margin-right: 0 !important;
+      
     }
     #preloader h4{
-        margin-left: -15% !important;
+        margin-left: -32% !important;
     }
     }
 
