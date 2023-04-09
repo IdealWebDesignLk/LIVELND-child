@@ -100,7 +100,7 @@
     @media only screen and (max-width: 768px) {
         #loading-text {
             font-size: 13px !important;
-            margin-right: 35px !important;
+            margin-left: -35px !important;
             text-align: left !important;
         }
         #test li{
@@ -108,7 +108,7 @@
         margin: 5 0 5 0 !important;
     }
     #animated-roll-text {
-        right: -5% !important;
+        right: -3% !important;
         margin-right: 0 !important;
     }
     }
