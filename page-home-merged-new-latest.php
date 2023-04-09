@@ -110,7 +110,11 @@
         
         right: 2%;
         margin-right: 10px;
-    }
+    }#loading-text {
+        font-size: 15px !important;
+        text-align: left !important;
+       }
+
     }
 
     .w-hwrapper.valign_bottom {
