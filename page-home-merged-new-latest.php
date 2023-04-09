@@ -31,7 +31,7 @@
     document.body.classList.add("preloader-active");
 
     setTimeout(function() {
-        document.getElementById('animated-roll-text').style.visibility = 'visible';
+        document.getElementById('animated-roll-text').style.display = 'flex';
     }, 3000);
 </script>
 <style>
@@ -102,7 +102,7 @@
     }
 
     #animated-roll-text {
-        visibility: hidden;
+        display:none;
         position: absolute;
         bottom: 0;
         right: 25%;
