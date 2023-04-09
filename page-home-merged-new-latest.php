@@ -945,7 +945,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 preloader.style.display = "none";
                                 document.body.classList.remove("preloader-active");
                             }, 1000); // 1s for the opacity transition to complete
-                        }, 600000); // Keep the preloader visible for at least 6 seconds
+                        }, 1000); // Keep the preloader visible for at least 6 seconds
                     });
                 </script>
 
