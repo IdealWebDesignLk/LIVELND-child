@@ -185,7 +185,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 1s linear forwards; /* Update the animation duration */
+    animation: words 0.9s linear forwards; /* Update the animation duration */
 }
 
 @keyframes words {
@@ -960,7 +960,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 preloader.style.display = "none";
                                 document.body.classList.remove("preloader-active");
                             }, 1000); // 1s for the opacity transition to complete
-                        }, 1800); // Keep the preloader visible for at least 6 seconds
+                        }, 1500); // Keep the preloader visible for at least 6 seconds
                     });
                 </script>
                 <noscript>
