@@ -28,6 +28,11 @@
 
 <script>
     document.body.classList.add("preloader-active");
+
+    // Add a timeout function to delay the start of the animation
+    setTimeout(function() {
+        document.getElementById('animated-roll-text').style.display = 'flex';
+    }, 3000); // Change 3000 to the desired number of milliseconds before the words start scrolling
 </script>
 <style>
     body.preloader-active {
@@ -105,8 +110,8 @@ ul {
 
 .us_custom_e58a457e {
     color: #E5E5E5 !important;
-    font-weight: 600 !important;
-    font-size: 3rem !important;
+    font-weight: 200 !important;
+    font-size: 1.5rem !important;
     line-height: 1.2 !important;
 }
 
