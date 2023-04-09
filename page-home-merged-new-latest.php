@@ -213,16 +213,8 @@ ul {
         transform: translateY(-560px);
         color: #ffffff;
     }
-    75% {
-        transform: translateY(-630px);
-        color: #ffffff;
-    }
-    83.333333% {
-        transform: translateY(-700px);
-        color: #ffffff;
-    }
     100% {
-        transform: translateY(-700px); /* Keep the last word in place */
+        transform: translateY(-630px);
         color: #ffffff;
     }
 }
