@@ -195,7 +195,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 3s linear forwards; /* Update the animation duration */
+    animation: words 3s linear infinite; /* Update the animation duration */
 }
 
 @keyframes words {
@@ -203,76 +203,12 @@ ul {
         transform: translateY(0px);
         color: #ffffff;
     }
-    5% {
-        transform: translateY(-70px);
-        color: #ffffff;
-    }
-    10% {
-        transform: translateY(-140px);
-        color: #ffffff;
-    }
-    15% {
-        transform: translateY(-210px);
-        color: #ffffff;
-    }
-    20% {
-        transform: translateY(-280px);
-        color: #ffffff;
-    }
-    25% {
-        transform: translateY(-350px);
-        color: #ffffff;
-    }
-    30% {
-        transform: translateY(-420px);
-        color: #ffffff;
-    }
-    35% {
-        transform: translateY(-490px);
-        color: #ffffff;
-    }
-    40% {
-        transform: translateY(-560px);
-        color: #ffffff;
-    }
     50% {
         transform: translateY(-630px);
         color: #ffffff;
     }
-    60% {
-        transform: translateY(-560px);
-        color: #ffffff;
-    }
-    65% {
-        transform: translateY(-490px);
-        color: #ffffff;
-    }
-    70% {
-        transform: translateY(-420px);
-        color: #ffffff;
-    }
-    75% {
-        transform: translateY(-350px);
-        color: #ffffff;
-    }
-    80% {
-        transform: translateY(-280px);
-        color: #ffffff;
-    }
-    85% {
-        transform: translateY(-210px);
-        color: #ffffff;
-    }
-    90% {
-        transform: translateY(-140px);
-        color: #ffffff;
-    }
-    95% {
-        transform: translateY(-70px);
-        color: #ffffff;
-    }
     100% {
-        transform: translateY(10px);
+        transform: translateY(0px);
         color: #ffffff;
     }
 }
@@ -996,16 +932,20 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
 
                     window.addEventListener("load", function () {
+                        // Remove the infinite loop and stop the animation when the page has finished loading
+                        document.getElementById("test").classList.remove("start-animation");
+
                         setTimeout(() => {
                             var preloader = document.getElementById("preloader");
-                            preloader.classList.add("preloader-fadeout");
+                            preloader.style.opacity = 0;
                             setTimeout(() => {
                                 preloader.style.display = "none";
                                 document.body.classList.remove("preloader-active");
                             }, 1000); // 1s for the opacity transition to complete
-                        }, 1300); // Keep the preloader visible for at least 6 seconds
+                        }, 6000); // Keep the preloader visible for at least 6 seconds
                     });
                 </script>
+
                 <noscript>
                     <style>
                         #preloader {
