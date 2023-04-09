@@ -56,7 +56,7 @@
         height: 100%;
         background-color: #ff8250;
         z-index: 9999;
-        animation: backgroundFade 1s forwards;
+        animation: backgroundFade 2s forwards;
         transition: opacity 0.5s ease;
     }
 
