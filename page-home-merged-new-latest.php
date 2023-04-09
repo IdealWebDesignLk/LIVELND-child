@@ -112,7 +112,7 @@
         margin-right: 0 !important;
     }
     #preloader h4{
-        margin-left: -35px !important;
+        margin-left: -15% !important;
     }
     }
 
