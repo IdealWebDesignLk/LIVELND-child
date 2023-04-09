@@ -185,7 +185,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 3.6s linear forwards; /* Update the animation duration */
+    animation: words 2s linear forwards; /* Update the animation duration */
 }
 
 @keyframes words {
@@ -193,43 +193,48 @@ ul {
         transform: translateY(0px);
         color: #ffffff;
     }
-    8.333333% {
+    9.090909% {
         transform: translateY(-70px);
         color: #ffffff;
     }
-    16.666667% {
+    18.181818% {
         transform: translateY(-140px);
         color: #ffffff;
     }
-    25% {
+    27.272727% {
         transform: translateY(-210px);
         color: #ffffff;
     }
-    33.333333% {
+    36.363636% {
         transform: translateY(-280px);
         color: #ffffff;
     }
-    41.666667% {
+    45.454545% {
         transform: translateY(-350px);
         color: #ffffff;
     }
-    50% {
+    54.545455% {
         transform: translateY(-420px);
         color: #ffffff;
     }
-    58.333333% {
+    63.636364% {
         transform: translateY(-490px);
         color: #ffffff;
     }
-    66.666667% {
+    72.727273% {
         transform: translateY(-560px);
         color: #ffffff;
     }
-    100% {
+    81.818182% {
         transform: translateY(-630px);
         color: #ffffff;
     }
+    100% {
+        transform: translateY(-630px); /* Keep the last word in place */
+        color: #ffffff;
+    }
 }
+
 
 
 </style>
