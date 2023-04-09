@@ -2,16 +2,34 @@
 
 <!--Load Preloader-->
 
+<!--Load Preloader-->
+
 <div id="preloader">
-    <h4 id="loading-text">Live L&D is loading for you
-        <span class="dot-container">
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-        </span>
-    </h4>
+    <h4 id="loading-text">Live L&D is loading for you</h4>
+    <span class="dot-container">
+        <span class="dot-animation">.</span>
+        <span class="dot-animation">.</span>
+        <span class="dot-animation">.</span>
+        <span class="dot-animation">.</span>
+    </span>
+    <div class="w-hwrapper align_left valign_top" style="display: none;" id="animated-roll-text">
+        <div class="wpb_text_column">
+            <div class="wpb_wrapper">
+                <h2>We</h2>
+            </div>
+        </div>
+        <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
+            <div class="wpb_wrapper">
+                <ul id="test">
+                    <li>design</li>
+                    <li>build</li>
+                    <li>check</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
+
 
 <script>
     document.body.classList.add("preloader-active");
@@ -828,11 +846,30 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 </div>
                 <!--Unload Preloader-->
                 <script>
-                    window.addEventListener("load", function() {
-                        var preloader = document.getElementById('preloader');
-                        preloader.style.display = 'none';
-                        document.body.classList.remove("preloader-active");
+                    window.addEventListener("load", function () {
+                        var preloader = document.getElementById("preloader");
+                        var loadingText = document.getElementById("loading-text");
+                        var animatedRollText = document.getElementById("animated-roll-text");
+                        animatedRollText.style.display = "flex";
+
+                        var animationDuration = 6000; // Set the animation duration to 6 seconds
+
+                        // Calculate the time difference between the current time and the page load event
+                        var timeSincePageLoad = new Date().getTime() - performance.timing.navigationStart;
+
+                        // Determine the maximum time between the predefined animation duration and the time since the page load
+                        var remainingAnimationTime = Math.max(animationDuration - timeSincePageLoad, 0);
+
+                        setTimeout(function () {
+                            preloader.style.opacity = "0";
+                            document.body.classList.remove("preloader-active");
+                        }, remainingAnimationTime);
+
+                        setTimeout(function () {
+                            preloader.style.display = "none";
+                        }, remainingAnimationTime + 1000);
                     });
+
                 </script>
                 <noscript>
                     <style>
