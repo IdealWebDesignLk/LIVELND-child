@@ -195,7 +195,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 4s linear forwards; /* Update the animation duration */
+    animation: words 3s linear forwards; /* Update the animation duration */
 }
 
 @keyframes words {
@@ -272,7 +272,7 @@ ul {
         color: #ffffff;
     }
     100% {
-        transform: translateY(0px);
+        transform: translateY(10px);
         color: #ffffff;
     }
 }
