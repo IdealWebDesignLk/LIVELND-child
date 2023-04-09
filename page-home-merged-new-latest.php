@@ -3,7 +3,7 @@
 <!--Load Preloader-->
 <div id="preloader">
     <h4 id="loading-text">Live L&D</h4>
-    <div class="w-hwrapper align_left valign_top" id="animated-roll-text">
+    <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
                 <ul id="test">
@@ -25,14 +25,13 @@
     </div>
 </div>
 
-
 <script>
     document.body.classList.add("preloader-active");
 
     // Add a timeout function to delay the start of the animation
     setTimeout(function() {
         document.getElementById('animated-roll-text').style.display = 'flex';
-    }, 3000); // Change 3000 to the desired number of milliseconds before the words start scrolling
+    }, 3000);
 </script>
 <style>
     body.preloader-active {
@@ -41,6 +40,7 @@
 
     #preloader {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         position: fixed;
@@ -48,9 +48,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #ff8250; /* Set the initial background color to orange */
+        background-color: #ff8250;
         z-index: 9999;
-        animation: backgroundFade 3s forwards; /* Add animation to change the background color */
+        animation: backgroundFade 3s forwards;
     }
 
     .preloader-hidden {
@@ -63,9 +63,9 @@
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
-        color: black; /* Set the initial text color to black */
+        color: black;
         position: relative;
-        animation: textColorFade 3s forwards; /* Add animation to change the text color */
+        animation: textColorFade 3s forwards;
     }
 
     @keyframes backgroundFade {
@@ -92,15 +92,20 @@
         }
     }
 
-    .w-hwrapper.valign_top {
-        align-items: flex-start;
+    .w-hwrapper.valign_bottom {
+        align-items: flex-end;
     }
+
     .w-hwrapper.align_left {
         justify-content: flex-start;
     }
 
     #animated-roll-text {
         display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 10px;
     }
 
     ul {
@@ -117,7 +122,7 @@
     ul li {
         color: #ffffff;
     }
-
+    
     ul li:nth-of-type(1) {
     animation-delay: 0s;
 }
