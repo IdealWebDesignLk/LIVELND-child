@@ -7,7 +7,7 @@
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
-                <ul id="test" class="word-animation">
+                <ul id="test">
                     <li>Unconscious Bias</li>
                     <li>Allyship</li>
                     <li>Gender Gap</li>
@@ -130,7 +130,7 @@
     }
    
 
-    .word-animation ul {
+    ul {
         list-style: none;
     }
 
@@ -141,60 +141,60 @@
         line-height: 1.2 !important;
     }
 
-    .word-animation ul li {
+    ul li {
         color: #ffffff;
     }
     
-    .word-animation ul li:nth-of-type(1) {
+    ul li:nth-of-type(1) {
     animation-delay: 0s;
 }
 
-.word-animation ul li:nth-of-type(2) {
+ul li:nth-of-type(2) {
     animation-delay: 0.3s;
 }
 
-.word-animation ul li:nth-of-type(3) {
+ul li:nth-of-type(3) {
     animation-delay: 0.6s;
 }
 
 /* Add animation delays for the additional words */
-.word-animation ul li:nth-of-type(4) {
+ul li:nth-of-type(4) {
     animation-delay: 0.9s;
 }
 
-.word-animation ul li:nth-of-type(5) {
+ul li:nth-of-type(5) {
     animation-delay: 1.2s;
 }
 
-.word-animation ul li:nth-of-type(6) {
+ul li:nth-of-type(6) {
     animation-delay: 1.5s;
 }
 
-.word-animation ul li:nth-of-type(7) {
+ul li:nth-of-type(7) {
     animation-delay: 1.8s;
 }
 
-.word-animation ul li:nth-of-type(8) {
+ul li:nth-of-type(8) {
     animation-delay: 2.1s;
 }
 
-.word-animation ul li:nth-of-type(9) {
+ul li:nth-of-type(9) {
     animation-delay: 2.4s;
 }
 
-.word-animation ul li:nth-of-type(10) {
+ul li:nth-of-type(10) {
     animation-delay: 2.7s;
 }
 
-.word-animation ul li:nth-of-type(11) {
+ul li:nth-of-type(11) {
     animation-delay: 3.0s;
 }
 
-.word-animation ul li:nth-of-type(12) {
+ul li:nth-of-type(12) {
     animation-delay: 3.3s;
 }
 
-.word-animation ul {
+ul {
     animation: words 3s linear infinite; /* Update the animation duration */
 }
 
