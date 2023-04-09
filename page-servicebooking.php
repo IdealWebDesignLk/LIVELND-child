@@ -551,7 +551,7 @@ $worduser = 'user_' . $externalid;
                     <div class="mainbody abtexprt">
                         <div class="subrow">
                             <div class="row">
-                                <div class="ab-title" style="margin:0 auto;">About the Expert</div>
+                                <div class="ab-title" style="margin:0 auto;">About the Speaker</div>
                             </div>
                             <div class="row author-box">
 
