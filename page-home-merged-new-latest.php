@@ -178,25 +178,58 @@ ul {
 @keyframes words {
     0% {
         transform: translateY(70px); /* Start from the bottom */
-        color: #ffffff;
         opacity: 0;
     }
-    6% {
+    8.33% {
         transform: translateY(0px);
-        color: #ffffff;
         opacity: 1;
     }
-    14%, 92% {
+    16.67% {
+        transform: translateY(-70px);
+        opacity: 1;
+    }
+    25% {
+        transform: translateY(-140px);
+        opacity: 1;
+    }
+    33.33% {
+        transform: translateY(-210px);
+        opacity: 1;
+    }
+    41.67% {
+        transform: translateY(-280px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-350px);
+        opacity: 1;
+    }
+    58.33% {
+        transform: translateY(-420px);
+        opacity: 1;
+    }
+    66.67% {
+        transform: translateY(-490px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-560px);
+        opacity: 1;
+    }
+    83.33% {
         transform: translateY(-630px);
-        color: #ffffff;
+        opacity: 1;
+    }
+    91.67% {
+        transform: translateY(-700px);
         opacity: 1;
     }
     100% {
         transform: translateY(-700px);
-        color: #ffffff;
         opacity: 0;
     }
 }
+
 
 
 </style>
