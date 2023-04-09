@@ -189,7 +189,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 1.8s linear forwards; /* Update the animation duration */
+    animation: words 3s linear forwards; /* Update the animation duration */
 }
 
 @keyframes words {
@@ -197,44 +197,52 @@ ul {
         transform: translateY(0px);
         color: #ffffff;
     }
-    9.090909% {
+    10% {
         transform: translateY(-70px);
         color: #ffffff;
     }
-    18.181818% {
+    20% {
         transform: translateY(-140px);
         color: #ffffff;
     }
-    27.272727% {
+    30% {
         transform: translateY(-210px);
         color: #ffffff;
     }
-    36.363636% {
+    40% {
         transform: translateY(-280px);
         color: #ffffff;
     }
-    45.454545% {
+    50% {
         transform: translateY(-350px);
         color: #ffffff;
     }
-    54.545455% {
+    60% {
         transform: translateY(-420px);
         color: #ffffff;
     }
-    63.636364% {
+    70% {
         transform: translateY(-490px);
         color: #ffffff;
     }
-    72.727273% {
+    80% {
         transform: translateY(-560px);
         color: #ffffff;
     }
-    81.818182% {
+    90% {
         transform: translateY(-630px);
         color: #ffffff;
     }
+    92% {
+        transform: translateY(-565px);
+        color: #ffffff;
+    }
+    94%, 97% {
+        transform: translateY(-565px);
+        color: #ffffff;
+    }
     100% {
-        transform: translateY(-565px); /* Keep the last word in place */
+        transform: translateY(-490px);
         color: #ffffff;
     }
 }
