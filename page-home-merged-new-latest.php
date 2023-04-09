@@ -26,7 +26,6 @@
 </div>
 
 
-
 <script>
     document.body.classList.add("preloader-active");
 
@@ -41,52 +40,51 @@
     }
 
     #preloader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ff8250; /* Set the initial background color to orange */
-    z-index: 9999;
-    animation: backgroundFade 3s forwards; /* Add animation to change the background color */
-}
-
-.preloader-hidden {
-    display: none;
-}
-
-
-#loading-text {
-    font-size: 24px !important;
-    font-weight: bold !important;
-    text-align: center !important;
-    white-space: nowrap;
-    letter-spacing: 0.15em !important;
-    color: black; /* Set the initial text color to black */
-    position: relative;
-    animation: textColorFade 3s forwards; /* Add animation to change the text color */
-}
-
-@keyframes backgroundFade {
-    0%, 40% {
-        background-color: #ff8250;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ff8250; /* Set the initial background color to orange */
+        z-index: 9999;
+        animation: backgroundFade 3s forwards; /* Add animation to change the background color */
     }
-    100% {
-        background-color: black;
-    }
-}
 
-@keyframes textColorFade {
-    0%, 40% {
-        color: black;
+    .preloader-hidden {
+        display: none;
     }
-    100% {
-        color: white;
+
+    #loading-text {
+        font-size: 24px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        white-space: nowrap;
+        letter-spacing: 0.15em !important;
+        color: black; /* Set the initial text color to black */
+        position: relative;
+        animation: textColorFade 3s forwards; /* Add animation to change the text color */
     }
-}
+
+    @keyframes backgroundFade {
+        0%, 40% {
+            background-color: #ff8250;
+        }
+        100% {
+            background-color: black;
+        }
+    }
+
+    @keyframes textColorFade {
+        0%, 40% {
+            color: black;
+        }
+        100% {
+            color: white;
+        }
+    }
 
     @media only screen and (max-width: 768px) {
         #loading-text {
@@ -95,34 +93,32 @@
     }
 
     .w-hwrapper.valign_top {
-    align-items: flex-start;
-}
-.w-hwrapper.align_left {
-    justify-content: flex-start;
-}
-.w-hwrapper {
-    display: flex;
-    margin-top: 150px;
-}
+        align-items: flex-start;
+    }
+    .w-hwrapper.align_left {
+        justify-content: flex-start;
+    }
 
-ul {
-    list-style: none;
-}
+    #animated-roll-text {
+        display: none;
+    }
 
-.us_custom_e58a457e {
-    color: #E5E5E5 !important;
-    font-weight: 200 !important;
-    font-size: 1.5rem !important;
-    line-height: 1.2 !important;
-}
+    ul {
+        list-style: none;
+    }
 
+    .us_custom_e58a457e {
+        color: #E5E5E5 !important;
+        font-weight: 200 !important;
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+    }
 
-ul li {
-    color: #ffffff;
-    opacity: 0; /* Set the initial opacity to 0 */
-}
+    ul li {
+        color: #ffffff;
+    }
 
-ul li:nth-of-type(1) {
+    ul li:nth-of-type(1) {
     animation-delay: 0s;
 }
 
@@ -177,59 +173,54 @@ ul {
 
 @keyframes words {
     0% {
-        transform: translateY(70px); /* Start from the bottom */
-        opacity: 0;
-    }
-    8.33% {
         transform: translateY(0px);
-        opacity: 1;
+        color: #ffffff;
     }
-    16.67% {
+    8.333333% {
         transform: translateY(-70px);
-        opacity: 1;
+        color: #ffffff;
+    }
+    16.666667% {
+        transform: translateY(-140px);
+        color: #ffffff;
     }
     25% {
-        transform: translateY(-140px);
-        opacity: 1;
-    }
-    33.33% {
         transform: translateY(-210px);
-        opacity: 1;
+        color: #ffffff;
     }
-    41.67% {
+    33.333333% {
         transform: translateY(-280px);
-        opacity: 1;
+        color: #ffffff;
+    }
+    41.666667% {
+        transform: translateY(-350px);
+        color: #ffffff;
     }
     50% {
-        transform: translateY(-350px);
-        opacity: 1;
-    }
-    58.33% {
         transform: translateY(-420px);
-        opacity: 1;
+        color: #ffffff;
     }
-    66.67% {
+    58.333333% {
         transform: translateY(-490px);
-        opacity: 1;
+        color: #ffffff;
+    }
+    66.666667% {
+        transform: translateY(-560px);
+        color: #ffffff;
     }
     75% {
-        transform: translateY(-560px);
-        opacity: 1;
-    }
-    83.33% {
         transform: translateY(-630px);
-        opacity: 1;
+        color: #ffffff;
     }
-    91.67% {
+    83.333333% {
         transform: translateY(-700px);
-        opacity: 1;
+        color: #ffffff;
     }
     100% {
-        transform: translateY(-700px);
-        opacity: 0;
+        transform: translateY(-700px); /* Keep the last word in place */
+        color: #ffffff;
     }
 }
-
 
 
 </style>
@@ -940,7 +931,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 </div>
                 <!--Unload Preloader-->
                 <script>
-                  document.body.classList.add("preloader-active");
+                    document.body.classList.add("preloader-active");
 
                     setTimeout(() => {
                         const animatedRollText = document.getElementById("animated-roll-text");
@@ -957,8 +948,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             }, 1000); // 1s for the opacity transition to complete
                         }, 6000); // Keep the preloader visible for at least 6 seconds
                     });
-
-
                 </script>
                 <noscript>
                     <style>
