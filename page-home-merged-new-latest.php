@@ -2,17 +2,11 @@
 
 <!--Load Preloader-->
 
-<!--Load Preloader-->
 
+<!--Load Preloader-->
 <div id="preloader">
     <h4 id="loading-text">Live L&D</h4>
-    <span class="dot-container">
-        <span class="dot-animation">.</span>
-        <span class="dot-animation">.</span>
-        <span class="dot-animation">.</span>
-        <span class="dot-animation">.</span>
-    </span>
-    <div class="w-hwrapper align_left valign_top" style="display: none;" id="animated-roll-text">
+    <div class="w-hwrapper align_left valign_top preloader-hidden" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
                 <ul id="test">
@@ -24,6 +18,7 @@
         </div>
     </div>
 </div>
+
 
 
 <script>
@@ -47,6 +42,11 @@
     z-index: 9999;
     animation: backgroundFade 3s forwards; /* Add animation to change the background color */
 }
+
+.preloader-hidden {
+    display: none;
+}
+
 
 #loading-text {
     font-size: 24px !important;
@@ -790,6 +790,13 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 </div>
                 <!--Unload Preloader-->
                 <script>
+                    document.body.classList.add("preloader-active");
+
+                    setTimeout(() => {
+                        const animatedRollText = document.getElementById("animated-roll-text");
+                        animatedRollText.classList.remove("preloader-hidden");
+                    }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
+
                     window.addEventListener("load", function () {
                         var preloader = document.getElementById("preloader");
                         var loadingText = document.getElementById("loading-text");
