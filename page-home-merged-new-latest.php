@@ -56,7 +56,7 @@
         height: 100%;
         background-color: #ff8250;
         z-index: 9999;
-        animation: backgroundFade 2s forwards;
+        animation: backgroundFade 1s forwards;
         transition: opacity 0.5s ease;
     }
 
@@ -76,7 +76,7 @@
         letter-spacing: 0.15em !important;
         color: black;
         position: relative;
-        animation: textColorFade 1.5s forwards;
+        animation: textColorFade 1s forwards;
     }
 
     @keyframes backgroundFade {
