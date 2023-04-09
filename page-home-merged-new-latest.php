@@ -790,7 +790,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 </div>
                 <!--Unload Preloader-->
                 <script>
-                    document.body.classList.add("preloader-active");
+                  document.body.classList.add("preloader-active");
 
                     setTimeout(() => {
                         const animatedRollText = document.getElementById("animated-roll-text");
@@ -798,28 +798,16 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
 
                     window.addEventListener("load", function () {
-                        var preloader = document.getElementById("preloader");
-                        var loadingText = document.getElementById("loading-text");
-                        var animatedRollText = document.getElementById("animated-roll-text");
-                        animatedRollText.style.display = "flex";
-
-                        var animationDuration = 20000; // Set the animation duration to 6 seconds
-
-                        // Calculate the time difference between the current time and the page load event
-                        var timeSincePageLoad = new Date().getTime() - performance.timing.navigationStart;
-
-                        // Determine the maximum time between the predefined animation duration and the time since the page load
-                        var remainingAnimationTime = Math.max(animationDuration - timeSincePageLoad, 0);
-
-                        setTimeout(function () {
-                            preloader.style.opacity = "0";
-                            document.body.classList.remove("preloader-active");
-                        }, remainingAnimationTime);
-
-                        setTimeout(function () {
-                            preloader.style.display = "none";
-                        }, remainingAnimationTime + 1000);
+                        setTimeout(() => {
+                            var preloader = document.getElementById("preloader");
+                            preloader.style.opacity = 0;
+                            setTimeout(() => {
+                                preloader.style.display = "none";
+                                document.body.classList.remove("preloader-active");
+                            }, 1000); // 1s for the opacity transition to complete
+                        }, 6000); // Keep the preloader visible for at least 6 seconds
                     });
+
 
                 </script>
                 <noscript>
