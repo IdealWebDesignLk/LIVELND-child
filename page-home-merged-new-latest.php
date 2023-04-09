@@ -108,9 +108,7 @@
         right: 25%;
         margin-right: 10px;
     }
-    .live-ld-wrapper {
-        position: relative;
-    }
+   
 
     ul {
         list-style: none;
