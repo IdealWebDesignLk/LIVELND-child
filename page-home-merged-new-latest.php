@@ -2,6 +2,7 @@
 
 <!--Load Preloader-->
 <div id="preloader">
+    <div class="live-ld-wrapper">
     <h4 id="loading-text">Live L&D</h4>
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
@@ -23,14 +24,14 @@
             </div>
         </div>
     </div>
+  </div>
 </div>
 
 <script>
     document.body.classList.add("preloader-active");
 
-    // Add a timeout function to delay the start of the animation
     setTimeout(function() {
-        document.getElementById('animated-roll-text').style.display = 'flex';
+        document.getElementById('animated-roll-text').style.visibility = 'visible';
     }, 3000);
 </script>
 <style>
@@ -101,11 +102,14 @@
     }
 
     #animated-roll-text {
-        display: none;
+        visibility: hidden;
         position: absolute;
         bottom: 0;
         right: 25%;
         margin-right: 10px;
+    }
+    .live-ld-wrapper {
+        position: relative;
     }
 
     ul {
