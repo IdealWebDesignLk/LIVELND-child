@@ -852,7 +852,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         var animatedRollText = document.getElementById("animated-roll-text");
                         animatedRollText.style.display = "flex";
 
-                        var animationDuration = 10000; // Set the animation duration to 6 seconds
+                        var animationDuration = 20000; // Set the animation duration to 6 seconds
 
                         // Calculate the time difference between the current time and the page load event
                         var timeSincePageLoad = new Date().getTime() - performance.timing.navigationStart;
