@@ -185,7 +185,7 @@ ul li:nth-of-type(12) {
 }
 
 ul {
-    animation: words 2s linear forwards; /* Update the animation duration */
+    animation: words 1.5s linear forwards; /* Update the animation duration */
 }
 
 @keyframes words {
