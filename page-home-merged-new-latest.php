@@ -234,7 +234,7 @@ ul {
         color: #ffffff;
     }
     100% {
-        transform: translateY(-600px); /* Keep the last word in place */
+        transform: translateY(-580px); /* Keep the last word in place */
         color: #ffffff;
     }
 }
