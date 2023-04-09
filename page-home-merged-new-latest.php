@@ -13,11 +13,6 @@
         <span class="dot-animation">.</span>
     </span>
     <div class="w-hwrapper align_left valign_top" style="display: none;" id="animated-roll-text">
-        <div class="wpb_text_column">
-            <div class="wpb_wrapper">
-                <h2>We</h2>
-            </div>
-        </div>
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
                 <ul id="test">
