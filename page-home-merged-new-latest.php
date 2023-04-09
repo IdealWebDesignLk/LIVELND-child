@@ -26,6 +26,7 @@
 </div>
 
 
+
 <script>
     document.body.classList.add("preloader-active");
 
@@ -118,6 +119,7 @@ ul {
 
 ul li {
     color: #ffffff;
+    opacity: 0; /* Set the initial opacity to 0 */
 }
 
 ul li:nth-of-type(1) {
@@ -175,52 +177,24 @@ ul {
 
 @keyframes words {
     0% {
+        transform: translateY(70px); /* Start from the bottom */
+        color: #ffffff;
+        opacity: 0;
+    }
+    6% {
         transform: translateY(0px);
         color: #ffffff;
+        opacity: 1;
     }
-    8.333333% {
-        transform: translateY(-70px);
-        color: #ffffff;
-    }
-    16.666667% {
-        transform: translateY(-140px);
-        color: #ffffff;
-    }
-    25% {
-        transform: translateY(-210px);
-        color: #ffffff;
-    }
-    33.333333% {
-        transform: translateY(-280px);
-        color: #ffffff;
-    }
-    41.666667% {
-        transform: translateY(-350px);
-        color: #ffffff;
-    }
-    50% {
-        transform: translateY(-420px);
-        color: #ffffff;
-    }
-    58.333333% {
-        transform: translateY(-490px);
-        color: #ffffff;
-    }
-    66.666667% {
-        transform: translateY(-560px);
-        color: #ffffff;
-    }
-    75% {
+    14%, 92% {
         transform: translateY(-630px);
         color: #ffffff;
-    }
-    83.333333% {
-        transform: translateY(-700px);
-        color: #ffffff;
+        opacity: 1;
     }
     100% {
-        transform: translateY(-700px); /* Keep the last word in place */
+        transform: translateY(-700px);
         color: #ffffff;
+        opacity: 0;
     }
 }
 
