@@ -39,6 +39,11 @@
         overflow: hidden;
     }
 
+    #test {
+    font-size: 35;
+    margin: 15 0 10 0;
+    }
+
     #preloader {
         display: flex;
         flex-direction: column;
@@ -110,7 +115,7 @@
         display:none;
         position: absolute;
         bottom: 0;
-        right: 25%;
+        right: 20%;
         margin-right: 10px;
     }
    
