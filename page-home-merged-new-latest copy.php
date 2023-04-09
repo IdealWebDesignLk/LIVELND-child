@@ -35,7 +35,6 @@
         height: 100%;
         background-color: black;
         z-index: 9999;
-        animation: backgroundTransition 1s ease-out 1s forwards;
     }
 
     #loading-text {
@@ -46,7 +45,6 @@
         letter-spacing: 0.15em !important;
         color: #ff8250;
         position: relative;
-        animation: textColorTransition 1s ease-out 1s forwards;
         /* Change position to relative */
     }
 
@@ -94,24 +92,6 @@
 
         40% {
             transform: translateY(-10px);
-        }
-    }
-
-    @keyframes backgroundTransition {
-    0% {
-        background-color: #ff8250;
-    }
-    100% {
-        background-color: black;
-    }
-    }
-
-    @keyframes textColorTransition {
-        0% {
-            color: black;
-        }
-        100% {
-            color: #ff8250;
         }
     }
 
