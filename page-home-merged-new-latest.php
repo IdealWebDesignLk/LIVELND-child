@@ -194,7 +194,7 @@
     animation-delay: 3.3s;
 }
 
-.word-animation ul {
+.word-animation {
     animation: words 3s linear infinite; /* Update the animation duration */
 }
 
