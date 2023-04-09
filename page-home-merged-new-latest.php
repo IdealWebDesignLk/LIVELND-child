@@ -200,7 +200,7 @@ ul {
 
 @keyframes words {
     0% {
-        transform: translateY(10px);
+        transform: translateY(30px);
         color: #ffffff;
     }
     50% {
@@ -208,7 +208,7 @@ ul {
         color: #ffffff;
     }
     100% {
-        transform: translateY(10px);
+        transform: translateY(30px);
         color: #ffffff;
     }
 }
