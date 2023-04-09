@@ -108,7 +108,7 @@
         margin: 5 0 5 0 !important;
     }
     #animated-roll-text {
-        right: 0 !important;
+        right: -5% !important;
         margin-right: 0 !important;
     }
     }
