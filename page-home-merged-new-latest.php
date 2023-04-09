@@ -93,7 +93,7 @@
             color: black;
         }
         100% {
-            color: white;
+            color: #ff8250;
         }
     }
 
