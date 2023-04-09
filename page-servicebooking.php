@@ -96,7 +96,7 @@
 
     @media only screen and (max-width: 768px) {
         #loading-text {
-            font-size: 20px !important;
+            font-size: 13px !important;
         }
     }
 </style>

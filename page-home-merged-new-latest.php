@@ -113,6 +113,7 @@
     }#loading-text {
         font-size: 15px !important;
         text-align: left !important;
+        margin-right: 30%;
        }
 
     }
