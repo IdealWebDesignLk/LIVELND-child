@@ -56,7 +56,7 @@
         height: 100%;
         background-color: #ff8250;
         z-index: 9999;
-        animation: backgroundFade 3s forwards;
+        animation: backgroundFade 1s forwards;
         transition: opacity 1s ease;
     }
 
@@ -76,7 +76,7 @@
         letter-spacing: 0.15em !important;
         color: black;
         position: relative;
-        animation: textColorFade 3s forwards;
+        animation: textColorFade 1s forwards;
     }
 
     @keyframes backgroundFade {
@@ -960,7 +960,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 preloader.style.display = "none";
                                 document.body.classList.remove("preloader-active");
                             }, 1000); // 1s for the opacity transition to complete
-                        }, 1500); // Keep the preloader visible for at least 6 seconds
+                        }, 1300); // Keep the preloader visible for at least 6 seconds
                     });
                 </script>
                 <noscript>
