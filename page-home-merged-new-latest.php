@@ -115,9 +115,6 @@ ul {
     line-height: 1.2 !important;
 }
 
-ul {
-    animation: words 3s linear infinite;
-}
 
 ul li {
     color: #ffffff;
@@ -172,49 +169,57 @@ ul li:nth-of-type(12) {
     animation-delay: 3.3s;
 }
 
+ul {
+    animation: words 3.6s linear; /* Update the animation duration */
+}
+
 @keyframes words {
     0% {
         transform: translateY(0px);
         color: #ffffff;
     }
-    10% {
+    8.333333% {
         transform: translateY(-70px);
         color: #ffffff;
     }
-    20% {
+    16.666667% {
         transform: translateY(-140px);
         color: #ffffff;
     }
-    30% {
+    25% {
         transform: translateY(-210px);
         color: #ffffff;
     }
-    40% {
+    33.333333% {
         transform: translateY(-280px);
         color: #ffffff;
     }
-    50% {
+    41.666667% {
         transform: translateY(-350px);
         color: #ffffff;
     }
-    60% {
+    50% {
         transform: translateY(-420px);
         color: #ffffff;
     }
-    70% {
+    58.333333% {
         transform: translateY(-490px);
         color: #ffffff;
     }
-    80% {
+    66.666667% {
         transform: translateY(-560px);
         color: #ffffff;
     }
-    90% {
+    75% {
         transform: translateY(-630px);
         color: #ffffff;
     }
-    100% {
+    83.333333% {
         transform: translateY(-700px);
+        color: #ffffff;
+    }
+    100% {
+        transform: translateY(-700px); /* Keep the last word in place */
         color: #ffffff;
     }
 }
