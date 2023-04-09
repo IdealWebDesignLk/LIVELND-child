@@ -52,7 +52,12 @@
         background-color: #ff8250;
         z-index: 9999;
         animation: backgroundFade 3s forwards;
+        transition: opacity 1s ease;
     }
+
+    .preloader-fadeout {
+    opacity: 0;
+}
 
     .preloader-hidden {
         display: none;
@@ -940,12 +945,12 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     window.addEventListener("load", function () {
                         setTimeout(() => {
                             var preloader = document.getElementById("preloader");
-                            preloader.style.opacity = 0;
+                            preloader.classList.add("preloader-fadeout");
                             setTimeout(() => {
                                 preloader.style.display = "none";
                                 document.body.classList.remove("preloader-active");
                             }, 1000); // 1s for the opacity transition to complete
-                        }, 60000); // Keep the preloader visible for at least 6 seconds
+                        }, 6000); // Keep the preloader visible for at least 6 seconds
                     });
                 </script>
                 <noscript>
