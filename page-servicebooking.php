@@ -2,7 +2,7 @@
 <!--Load Preloader-->
 
 <div id="preloader">
-    <h4 id="loading-text">Live L&D is loading for you
+    <h4 id="loading-text">Live L&D is loading your session
         <span class="dot-container">
             <span class="dot-animation">.</span>
             <span class="dot-animation">.</span>
