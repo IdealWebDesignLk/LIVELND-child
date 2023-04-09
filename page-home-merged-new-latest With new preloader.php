@@ -76,7 +76,7 @@
         letter-spacing: 0.15em !important;
         color: black;
         position: relative;
-        animation: textColorFade 2s forwards;
+        animation: textColorFade 3s forwards;
     }
 
     @keyframes backgroundFade {
