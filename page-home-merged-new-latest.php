@@ -2,7 +2,7 @@
 
 <!--Load Preloader-->
 <div id="preloader">
-    <div class="live-ld-wrapper">
+    
     <h4 id="loading-text">Live L&D</h4>
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
-  </div>
+ 
 </div>
 
 <script>
