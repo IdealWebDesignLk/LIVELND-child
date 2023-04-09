@@ -3,7 +3,7 @@
 <!--Load Preloader-->
 <div id="preloader">
     
-    <h4 id="loading-text">Live L&D</h4>
+    <h4 id="loading-text">Live L&D is loading topics</h4>
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
@@ -76,7 +76,7 @@
         letter-spacing: 0.15em !important;
         color: black;
         position: relative;
-        animation: textColorFade 1s forwards;
+        animation: textColorFade 0.2s forwards;
     }
 
     @keyframes backgroundFade {
