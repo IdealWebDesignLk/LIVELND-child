@@ -39,7 +39,7 @@
         overflow: hidden;
     }
 
-    #test {
+    #test li{
     font-size: 35;
     margin: 15 0 10 0;
     }
