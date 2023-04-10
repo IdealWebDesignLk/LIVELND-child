@@ -1053,4 +1053,4 @@ function wpa_change_my_basket_text( $translated_text, $text, $domain ){
 		$translated_text = 'Options:';
 	return $translated_text;
 	}
-	add_filter( 'gettext', 'wpa_change_my_basket_text', 10, 3 );
+add_filter( 'gettext', 'wpa_change_my_basket_text', 10, 3 );
