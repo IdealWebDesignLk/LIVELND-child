@@ -31,7 +31,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     ?>
 </div>
 
-do_action('woocommerce_before_cart'); ?>
+<?php do_action('woocommerce_before_cart'); ?>
 
 <form class="woocommerce-cart-form" action="<?php echo esc_url(wc_get_cart_url()); ?>" method="post">
     <?php do_action('woocommerce_before_cart_table'); ?>
@@ -176,5 +176,9 @@ do_action('woocommerce_before_cart'); ?>
     </table>
     <?php do_action('woocommerce_after_cart_table'); ?>
 </form>
+
+<div class="woocommerce-cart-total-display">
+    <?php woocommerce_cart_totals(); ?>
+</div>
 
 <?php do_action('woocommerce_after_cart'); ?>
