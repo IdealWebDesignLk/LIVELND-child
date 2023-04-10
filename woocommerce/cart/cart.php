@@ -39,9 +39,13 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     $cart_ids = [];
     $crosssellProductIdsArr = [];
 
+    foreach ($items as $itm => $val) {
+        $cart_ids[] = $values['data']->get_id();
+
+    }
+
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
-        $cart_ids[] = $values['data']->get_id();
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
         $crosssellProductIds    =   $crosssellProductIds[0];
 
