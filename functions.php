@@ -1048,9 +1048,3 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) {
 
 
 // change cart page title
-function wpa_change_my_basket_text( $translated_text, $text, $domain ){
-	if($translated_text == 'Cart:' )
-		$translated_text = 'Options:';
-	return $translated_text;
-	}
-add_filter( 'gettext', 'wpa_change_my_basket_text', 10, 3 );
