@@ -39,6 +39,8 @@ do_action('woocommerce_before_cart_collaterals'); ?>
         // $_product =  wc_get_product( $values['data']->get_id()); 
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
         $crosssellProductIds    =   $crosssellProductIds[0];
+
+        print_r($crosssellProductIds);
     }
 
 
