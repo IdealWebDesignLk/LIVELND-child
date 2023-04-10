@@ -1048,7 +1048,7 @@ if ( ! function_exists( 'wp_new_user_notification' ) ) {
 
 
 // change cart page title
-unction wpa_change_my_basket_text( $translated_text, $text, $domain ){
+function wpa_change_my_basket_text( $translated_text, $text, $domain ){
 	if($translated_text == 'Cart:' )
 		$translated_text = 'Options:';
 	return $translated_text;
