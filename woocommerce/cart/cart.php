@@ -35,7 +35,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     <?php
     global $woocommerce;
     $items = $woocommerce->cart->get_cart();
-    $return_html = '<div class="kd-cross-sells-wrapper">';
+    $return_html = '<br><br><h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
 
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
@@ -74,7 +74,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 
 
     ?>
-    <?php echo  woocommerce_cross_sell_display(); ?>
+    <?php //echo  woocommerce_cross_sell_display(); ?>
 </div>
 
 <?php do_action('woocommerce_before_cart'); ?>
