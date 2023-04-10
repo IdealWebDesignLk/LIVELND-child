@@ -19,7 +19,7 @@
 defined('ABSPATH') || exit;
 do_action('woocommerce_before_cart_collaterals'); ?>
 
-<div class="cart-collaterals">
+<!-- <div class="cart-collaterals">
     <?php
     /**
      * Cart collaterals hook.
@@ -27,8 +27,12 @@ do_action('woocommerce_before_cart_collaterals'); ?>
      * @hooked woocommerce_cross_sell_display
      * @hooked woocommerce_cart_totals - 10
      */
-    do_action('woocommerce_cart_collaterals');
+    //do_action('woocommerce_cart_collaterals');
     ?>
+</div> -->
+
+<div class="woocommerce-cross-sels kd-cross-sells-wrapper">
+<?php echo  woocommerce_cross_sell_display(); ?>
 </div>
 
 <?php do_action('woocommerce_before_cart'); ?>
