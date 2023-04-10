@@ -33,6 +33,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 
 <div class="woocommerce-cross-sels kd-cross-sells-wrapper">
     <?php
+    global $woocommerce;
     $items = $woocommerce->cart->get_cart();
     foreach ($items as $item => $values) {
         print_r($item);
