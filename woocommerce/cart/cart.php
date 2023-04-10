@@ -35,10 +35,33 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     <?php
     global $woocommerce;
     $items = $woocommerce->cart->get_cart();
+    $return_html = '<div class="kd-cross-sells-wrapper">';
+
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
         $crosssellProductIds    =   $crosssellProductIds[0];
+
+        foreach ($crosssellProductIds as $key => $crossId) {
+            $cross_product = wc_get_product($crossId);
+            $title = $cross_product->get_name();
+            $description = $cross_product->get_description();
+            $price = $cross_product->get_price();
+
+            $cart_button = '<a href="?add-to-cart='.$crossId.'" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="'.$crossId.'" data-product_sku="" aria-label="Add “'.$title.'” to your cart" rel="nofollow">Add to cart</a>';
+        
+            $return_html .= '<div class="kd-single-croll-sell">
+            <h3>'.$title.'</h3>
+            <p>'.$description.'</p>
+            <p>'.get_woocommerce_currency_symbol().$price.'</p>
+            '.$cart_button.'
+            </div>';
+        
+
+        }
+
+        $return_html.='</div>';
+        echo $return_html;
 
         print_r($crosssellProductIds);
     }
