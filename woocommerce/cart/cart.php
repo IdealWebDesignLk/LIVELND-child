@@ -66,7 +66,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 
         }
 
-        $return_html.='</div>';
+        $return_html.='</div><br><br>';
         echo $return_html;
 
         // print_r($crosssellProductIds);
