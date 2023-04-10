@@ -898,7 +898,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                                                                     ?></p>
 
 
-                                                    <p class="views"><img class="views-icon" src="https://iwdsessions.com/wp-content/uploads/2022/10/eyeball.png" /> <?php //echo number_format($row->videoViews, 0, '.', ',');  
+                                                    <p class="views"><img class="views-icon" src="https://livelnd.com/wp-content/uploads/2022/10/eyeball.png" /> <?php //echo number_format($row->videoViews, 0, '.', ',');  
                                                                                                                                                                         ?></p> -->
                                                         <p class="paratext"><?php echo do_shortcode($row->description); ?></p>
                                                         <a href="<?php echo $url ?>"><button class="viewmorebtn">Learn More</button></a>
