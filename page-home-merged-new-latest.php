@@ -602,7 +602,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                     <div class="kd-form-group from-to-dates">
                         <label>To</label>
-                        <input type="date" id="kd-to-date" onchange="get_available_dates(event)">
+                        <input type="date" id="kd-to-date" onchange="copyFromDate(event);">
                     </div>
 
                     <div class="kd-form-group reset-button">
