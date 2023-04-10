@@ -36,15 +36,17 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     global $woocommerce;
     $items = $woocommerce->cart->get_cart();
     $return_html = '<br><br><h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
+    $cart_ids = [];
     $crosssellProductIdsArr = [];
 
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
+        $cart_ids[] = $values['data']->get_id();
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
         $crosssellProductIds    =   $crosssellProductIds[0];
 
         foreach ($crosssellProductIds as $key => $crossId) {
-            if (!in_array($crossId , $crosssellProductIdsArr)) {
+            if (!in_array($crossId , $crosssellProductIdsArr) && !in_array($crossId , $cart_ids)) {
                 $crosssellProductIdsArr[] = $crossId;
             }
         }
