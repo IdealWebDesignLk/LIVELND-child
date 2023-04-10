@@ -32,7 +32,17 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 </div> -->
 
 <div class="woocommerce-cross-sels kd-cross-sells-wrapper">
-<?php echo  woocommerce_cross_sell_display(); ?>
+    <?php
+    $items = $woocommerce->cart->get_cart();
+    foreach ($items as $item => $values) {
+        print_r($item);
+        // $crosssellProductIds   =   get_post_meta(get_the_ID(), '_crosssell_ids');
+        // $crosssellProductIds    =   $crosssellProductIds[0];
+    }
+
+
+    ?>
+    <?php echo  woocommerce_cross_sell_display(); ?>
 </div>
 
 <?php do_action('woocommerce_before_cart'); ?>
