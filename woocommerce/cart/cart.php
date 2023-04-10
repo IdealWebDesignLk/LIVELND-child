@@ -57,8 +57,6 @@ do_action('woocommerce_before_cart_collaterals'); ?>
         // print_r($crosssellProductIds);
     }
 
-    print_r($cart_ids);
-    print_r($crosssellProductIdsArr);
 
     foreach ($crosssellProductIdsArr as $key => $crossId) {
         $cross_product = wc_get_product($crossId);
