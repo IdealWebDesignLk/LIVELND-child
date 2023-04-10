@@ -51,10 +51,16 @@ do_action('woocommerce_before_cart_collaterals'); ?>
             $cart_button = '<a href="?add-to-cart='.$crossId.'" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="'.$crossId.'" data-product_sku="" aria-label="Add “'.$title.'” to your cart" rel="nofollow">Add to cart</a>';
         
             $return_html .= '<div class="kd-single-croll-sell">
+            <div class="col">
             <h3>'.$title.'</h3>
             <p>'.$description.'</p>
+            </div>
+            <div class="col">
             <p>'.get_woocommerce_currency_symbol().$price.'</p>
+            </div>
+            <div class="col">
             '.$cart_button.'
+            </div>
             </div>';
         
 
@@ -63,7 +69,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
         $return_html.='</div>';
         echo $return_html;
 
-        print_r($crosssellProductIds);
+        // print_r($crosssellProductIds);
     }
 
 
