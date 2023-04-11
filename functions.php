@@ -861,7 +861,7 @@ function wpdocs_custom_login()
 		$u_id = explode("*" , $token_arr[1])[1];
 
 		echo $expDte . $u_id;
-
+exit;
 
 		// $creds = array(
 		// 	'user_login'    => $_GET['username'],
