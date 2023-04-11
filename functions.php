@@ -1038,9 +1038,9 @@ function custom_login_button($user)
 				let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
 
 				let data = {
-					action: 'update_user_token',
-					user_tiken: token,
-					user_id: user_id
+					'action' : 'update_user_token',
+					// user_token: token,
+					// user_id: user_id
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
