@@ -875,8 +875,11 @@ function wpdocs_custom_login()
 
 		echo $formated_date;
 		$date_now = new DateTime();
+		echo $date_now;
 
 		$user_token = get_user_meta( $u_id, 'access_token', true );
+
+		echo $user_token;
 
 		if($user_token==$token && $formated_date > $date_now){
 			$user = get_user_by( 'id', $u_id ); 
