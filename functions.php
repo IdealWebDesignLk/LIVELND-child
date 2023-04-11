@@ -853,7 +853,7 @@ function wpdocs_custom_login()
 		error_log('Username: ' . $_GET['username']);
 		error_log('Password: ' . $_GET['pass']);
 
-		// echo $_GET['pass'];
+		echo $_GET['pass'];
 		$token = $_GET['pass'];
 		$token_arr = explode("_" , $token);
 
@@ -873,13 +873,13 @@ function wpdocs_custom_login()
 
 		$formated_date = new DateTime(''.$date_arr[0].'/'.$date_arr[1].'/'.date('Y'));
 
-		// print_r($formated_date);
+		print_r($formated_date);
 		$date_now = new DateTime();
-		// print_r($date_now);
+		print_r($date_now);
 
 		$user_token = get_user_meta( $u_id, 'access_token', true );
 
-		// echo $user_token;
+		echo $user_token;
 
 		if($user_token==$token && $formated_date > $date_now){
 			$user = get_user_by( 'id', $u_id ); 
@@ -889,6 +889,8 @@ function wpdocs_custom_login()
 			wp_redirect(home_url('/speakers-panel'), 301);
 			exit;
 		}
+
+		exit;
 		
 
 		// $creds = array(
