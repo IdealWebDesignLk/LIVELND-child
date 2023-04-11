@@ -999,10 +999,11 @@ function kd_updat_user_token()
 	$user_token = $_POST['user_token'];
 	$user_id = $_POST['user_id'];
 
-	// update_user_meta($user_id, "access_token", $user_token);
+	update_user_meta($user_id, "access_token", $user_token);
 
-	// $user_token = get_user_meta( $user_id, "access_token", true );
-	echo $user_token . $user_id;
+	$usr_token = get_user_meta( $user_id, "access_token", true );
+
+	echo $usr_token . $user_id;
 	wp_die();
 }
 
@@ -1041,7 +1042,7 @@ function custom_login_button($user)
 				let data = {
 					'action' : 'update_user_token',
 					'user_token' : `${token}`,
-					'user_id' : `${user_id}`
+					'user_id' : `${$user_id}`
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
