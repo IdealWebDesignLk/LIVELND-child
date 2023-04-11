@@ -871,11 +871,11 @@ function wpdocs_custom_login()
 			$date_arr[1] = '0'.$date_arr[1];
 		}
 
-		$formated_date = ''.$date_arr[0].'/'.$date_arr[1].'/'.date('Y');
+		$formated_date = new DateTime(''.$date_arr[0].'/'.$date_arr[1].'/'.date('Y'));
 
-		echo $formated_date;
+		print_r($formated_date);
 		$date_now = new DateTime();
-		echo $date_now;
+		print_r($date_now);
 
 		$user_token = get_user_meta( $u_id, 'access_token', true );
 
