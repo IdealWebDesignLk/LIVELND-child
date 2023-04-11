@@ -1110,7 +1110,7 @@ function custom_login_button($user)
 function add_custom_login_button_to_account_management($user)
 {
 	echo '<tr class="user-custom-login-wrap">';
-	echo '<th scope="row">Custom Login Button</th>';
+	echo '<th scope="row">Create token For speakers</th>';
 	echo '<td>';
 	custom_login_button($user);
 	echo '</td>';
