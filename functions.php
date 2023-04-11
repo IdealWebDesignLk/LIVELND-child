@@ -992,6 +992,7 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
 function custom_login_button( $user ) {
     $username = $user->user_login;
+	print_r($user);
 
     ?>
     <input type="date" id="expire-date" placeholder="Expire Date">
