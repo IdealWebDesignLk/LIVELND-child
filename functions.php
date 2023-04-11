@@ -999,7 +999,7 @@ function custom_login_button( $user ) {
 
     ?>
 
-    <input type="date" id="expire-date" placeholder="Expire Date">
+    <input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
     <button id="custom-login-button" class="custom-login-button">Copy Link</button>
     <!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
