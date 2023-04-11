@@ -1059,7 +1059,7 @@ function custom_login_button($user)
 
 						alert('Link copied to clipboard');
 					}
-				})
+				}) 
 			});
 		});
 	</script>
