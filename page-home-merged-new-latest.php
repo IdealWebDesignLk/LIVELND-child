@@ -587,7 +587,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     </div>
 
                     <div class="kd-form-group">
-                        <label>Max Price</label>
+                    <label for="max-price" id="max-price-label">Max Price</label>
                         <input type="number" id="kd-price-to" onchange="selectResultBasedPrice(event)" onkeyup="selectResultBasedPrice(event)" placeholder="Max Price">
                     </div>
                     <div class="kd-form-group">
