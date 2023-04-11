@@ -993,10 +993,10 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 function custom_login_button( $user ) {
     $username = $user->user_login;
 	$user_id = $user->ID;
-	$today_date = date("yy-mm-dd");
+	$today_date = date("yy-m-d");
 
 	print_r($today_date);
-	
+
     ?>
 
     <input type="date" id="expire-date" placeholder="Expire Date">
