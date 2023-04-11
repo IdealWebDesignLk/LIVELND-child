@@ -117,8 +117,8 @@ function my_services_handler()
 		$lastSpacePos = strrpos($empval, ' ');
 		$firstname = substr($empval, 0, $lastSpacePos);
 		$lastname = substr($empval, $lastSpacePos + 1);
-// 		echo $empval . "<br>";
-// 		echo $catval . "<br>";
+		// 		echo $empval . "<br>";
+		// 		echo $catval . "<br>";
 
 
 		$tag1 = $_POST["tag1"];
@@ -132,10 +132,10 @@ function my_services_handler()
 		$language3 = $_POST["language3"];
 		// echo 'tag name = '.$tag1;
 
-// echo 'awa2';
+		// echo 'awa2';
 
 		$tbprefix2 = $wpdb->prefix;
-// echo 'awa3'.$tbprefix2;
+		// echo 'awa3'.$tbprefix2;
 		$serchdataservice = "SELECT " . $tbprefix2 . "amelia_services.id FROM " . $tbprefix2 . "amelia_services INNER JOIN " . $tbprefix2 . "amelia_categories INNER JOIN " . $tbprefix2 . "amelia_users INNER JOIN " . $tbprefix2 . "amelia_providers_to_services ON " . $tbprefix2 . "amelia_services.categoryId=" . $tbprefix2 . "amelia_categories.id and " . $tbprefix2 . "amelia_services.id=" . $tbprefix2 . "amelia_providers_to_services.serviceId and " . $tbprefix2 . "amelia_users.id=" . $tbprefix2 . "amelia_providers_to_services.userId where " . $tbprefix2 . "amelia_users.full_name='" . $fullname . "' and " . $tbprefix2 . "amelia_services.name='" . $servicename . "' and " . $tbprefix2 . "amelia_categories.name='" . $catval . "'";
 
 		$serviceid = '';
@@ -144,11 +144,11 @@ function my_services_handler()
 		if (count($result1) > 0) {
 
 			$services = json_decode(json_encode($result1[0]), true);
-// var_dump($services);
+			// var_dump($services);
 			$serviceid = $services["id"];
 		}
 
-		echo "servid-".$serviceid;
+		echo "servid-" . $serviceid;
 		$sql = "SELECT * FROM " . $tbprefix2 . "amelia_services WHERE id='$serviceid'";
 		$result = $wpdb->get_results($sql);
 		if (count($result) > 0) {
@@ -233,7 +233,7 @@ function duplicateService()
 
 
 		$userforservice = $wpdb->get_results(
-			$wpdb->prepare("SELECT * from " . $tbprefix5 . "amelia_providers_to_services where serviceId=". $id)
+			$wpdb->prepare("SELECT * from " . $tbprefix5 . "amelia_providers_to_services where serviceId=" . $id)
 		);
 
 		if ($userforservice > 0) {
@@ -241,17 +241,17 @@ function duplicateService()
 			foreach ($userforservice as $row) {
 				$userserviceid = $row->userId;
 				$userserviceprice = $row->price;
-				 //echo $userserviceid."xx".$userserviceprice;
+				//echo $userserviceid."xx".$userserviceprice;
 			}
 		}
 
 
 
- 		$selectservice = "INSERT INTO " . $tbprefix5 . "amelia_services (name, description, color, price, status, categoryId, minCapacity, maxCapacity, duration, timeBefore, priority, pictureFullPath, pictureThumbPath, aggregatedPrice, settings, recurringCycle, recurringSub, recurringPayment, translations, depositPayment, depositPerPerson, deposit, fullPayment, mandatoryExtra, minSelectedExtras, video, videoStartTime, videoViews, tag1, tag2, tag3, tag4, tag5, short_excerpt, language1, language2, language3, preTalkSessionId, customPricing, maxExtraPeople, limitPerCustomer) SELECT name, description, color, price, status, categoryId, minCapacity, maxCapacity, duration, timeBefore, priority, pictureFullPath, pictureThumbPath, aggregatedPrice, settings, recurringCycle, recurringSub, recurringPayment, translations, depositPayment, depositPerPerson, deposit, fullPayment, mandatoryExtra, minSelectedExtras, video, videoStartTime, videoViews, tag1, tag2, tag3, tag4, tag5, short_excerpt, language1, language2, language3, preTalkSessionId, customPricing, maxExtraPeople, limitPerCustomer FROM  " . $tbprefix5 . "amelia_services WHERE id='" . $id . "'";
- 		$resultservice = $wpdb->query($wpdb->prepare($selectservice));
+		$selectservice = "INSERT INTO " . $tbprefix5 . "amelia_services (name, description, color, price, status, categoryId, minCapacity, maxCapacity, duration, timeBefore, priority, pictureFullPath, pictureThumbPath, aggregatedPrice, settings, recurringCycle, recurringSub, recurringPayment, translations, depositPayment, depositPerPerson, deposit, fullPayment, mandatoryExtra, minSelectedExtras, video, videoStartTime, videoViews, tag1, tag2, tag3, tag4, tag5, short_excerpt, language1, language2, language3, preTalkSessionId, customPricing, maxExtraPeople, limitPerCustomer) SELECT name, description, color, price, status, categoryId, minCapacity, maxCapacity, duration, timeBefore, priority, pictureFullPath, pictureThumbPath, aggregatedPrice, settings, recurringCycle, recurringSub, recurringPayment, translations, depositPayment, depositPerPerson, deposit, fullPayment, mandatoryExtra, minSelectedExtras, video, videoStartTime, videoViews, tag1, tag2, tag3, tag4, tag5, short_excerpt, language1, language2, language3, preTalkSessionId, customPricing, maxExtraPeople, limitPerCustomer FROM  " . $tbprefix5 . "amelia_services WHERE id='" . $id . "'";
+		$resultservice = $wpdb->query($wpdb->prepare($selectservice));
 
- 		// echo count($resultservice);
- 		if ($resultservice > 0) {
+		// echo count($resultservice);
+		if ($resultservice > 0) {
 
 			$wpdb->query($wpdb->prepare("UPDATE " . $tbprefix5 . "amelia_services SET position = position + 1"));
 
@@ -274,9 +274,9 @@ function duplicateService()
 			// echo $userserviceid . "+" . $latestserviceid . "+" . $userserviceprice;
 			echo "DuplicateSuccess";
 		}
-// 		else {
-//  			echo "Failed";
-//  		}
+		// 		else {
+		//  			echo "Failed";
+		//  		}
 		exit();
 	}
 }
@@ -536,15 +536,14 @@ function my_admin_review_page_contents()
 
 
 									$expertname = $wpdb->get_results(
-										$wpdb->prepare("SELECT full_name FROM ".$tbprefix6."amelia_users")
+										$wpdb->prepare("SELECT full_name FROM " . $tbprefix6 . "amelia_users")
 									);
 
 									if (count($expertname) > 0) {
 										echo '<datalist id="expert-list">';
 										foreach ($expertname as $row) {
 
-											echo '<option value="'.$row->full_name.'">';
-
+											echo '<option value="' . $row->full_name . '">';
 										}
 										echo '</datalist>';
 									}
@@ -849,27 +848,27 @@ add_action('wp_ajax_noppriv_return_card_content', 'kd_return_card_content');
  */
 function wpdocs_custom_login()
 {
-    if (isset($_GET['username']) && isset($_GET['pass'])) {
-        // Log the values of username and pass
-        error_log('Username: ' . $_GET['username']);
-        error_log('Password: ' . $_GET['pass']);
+	if (isset($_GET['username']) && isset($_GET['pass'])) {
+		// Log the values of username and pass
+		error_log('Username: ' . $_GET['username']);
+		error_log('Password: ' . $_GET['pass']);
 
-        $creds = array(
-            'user_login'    => $_GET['username'],
-            'user_password' => $_GET['pass'],
-            'remember'      => true
-        );
+		$creds = array(
+			'user_login'    => $_GET['username'],
+			'user_password' => $_GET['pass'],
+			'remember'      => true
+		);
 
-        $user = wp_signon($creds, true);
+		$user = wp_signon($creds, true);
 
-        if (is_wp_error($user)) {
-            echo $user->get_error_message();
-            return false;
-        } else {
-            wp_redirect(home_url('/speakers-panel'), 301);
-            exit;
-        }
-    }
+		if (is_wp_error($user)) {
+			echo $user->get_error_message();
+			return false;
+		} else {
+			wp_redirect(home_url('/speakers-panel'), 301);
+			exit;
+		}
+	}
 }
 
 
@@ -900,43 +899,47 @@ add_action('init', 'custom_rewrite_rule', 10, 0);
 
 
 // Exit if accessed directly
-if ( !defined( 'ABSPATH' ) ) exit;
+if (!defined('ABSPATH')) exit;
 
 // BEGIN ENQUEUE PARENT ACTION
 // AUTO GENERATED - Do not modify or remove comment markers above or below:
 
-if ( !function_exists( 'chld_thm_cfg_locale_css' ) ):
-    function chld_thm_cfg_locale_css( $uri ){
-        if ( empty( $uri ) && is_rtl() && file_exists( get_template_directory() . '/rtl.css' ) )
-            $uri = get_template_directory_uri() . '/rtl.css';
-        return $uri;
-    }
-endif;
-add_filter( 'locale_stylesheet_uri', 'chld_thm_cfg_locale_css' );
-
-if ( !function_exists( 'child_theme_configurator_css' ) ):
-    function child_theme_configurator_css() {
-        wp_enqueue_style( 'chld_thm_cfg_child', trailingslashit( get_stylesheet_directory_uri() ) . 'style.css', array( 'hello-elementor','hello-elementor','hello-elementor-theme-style' ) );
-
-	// jquery time picker
-	wp_enqueue_style( 'jquery-time-picker-by-kd', get_stylesheet_directory_uri().'/kd-date-time-picker/jquery.datetimepicker.css');
-	wp_enqueue_script( 'jquery-time-picker-sript-by-kd', get_stylesheet_directory_uri().'/kd-date-time-picker/jquery.datetimepicker.js');
+if (!function_exists('chld_thm_cfg_locale_css')) :
+	function chld_thm_cfg_locale_css($uri)
+	{
+		if (empty($uri) && is_rtl() && file_exists(get_template_directory() . '/rtl.css'))
+			$uri = get_template_directory_uri() . '/rtl.css';
+		return $uri;
 	}
 endif;
-add_action( 'wp_enqueue_scripts', 'child_theme_configurator_css', 100 );
+add_filter('locale_stylesheet_uri', 'chld_thm_cfg_locale_css');
+
+if (!function_exists('child_theme_configurator_css')) :
+	function child_theme_configurator_css()
+	{
+		wp_enqueue_style('chld_thm_cfg_child', trailingslashit(get_stylesheet_directory_uri()) . 'style.css', array('hello-elementor', 'hello-elementor', 'hello-elementor-theme-style'));
+
+		// jquery time picker
+		wp_enqueue_style('jquery-time-picker-by-kd', get_stylesheet_directory_uri() . '/kd-date-time-picker/jquery.datetimepicker.css');
+		wp_enqueue_script('jquery-time-picker-sript-by-kd', get_stylesheet_directory_uri() . '/kd-date-time-picker/jquery.datetimepicker.js');
+	}
+endif;
+add_action('wp_enqueue_scripts', 'child_theme_configurator_css', 100);
 
 // END ENQUEUE PARENT ACTION
 //
 
-function custom_query_vars( $vars ) {
-    $vars[] = 'sid';
-    return $vars;
+function custom_query_vars($vars)
+{
+	$vars[] = 'sid';
+	return $vars;
 }
-add_filter( 'query_vars', 'custom_query_vars' );
+add_filter('query_vars', 'custom_query_vars');
 
-function my_custom_js() {
-    if ( is_page( 'speakers-panel' ) || is_user_logged_in() ) {
-        echo '<script>
+function my_custom_js()
+{
+	if (is_page('speakers-panel') || is_user_logged_in()) {
+		echo '<script>
         function checkElements() {
           const dropdown = document.querySelector(".am-cabinet-user-email.el-dropdown");
           const myProfileLink = document.querySelector(".el-dropdown-menu__item");
@@ -962,98 +965,122 @@ function my_custom_js() {
           checkElements();
         });
         </script>';
-    }
+	}
 }
-add_action( 'wp_footer', 'my_custom_js' );
+add_action('wp_footer', 'my_custom_js');
 
 
 
 
-function add_custom_links_to_admin_bar($wp_admin_bar) {
-    // Add link for Amelia Employees
-    $args_employees = array(
-        'id' => 'amelia_employees_link',
-        'title' => 'Amelia Experts',
-        'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-employees#/employees',
-        'parent' => 'top-secondary',
-    );
-    $wp_admin_bar->add_node($args_employees);
+function add_custom_links_to_admin_bar($wp_admin_bar)
+{
+	// Add link for Amelia Employees
+	$args_employees = array(
+		'id' => 'amelia_employees_link',
+		'title' => 'Amelia Experts',
+		'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-employees#/employees',
+		'parent' => 'top-secondary',
+	);
+	$wp_admin_bar->add_node($args_employees);
 
-    // Add link for Amelia Services
-    $args_services = array(
-        'id' => 'amelia_services_link',
-        'title' => 'Amelia Sessions',
-        'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-services#/services',
-        'parent' => 'top-secondary',
-    );
-    $wp_admin_bar->add_node($args_services);
+	// Add link for Amelia Services
+	$args_services = array(
+		'id' => 'amelia_services_link',
+		'title' => 'Amelia Sessions',
+		'href' => 'https://livelnd.com/wp-admin/admin.php?page=wpamelia-services#/services',
+		'parent' => 'top-secondary',
+	);
+	$wp_admin_bar->add_node($args_services);
 }
 add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
-function custom_login_button( $user ) {
-    $username = $user->user_login;
+function kd_updat_user_token()
+{
+	$user_token = $_POST['user_token'];
+	$user_id = $_POST['user_id'];
+
+	echo update_user_meta($user_id, "access_token", $user_token);
+}
+
+add_action('wp_ajax_update_user_token', 'kd_updat_user_token');
+
+function custom_login_button($user)
+{
+	$username = $user->user_login;
 	$user_id = $user->ID;
 	$today_date = date("yy-m-d");
 
-	print_r($today_date);
+	echo '<script>let ajax_url = '.admin_url( "admin-ajax.php" ).';</script>';
+?>
 
-    ?>
+	<input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
+	<button id="custom-login-button" class="custom-login-button">Copy Link</button>
+	<!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
-    <input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
-    <button id="custom-login-button" class="custom-login-button">Copy Link</button>
-    <!-- <p id="link-container">Link: <a href="#"></a></p> -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('custom-login-button').addEventListener('click', function() {
+				var username = '<?php echo urlencode($username); ?>';
+				var expireDate = document.getElementById('expire-date').value;
+				// var password = encodeURIComponent(document.getElementById('custom-password').value);
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('custom-login-button').addEventListener('click', function () {
-            var username = '<?php echo urlencode( $username ); ?>';
-			var expireDate = document.getElementById('expire-date').value;
-            // var password = encodeURIComponent(document.getElementById('custom-password').value);
+				if (expireDate === '') {
+					alert('Please enter an Expire Date.');
+					return;
+				}
 
-            if (expireDate === '') {
-                alert('Please enter an Expire Date.');
-                return;
-            }
+				expireDate = new Date(expireDate);
+				console.log(expireDate);
 
-			expireDate = new Date(expireDate);
-			console.log(expireDate);
+				let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
 
-			let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
-			console.log(token)
+				let data = {
+					action: 'update_user_token',
+					user_tiken: token,
+					user_id: user_id
+				};
 
-            var button_url = "https://livelnd.com/?username=" + username + "&pass=" + token;
+				jQuery.post(ajax_url, data, function(respond) {
+					console.log(respond);
+				})
 
-            var tempInput = document.createElement('input');
-            tempInput.value = button_url;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
+				console.log(token)
 
-            // document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
+				var button_url = "https://livelnd.com/?username=" + username + "&pass=" + token;
 
-            alert('Link copied to clipboard');
-        });
-    });
-    </script>
-    <?php
+				var tempInput = document.createElement('input');
+				tempInput.value = button_url;
+				document.body.appendChild(tempInput);
+				tempInput.select();
+				document.execCommand('copy');
+				document.body.removeChild(tempInput);
+
+				// document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
+
+				alert('Link copied to clipboard');
+			});
+		});
+	</script>
+<?php
 }
 
 
-function add_custom_login_button_to_account_management( $user ) {
-    echo '<tr class="user-custom-login-wrap">';
-    echo '<th scope="row">Custom Login Button</th>';
-    echo '<td>';
-    custom_login_button( $user );
-    echo '</td>';
-    echo '</tr>';
+function add_custom_login_button_to_account_management($user)
+{
+	echo '<tr class="user-custom-login-wrap">';
+	echo '<th scope="row">Custom Login Button</th>';
+	echo '<td>';
+	custom_login_button($user);
+	echo '</td>';
+	echo '</tr>';
 }
-add_action( 'personal_options', 'add_custom_login_button_to_account_management' );
+add_action('personal_options', 'add_custom_login_button_to_account_management');
 
 
 //Disbale Wordpress email notification for users
-if ( ! function_exists( 'wp_new_user_notification' ) ) {
-    function wp_new_user_notification( $user_id, $deprecated = null, $notify = '' ) {
-        return;
-    }
+if (!function_exists('wp_new_user_notification')) {
+	function wp_new_user_notification($user_id, $deprecated = null, $notify = '')
+	{
+		return;
+	}
 }
