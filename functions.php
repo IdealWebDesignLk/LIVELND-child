@@ -999,7 +999,10 @@ function kd_updat_user_token()
 	$user_token = $_POST['user_token'];
 	$user_id = $_POST['user_id'];
 
-	echo update_user_meta($user_id, "access_token", $user_token);
+	update_user_meta($user_id, "access_token", $user_token);
+
+	$user_token = get_user_meta( $user_id, "access_token", true );
+	echo $user_token;
 }
 
 add_action('wp_ajax_update_user_token', 'kd_updat_user_token');
