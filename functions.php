@@ -1015,7 +1015,7 @@ function custom_login_button($user)
 	$user_id = $user->ID;
 	$today_date = date("yy-m-d");
 
-	echo '<script>let ajax_url = "'.admin_url( "admin-ajax.php" ).'";</script>';
+	echo '<script>let ajax_url = "'.admin_url( "admin-ajax.php" ).'"; user_id = "'.$user_id.'"</script>';
 ?>
 
 	<input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
@@ -1042,7 +1042,7 @@ function custom_login_button($user)
 				let data = {
 					'action' : 'update_user_token',
 					'user_token' : `${token}`,
-					'user_id' : `${$user_id}`
+					'user_id' : `${user_id}`
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
