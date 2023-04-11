@@ -41,19 +41,21 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 
     foreach ($items as $itm => $val) {
         $cart_ids[] = $val['data']->get_id();
-
     }
 
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
-        $crosssellProductIds    =   $crosssellProductIds[0];
+        if ($crosssellProductIds !== null) {
+            $crosssellProductIds    =   $crosssellProductIds[0];
 
-        foreach ($crosssellProductIds as $key => $crossId) {
-            if (!in_array($crossId , $crosssellProductIdsArr) && !in_array($crossId , $cart_ids)) {
-                $crosssellProductIdsArr[] = $crossId;
+            foreach ($crosssellProductIds as $key => $crossId) {
+                if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
+                    $crosssellProductIdsArr[] = $crossId;
+                }
             }
         }
+
         // print_r($crosssellProductIds);
     }
 
