@@ -854,14 +854,22 @@ function wpdocs_custom_login()
 		error_log('Password: ' . $_GET['pass']);
 
 		echo $_GET['pass'];
+		$token = $_GET['pass'];
+		$token_arr = explode("_" , $token);
 
-		$creds = array(
-			'user_login'    => $_GET['username'],
-			'user_password' => $_GET['pass'],
-			'remember'      => true
-		);
+		$expDte = $token_arr[0];
+		$u_id = explode("*" , $token_arr[1])[1];
 
-		$user = wp_signon($creds, true);
+		echo $expDte . $u_id;
+
+
+		// $creds = array(
+		// 	'user_login'    => $_GET['username'],
+		// 	'user_password' => $_GET['pass'],
+		// 	'remember'      => true
+		// );
+
+		// $user = wp_signon($creds, true);
 
 		// if (is_wp_error($user)) {
 		// 	echo $user->get_error_message();
