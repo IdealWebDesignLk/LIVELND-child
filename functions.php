@@ -1040,8 +1040,8 @@ function custom_login_button($user)
 
 				let data = {
 					'action' : 'update_user_token',
-					'user_token' : token,
-					'user_id' : user_id
+					'user_token' : `${token}`,
+					'user_id' : `${user_id}`
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
