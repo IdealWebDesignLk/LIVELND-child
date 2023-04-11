@@ -887,6 +887,7 @@ function wpdocs_custom_login()
 			exit;
 		}
 
+		exit;
 		
 
 		// $creds = array(
