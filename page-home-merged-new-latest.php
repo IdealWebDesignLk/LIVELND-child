@@ -558,7 +558,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
             <div class="kd-searchbox-inner">
-                <form action="" id="kd-search-form" class="kd-search-form">
+            <form action="" id="kd-search-form" class="kd-search-form" onkeydown="return checkForEnter(event);">
                     <div class="kd-form-group">
 
                         <label>Category</label>
