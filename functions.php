@@ -860,7 +860,7 @@ function wpdocs_custom_login()
 		$expDte = $token_arr[0];
 		$u_id = explode("*" , $token_arr[1])[1];
 
-		echo $expDte . $u_id;
+		// echo $expDte . $u_id;
 
 		$date_arr  = explode("." , $expDte);
 		if($date_arr[0]<10){
@@ -871,7 +871,7 @@ function wpdocs_custom_login()
 			$date_arr[1] = '0'.$date_arr[1];
 		}
 
-		$formated_date = ''.$date_arr[0].''.$date_arr[0].''.date('yy');
+		$formated_date = ''.$date_arr[0].'/'.$date_arr[1].'/'.date('Y');
 
 		echo $formated_date;
 		$date_now = new DateTime();
