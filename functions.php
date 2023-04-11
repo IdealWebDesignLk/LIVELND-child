@@ -1013,7 +1013,7 @@ function custom_login_button( $user ) {
 			expireDate = new Date(expireDate);
 			console.log(expireDate);
 
-			let token = `${expireDate}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
+			let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
 			console.log(token)
 
             var button_url = "https://livelnd.com/?username=" + username + "&pass=" + password;
