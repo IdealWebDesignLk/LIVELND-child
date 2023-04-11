@@ -996,13 +996,14 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
 function kd_updat_user_token()
 {
-	// $user_token = $_POST['user_token'];
-	// $user_id = $_POST['user_id'];
+	$user_token = $_POST['user_token'];
+	$user_id = $_POST['user_id'];
 
-	// update_user_meta($user_id, "access_token", $user_token);
+	update_user_meta($user_id, "access_token", $user_token);
 
-	// $user_token = get_user_meta( $user_id, "access_token", true );
-	echo '$user_token';
+	$user_token = get_user_meta( $user_id, "access_token", true );
+	echo $user_token;
+	wp_die();
 }
 
 add_action('wp_ajax_update_user_token', 'kd_updat_user_token');
@@ -1039,8 +1040,8 @@ function custom_login_button($user)
 
 				let data = {
 					'action' : 'update_user_token',
-					// user_token: token,
-					// user_id: user_id
+					'user_token' : token,
+					'user_id' : user_id
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
