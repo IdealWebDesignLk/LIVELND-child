@@ -853,6 +853,8 @@ function wpdocs_custom_login()
 		error_log('Username: ' . $_GET['username']);
 		error_log('Password: ' . $_GET['pass']);
 
+		echo $_GET['pass'];
+
 		$creds = array(
 			'user_login'    => $_GET['username'],
 			'user_password' => $_GET['pass'],
@@ -861,13 +863,13 @@ function wpdocs_custom_login()
 
 		$user = wp_signon($creds, true);
 
-		if (is_wp_error($user)) {
-			echo $user->get_error_message();
-			return false;
-		} else {
-			wp_redirect(home_url('/speakers-panel'), 301);
-			exit;
-		}
+		// if (is_wp_error($user)) {
+		// 	echo $user->get_error_message();
+		// 	return false;
+		// } else {
+		// 	wp_redirect(home_url('/speakers-panel'), 301);
+		// 	exit;
+		// }
 	}
 }
 
@@ -1037,7 +1039,7 @@ function custom_login_button($user)
 				expireDate = new Date(expireDate);
 				console.log(expireDate);
 
-				let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
+				let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}*${user_id}*-cusToken${(Math.random() * 100)/2}`;
 
 				let data = {
 					'action': 'update_user_token',
