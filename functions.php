@@ -1001,9 +1001,9 @@ function kd_updat_user_token()
 
 	update_user_meta($user_id, "access_token", $user_token);
 
-	$usr_token = get_user_meta( $user_id, "access_token", true );
+	$usr_token = get_user_meta($user_id, "access_token", true);
 
-	echo $usr_token . $user_id;
+	echo 'updated';
 	wp_die();
 }
 
@@ -1015,7 +1015,7 @@ function custom_login_button($user)
 	$user_id = $user->ID;
 	$today_date = date("yy-m-d");
 
-	echo '<script>let ajax_url = "'.admin_url( "admin-ajax.php" ).'"; user_id = "'.$user_id.'"</script>';
+	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; user_id = "' . $user_id . '"</script>';
 ?>
 
 	<input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
@@ -1040,29 +1040,26 @@ function custom_login_button($user)
 				let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
 
 				let data = {
-					'action' : 'update_user_token',
-					'user_token' : `${token}`,
-					'user_id' : `${user_id}`
+					'action': 'update_user_token',
+					'user_token': `${token}`,
+					'user_id': `${user_id}`
 				};
 
 				jQuery.post(ajax_url, data, function(respond) {
-					console.log(respond);
+					if (respond == 'updated') {
+						var button_url = "https://livelnd.com/?username=" + username + "&pass=" + token;
+						var tempInput = document.createElement('input');
+						tempInput.value = button_url;
+						document.body.appendChild(tempInput);
+						tempInput.select();
+						document.execCommand('copy');
+						document.body.removeChild(tempInput);
+
+						// document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
+
+						alert('Link copied to clipboard');
+					}
 				})
-
-				console.log(token)
-
-				var button_url = "https://livelnd.com/?username=" + username + "&pass=" + token;
-
-				var tempInput = document.createElement('input');
-				tempInput.value = button_url;
-				document.body.appendChild(tempInput);
-				tempInput.select();
-				document.execCommand('copy');
-				document.body.removeChild(tempInput);
-
-				// document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
-
-				alert('Link copied to clipboard');
 			});
 		});
 	</script>
