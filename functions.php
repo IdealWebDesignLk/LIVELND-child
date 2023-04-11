@@ -881,14 +881,14 @@ function wpdocs_custom_login()
 
 		// echo $user_token;
 
-		if($user_token==$token && $formated_date > $date_now){
-			$user = get_user_by( 'id', $u_id ); 
-			wp_set_current_user( $u_id, $user->user_login);
-			wp_set_auth_cookie( $u_id );
-			do_action( 'wp_login', $user->user_login, $user );
-			wp_redirect(home_url('/speakers-panel'), 301);
-			exit;
-		}
+		// if($user_token==$token && $formated_date > $date_now){
+		// 	$user = get_user_by( 'id', $u_id ); 
+		// 	wp_set_current_user( $u_id, $user->user_login);
+		// 	wp_set_auth_cookie( $u_id );
+		// 	do_action( 'wp_login', $user->user_login, $user );
+		// 	wp_redirect(home_url('/speakers-panel'), 301);
+		// 	exit;
+		// }
 		
 
 		// $creds = array(
