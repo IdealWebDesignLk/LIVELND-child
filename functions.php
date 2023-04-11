@@ -1016,7 +1016,7 @@ function custom_login_button( $user ) {
 			let token = `${(expireDate.getMonth())+1}.${expireDate.getDate()}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
 			console.log(token)
 
-            var button_url = "https://livelnd.com/?username=" + username + "&pass=" + password;
+            var button_url = "https://livelnd.com/?username=" + username + "&pass=" + token;
 
             var tempInput = document.createElement('input');
             tempInput.value = button_url;
