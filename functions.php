@@ -1126,3 +1126,12 @@ if (!function_exists('wp_new_user_notification')) {
 		return;
 	}
 }
+
+
+function change_update_cart_text( $translated, $text, $domain ) {
+    if( is_cart() && $translated == 'Update cart' ){
+        $translated = 'Update Total';
+    }
+    return $translated;
+}
+add_filter( 'gettext', 'change_update_cart_text', 20, 3 );

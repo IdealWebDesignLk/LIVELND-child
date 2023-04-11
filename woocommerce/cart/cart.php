@@ -66,7 +66,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
         $description = $cross_product->get_description();
         $price = $cross_product->get_price();
 
-        $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add to cart</a>';
+        $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add Option</a>';
 
         $return_html .= '<div class="kd-single-croll-sell">
         <div class="kd-col">
