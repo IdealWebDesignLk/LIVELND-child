@@ -46,7 +46,7 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
         $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
-        if ($crosssellProductIds !== null) {
+        if (isset($crosssellProductIds)) {
             $crosssellProductIds    =   $crosssellProductIds[0];
 
             foreach ($crosssellProductIds as $key => $crossId) {
