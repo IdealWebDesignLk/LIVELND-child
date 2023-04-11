@@ -996,13 +996,13 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
 function kd_updat_user_token()
 {
-	$user_token = $_POST['user_token'];
-	$user_id = $_POST['user_id'];
+	// $user_token = $_POST['user_token'];
+	// $user_id = $_POST['user_id'];
 
-	update_user_meta($user_id, "access_token", $user_token);
+	// update_user_meta($user_id, "access_token", $user_token);
 
-	$user_token = get_user_meta( $user_id, "access_token", true );
-	echo $user_token;
+	// $user_token = get_user_meta( $user_id, "access_token", true );
+	echo '$user_token';
 }
 
 add_action('wp_ajax_update_user_token', 'kd_updat_user_token');
