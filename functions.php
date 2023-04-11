@@ -992,9 +992,13 @@ add_action('admin_bar_menu', 'add_custom_links_to_admin_bar', 999);
 
 function custom_login_button( $user ) {
     $username = $user->user_login;
-	print_r($user->ID);
+	$user_id = $user->ID;
+	$today_date = date("yy-mm-dd");
 
+	print_r($today_date);
+	
     ?>
+
     <input type="date" id="expire-date" placeholder="Expire Date">
     <button id="custom-login-button" class="custom-login-button">Copy Link</button>
     <!-- <p id="link-container">Link: <a href="#"></a></p> -->
