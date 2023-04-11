@@ -1002,7 +1002,7 @@ function kd_updat_user_token()
 	// update_user_meta($user_id, "access_token", $user_token);
 
 	// $user_token = get_user_meta( $user_id, "access_token", true );
-	echo '$user_token';
+	echo $user_token . $user_id;
 	wp_die();
 }
 
