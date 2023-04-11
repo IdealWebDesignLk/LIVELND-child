@@ -1010,7 +1010,7 @@ function custom_login_button( $user ) {
                 return;
             }
 
-			expireDate = new Date(expireDate).getTime();
+			expireDate = new Date(expireDate);
 			console.log(expireDate);
 
 			let token = `${expireDate}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
