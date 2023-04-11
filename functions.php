@@ -994,20 +994,26 @@ function custom_login_button( $user ) {
     $username = $user->user_login;
 
     ?>
-    <input type="password" id="custom-password" placeholder="Enter Password">
+    <input type="date" id="expire-date" placeholder="Expire Date">
     <button id="custom-login-button" class="custom-login-button">Copy Link</button>
-    <p id="link-container">Link: <a href="#">(Generate link)</a></p>
+    <!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('custom-login-button').addEventListener('click', function () {
             var username = '<?php echo urlencode( $username ); ?>';
-            var password = encodeURIComponent(document.getElementById('custom-password').value);
+			var expireDate = document.getElementById('expire-date').value;
+            // var password = encodeURIComponent(document.getElementById('custom-password').value);
 
-            if (password === '') {
-                alert('Please enter a password.');
+            if (expireDate === '') {
+                alert('Please enter an Expire Date.');
                 return;
             }
+
+			console.log(expireDate)
+
+			let token = `${expireDate}_${Math.random() * 1000}-cusToken${(Math.random() * 100)/2}`;
+			console.log(token)
 
             var button_url = "https://livelnd.com/?username=" + username + "&pass=" + password;
 
@@ -1018,7 +1024,7 @@ function custom_login_button( $user ) {
             document.execCommand('copy');
             document.body.removeChild(tempInput);
 
-            document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
+            // document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
 
             alert('Link copied to clipboard');
         });
