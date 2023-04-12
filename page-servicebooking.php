@@ -468,7 +468,7 @@ $worduser = 'user_' . $externalid;
                                 <?php
                                 if ($preTalkId != "") {
                                 ?>
-                                    <a class="w3-bar-item w3-button pretalkbtn booktypebtn">Pre Talk</a>
+                                    <a class="w3-bar-item w3-button pretalkbtn booktypebtn">Meet the expert</a>
 
                                 <?php
 
