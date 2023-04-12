@@ -1136,23 +1136,3 @@ function change_update_cart_text( $translated, $text, $domain ) {
 }
 add_filter( 'gettext', 'change_update_cart_text', 20, 3 );
 
-// Register the custom AJAX action Crosssels products
-add_action('wp_ajax_get_product_cross_sells', 'get_product_cross_sells');
-add_action('wp_ajax_nopriv_get_product_cross_sells', 'get_product_cross_sells');
-
-function get_product_cross_sells() {
-  if (!isset($_GET['product_id'])) {
-    wp_send_json_error('Missing product ID');
-  }
-
-  $product_id = intval($_GET['product_id']);
-  $product = wc_get_product($product_id);
-
-  if (!$product) {
-    wp_send_json_error('Invalid product ID');
-  }
-
-  wp_send_json_success(array(
-    'cross_sells' => $product->get_cross_sell_ids(),
-  ));
-}
