@@ -45,19 +45,21 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 
     foreach ($items as $item => $values) {
         // $_product =  wc_get_product( $values['data']->get_id()); 
-        $crosssellProductIds   =   get_post_meta($values['data']->get_id(), '_crosssell_ids');
-        if (isset($crosssellProductIds)) {
-            $crosssellProductIds    =   $crosssellProductIds[0];
-
-            foreach ($crosssellProductIds as $key => $crossId) {
-                if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
-                    $crosssellProductIdsArr[] = $crossId;
+        $crosssellProductIds = get_post_meta($values['data']->get_id(), '_crosssell_ids');
+        if (isset($crosssellProductIds[0])) { // Check if the first element is set
+            $crosssellProductIds = $crosssellProductIds[0];
+    
+            // Check if $crosssellProductIds is an array before running foreach
+            if (is_array($crosssellProductIds)) {
+                foreach ($crosssellProductIds as $key => $crossId) {
+                    if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
+                        $crosssellProductIdsArr[] = $crossId;
+                    }
                 }
             }
         }
-
-        // print_r($crosssellProductIds);
     }
+    
 
 
     foreach ($crosssellProductIdsArr as $key => $crossId) {
