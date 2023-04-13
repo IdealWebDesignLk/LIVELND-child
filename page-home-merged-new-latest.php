@@ -8,18 +8,18 @@
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
                 <ul id="test" class="word-animation">
-                    <li>Unconscious Bias</li>
-                    <li>Allyship</li>
-                    <li>Gender Gap</li>
-                    <li>Equity in the Workplace</li>
-                    <li>Female Leadership</li>
-                    <li>Feminism</li>
-                    <li>Education</li>
-                    <li>Female Entrepreneurship</li>
-                    <li>Women in STEM</li>
-                    <li>Sexism</li>
-                    <li>Women's Rights</li>
-                    <li>...</li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
                 </ul>
             </div>
         </div>
