@@ -462,7 +462,7 @@ $worduser = 'user_' . $externalid;
 
 
                             <div class="col-md-6" id="calenderbooking">
-
+                            <div class="session-buttons-rp">                     
                                 <a class="w3-bar-item w3-button bookingbtn booktypebtn">Book this session</a>
 
                                 <?php
@@ -471,10 +471,10 @@ $worduser = 'user_' . $externalid;
                                     <a class="w3-bar-item w3-button pretalkbtn booktypebtn">Meet the expert</a>
 
                                 <?php
-
+                            
                                 }
                                 ?>
-
+                                </div>
 
 
 
