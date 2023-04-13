@@ -134,7 +134,8 @@
    
 
     .word-animation ul {
-        list-style: none;
+        list-style: none !important;
+        padding-left: 0;
     }
 
     .us_custom_e58a457e {
