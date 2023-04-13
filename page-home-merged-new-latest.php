@@ -133,7 +133,7 @@
     }
    
 
-    ul .word-animation  {
+    ul.word-animation  {
         list-style: none !important;
         padding-left: 0;
     }
