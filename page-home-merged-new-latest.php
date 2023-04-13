@@ -7,7 +7,7 @@
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
-                <ul id="test" class="word-animation">
+               <!-- <ul id="test" class="word-animation">
                     <li></li>
                     <li></li>
                     <li></li>
@@ -20,7 +20,7 @@
                     <li></li>
                     <li></li>
                     <li></li>
-                </ul>
+                </ul>-->
             </div>
         </div>
     </div>
