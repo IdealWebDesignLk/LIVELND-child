@@ -978,7 +978,7 @@ add_filter('query_vars', 'custom_query_vars');
 
 function my_custom_js()
 {
-	if (is_page('speakers-panel') || is_user_logged_in()) {
+	if (is_page('speakers-panel') && is_user_logged_in()) {
 		echo '<script>
         function checkElements() {
           const dropdown = document.querySelector(".am-cabinet-user-email.el-dropdown");
