@@ -1136,3 +1136,11 @@ function change_update_cart_text( $translated, $text, $domain ) {
 }
 add_filter( 'gettext', 'change_update_cart_text', 20, 3 );
 
+//Do not display VAT on cart page
+function disable_taxes_on_cart($taxes, $price, $rates, $price_includes_tax, $suppress_rounding) {
+    if (is_cart()) {
+        return 0;
+    }
+    return $taxes;
+}
+add_filter('woocommerce_calc_tax', 'disable_taxes_on_cart', 10, 5);
