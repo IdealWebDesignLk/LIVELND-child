@@ -855,43 +855,43 @@ function wpdocs_custom_login()
 
 		echo $_GET['pass'];
 		$token = $_GET['pass'];
-		$token_arr = explode("_" , $token);
+		$token_arr = explode("_", $token);
 
 		$expDte = $token_arr[0];
-		$u_id = explode("*" , $token_arr[1])[1];
+		$u_id = explode("*", $token_arr[1])[1];
 
 		// echo $expDte . $u_id;
 
-		$date_arr  = explode("." , $expDte);
-		if($date_arr[0]<10){
-			$date_arr[0] = '0'.$date_arr[0];
+		$date_arr  = explode(".", $expDte);
+		if ($date_arr[0] < 10) {
+			$date_arr[0] = '0' . $date_arr[0];
 		}
 
-		if($date_arr[1]<10){
-			$date_arr[1] = '0'.$date_arr[1];
+		if ($date_arr[1] < 10) {
+			$date_arr[1] = '0' . $date_arr[1];
 		}
 
-		$formated_date = new DateTime(''.$date_arr[0].'/'.$date_arr[1].'/'.date('Y'));
+		$formated_date = new DateTime('' . $date_arr[0] . '/' . $date_arr[1] . '/' . date('Y'));
 
 		print_r($formated_date);
 		$date_now = new DateTime();
 		print_r($date_now);
 
-		$user_token = get_user_meta( $u_id, 'access_token', true );
+		$user_token = get_user_meta($u_id, 'access_token', true);
 
 		echo $user_token;
 
-		if($user_token==$token && $formated_date > $date_now){
-			$user = get_user_by( 'id', $u_id ); 
-			wp_set_current_user( $u_id, $user->user_login);
-			wp_set_auth_cookie( $u_id );
-			do_action( 'wp_login', $user->user_login, $user );
+		if ($user_token == $token && $formated_date > $date_now) {
+			$user = get_user_by('id', $u_id);
+			wp_set_current_user($u_id, $user->user_login);
+			wp_set_auth_cookie($u_id);
+			do_action('wp_login', $user->user_login, $user);
 			wp_redirect(home_url('/speakers-panel'), 301);
 			exit;
 		}
 
 		exit;
-		
+
 
 		// $creds = array(
 		// 	'user_login'    => $_GET['username'],
@@ -1097,9 +1097,19 @@ function custom_login_button($user)
 
 						// document.getElementById('link-container').innerHTML = 'Link: <a href="' + button_url + '">' + button_url + '</a>';
 
+						// remove loading button from action area
+						let actionsWrapper = document.getElementById('publishing-action')
+						let mainBtn = actionsWrapper.getElementById('submit')
+						let loader = Array.from(actionsWrapper.getElementsByClassName('spinner'))
+
+						if(mainBtn.disabled == true){
+							console.log('here is not');
+						}
+
 						alert('Link copied to clipboard');
+
 					}
-				}) 
+				})
 			});
 		});
 	</script>
@@ -1128,12 +1138,11 @@ if (!function_exists('wp_new_user_notification')) {
 }
 
 
-function change_update_cart_text( $translated, $text, $domain ) {
-    if( is_cart() && $translated == 'Update cart' ){
-        $translated = 'Update Total';
-    }
-    return $translated;
+function change_update_cart_text($translated, $text, $domain)
+{
+	if (is_cart() && $translated == 'Update cart') {
+		$translated = 'Update Total';
+	}
+	return $translated;
 }
-add_filter( 'gettext', 'change_update_cart_text', 20, 3 );
-
-
+add_filter('gettext', 'change_update_cart_text', 20, 3);
