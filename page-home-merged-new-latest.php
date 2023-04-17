@@ -788,13 +788,15 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $crosssellProductIds = get_post_meta($servicesingleid, '_crosssell_ids');
                                         $crosssellProductIds = $crosssellProductIds[0];
 
-                                        print_r($crosssellProductIds);
+                                        // print_r($crosssellProductIds);
 
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
                                                 <div class="kd-popup-content-left">
                                                     <div class="kd-popp-content-left-inner">
+
+                                                    <?php print_r($crosssellProductIds); ?>
                                                         <!-- video container image -->
                                                         <div class="kd-single-video-container">
                                                             <img class="single-video-paceholder-img" src="<?php echo $image_url; ?>" data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl; ?>" alt="">
