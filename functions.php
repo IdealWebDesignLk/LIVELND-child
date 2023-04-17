@@ -1121,7 +1121,7 @@ function custom_login_button($user)
 
 .custom-login-button{
 	cursor: pointer;
-	padding: 5px 22px;
+	padding: 7px 22px;
 	background-color: blue;
 	color: white;
 	border-radius: 5px;
