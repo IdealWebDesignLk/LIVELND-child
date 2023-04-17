@@ -793,19 +793,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $finalurl = $videourl . $parameters;
 
                                         // getting cross sells
-                                        $service_id = $servicesingleid; // replace with the service ID you want to retrieve
-                                        $response = wp_remote_get('https://livelnd.com/wp-json/ameliabooking/v2/services/' . $service_id);
-                                        if (is_wp_error($response)) {
-                                            // handle error
-                                        }
-                                        $service_data = json_decode(wp_remote_retrieve_body($response), true);
-
-                                        // Get associated product ID from service data
-                                        $woo_product_id = get_post_meta($service_data['product_id'], '_ameliabooking_wc_product_id', true);
-                                        $crosssellProductIds = get_post_meta($woo_product_id, '_crosssell_ids');
-                                        $crosssellProductIds = $crosssellProductIds[0];
-
-                                        // print_r($crosssellProductIds);
 
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
@@ -813,9 +800,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="kd-popup-content-left">
                                                     <div class="kd-popp-content-left-inner">
 
-                                                        <?php echo $servicesingleid; ?>
-                                                        <?php echo $woo_product_id; ?>
-                                                        <?php print_r($crosssellProductIds); ?>
                                                         <!-- video container image -->
                                                         <div class="kd-single-video-container">
                                                             <img class="single-video-paceholder-img" src="<?php echo $image_url; ?>" data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl; ?>" alt="">
