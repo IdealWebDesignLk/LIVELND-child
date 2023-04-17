@@ -1116,6 +1116,17 @@ function custom_login_button($user)
 			});
 		});
 	</script>
+
+	<style>
+
+.custom-login-button{
+	cursor: pointer;
+	padding: 12px 22px;
+	background-color: blue;
+	color: white;
+}
+
+	</style>
 <?php
 }
 
