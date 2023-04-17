@@ -784,6 +784,12 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $parameters = "?controls=1&showinfo=0&start=" . $row->videoStartTime . "&modestbranding=1&rel=0&loop=1&autoplay=1&mute=1";
                                         $finalurl = $videourl . $parameters;
 
+                                        // getting cross sells
+                                        $crosssellProductIds = get_post_meta($servicesingleid, '_crosssell_ids');
+                                        $crosssellProductIds = $crosssellProductIds[0];
+
+                                        print_r($crosssellProductIds);
+
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
