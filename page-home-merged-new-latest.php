@@ -797,7 +797,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="kd-popup-content-left">
                                                     <div class="kd-popp-content-left-inner">
 
-                                                    <?php echo $woo_product_id; ?>
+                                                    <?php echo $servicesingleid; ?>
+                                                    <?php echo $woo_product_id.'hutta'; ?>
                                                     <?php print_r($crosssellProductIds); ?>
                                                         <!-- video container image -->
                                                         <div class="kd-single-video-container">
