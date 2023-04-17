@@ -798,7 +798,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                     <div class="kd-popp-content-left-inner">
 
                                                     <?php echo $servicesingleid; ?>
-                                                    <?php echo $woo_product_id.'hutta'; ?>
+                                                    <?php echo get_post_meta( 280, '_ameliabooking_wc_product_id', true );?>
                                                     <?php print_r($crosssellProductIds); ?>
                                                         <!-- video container image -->
                                                         <div class="kd-single-video-container">
