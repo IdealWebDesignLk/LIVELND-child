@@ -1055,10 +1055,13 @@ function custom_login_button($user)
 	$user_id = $user->ID;
 	$today_date = date("yy-m-d");
 
+	$next_date = date('yy-m-d', strtotime($today_date . ' + 2 days'));
+	echo $next_date;
+
 	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; user_id = "' . $user_id . '"</script>';
 ?>
 
-	<input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
+	<input type="date" value="<?php echo $next_date;?>" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
 	<a id="custom-login-button" class="custom-login-button">Copy Link</a>
 	<!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
@@ -1105,7 +1108,7 @@ function custom_login_button($user)
 						console.log(mainBtn);
 						let loader = Array.from(actionsWrapper.getElementsByClassName('spinner'))
 
-						if(mainBtn.disabled){
+						if (mainBtn.disabled) {
 							console.log('here is not');
 						}
 
@@ -1118,20 +1121,17 @@ function custom_login_button($user)
 	</script>
 
 	<style>
+		.custom-login-button {
+			cursor: pointer;
+			padding: 7px 22px;
+			background-color: blue;
+			color: white;
+			border-radius: 5px;
+		}
 
-.custom-login-button{
-	cursor: pointer;
-	padding: 7px 22px;
-	background-color: blue;
-	color: white;
-	border-radius: 5px;
-}
-
-.custom-login-button:hover{
-	color: white;
-}
-
-
+		.custom-login-button:hover {
+			color: white;
+		}
 	</style>
 <?php
 }
