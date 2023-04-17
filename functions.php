@@ -1099,6 +1099,7 @@ function custom_login_button($user)
 
 						// remove loading button from action area
 						let actionsWrapper = document.getElementById('publishing-action')
+						console.log(actionsWrapper);
 						let mainBtn = actionsWrapper.getElementById('submit')
 						let loader = Array.from(actionsWrapper.getElementsByClassName('spinner'))
 
