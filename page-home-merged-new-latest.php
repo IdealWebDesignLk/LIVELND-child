@@ -2,13 +2,13 @@
 
 <!--Load Preloader-->
 <div id="preloader">
-    
+
     <h4 id="loading-text">Live L&D is loading ....</h4>
     <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
         <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
             <div class="wpb_wrapper">
-               <ul id="test" class="word-animation">
-                   <!--  <li></li>
+                <ul id="test" class="word-animation">
+                    <!--  <li></li>
                     <li></li>
                     <li></li>
                     <li></li>
@@ -24,7 +24,7 @@
             </div>
         </div>
     </div>
- 
+
 </div>
 
 <script>
@@ -39,9 +39,9 @@
         overflow: hidden;
     }
 
-    #test li{
-    font-size: 35;
-    margin: 15 0 10 0;
+    #test li {
+        font-size: 35;
+        margin: 15 0 10 0;
     }
 
     #preloader {
@@ -61,8 +61,8 @@
     }
 
     .preloader-fadeout {
-    opacity: 0;
-}
+        opacity: 0;
+    }
 
     .preloader-hidden {
         display: none;
@@ -80,18 +80,24 @@
     }
 
     @keyframes backgroundFade {
-        0%, 40% {
+
+        0%,
+        40% {
             background-color: #ff8250;
         }
+
         100% {
             background-color: black;
         }
     }
 
     @keyframes textColorFade {
-        0%, 40% {
+
+        0%,
+        40% {
             color: black;
         }
+
         100% {
             color: #ff8250;
         }
@@ -100,20 +106,23 @@
     @media only screen and (max-width: 768px) {
         #loading-text {
             font-size: 13px !important;
-            
+
             text-align: left !important;
         }
-        #test li{
-        font-size: 11px !important;
-        margin: 5 0 5 0 !important;
-    }
-    #animated-roll-text {
-        right: -3% !important;
-      
-    }
-    #preloader h4{
-        margin-left: -32% !important;
-    }
+
+        #test li {
+            font-size: 11px !important;
+            margin: 5 0 5 0 !important;
+        }
+
+        #animated-roll-text {
+            right: -3% !important;
+
+        }
+
+        #preloader h4 {
+            margin-left: -32% !important;
+        }
     }
 
     .w-hwrapper.valign_bottom {
@@ -125,15 +134,15 @@
     }
 
     #animated-roll-text {
-        display:none;
+        display: none;
         position: absolute;
         bottom: 0;
         right: 10%;
         margin-right: 10px;
     }
-   
 
-    ul.word-animation  {
+
+    ul.word-animation {
         list-style: none !important;
         padding-left: 0;
     }
@@ -148,78 +157,77 @@
     .word-animation ul li {
         color: #ffffff;
     }
-    
+
     .word-animation ul li:nth-of-type(1) {
-    animation-delay: 0s;
-}
-
-.word-animation ul li:nth-of-type(2) {
-    animation-delay: 0.3s;
-}
-
-.word-animation ul li:nth-of-type(3) {
-    animation-delay: 0.6s;
-}
-
-/* Add animation delays for the additional words */
-.word-animation ul li:nth-of-type(4) {
-    animation-delay: 0.9s;
-}
-
-.word-animation ul li:nth-of-type(5) {
-    animation-delay: 1.2s;
-}
-
-.word-animation ul li:nth-of-type(6) {
-    animation-delay: 1.5s;
-}
-
-.word-animation ul li:nth-of-type(7) {
-    animation-delay: 1.8s;
-}
-
-.word-animation ul li:nth-of-type(8) {
-    animation-delay: 2.1s;
-}
-
-.word-animation ul li:nth-of-type(9) {
-    animation-delay: 2.4s;
-}
-
-.word-animation ul li:nth-of-type(10) {
-    animation-delay: 2.7s;
-}
-
-.word-animation ul li:nth-of-type(11) {
-    animation-delay: 3.0s;
-}
-
-.word-animation ul li:nth-of-type(12) {
-    animation-delay: 3.3s;
-}
-
-.word-animation {
-    animation: words 3s linear infinite; /* Update the animation duration */
-}
-
-@keyframes words {
-    0% {
-        transform: translateY(30px);
-        color: #ffffff;
+        animation-delay: 0s;
     }
-    50% {
-        transform: translateY(-630px);
-        color: #ffffff;
+
+    .word-animation ul li:nth-of-type(2) {
+        animation-delay: 0.3s;
     }
-    100% {
-        transform: translateY(30px);
-        color: #ffffff;
+
+    .word-animation ul li:nth-of-type(3) {
+        animation-delay: 0.6s;
     }
-}
 
+    /* Add animation delays for the additional words */
+    .word-animation ul li:nth-of-type(4) {
+        animation-delay: 0.9s;
+    }
 
+    .word-animation ul li:nth-of-type(5) {
+        animation-delay: 1.2s;
+    }
 
+    .word-animation ul li:nth-of-type(6) {
+        animation-delay: 1.5s;
+    }
 
+    .word-animation ul li:nth-of-type(7) {
+        animation-delay: 1.8s;
+    }
+
+    .word-animation ul li:nth-of-type(8) {
+        animation-delay: 2.1s;
+    }
+
+    .word-animation ul li:nth-of-type(9) {
+        animation-delay: 2.4s;
+    }
+
+    .word-animation ul li:nth-of-type(10) {
+        animation-delay: 2.7s;
+    }
+
+    .word-animation ul li:nth-of-type(11) {
+        animation-delay: 3.0s;
+    }
+
+    .word-animation ul li:nth-of-type(12) {
+        animation-delay: 3.3s;
+    }
+
+    .word-animation {
+        animation: words 3s linear infinite;
+        /* Update the animation duration */
+    }
+
+    @keyframes words {
+        0% {
+            transform: translateY(30px);
+            color: #ffffff;
+        }
+
+        50% {
+            transform: translateY(-630px);
+            color: #ffffff;
+        }
+
+        100% {
+            transform: translateY(30px);
+            color: #ffffff;
+        }
+    }
 </style>
 
 
@@ -559,7 +567,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
             <div class="kd-searchbox-inner">
-            <form action="" id="kd-search-form" class="kd-search-form" onkeydown="return checkForEnter(event);">
+                <form action="" id="kd-search-form" class="kd-search-form" onkeydown="return checkForEnter(event);">
                     <div class="kd-form-group">
 
                         <label>Category</label>
@@ -588,7 +596,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     </div>
 
                     <div class="kd-form-group">
-                    <label for="max-price" id="max-price-label">Max Price</label> 
+                        <label for="max-price" id="max-price-label">Max Price</label>
                         <input type="number" id="kd-price-to" onchange="selectResultBasedPrice(event)" onkeyup="selectResultBasedPrice(event)" placeholder="Max Price" step="500">
                     </div>
                     <div class="kd-form-group">
@@ -625,15 +633,15 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 </div>
 
                 <div class="kd-searchbox-loading-overlay">
-                <h4 id="loading-text">Searching
-                    <span class="dot-container">
-                        <span class="dot-animation">.</span>
-                        <span class="dot-animation">.</span>
-                        <span class="dot-animation">.</span>
-                        <span class="dot-animation">.</span>
-                    </span>
-                </h4>
-            </div>
+                    <h4 id="loading-text">Searching
+                        <span class="dot-container">
+                            <span class="dot-animation">.</span>
+                            <span class="dot-animation">.</span>
+                            <span class="dot-animation">.</span>
+                            <span class="dot-animation">.</span>
+                        </span>
+                    </h4>
+                </div>
             </div>
         </div>
     </div>
@@ -721,7 +729,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         ?>
 
 
-                                            <div class="item mainitem kd-service-slide" data-id="<?php echo $servicesingleid; ?>" data-tags="<?php echo $tagone . $tagtwo . $tagthree . $tagfour . $tagfive; ?>" data-expert="<?php echo $employeedetails->firstName . " " . $employeedetails->lastName;  ?>" data-category="<?php echo $catResult->name; ?>" data-price="<?php echo $row->price; ?>" data-name="<?php echo $row->name; ?>" data-views="<?php echo $row->videoViews;?>">
+                                            <div class="item mainitem kd-service-slide" data-id="<?php echo $servicesingleid; ?>" data-tags="<?php echo $tagone . $tagtwo . $tagthree . $tagfour . $tagfive; ?>" data-expert="<?php echo $employeedetails->firstName . " " . $employeedetails->lastName;  ?>" data-category="<?php echo $catResult->name; ?>" data-price="<?php echo $row->price; ?>" data-name="<?php echo $row->name; ?>" data-views="<?php echo $row->videoViews; ?>">
 
                                                 <div onmouseleave="kdAdddeactivatedThumb(event)" onmouseenter="kdOpenPopupFunc(event)" class="gallery-video-thumbnail kd-thumbnnail" data-id="<?php echo $servicesingleid; ?>">
                                                     <a data-id="<?php echo $servicesingleid; ?>" href="<?php echo $url; ?>">
@@ -785,7 +793,15 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $finalurl = $videourl . $parameters;
 
                                         // getting cross sells
-                                        $woo_product_id = get_post_meta( $servicesingleid, '_ameliabooking_wc_product_id', true );
+                                        $service_id = $servicesingleid; // replace with the service ID you want to retrieve
+                                        $response = wp_remote_get('https://your-site.com/wp-json/ameliabooking/v2/services/' . $service_id);
+                                        if (is_wp_error($response)) {
+                                            // handle error
+                                        }
+                                        $service_data = json_decode(wp_remote_retrieve_body($response), true);
+
+                                        // Get associated product ID from service data
+                                        $woo_product_id = get_post_meta($service_data['product_id'], '_ameliabooking_wc_product_id', true);
                                         $crosssellProductIds = get_post_meta($woo_product_id, '_crosssell_ids');
                                         $crosssellProductIds = $crosssellProductIds[0];
 
@@ -797,9 +813,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="kd-popup-content-left">
                                                     <div class="kd-popp-content-left-inner">
 
-                                                    <?php echo $servicesingleid; ?>
-                                                    <?php echo get_post_meta( 280, '_ameliabooking_wc_product_id', true );?>
-                                                    <?php print_r($crosssellProductIds); ?>
+                                                        <?php echo $servicesingleid; ?>
+                                                        <?php echo $woo_product_id; ?>
+                                                        <?php print_r($crosssellProductIds); ?>
                                                         <!-- video container image -->
                                                         <div class="kd-single-video-container">
                                                             <img class="single-video-paceholder-img" src="<?php echo $image_url; ?>" data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl; ?>" alt="">
@@ -911,7 +927,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
 
                                                     <p class="views"><img class="views-icon" src="https://livelnd.com/wp-content/uploads/2022/10/eyeball.png" /> <?php //echo number_format($row->videoViews, 0, '.', ',');  
-                                                                                                                                                                        ?></p> -->
+                                                                                                                                                                    ?></p> -->
                                                         <p class="paratext"><?php echo do_shortcode($row->description); ?></p>
                                                         <a href="<?php echo $url ?>"><button class="viewmorebtn">Learn More</button></a>
 
@@ -937,7 +953,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         </div>
 
                 </div>
-           
+
 
                 <div class="home-demo mobicarosel">
 
@@ -1114,38 +1130,38 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             </div>
         </div>
     </div>
-     <!--Unload Preloader-->
-     <script>
-                    document.body.classList.add("preloader-active");
+    <!--Unload Preloader-->
+    <script>
+        document.body.classList.add("preloader-active");
 
-                    setTimeout(() => {
-                        const animatedRollText = document.getElementById("animated-roll-text");
-                        animatedRollText.classList.remove("preloader-hidden");
-                    }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
+        setTimeout(() => {
+            const animatedRollText = document.getElementById("animated-roll-text");
+            animatedRollText.classList.remove("preloader-hidden");
+        }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
 
-                    window.addEventListener("load", function () {
-                        // Remove the infinite loop and stop the animation when the page has finished loading
-                        document.getElementById("test").classList.remove("start-animation");
+        window.addEventListener("load", function() {
+            // Remove the infinite loop and stop the animation when the page has finished loading
+            document.getElementById("test").classList.remove("start-animation");
 
-                        setTimeout(() => {
-                            var preloader = document.getElementById("preloader");
-                            preloader.style.opacity = 0;
-                            setTimeout(() => {
-                                preloader.style.display = "none";
-                                document.body.classList.remove("preloader-active");
-                            }, 1000); // 1s for the opacity transition to complete
-                        }, 1000); // Keep the preloader visible for at least 6 seconds
-                    });
-                </script>
+            setTimeout(() => {
+                var preloader = document.getElementById("preloader");
+                preloader.style.opacity = 0;
+                setTimeout(() => {
+                    preloader.style.display = "none";
+                    document.body.classList.remove("preloader-active");
+                }, 1000); // 1s for the opacity transition to complete
+            }, 1000); // Keep the preloader visible for at least 6 seconds
+        });
+    </script>
 
-                <noscript>
-                    <style>
-                        #preloader {
-                            display: none;
-                        }
-                    </style>
-                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                </noscript>
+    <noscript>
+        <style>
+            #preloader {
+                display: none;
+            }
+        </style>
+        <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+    </noscript>
 
     <script>
         function muteCurrentVideo(e) {
