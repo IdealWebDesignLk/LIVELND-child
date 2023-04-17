@@ -1059,12 +1059,13 @@ function custom_login_button($user)
 ?>
 
 	<input type="date" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
-	<button id="custom-login-button" class="custom-login-button">Copy Link</button>
+	<a id="custom-login-button" class="custom-login-button">Copy Link</a>
 	<!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
 	<script>
 		document.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('custom-login-button').addEventListener('click', function() {
+			document.getElementById('custom-login-button').addEventListener('click', function(e) {
+				e.preventDefault();
 				var username = '<?php echo urlencode($username); ?>';
 				var expireDate = document.getElementById('expire-date').value;
 				// var password = encodeURIComponent(document.getElementById('custom-password').value);
@@ -1104,7 +1105,7 @@ function custom_login_button($user)
 						console.log(mainBtn);
 						let loader = Array.from(actionsWrapper.getElementsByClassName('spinner'))
 
-						if(mainBtn.disabled == true){
+						if(mainBtn.disabled){
 							console.log('here is not');
 						}
 
