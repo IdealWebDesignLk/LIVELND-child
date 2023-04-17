@@ -794,7 +794,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                         // getting cross sells
                                         $service_id = $servicesingleid; // replace with the service ID you want to retrieve
-                                        $response = wp_remote_get('https://your-site.com/wp-json/ameliabooking/v2/services/' . $service_id);
+                                        $response = wp_remote_get('https://livelnd.com/wp-json/ameliabooking/v2/services/' . $service_id);
                                         if (is_wp_error($response)) {
                                             // handle error
                                         }
