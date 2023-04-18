@@ -530,7 +530,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
-                                            <h2>Book a Virtual Live Speaker for International Women's Week!</h2>
+                                            <h2>Book a Virtual Live Speaker!</h2>
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
@@ -1078,24 +1078,24 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 <div class="col-md-8">
                     <div class="container">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <button class="accordion">What is DEI Sessions?</button>
+                            <button class="accordion">What is LiveL&D?</button>
                             <div class="panel">
-                                <p>DEI Sessions is a platform where you can find your curated guest expert speakers for International Women's Day and the week in which this day falls (6-10 March). You can take an option on a specific time slot for 48 hrs or instantly book your session of choice.</p>
+                                <p>Live L&D is a platform where you can find your curated guest expert speakers for your organization or team. You can take an option on a specific timeslot for 72 hrs or instantly book your session of choice. </p>
                             </div>
 
-                            <button class="accordion">Are the DEI sessions recorded?</button>
+                            <button class="accordion">Are the Live L&D sessions recorded?</button>
                             <div class="panel">
-                                <p>The DEI sessions cannot be recorded, unless you agree on this specifically with the expert speaker. </p>
+                                <p>The Live L&D sessions cannot be recorded, unless you agree on this specifically with the expert speaker. If a speaker has agreed to the recording of the session, you can choose this as an extra option during the booking process. </p>
                             </div>
 
                             <button class="accordion">I am not sure yet I am able to make the booking, can I take an option on a specific timeslot?</button>
                             <div class="panel">
-                                <p>Yes, in the booking process, you can choose to make a reservation for a specific session and timeslot. We will hold this timeslot for you for 48 hrs and will contact you as soon as possible after you have made the reservation.</p>
+                                <p>Yes, in the booking process, you can choose to make a reservation for a specific session and timeslot. We will hold this timeslot for you for 72 hrs and will contact you as soon as possible after you have made the reservation.</p>
                             </div>
 
-                            <button class="accordion">Are DEI sessions online only?</button>
+                            <button class="accordion">Are Live L&D sessions online only?</button>
                             <div class="panel">
-                                <p>Yes, the DEI sessions are online only, and always live and interactive.</p>
+                                <p>Yes, the Live L&D are online only, and always live and interactive.</p>
                             </div>
 
                             <button class="accordion">How do I make sure the expert speaker is informed about any specifics before the session (e.g. size and type of audience, context in which the session takes place)?</button>
