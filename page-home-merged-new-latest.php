@@ -278,35 +278,28 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
 
 <div id="primary" class="content-area">
-
+    
     <main id="main" class="site-main" role="main">
         <div class="containerx">
             <div class="bg-video-wrap">
 
-            <?php
-                $paramid = '';
-                if (isset($_GET['idx']) && $_GET['idx'] != '') {
-                    $paramid = $_GET['idx'];
-                }
-                if ($paramid != "") {
-                    $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$paramid'");
-                    $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$paramid'");
-                    if ($service[0]->video != "" || $service[0]->video != null) {
-                        $videourlhero = "https://www.youtube.com/embed/" . $service[0]->video;
-                        $parametershero = "?enablejsapi=1&rel=0&start=" . $service[0]->videoStartTime . "&mute=1&autoplay=1&modestbranding=1";
-                        $finalurlhero = $videourlhero . $parametershero;
-                    } else {
-                        $imgurl =  ot_get_option('top_section_background_image');
-                ?>
 
-<?php
+                <!-- taken from rajika -->
+
+                <?php
                 $paramid = '';
                 if (isset($_GET['idx']) && $_GET['idx'] != '') {
                     $paramid = $_GET['idx'];
                 }
                 if ($paramid != "") {
+
+
                     $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$paramid'");
+
+
                     $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$paramid'");
+
+
                     if ($service[0]->video != "" || $service[0]->video != null) {
                         $videourlhero = "https://www.youtube.com/embed/" . $service[0]->video;
                         $parametershero = "?enablejsapi=1&rel=0&start=" . $service[0]->videoStartTime . "&mute=1&autoplay=1&modestbranding=1";
@@ -319,20 +312,24 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         <?php
                     }
 
-                        if ($finalurlhero != "" || $finalurlhero != null) {
+
                         ?>
 
-                        
+                        <?php
+                        if ($finalurlhero != "" || $finalurlhero != null) {
+                        ?>
+                            <div class="video-background">
 
-            <div class="video-background">
+                                <div class="video-foreground">
+                                    <iframe class="youtube-video" id="youtube-video" width="278" height="154" src=<?php echo  $finalurlhero; ?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
 
-            <div class="video-foreground">
-                <iframe class="youtube-video" id="youtube-video" width="278" height="154" src=<?php echo  $finalurlhero; ?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+                            </div>
 
-            </div>
 
-            <?php
+
+
+                            <?php
 
                         }
                     } else if (function_exists('ot_get_option')) {
@@ -354,16 +351,26 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             } else {
                                 $imgurl =  ot_get_option('top_section_background_image');
                             ?>
+                                <div class="bg-video-wrap videobackimg" style="background: url(<?php echo $imgurl; ?>)">
 
-                    <div class="bg-video-wrap videobackimg" style="background: url(<?php echo $imgurl; ?>)">
-                    <?php
+                                <?php
                             }
 
+
+                                ?>
+                            <?php
                         }
-                            if ($finalurlhero != "" || $finalurlhero != null) {
+
+
                             ?>
 
-                            <div class="video-background">
+                            <?php
+                            if ($finalurlhero != "" || $finalurlhero != null) {
+                            ?>
+                                <div class="video-background">
+                                    <?php
+
+                                    ?>
                                     <div class="video-foreground">
                                         <iframe class="youtube-video" id="youtube-video" width="278" height="154" src=<?php echo  $finalurlhero; ?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
@@ -372,10 +379,22 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                             <?php
                             }
+                            ?>
+
+
+                        <?php
+
                     }
+
+
                         ?>
 
-<div class="overlay mobioverlay" id="kd-video-overlay1" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
+
+
+                        <!-- taken from rajikaa -->
+
+
+                        <div class="overlay mobioverlay" id="kd-video-overlay1" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
                         <div class="overlay deskoverlay" id="kd-video-overlay" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
 
 
@@ -494,8 +513,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                         </div>
 
-                         <!-- 	mute unmute			 -->
-                         <p id="unmute"><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOff_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/03/SoundButton.png' ?>"></p>
+                        <!-- 	mute unmute			 -->
+                        <p id="unmute"><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOff_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/03/SoundButton.png' ?>"></p>
                         <p id="mute"><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOn_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOff.png' ?>"></p>
 
                         <!--   Play Pause		 -->
@@ -506,9 +525,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                         <!-- full screen  -->
                         <p id="kd-full-screen-video" onclick="openFullscreenVideo()" style="width: auto; " class=""><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Expand.png' ?>"></p>
-                    </div>
-                    
-                    <div class="container homebodysec">
+                                </div>
+
+
+                                <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
                                             <h2>Book a Virtual Live Speaker for International Women's Week!</h2>
@@ -538,10 +558,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                     </div>
                                 </div>
-
+                        </div>
             </div>
-        </div>
-        </div>
     </main>
 
 
