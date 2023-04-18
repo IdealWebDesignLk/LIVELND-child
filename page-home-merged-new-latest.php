@@ -279,7 +279,273 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
 <div id="primary" class="content-area">
 
-<!-- ====================================================================================== -->
+    <main id="main" class="site-main" role="main">
+        <div class="containerx">
+            <div class="bg-video-wrap">
+
+            <?php
+                $paramid = '';
+                if (isset($_GET['idx']) && $_GET['idx'] != '') {
+                    $paramid = $_GET['idx'];
+                }
+                if ($paramid != "") {
+                    $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$paramid'");
+                    $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$paramid'");
+                    if ($service[0]->video != "" || $service[0]->video != null) {
+                        $videourlhero = "https://www.youtube.com/embed/" . $service[0]->video;
+                        $parametershero = "?enablejsapi=1&rel=0&start=" . $service[0]->videoStartTime . "&mute=1&autoplay=1&modestbranding=1";
+                        $finalurlhero = $videourlhero . $parametershero;
+                    } else {
+                        $imgurl =  ot_get_option('top_section_background_image');
+                ?>
+
+<?php
+                $paramid = '';
+                if (isset($_GET['idx']) && $_GET['idx'] != '') {
+                    $paramid = $_GET['idx'];
+                }
+                if ($paramid != "") {
+                    $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$paramid'");
+                    $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$paramid'");
+                    if ($service[0]->video != "" || $service[0]->video != null) {
+                        $videourlhero = "https://www.youtube.com/embed/" . $service[0]->video;
+                        $parametershero = "?enablejsapi=1&rel=0&start=" . $service[0]->videoStartTime . "&mute=1&autoplay=1&modestbranding=1";
+                        $finalurlhero = $videourlhero . $parametershero;
+                    } else {
+                        $imgurl =  ot_get_option('top_section_background_image');
+                ?>
+                        <div class="bg-video-wrap videobackimg" style="background: url(<?php echo $imgurl; ?>)">
+
+                        <?php
+                    }
+
+                        if ($finalurlhero != "" || $finalurlhero != null) {
+                        ?>
+
+                        
+
+            <div class="video-background">
+
+            <div class="video-foreground">
+                <iframe class="youtube-video" id="youtube-video" width="278" height="154" src=<?php echo  $finalurlhero; ?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            </div>
+
+            <?php
+
+                        }
+                    } else if (function_exists('ot_get_option')) {
+                        if (ot_get_option('featured_video_id')) {
+                            $serviceid = ot_get_option('featured_video_id');
+
+                            $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$serviceid'");
+
+
+                            $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$serviceid'");
+
+
+
+                            if ($service[0]->video != "" || $service[0]->video != null) {
+                                $videourlhero = "https://www.youtube.com/embed/" . $service[0]->video;
+                                $parametershero = "?enablejsapi=1&rel=0&start=" . $service[0]->videoStartTime . "&mute=1&autoplay=1&modestbranding=1";
+                                $finalurlhero = $videourlhero . $parametershero;
+                                $finalHeroVidUrl = $videourlhero . "?enablejsapi=1&rel=0";
+                            } else {
+                                $imgurl =  ot_get_option('top_section_background_image');
+                            ?>
+
+                    <div class="bg-video-wrap videobackimg" style="background: url(<?php echo $imgurl; ?>)">
+                    <?php
+                            }
+
+                        }
+                            if ($finalurlhero != "" || $finalurlhero != null) {
+                            ?>
+
+                            <div class="video-background">
+                                    <div class="video-foreground">
+                                        <iframe class="youtube-video" id="youtube-video" width="278" height="154" src=<?php echo  $finalurlhero; ?> title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+
+                                </div>
+
+                            <?php
+                            }
+                    }
+                        ?>
+
+<div class="overlay mobioverlay" id="kd-video-overlay1" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
+                        <div class="overlay deskoverlay" id="kd-video-overlay" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
+
+
+
+                        <div class="vsec">
+                            <div class="col-12 col-md">
+                                <div class="text-wrapper">
+                                    <h2 class="mbr-section-title mb-3 mbr-fonts-style display-2">
+
+                                        <strong><?php echo $service[0]->name; ?></strong>
+
+                                    </h2>
+                                    <h3 class="headeremployeename">
+
+                                        <?php
+                                        $employeefullname = $employee[0]->full_name;
+                                        $wordpressuserid = $employee[0]->externalId;
+                                        $worduser = 'user_' . $wordpressuserid;
+                                        ?>
+                                        <?php echo $employee[0]->firstName . " " . $employee[0]->lastName; ?>
+                                        <?php if (get_field('verifed', $worduser)) : ?>
+                                            <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Vector-Stroke.png' ?>"></span>
+                                        <?php endif; ?>
+
+
+                                    </h3>
+                                    <div class="rate">
+                                        <?php
+                                        $average = 0;
+                                        $rate = 0;
+                                        $reviewresult = $wpdb->get_results("SELECT * FROM `review_details` where user='$employeefullname'");
+                                        foreach ($reviewresult as $row) {
+                                            $count = count($reviewresult);
+                                            $review = $row->starreview;
+
+                                            $rate += $review;
+                                            $average = $rate / $count;
+                                        }
+                                        $rating = round($average);
+                                        if ($rating == "1") {
+                                        ?>
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+
+
+                                        <?php
+                                        } else if ($rating == "2") {
+                                        ?>
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                            <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
+                                        <?php
+                                        } else if ($rating == "3") {
+                                        ?>
+
+                                            <a href="<?php $server_name . '/how-it-works-iwd-sessions-explained/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starseke.png' ?>"></a>
+                                        <?php
+                                        } else if ($rating == "4") {
+                                        ?>
+
+                                            <a href="<?php $server_name . '/how-it-works-iwd-sessions-explained/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starsyanti.png' ?>"></a>
+                                        <?php
+                                        } else if ($rating == "5") {
+                                        ?>
+
+                                            <a href="<?php $server_name . '/how-it-works-iwd-sessions-explained/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starsdanielle.png' ?>"></a>
+
+                                        <?php
+                                        }
+                                        ?>
+
+                                    </div>
+                                    <div class="sessiondiscription">
+                                        <p class="mbr-text mb-3 mbr-fonts-style display-7">
+                                            <?php echo do_shortcode($service[0]->description); ?>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+
+                                        <?php
+
+                                        // generate currency format
+
+                                        $oFormatter = new \NumberFormatter('de_DE', \NumberFormatter::CURRENCY);
+                                        $formattedPrice = $oFormatter->formatCurrency($service[0]->price, 'EUR');
+
+
+                                        ?>
+                                        <h3 class="session-price"><?php echo do_shortcode('[woo_multi_currency_exchange price="' . $service[0]->price . '" currency="' . $curr . '"]'); ?></h3>
+                                    </div>
+                                    <p class="staticlabeltop">60 minutes including Q&A</p>
+                                    <div class="views">
+                                        <?php if (intval($service[0]->videoViews) > 1000) { ?>
+                                            <h3 class="viewscount"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> Youtube views</h3>
+                                        <?php } ?>
+                                    </div>
+                                    <?php
+
+
+
+                                    $slug1 = sanitize_title($service[0]->name) . '-' . $serviceid;
+                                    $topvideosingle =  $server_name . "/single-service/" . $slug1;
+                                    ?>
+                                    <a href=<?php echo $topvideosingle; ?>><button type="button" class="btn btn-dark sessionbtn">Instant Booking</button></a>
+                                    <?php
+
+                                    ?>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                         <!-- 	mute unmute			 -->
+                         <p id="unmute"><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOff_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/03/SoundButton.png' ?>"></p>
+                        <p id="mute"><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOn_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1SoundOff.png' ?>"></p>
+
+                        <!--   Play Pause		 -->
+
+                        <p id="kd-play-video" style="width: auto; " class=""><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1PauseOn_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1PlayOn.png' ?>"></p>
+                        <p id="kd-pause-video" style="width: auto; " class=""><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1PlayOn_Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1PauseOn.png' ?>"></p>
+
+
+                        <!-- full screen  -->
+                        <p id="kd-full-screen-video" onclick="openFullscreenVideo()" style="width: auto; " class=""><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Expand.png' ?>"></p>
+                    </div>
+                    
+                    <div class="container homebodysec">
+                                    <div class="innerhomesecondrow">
+                                        <div class="secondsec">
+                                            <h2>Book a Virtual Live Speaker for International Women's Week!</h2>
+
+                                            <div class="row textrowdiv">
+                                                <div class="col-md-4">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
+                                                    <h4>1. Find your virtual speaker</h4>
+                                                    Our curators have handpicked global experts who speak about equity, bias & diversity.
+                                                    Discover them by hovering over their talks.
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
+                                                    <h4>2. Check availability</h4>
+                                                    All DEI speakers have connected their calendar to our site. Check their availability throughout the DEI week.
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
+                                                    <h4>3. Hold Time Slot / Book Instantly</h4>
+                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 48 hours for you and contact you to answer your questions.
+                                                </div>
+                                                <p class="bottomtext">Sessions will be held in your company’s own Microsoft Teams, Google Meet, Zoom or Webex environment.</p>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+            </div>
+        </div>
+        </div>
+    </main>
+
+
+    <!-- ====================================================================================== -->
     <!-- kd new search box -->
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
