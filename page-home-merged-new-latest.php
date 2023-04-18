@@ -282,10 +282,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
         <main id="main" class="site-main" role="main">
             <div class="containerx">
                 <div class="bg-video-wrap">
-
-
-                    <!-- taken from rajika -->
-
                     <?php
                     $paramid = '';
                     if (isset($_GET['idx']) && $_GET['idx'] != '') {
@@ -560,10 +556,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                     </div>
                             </div>
                 </div>
+            </div>
         </main>
     </div>
-
-    <!-- ====================================================================================== -->
     <!-- kd new search box -->
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
