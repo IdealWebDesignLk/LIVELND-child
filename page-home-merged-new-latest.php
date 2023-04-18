@@ -794,7 +794,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $finalurl = $videourl . $parameters;
 
                                         // getting cross sells
-
+                                        global $wpdb;
+                                        $result = $wpdb->get_results(" SELECT * FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'");
+                                        print_r($result);
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
@@ -1470,6 +1472,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             <button class="kd-accept-cookies kd-close-cookie" onclick="closeCookiePopup(event)">Allow cookies</button>
         </div>
     </div> -->
-    </section><!-- .content-area -->
+</section><!-- .content-area -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
