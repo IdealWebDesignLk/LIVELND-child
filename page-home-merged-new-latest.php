@@ -278,10 +278,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
 
 <div id="primary" class="content-area">
-    
 
-
-    <!-- ====================================================================================== -->
+<!-- ====================================================================================== -->
     <!-- kd new search box -->
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
