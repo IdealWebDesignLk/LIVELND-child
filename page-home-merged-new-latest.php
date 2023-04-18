@@ -1103,7 +1103,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <p>In the booking process (on the details page) you have the possibility to leave important information that will be shared with the expert speaker upon booking.</p>
                             </div>
 
-                            <button class="accordion">Is there a limit to the number of people attending a DEI session?</button>
+                            <button class="accordion">Is there a limit to the number of people attending a Live L&D session?</button>
                             <div class="panel">
                                 <p>In principle no, this is up to you. Two things to take into account: 1) the technical limitations of the video conferencing tool you use and 2) the level of interaction you desire for your audience. </p>
                             </div>
