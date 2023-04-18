@@ -277,8 +277,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 <video src="<?php echo $videosrc; ?>" autoplay class="hidden" id="kd-test-autoplay"></video>
 
 
-<div id="primary" class="content-area">
-    
+<section id="primary" class="content-area">
+
     <main id="main" class="site-main" role="main">
         <div class="containerx">
             <div class="bg-video-wrap">
@@ -1470,6 +1470,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             <button class="kd-accept-cookies kd-close-cookie" onclick="closeCookiePopup(event)">Allow cookies</button>
         </div>
     </div> -->
-</div><!-- .content-area -->
+    </section><!-- .content-area -->
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
