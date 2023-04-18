@@ -543,7 +543,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
                                                     <h4>2. Check availability</h4>
-                                                    All DEI speakers have connected their calendar to our site. Check their availability throughout the DEI week.
+                                                    All Live L&D speakers have connected their calendar to our site. Check their availability via the search form bellow.
                                                 </div>
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
