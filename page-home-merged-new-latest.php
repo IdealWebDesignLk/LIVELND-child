@@ -796,7 +796,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         // getting cross sells
                                         global $wpdb;
                                         $results = $wpdb->get_results("SELECT * FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'");
-                                        echo "SELECT * FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'";
+                                        echo "SELECT `settings` FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'";
                                         
                                         foreach( $results as $result ) {
 
