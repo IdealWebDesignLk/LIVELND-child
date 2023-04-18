@@ -548,7 +548,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
-                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 48 hours for you and contact you to answer your questions.
+                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 72 hours for you and contact you to answer your questions.
                                                 </div>
                                                 <p class="bottomtext">Sessions will be held in your company’s own Microsoft Teams, Google Meet, Zoom or Webex environment.</p>
                                             </div>
