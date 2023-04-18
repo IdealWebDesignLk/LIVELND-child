@@ -536,8 +536,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about equity, bias & diversity.
-                                                    Discover them by hovering over their talks.
+                                                    Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics. 
+                                                    Discover them by hovering over their talks.
                                                 </div>
 
                                                 <div class="col-md-4">
