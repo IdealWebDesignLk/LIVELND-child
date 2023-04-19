@@ -531,25 +531,25 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
-                                            <h2>Book a Virtual Live Speaker for International Women's Week!</h2>
+                                            <h2>Book a Virtual Live Speaker !</h2>
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about equity, bias & diversity.
-                                                    Discover them by hovering over their talks.
+                                                    Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics. 
+                                                    Discover them by hovering over their talks.
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
                                                     <h4>2. Check availability</h4>
-                                                    All DEI speakers have connected their calendar to our site. Check their availability throughout the DEI week.
+                                                    All Live L&D speakers have connected their calendar to our site. Check their availability via the search form bellow.
                                                 </div>
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
-                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 48 hours for you and contact you to answer your questions.
+                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 72 hours for you and contact you to answer your questions.
                                                 </div>
                                                 <p class="bottomtext">Sessions will be held in your company’s own Microsoft Teams, Google Meet, Zoom or Webex environment.</p>
                                             </div>
@@ -1086,24 +1086,24 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 <div class="col-md-8">
                     <div class="container">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <button class="accordion">What is DEI Sessions?</button>
+                            <button class="accordion">What is Live L&D?</button>
                             <div class="panel">
-                                <p>DEI Sessions is a platform where you can find your curated guest expert speakers for International Women's Day and the week in which this day falls (6-10 March). You can take an option on a specific time slot for 48 hrs or instantly book your session of choice.</p>
+                                <p>Live L&D is a platform where you can find your curated guest expert speakers for your organization or team. You can take an option on a specific timeslot for 72 hrs or instantly book your session of choice. </p>
                             </div>
 
-                            <button class="accordion">Are the DEI sessions recorded?</button>
+                            <button class="accordion">Are the Live L&D recorded?</button>
                             <div class="panel">
-                                <p>The DEI sessions cannot be recorded, unless you agree on this specifically with the expert speaker. </p>
+                                <p>Live L&D sessions cannot be recorded, unless you agree on this specifically with the expert speaker. If a speaker has agreed to the recording of the session, you can choose this as an extra option during the booking process. </p>
                             </div>
 
                             <button class="accordion">I am not sure yet I am able to make the booking, can I take an option on a specific timeslot?</button>
                             <div class="panel">
-                                <p>Yes, in the booking process, you can choose to make a reservation for a specific session and timeslot. We will hold this timeslot for you for 48 hrs and will contact you as soon as possible after you have made the reservation.</p>
+                                <p>Yes, in the booking process, you can choose to make a reservation for a specific session and timeslot. We will hold this timeslot for you for 72 hrs and will contact you as soon as possible after you have made the reservation.</p>
                             </div>
 
-                            <button class="accordion">Are DEI sessions online only?</button>
+                            <button class="accordion">Are Live L&D online only?</button>
                             <div class="panel">
-                                <p>Yes, the DEI sessions are online only, and always live and interactive.</p>
+                                <p>Yes, the Live L&D are online only, and always live and interactive.</p>
                             </div>
 
                             <button class="accordion">How do I make sure the expert speaker is informed about any specifics before the session (e.g. size and type of audience, context in which the session takes place)?</button>
@@ -1111,7 +1111,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <p>In the booking process (on the details page) you have the possibility to leave important information that will be shared with the expert speaker upon booking.</p>
                             </div>
 
-                            <button class="accordion">Is there a limit to the number of people attending a DEI session?</button>
+                            <button class="accordion">Is there a limit to the number of people attending a Live L&D session?</button>
                             <div class="panel">
                                 <p>In principle no, this is up to you. Two things to take into account: 1) the technical limitations of the video conferencing tool you use and 2) the level of interaction you desire for your audience. </p>
                             </div>
