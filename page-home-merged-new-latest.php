@@ -1,5 +1,8 @@
 <?php /* Template Name: Page_home_merged_new_latest */ ?>
+<?php
+get_header();
 
+?>
 <!--Load Preloader-->
 <div id="preloader">
 
@@ -231,10 +234,7 @@
 </style>
 
 
-<?php
-get_header();
 
-?>
 <?php echo '<script type="text/javascript">let kdHomepage = true; </script>'; ?>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
