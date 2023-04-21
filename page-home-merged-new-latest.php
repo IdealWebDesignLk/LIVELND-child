@@ -40,7 +40,7 @@
     }
 
     #test li {
-        font-size: 35;
+        font-size: 35px;
         margin: 15 0 10 0;
     }
 
