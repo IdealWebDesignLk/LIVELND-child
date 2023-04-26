@@ -537,7 +537,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics. 
+                                                    Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics.
                                                     Discover them by hovering over their talks.
                                                 </div>
 
@@ -795,15 +795,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                         // getting cross sells
                                         global $wpdb;
-                                        // $results = $wpdb->get_results("SELECT * FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'");
-                                        // echo "SELECT `settings` FROM  " . $wpdb->prefix . "amelia_services WHERE 'id' = '" . $servicesingleid . "'";
                                         $result = $wpdb->get_results("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = '" . $servicesingleid . "'");
-                                        echo "SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = '" . $servicesingleid . "'";
-                                        
-                                        foreach( $results as $result ) {
 
-                                            print_r($result);                                    
-                                        }
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
@@ -890,6 +883,16 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                         ?>
 
                                                         <p class="staticlabel">60 minutes including Q&A</p>
+
+                                                        <!-- cross sells section -->
+                                                        <div class="kd-cross-sells-wrapper">
+                                                            <?php
+                                                            foreach ($results as $result) {
+                                                                echo "<div class='kd-single-popup-cross-sell'><div class='name'>".$result['name']."</div><div class='price'>".$result['price']."</div></div>";
+                                                                // print_r($result);
+                                                            }
+                                                            ?>
+                                                        </div>
                                                         <p class="staticlabel"> Talks about:</p>
 
                                                         <?php
