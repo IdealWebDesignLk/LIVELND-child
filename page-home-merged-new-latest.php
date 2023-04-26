@@ -890,7 +890,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                             <?php
                                                             foreach ($results as $result) {
                                                                 echo "<div class='kd-single-popup-cross-sell'><div class='name'>".$result->name."</div><div class='price'>".$result->price."</div></div>";
-                                                                // print_r($result);
+                                                                print_r($result);
                                                             }
                                                             ?>
                                                         </div>
