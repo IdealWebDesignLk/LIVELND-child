@@ -890,7 +890,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                             <?php
                                                             foreach ($results as $result) {
                                                                 echo "<div class='kd-single-popup-cross-sell'><a href='single-service/".str_replace(' ', '-', $result->name) . '-' . $result->id."'><div class='name'>" . $result->name . "</div><div class='price'>" . $result->price . "</div></a></div>";
-                                                                echo str_replace(' ', '-', $result->name) . '-' . $result->id;
+                                                                // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
                                                                 // print_r($result);
                                                             }
                                                             ?>
