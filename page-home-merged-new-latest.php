@@ -794,28 +794,23 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $finalurl = $videourl . $parameters;
 
                                         // getting cross sells
-                                        // global $wpdb;
-
-                                        // print_r($wpdb);
                                         $kdresults = $wpdb->get_results("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id= '" . $servicesingleid . "'");
-                                        // echo ("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = " . $servicesingleid . "");
-                                        
-                                        if ( $wpdb->last_error ) {
+
+                                        if ($wpdb->last_error) {
                                             echo 'wpdb error: ' . $wpdb->last_error;
-                                          }
-                                        
-                                        // print_r($kdresults[0]);
-                                        foreach ($kdresults as $rst) {
-                                            // echo '<pre>';
-                                            // print_r($rst->settings);
-                                            // echo '</pre>';
-                                            echo '<pre>';
-                                            // print_r(json_decode($rst->settings));
-                                            $kdsettings = json_decode($rst->settings);
-                                            print_r($kdsettings);
-                                            print_r($kdsettings->payments->wc->productId);
-                                            echo '</pre>';
                                         }
+
+                                        $kdsettings = json_decode($rst[0]->settings);
+                                        print_r($kdsettings->payments->wc->productId);
+
+                                        $product_associated = wc_get_product($kdsettings->payments->wc->productId);
+                                        $cross_sell_ids = $product_associated->get_cross_sell_ids();
+                                        print_r($cross_sell_ids[0]);
+
+                                        // foreach ($kdresults as $rst) {
+                                        //     $kdsettings = json_decode($rst->settings);
+                                        //     print_r($kdsettings->payments->wc->productId);
+                                        // }
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
