@@ -15,7 +15,7 @@ get_header();
         <div class="color indigo"></div>
         <div class="color violet"></div>
     </div>
-    <h4 id="loading-text">Live L&D is loading
+    <h4 id="loading-text">Live L&D is loading the Pride page
         <!-- ... -->
     </h4>
 </div>
@@ -85,12 +85,12 @@ get_header();
 }
 
     #loading-text {
-        font-size: 24px !important;
+        font-size: 44px !important;
         font-weight: bold !important;
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
-        color: #ff8250;
+        color: white;
         position: relative;
         /* Change position to relative */
     }
