@@ -16,7 +16,12 @@ get_header();
         <div class="color violet"></div>
     </div>
     <h4 id="loading-text">Live L&D is loading the Pride page
-        <!-- ... -->
+    <span class="dot-container">
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+        </span>
     </h4>
 </div>
 
