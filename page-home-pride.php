@@ -91,7 +91,7 @@ get_header();
 
     #loading-text {
         font-size: 44px !important;
-        font-weight: bold !important;
+        /*font-weight: bold !important;*/
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
