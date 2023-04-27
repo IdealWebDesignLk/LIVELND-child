@@ -36,7 +36,6 @@ get_header();
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: black;
         background-image: linear-gradient(
         to right,
         red,
@@ -46,7 +45,7 @@ get_header();
         blue,
         indigo,
         violet
-    ); /* Change this line */
+    ); 
         z-index: 9999;
     }
 
