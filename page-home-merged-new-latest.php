@@ -799,6 +799,11 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         print_r($wpdb);
                                         $kdresults = $wpdb->get_results("SELECT `settings` FROM wp_821991_amelia_services WHERE id = 366");
                                         echo ("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = " . $servicesingleid . "");
+                                        
+                                        if ( $wpdb->last_error ) {
+                                            echo 'wpdb error: ' . $wpdb->last_error;
+                                          }
+                                        
                                         print_r($kdresults[0]);
                                         foreach ($kdresults as $rst) {
                                             print_r($rst);
