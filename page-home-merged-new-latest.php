@@ -806,9 +806,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         
                                         // print_r($kdresults[0]);
                                         foreach ($kdresults as $rst) {
+                                            echo '<pre>';
                                             // print_r($rst);
                                             echo $rst->settings;
-                                            echo '<pre>';
+                                            echo '</pre>';
                                         }
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
