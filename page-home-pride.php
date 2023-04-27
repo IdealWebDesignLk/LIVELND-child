@@ -36,14 +36,17 @@ get_header();
         left: 0;
         width: 100%;
         height: 100%;
-        background: 
-        linear-gradient(red, red) top / 100% 14.28%,
-        linear-gradient(orange, orange) center / 100% 14.28%,
-        linear-gradient(yellow, yellow) bottom / 100% 14.28%,
-        linear-gradient(green, green) / 100% 14.28%,
-        linear-gradient(blue, blue) / 100% 14.28%,
-        linear-gradient(indigo, indigo) / 100% 14.28%,
-        linear-gradient(violet, violet) / 100% 14.28%;
+        background-image:
+        linear-gradient(red, red),
+        linear-gradient(orange, orange),
+        linear-gradient(yellow, yellow),
+        linear-gradient(green, green),
+        linear-gradient(blue, blue),
+        linear-gradient(indigo, indigo),
+        linear-gradient(violet, violet);
+    background-size: 100% 14.28%;
+    background-repeat: no-repeat;
+    background-position: 0 0, 0 14.28%, 0 28.56%, 0 42.84%, 0 57.12%, 0 71.4%, 0 85.68%;
         background-repeat: no-repeat;
     ); 
         z-index: 9999;
