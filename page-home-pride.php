@@ -97,6 +97,7 @@ get_header();
         letter-spacing: 0.15em !important;
         color: white;
         position: relative;
+        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
         /* Change position to relative */
     }
 
