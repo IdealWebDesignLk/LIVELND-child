@@ -520,7 +520,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         if (ot_get_option('exclude_category_id_s_lp1')) {
                                             $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
                                         }
-                                    }
+                                    }}}
 
                          
                             foreach ($catResults as $catResult) {
