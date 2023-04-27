@@ -503,28 +503,14 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             global $wpdb;
                             $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
                             $catResults = $wpdb->get_results($categoriesSql);
-
                             //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
-                           /* $is_homepage = is_front_page();
-                           $landing_page_url = ot_get_option('landing_page_url');
-                            $is_landing_page = ($current_url === $landing_page_url);
-
-                            if (function_exists('ot_get_option')) {
-                                if ($is_homepage || $is_landing_page) {
-                                    $exclude_cat_id;
-                                    if ($is_homepage) {
-                                        if (ot_get_option('exclude_category_id_s')) {
-                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-                                        }
-                                    } elseif ($is_landing_page) {
-                                        if (ot_get_option('exclude_category_id_s_lp1')) {
-                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
-                                        }
-                                    }}}*/
-
-                         
+                            $exclude_cat_id = array();
+                            if (ot_get_option('exclude_category_id_s')) {
+                                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+                            }
                             foreach ($catResults as $catResult) {
                                 if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                    
                             ?>
                                     <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
                             <?php }
