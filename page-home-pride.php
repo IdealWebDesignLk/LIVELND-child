@@ -506,6 +506,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
                             $is_homepage = is_front_page();
                             $landing_page_url = ot_get_option('landing_page_url');
+                            $current_url = home_url($_SERVER['REQUEST_URI']);
                             $is_landing_page = ($current_url === $landing_page_url);
 
                             $exclude_cat_id = array();
