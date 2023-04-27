@@ -795,9 +795,12 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                         // getting cross sells
                                         global $wpdb;
-                                        $results = $wpdb->get_results("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = " . $servicesingleid . "");
+                                        $kdresults = $wpdb->get_results("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = " . $servicesingleid . "");
                                         echo ("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id = " . $servicesingleid . "");
-                                        print_r($results);
+                                        print_r($kdresults);
+                                        foreach ($kdresults as $rst) {
+                                            print_r($rst);
+                                        }
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
