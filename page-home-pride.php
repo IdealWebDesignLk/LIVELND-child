@@ -190,6 +190,31 @@ $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where
 
 $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$serviceid'");
 
+$is_homepage = is_front_page();
+$landing_page_url = ot_get_option('landing_page_url');
+$current_url = home_url($_SERVER['REQUEST_URI']);
+$is_landing_page = ($current_url === $landing_page_url);
+
+if (function_exists('ot_get_option')) {
+    if ($is_homepage || $is_landing_page) {
+        if ($is_homepage && ot_get_option('featured_video_id')) {
+            $serviceid = ot_get_option('featured_video_id');
+        } elseif ($is_landing_page && ot_get_option('featured_video_id_lp1')) {
+            $serviceid = ot_get_option('featured_video_id_lp1');
+        }
+
+        $exclude_cat_id = array();
+        if ($is_homepage) {
+            if (ot_get_option('exclude_category_id_s')) {
+                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+            }
+        } elseif ($is_landing_page) {
+            if (ot_get_option('exclude_category_id_s_lp1')) {
+                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
+            }
+        }
+    }
+}
 ?>
 
 <!-- video to test autoplay -->
@@ -256,7 +281,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         }
                     } else if (function_exists('ot_get_option')) {
                         if (ot_get_option('featured_video_id')) {
-                            $serviceid = ot_get_option('featured_video_id');
+                            
 
                             $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$serviceid'");
 
@@ -503,13 +528,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 global $wpdb;
                                 $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
                                 $catResults = $wpdb->get_results($categoriesSql);
-
-                                //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
-                                $exclude_cat_id;
-                                if (ot_get_option('exclude_category_id_s')) {
-                                    $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-                                }
-
+                             
+                               
                                 foreach ($catResults as $catResult) {
                                     if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                 ?>
@@ -581,11 +601,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
         global $wpdb;
         $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
         $catResults = $wpdb->get_results($categoriesSql);
-        //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
-        $exclude_cat_id = array();
-        if (ot_get_option('exclude_category_id_s')) {
-            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-        }
+        
         foreach ($catResults as $catResult) {
             if (!in_array(intval($catResult->id), $exclude_cat_id)) {
 
