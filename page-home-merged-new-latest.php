@@ -806,7 +806,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $crosssellProductIds   =   get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
                                         $crosssellProductIds    =   $crosssellProductIds[0];
 
-                                        print_r($crosssellProductIds);
+                                        // print_r($crosssellProductIds);
 
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
