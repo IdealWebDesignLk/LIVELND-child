@@ -806,14 +806,14 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         
                                         // print_r($kdresults[0]);
                                         foreach ($kdresults as $rst) {
-                                            echo '<pre>';
-                                            print_r($rst->settings);
-                                            echo '</pre>';
+                                            // echo '<pre>';
+                                            // print_r($rst->settings);
+                                            // echo '</pre>';
                                             echo '<pre>';
                                             // print_r(json_decode($rst->settings));
                                             $kdsettings = json_decode($rst->settings);
                                             print_r($kdsettings);
-                                            print_r($kdsettings->payments->wc);
+                                            print_r($kdsettings->payments->wc->productId);
                                             echo '</pre>';
                                         }
                                 ?>
