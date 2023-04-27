@@ -44,9 +44,9 @@ get_header();
         linear-gradient(blue, blue),
         linear-gradient(indigo, indigo),
         linear-gradient(violet, violet);
-    background-size: 100% 14.28%;
+        background-size: 100% calc(100% / 7);
     background-repeat: no-repeat;
-    background-position: 0 0, 0 14.28%, 0 28.56%, 0 42.84%, 0 57.12%, 0 71.4%, 0 85.68%;
+    background-position: 0 0, 0 calc(100% / 7 * 1), 0 calc(100% / 7 * 2), 0 calc(100% / 7 * 3), 0 calc(100% / 7 * 4), 0 calc(100% / 7 * 5), 0 calc(100% / 7 * 6);
         background-repeat: no-repeat;
     ); 
         z-index: 9999;
