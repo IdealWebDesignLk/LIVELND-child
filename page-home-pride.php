@@ -6,13 +6,17 @@ get_header();
 <!--Load Preloader-->
 
 <div id="preloader">
+    <div class="color-container">
+        <div class="color red"></div>
+        <div class="color orange"></div>
+        <div class="color yellow"></div>
+        <div class="color green"></div>
+        <div class="color blue"></div>
+        <div class="color indigo"></div>
+        <div class="color violet"></div>
+    </div>
     <h4 id="loading-text">Live L&D is loading
-        <span class="dot-container">
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-            <span class="dot-animation">.</span>
-        </span>
+        <!-- ... -->
     </h4>
 </div>
 
@@ -24,33 +28,60 @@ get_header();
         overflow: hidden;
     }
 
-    #preloader {
-        display: flex;
-        /* Add flexbox to the preloader */
-        align-items: center;
-        /* Center the loading text vertically */
-        justify-content: center;
-        /* Center the loading text horizontally */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image:
-        linear-gradient(red, red),
-        linear-gradient(orange, orange),
-        linear-gradient(yellow, yellow),
-        linear-gradient(green, green),
-        linear-gradient(blue, blue),
-        linear-gradient(indigo, indigo),
-        linear-gradient(violet, violet);
-        background-size: 100% calc(100% / 7);
-    background-repeat: no-repeat;
-    background-position: 0 0, 0 calc(100% / 7 * 1), 0 calc(100% / 7 * 2), 0 calc(100% / 7 * 3), 0 calc(100% / 7 * 4), 0 calc(100% / 7 * 5), 0 calc(100% / 7 * 6);
-        background-repeat: no-repeat;
-    ); 
-        z-index: 9999;
-    }
+ 
+#preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+.color-container {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.color {
+    flex: 1;
+    height: 100%;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.indigo {
+    background-color: indigo;
+}
+
+.violet {
+    background-color: violet;
+}
 
     #loading-text {
         font-size: 24px !important;
