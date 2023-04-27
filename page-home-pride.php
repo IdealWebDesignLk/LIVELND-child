@@ -36,22 +36,15 @@ get_header();
         left: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(
-        to bottom,
-        red 14.28%,
-        red 14.28%,
-        orange 14.28%,
-        orange 28.56%,
-        yellow 28.56%,
-        yellow 42.84%,
-        green 42.84%,
-        green 57.12%,
-        blue 57.12%,
-        blue 71.40%,
-        indigo 71.40%,
-        indigo 85.68%,
-        violet 85.68%,
-        violet 100%
+        background: 
+        linear-gradient(red, red) top / 100% 14.28%,
+        linear-gradient(orange, orange) center / 100% 14.28%,
+        linear-gradient(yellow, yellow) bottom / 100% 14.28%,
+        linear-gradient(green, green) / 100% 14.28%,
+        linear-gradient(blue, blue) / 100% 14.28%,
+        linear-gradient(indigo, indigo) / 100% 14.28%,
+        linear-gradient(violet, violet) / 100% 14.28%;
+        background-repeat: no-repeat;
     ); 
         z-index: 9999;
     }
