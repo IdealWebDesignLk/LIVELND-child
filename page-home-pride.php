@@ -4,71 +4,40 @@ get_header();
 
 ?>
 <!--Load Preloader-->
+
 <div id="preloader">
-
-    <h4 id="loading-text">Live L&D is loading ....</h4>
-    <div class="w-hwrapper align_left valign_bottom" id="animated-roll-text">
-        <div class="wpb_text_column us_custom_e58a457e has_text_color" id="home--animated-list">
-            <div class="wpb_wrapper">
-                <ul id="test" class="word-animation">
-                    <!--  <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>-->
-                </ul>
-            </div>
-        </div>
-    </div>
-
+    <h4 id="loading-text">Live L&D is loading
+        <span class="dot-container">
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+        </span>
+    </h4>
 </div>
 
 <script>
     document.body.classList.add("preloader-active");
-
-    setTimeout(function() {
-        document.getElementById('animated-roll-text').style.display = 'flex';
-    }, 3000);
 </script>
 <style>
     body.preloader-active {
         overflow: hidden;
     }
 
-    #test li {
-        font-size: 35px;
-        margin: 15 0 10 0;
-    }
-
     #preloader {
         display: flex;
-        flex-direction: column;
+        /* Add flexbox to the preloader */
         align-items: center;
+        /* Center the loading text vertically */
         justify-content: center;
+        /* Center the loading text horizontally */
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #ff8250;
+        background-color: black;
         z-index: 9999;
-        animation: backgroundFade 2s forwards;
-        transition: opacity 1s ease;
-    }
-
-    .preloader-fadeout {
-        opacity: 0;
-    }
-
-    .preloader-hidden {
-        display: none;
     }
 
     #loading-text {
@@ -77,162 +46,64 @@ get_header();
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
-        color: black;
+        color: #ff8250;
         position: relative;
-        animation: textColorFade 2s forwards;
+        /* Change position to relative */
     }
 
-    @keyframes backgroundFade {
-
-        0%,
-        40% {
-            background-color: #ff8250;
-        }
-
-        100% {
-            background-color: black;
-        }
+    .dot-container {
+        display: inline-flex;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        margin-left: 5px;
+        width: 50px;
+        /* Add a fixed width */
+        height: 24px;
+        /* Add a fixed height */
     }
 
-    @keyframes textColorFade {
+    .dot-animation {
+        position: absolute;
+        animation: dot-bounce 1.2s linear infinite;
+        margin-left: 2px;
+        will-change: transform;
+    }
+
+    .dot-animation:nth-child(2) {
+        margin-left: 14px;
+        animation-delay: 0.2s;
+    }
+
+    .dot-animation:nth-child(3) {
+        margin-left: 26px;
+        animation-delay: 0.4s;
+    }
+
+    .dot-animation:nth-child(4) {
+        margin-left: 38px;
+        animation-delay: 0.6s;
+    }
+
+    @keyframes dot-bounce {
 
         0%,
-        40% {
-            color: black;
+        80%,
+        100% {
+            transform: translateY(0);
         }
 
-        100% {
-            color: #ff8250;
+        40% {
+            transform: translateY(-10px);
         }
     }
 
     @media only screen and (max-width: 768px) {
         #loading-text {
             font-size: 13px !important;
-
-            text-align: left !important;
-        }
-
-        #test li {
-            font-size: 11px !important;
-            margin: 5 0 5 0 !important;
-        }
-
-        #animated-roll-text {
-            right: -3% !important;
-
-        }
-
-        #preloader h4 {
-            margin-left: -32% !important;
-        }
-    }
-
-    .w-hwrapper.valign_bottom {
-        align-items: flex-end;
-    }
-
-    .w-hwrapper.align_left {
-        justify-content: flex-start;
-    }
-
-    #animated-roll-text {
-        display: none;
-        position: absolute;
-        bottom: 0;
-        right: 10%;
-        margin-right: 10px;
-    }
-
-
-    ul.word-animation {
-        list-style: none !important;
-        padding-left: 0;
-    }
-
-    .us_custom_e58a457e {
-        color: #E5E5E5 !important;
-        font-weight: 200 !important;
-        font-size: 1.5rem !important;
-        line-height: 1.2 !important;
-    }
-
-    .word-animation ul li {
-        color: #ffffff;
-    }
-
-    .word-animation ul li:nth-of-type(1) {
-        animation-delay: 0s;
-    }
-
-    .word-animation ul li:nth-of-type(2) {
-        animation-delay: 0.3s;
-    }
-
-    .word-animation ul li:nth-of-type(3) {
-        animation-delay: 0.6s;
-    }
-
-    /* Add animation delays for the additional words */
-    .word-animation ul li:nth-of-type(4) {
-        animation-delay: 0.9s;
-    }
-
-    .word-animation ul li:nth-of-type(5) {
-        animation-delay: 1.2s;
-    }
-
-    .word-animation ul li:nth-of-type(6) {
-        animation-delay: 1.5s;
-    }
-
-    .word-animation ul li:nth-of-type(7) {
-        animation-delay: 1.8s;
-    }
-
-    .word-animation ul li:nth-of-type(8) {
-        animation-delay: 2.1s;
-    }
-
-    .word-animation ul li:nth-of-type(9) {
-        animation-delay: 2.4s;
-    }
-
-    .word-animation ul li:nth-of-type(10) {
-        animation-delay: 2.7s;
-    }
-
-    .word-animation ul li:nth-of-type(11) {
-        animation-delay: 3.0s;
-    }
-
-    .word-animation ul li:nth-of-type(12) {
-        animation-delay: 3.3s;
-    }
-
-    .word-animation {
-        animation: words 3s linear infinite;
-        /* Update the animation duration */
-    }
-
-    @keyframes words {
-        0% {
-            transform: translateY(30px);
-            color: #ffffff;
-        }
-
-        50% {
-            transform: translateY(-630px);
-            color: #ffffff;
-        }
-
-        100% {
-            transform: translateY(30px);
-            color: #ffffff;
         }
     }
 </style>
-
 
 
 <?php echo '<script type="text/javascript">let kdHomepage = true; </script>'; ?>
