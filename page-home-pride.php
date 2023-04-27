@@ -456,15 +456,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                             <h1>Book a Virtual Live Speaker!</h1>
 
                                             <div class="row textrowdiv">
-                                            <div class="color-container">
-                                                    <div class="color red"></div>
-                                                    <div class="color orange"></div>
-                                                    <div class="color yellow"></div>
-                                                    <div class="color green"></div>
-                                                    <div class="color blue"></div>
-                                                    <div class="color indigo"></div>
-                                                    <div class="color violet"></div>
-                                                </div>
+                                            
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
