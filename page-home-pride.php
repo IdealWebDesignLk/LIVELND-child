@@ -1014,38 +1014,22 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             </div>
         </div>
     </div>
-    <!--Unload Preloader-->
-    <script>
-        document.body.classList.add("preloader-active");
-
-        setTimeout(() => {
-            const animatedRollText = document.getElementById("animated-roll-text");
-            animatedRollText.classList.remove("preloader-hidden");
-        }, 3000); // Show the animated-roll-text after 3 seconds (when the background color transition is complete)
-
-        window.addEventListener("load", function() {
-            // Remove the infinite loop and stop the animation when the page has finished loading
-            document.getElementById("test").classList.remove("start-animation");
-
-            setTimeout(() => {
-                var preloader = document.getElementById("preloader");
-                preloader.style.opacity = 0;
-                setTimeout(() => {
-                    preloader.style.display = "none";
-                    document.body.classList.remove("preloader-active");
-                }, 1000); // 1s for the opacity transition to complete
-            }, 1000); // Keep the preloader visible for at least 6 seconds
-        });
-    </script>
-
-    <noscript>
-        <style>
-            #preloader {
-                display: none;
-            }
-        </style>
-        <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-    </noscript>
+      <!--Unload Preloader-->
+      <script>
+                    window.addEventListener("load", function() {
+                        var preloader = document.getElementById('preloader');
+                        preloader.style.display = 'none';
+                        document.body.classList.remove("preloader-active");
+                    });
+                </script>
+                <noscript>
+                    <style>
+                        #preloader {
+                            display: none;
+                        }
+                    </style>
+                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+                </noscript>
 
     <script>
         function muteCurrentVideo(e) {
