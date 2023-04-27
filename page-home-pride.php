@@ -500,44 +500,25 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             <option value="select-category">All Categories</option>
                             <?php
 
-                            global $wpdb;
-                            $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
-                            $catResults = $wpdb->get_results($categoriesSql);
-                            //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
-                            $is_homepage = is_front_page();
-                            $landing_page_url = ot_get_option('landing_page_url');
-                            $current_url = home_url($_SERVER['REQUEST_URI']);
-                            $is_landing_page = ($current_url === $landing_page_url);
+                                global $wpdb;
+                                $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+                                $catResults = $wpdb->get_results($categoriesSql);
 
-                            if (function_exists('ot_get_option')) {
-                                if ($is_homepage || $is_landing_page) {
-                                    if ($is_homepage && ot_get_option('featured_video_id')) {
-                                        $serviceid = ot_get_option('featured_video_id');
-                                    } elseif ($is_landing_page && ot_get_option('featured_video_id_lp1')) {
-                                        $serviceid = ot_get_option('featured_video_id_lp1');
-                                    }
-                            
-                                    $exclude_cat_id;
-                                    if ($is_homepage) {
-                                        if (ot_get_option('exclude_category_id_s')) {
-                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-                                        }
-                                    } elseif ($is_landing_page) {
-                                        if (ot_get_option('exclude_category_id_s_lp1')) {
-                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
-                                        }
-                                    }
-                            
-                                    foreach ($catResults as $catResult) {
-                                        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
-                                    ?>
-                                     <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
-                                        <?php }
-                                    }
+                                //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
+                                $exclude_cat_id;
+                                if (ot_get_option('exclude_category_id_s')) {
+                                    $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
                                 }
-                            }
-                        </select>
-                    </div>
+
+                                foreach ($catResults as $catResult) {
+                                    if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                ?>
+                                        <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
+                                <?php }
+                                } ?>
+                                </select>
+                                </div>
+
 
                     <div class="kd-form-group">
                         <label for="max-price" id="max-price-label">Max Price</label>
