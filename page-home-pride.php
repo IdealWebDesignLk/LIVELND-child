@@ -504,6 +504,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
                             $catResults = $wpdb->get_results($categoriesSql);
                             //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
+                            $is_homepage = is_front_page();
+                            $landing_page_url = ot_get_option('landing_page_url');
+                            $is_landing_page = ($current_url === $landing_page_url);
+
                             $exclude_cat_id = array();
                             if (ot_get_option('exclude_category_id_s')) {
                                 $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
