@@ -803,8 +803,24 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $kdsettings = json_decode($kdresults[0]->settings);
                                         // print_r($kdsettings->payments->wc->productId);
 
-                                        $crosssellProductIds   =   get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
-                                        $crosssellProductIds    =   $crosssellProductIds[0];
+                                        //$crosssellProductIds   =   get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
+                                        //$crosssellProductIds    =   $crosssellProductIds[0];
+
+                                        if (isset($kdsettings->payments->wc->productId)) {
+                                            $crosssellProductIds = get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
+                                        
+                                            if (is_array($crosssellProductIds) && isset($crosssellProductIds[0])) {
+                                                $crosssellProductIds = $crosssellProductIds[0];
+                                            } else {
+                                                // Handle the case where $crosssellProductIds is not an array or the first element is not set
+                                                $crosssellProductIds = null;
+                                            }
+                                        } else {
+                                            // Handle the case where the 'productId' property is not set
+                                            $crosssellProductIds = null;
+                                        }
+                                        
+                                        
 
                                         // print_r($crosssellProductIds);
 
