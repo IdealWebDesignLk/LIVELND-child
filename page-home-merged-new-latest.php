@@ -806,8 +806,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         $product_associated = wc_get_product($kdsettings->payments->wc->productId);
                                         print_r($product_associated);
 
-                                        $cross_sell_ids = $product_associated->get_cross_sell_ids();
-                                        print_r($cross_sell_ids);
+                                        // $cross_sell_ids = $product_associated->get_cross_sell_ids();
+                                        // print_r($cross_sell_ids);
 
                                         // foreach ($kdresults as $rst) {
                                         //     $kdsettings = json_decode($rst->settings);
