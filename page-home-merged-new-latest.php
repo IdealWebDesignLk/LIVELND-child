@@ -808,13 +808,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                         print_r($crosssellProductIds);
 
-                                        // $cross_sell_ids = $product_associated->get_cross_sell_ids();
-                                        // print_r($cross_sell_ids);
-
-                                        // foreach ($kdresults as $rst) {
-                                        //     $kdsettings = json_decode($rst->settings);
-                                        //     print_r($kdsettings->payments->wc->productId);
-                                        // }
                                 ?>
                                         <div class="kd-popup-content hidden" id="kd-popup-<?php echo $servicesingleid; ?>">
                                             <div class="kd-popup-content-inner">
@@ -904,13 +897,17 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                                         <!-- cross sells section -->
                                                         <div class="kd-cross-sells-wrapper">
-                                                            <h4 class="sessionttile"><b>You Might Also Like</b></h4>
+                                                            <!-- <h4 class="sessionttile"><b>You Might Also Like</b></h4> -->
                                                             <?php
-                                                            // foreach ($results as $result) {
-                                                            //     echo "<div class='kd-single-popup-cross-sell'><a href='single-service/" . str_replace(' ', '-', $result->name) . '-' . $result->id . "'><div class='name'>" . $result->name . "</div><div class='price'>" . $result->price . "</div></a></div>";
-                                                            //     // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
-                                                            //     print_r($result);
-                                                            // }
+                                                            foreach ($crosssellProductIds as $crosssell) {
+                                                                $cross_product = wc_get_product($crosssell);
+                                                                $price = $cross_product->get_price();
+                                                                $url = get_the_permalink($crosssell);
+                                                                $product_name = $cross_product->get_name();
+
+                                                                echo "<div class='kd-single-popup-cross-sell'><a href='".$url."'><div class='name'>" . $product_name . "</div><div class='price'>" . $price . "</div></a></div>";
+                                                                // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
+                                                            }
                                                             ?>
                                                         </div>
                                                         <p class="staticlabel"> Talks about:</p>
