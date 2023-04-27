@@ -809,8 +809,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                             // echo '<pre>';
                                             // print_r($rst->settings);
                                             // print_r(json_decode($rst->settings));
-                                            $settings = json_decode($rst->settings);
-                                            echo $settings->wc;
+                                            $kdsettings = json_decode($rst->settings);
+                                            print_r($kdsettings);
+                                            echo $kdsettings->wc;
                                             // echo '</pre>';
                                         }
                                 ?>
