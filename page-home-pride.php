@@ -62,31 +62,31 @@ get_header();
 }
 
 .red {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: red;
 }
 
 .orange {
-    background-color: rgba(255, 165, 0, 0.7);
+    background-color: orange;
 }
 
 .yellow {
-    background-color: rgba(255, 255, 0, 0.7);
+    background-color: yellow;
 }
 
 .green {
-    background-color: rgba(0, 128, 0, 0.7);
+    background-color: green;
 }
 
 .blue {
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: blue;
 }
 
 .indigo {
-    background-color: rgba(75, 0, 130, 0.7);
+    background-color: indigo;
 }
 
 .violet {
-    background-color: rgba(128, 0, 128, 0.7);
+    background-color: violet;
 }
 
     #loading-text {
@@ -153,28 +153,6 @@ get_header();
             font-size: 13px !important;
         }
     }
-
-    .textrowdiv {
-    position: relative !important; /* Add position relative to the textrowdiv */
-	color: unset !important;
-	background : unset !important;
-}
-
-.textrowdiv .color-container {
-    display: flex;
-    flex-direction: column;
-    position: absolute ;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Add a lower z-index to keep the colors behind the text content */
-}
-
-.textrowdiv .color {
-    flex: 1;
-    width: 100%;
-}
 </style>
 
 
