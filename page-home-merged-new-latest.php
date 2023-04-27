@@ -800,11 +800,12 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                             echo 'wpdb error: ' . $wpdb->last_error;
                                         }
 
-                                        $kdsettings = json_decode($rst[0]->settings);
+                                        $kdsettings = json_decode($kdresults[0]->settings);
                                         print_r($kdsettings->payments->wc->productId);
 
                                         $product_associated = wc_get_product($kdsettings->payments->wc->productId);
                                         print_r($product_associated);
+
                                         // $cross_sell_ids = $product_associated->get_cross_sell_ids();
                                         // print_r($cross_sell_ids);
 
