@@ -917,6 +917,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                             <?php
                                                             global  $woocommerce;
 
+                                                            if ($crosssellProductIds !== null) {
                                                             foreach ($crosssellProductIds as $crosssell) {
                                                                 $cross_product = wc_get_product($crosssell);
                                                                 $price = $cross_product->get_price();
@@ -925,7 +926,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                                                 echo "<div class='kd-single-popup-cross-sell'><a href='" . $url . "'><div class='name'>" . $product_name . "</div><div class='price'>" . get_woocommerce_currency_symbol() . $price . "</div></a></div>";
                                                                 // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
-                                                            }
+                                                            }}
                                                             ?>
                                                         </div>
                                                         <p class="staticlabel"> Talks about:</p>
