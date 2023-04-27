@@ -194,6 +194,27 @@ $is_homepage = is_front_page();
 $landing_page_url = ot_get_option('landing_page_url');
 $current_url = home_url($_SERVER['REQUEST_URI']);
 $is_landing_page = ($current_url === $landing_page_url);
+
+if (function_exists('ot_get_option')) {
+    if ($is_homepage || $is_landing_page) {
+        if ($is_homepage && ot_get_option('featured_video_id')) {
+            $serviceid = ot_get_option('featured_video_id');
+        } elseif ($is_landing_page && ot_get_option('featured_video_id_lp1')) {
+            $serviceid = ot_get_option('featured_video_id_lp1');
+        }
+
+        $exclude_cat_id = array();
+        if ($is_homepage) {
+            if (ot_get_option('exclude_category_id_s')) {
+                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+            }
+        } elseif ($is_landing_page) {
+            if (ot_get_option('exclude_category_id_s_lp1')) {
+                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
+            }
+        }
+    }
+}
 ?>
 
 <!-- video to test autoplay -->
@@ -260,7 +281,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                         }
                     } else if (function_exists('ot_get_option')) {
                         if (ot_get_option('featured_video_id')) {
-                            $serviceid = ot_get_option('featured_video_id');
+                            
 
                             $service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$serviceid'");
 
