@@ -899,13 +899,15 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                         <div class="kd-cross-sells-wrapper">
                                                             <!-- <h4 class="sessionttile"><b>You Might Also Like</b></h4> -->
                                                             <?php
+                                                            global  $woocommerce;
+
                                                             foreach ($crosssellProductIds as $crosssell) {
                                                                 $cross_product = wc_get_product($crosssell);
                                                                 $price = $cross_product->get_price();
                                                                 $url = get_the_permalink($crosssell);
                                                                 $product_name = $cross_product->get_name();
 
-                                                                echo "<div class='kd-single-popup-cross-sell'><a href='".$url."'><div class='name'>" . $product_name . "</div><div class='price'>" . $price . "</div></a></div>";
+                                                                echo "<div class='kd-single-popup-cross-sell'><a href='" . $url . "'><div class='name'>" . $product_name . "</div><div class='price'>" . get_woocommerce_currency_symbol() . $price . "</div></a></div>";
                                                                 // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
                                                             }
                                                             ?>
