@@ -1,4 +1,4 @@
-<?php /* Template Name: Page_home_merged_new_latest */ ?>
+<?php /* Template Name: Page_home_pride */ ?>
 <?php
 get_header();
 
