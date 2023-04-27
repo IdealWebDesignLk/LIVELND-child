@@ -43,6 +43,7 @@ get_header();
 
 .color-container {
     display: flex;
+    flex-direction: column; /* Change the flex direction to column */
     position: absolute;
     top: 0;
     left: 0;
@@ -52,7 +53,7 @@ get_header();
 
 .color {
     flex: 1;
-    height: 100%;
+    width: 100%;
 }
 
 .red {
