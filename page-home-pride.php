@@ -509,17 +509,33 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             $current_url = home_url($_SERVER['REQUEST_URI']);
                             $is_landing_page = ($current_url === $landing_page_url);
 
-                            $exclude_cat_id = array();
-                            if (ot_get_option('exclude_category_id_s')) {
-                                $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+                            if (function_exists('ot_get_option')) {
+                                if ($is_homepage || $is_landing_page) {
+                                    if ($is_homepage && ot_get_option('featured_video_id')) {
+                                        $serviceid = ot_get_option('featured_video_id');
+                                    } elseif ($is_landing_page && ot_get_option('featured_video_id_lp1')) {
+                                        $serviceid = ot_get_option('featured_video_id_lp1');
+                                    }
+                            
+                                    $exclude_cat_id;
+                                    if ($is_homepage) {
+                                        if (ot_get_option('exclude_category_id_s')) {
+                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+                                        }
+                                    } elseif ($is_landing_page) {
+                                        if (ot_get_option('exclude_category_id_s_lp1')) {
+                                            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s_lp1'));
+                                        }
+                                    }
+                            
+                                    foreach ($catResults as $catResult) {
+                                        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                    ?>
+                                     <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
+                                        <?php }
+                                    }
+                                }
                             }
-                            foreach ($catResults as $catResult) {
-                                if (!in_array(intval($catResult->id), $exclude_cat_id)) {
-                    
-                            ?>
-                                    <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
-                            <?php }
-                            } ?>
                         </select>
                     </div>
 
