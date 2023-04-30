@@ -5,7 +5,7 @@ get_header();
 ?>
 <!--Load Preloader-->
 <div id="preloader">
-    <h4 id="loading-text">Live L&D is loading your session
+    <h4 id="loading-text">Live L&D is loading
         <span class="dot-container">
             <span class="dot-animation">.</span>
             <span class="dot-animation">.</span>
