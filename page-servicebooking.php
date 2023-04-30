@@ -395,15 +395,15 @@ $worduser = 'user_' . $externalid;
                                                 <?php
                                                 } else if ($rating == "3") {
                                                 ?>
-                                                    <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starseke.png" ?>"></a>
+                                                    <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starseke.png" ?>"></a>
                                                 <?php
                                                 } else if ($rating == "4") {
                                                 ?>
-                                                    <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsyanti.png" ?>"></a>
+                                                    <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsyanti.png" ?>"></a>
                                                 <?php
                                                 } else if ($rating == "5") {
                                                 ?>
-                                                    <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsdanielle.png" ?>"></a>
+                                                    <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsdanielle.png" ?>"></a>
 
                                                 <?php
                                                 }
@@ -599,15 +599,15 @@ $worduser = 'user_' . $externalid;
                                         <?php
                                         } else if ($rating == "3") {
                                         ?>
-                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starseke.png" ?>"></a>
+                                            <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starseke.png" ?>"></a>
                                         <?php
                                         } else if ($rating == "4") {
                                         ?>
-                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsyanti.png" ?>"></a>
+                                            <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsyanti.png" ?>"></a>
                                         <?php
                                         } else if ($rating == "5") {
                                         ?>
-                                            <a href="<?php echo $server_name . "/how-it-works-iwd-sessions-explained/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsdanielle.png" ?>"></a>
+                                            <a href="<?php echo $server_name . "/about-us/#curators" ?>" target="_blank"><img class="star-rating" src="<?php echo $server_name . "/wp-content/uploads/2023/01/starsdanielle.png" ?>"></a>
 
                                         <?php
                                         }
