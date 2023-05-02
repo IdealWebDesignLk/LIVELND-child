@@ -452,7 +452,7 @@ $worduser = 'user_' . $externalid;
                                             ?>
 
                                              <!-- cross sells section -->
-                                             <div class="kd-cross-sells-wrapper">
+                                             <div class="kd-single-cross-sells-wrapper">
                                                             <!-- <h4 class="sessionttile"><b>You Might Also Like</b></h4> -->
                                                             <?php
                                                             global  $woocommerce;
