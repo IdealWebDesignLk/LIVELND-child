@@ -1053,9 +1053,9 @@ function custom_login_button($user)
 {
 	$username = $user->user_login;
 	$user_id = $user->ID;
-	$today_date = date("yy-m-d");
+	$today_date = date("Y-m-d");
 
-	echo $today_date;
+	// echo $today_date;
 
 	$next_date = date('yy-m-d', strtotime($today_date . ' + 3 days'));
 
