@@ -416,6 +416,8 @@ $worduser = 'user_' . $externalid;
 
                                             <p>60 minutes including Q&A</p>
 
+                                            test
+
                                             <?php if (!empty($service[0]->videoViews) && intval($service[0]->videoViews) > 0) { ?>
                                                 <p class="viewscountsingle"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> views</p>
                                             <?php } ?>
