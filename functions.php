@@ -1055,6 +1055,8 @@ function custom_login_button($user)
 	$user_id = $user->ID;
 	$today_date = date("yy-m-d");
 
+	echo $today_date;
+
 	$next_date = date('yy-m-d', strtotime($today_date . ' + 3 days'));
 
 	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; user_id = "' . $user_id . '"</script>';
