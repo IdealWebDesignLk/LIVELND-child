@@ -416,7 +416,40 @@ $worduser = 'user_' . $externalid;
 
                                             <p>60 minutes including Q&A</p>
 
-                                            test
+                                            <?php
+
+                                            // getting cross sells
+                                            $kdresults = $wpdb->get_results("SELECT `settings` FROM " . $wpdb->prefix . "amelia_services WHERE id= '" . $serviceid . "'");
+
+                                            if ($wpdb->last_error) {
+                                                echo 'wpdb error: ' . $wpdb->last_error;
+                                            }
+
+                                            $kdsettings = json_decode($kdresults[0]->settings);
+                                            // print_r($kdsettings->payments->wc->productId);
+
+                                            //$crosssellProductIds   =   get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
+                                            //$crosssellProductIds    =   $crosssellProductIds[0];
+
+                                            if (isset($kdsettings->payments->wc->productId)) {
+                                                $crosssellProductIds = get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
+
+                                                if (is_array($crosssellProductIds) && isset($crosssellProductIds[0])) {
+                                                    $crosssellProductIds = $crosssellProductIds[0];
+                                                } else {
+                                                    // Handle the case where $crosssellProductIds is not an array or the first element is not set
+                                                    $crosssellProductIds = null;
+                                                }
+                                            } else {
+                                                // Handle the case where the 'productId' property is not set
+                                                $crosssellProductIds = null;
+                                            }
+
+
+
+                                            print_r($crosssellProductIds);
+
+                                            ?>
 
                                             <?php if (!empty($service[0]->videoViews) && intval($service[0]->videoViews) > 0) { ?>
                                                 <p class="viewscountsingle"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> views</p>
@@ -464,18 +497,18 @@ $worduser = 'user_' . $externalid;
 
 
                             <div class="col-md-6" id="calenderbooking">
-                            <div class="session-buttons-rp">                     
-                                <a class="w3-bar-item w3-button bookingbtn booktypebtn">Book this session</a>
+                                <div class="session-buttons-rp">
+                                    <a class="w3-bar-item w3-button bookingbtn booktypebtn">Book this session</a>
 
-                                <?php
-                                if ($preTalkId != "") {
-                                ?>
-                                    <a class="w3-bar-item w3-button pretalkbtn booktypebtn">Meet the expert</a>
+                                    <?php
+                                    if ($preTalkId != "") {
+                                    ?>
+                                        <a class="w3-bar-item w3-button pretalkbtn booktypebtn">Meet the expert</a>
 
-                                <?php
-                            
-                                }
-                                ?>
+                                    <?php
+
+                                    }
+                                    ?>
                                 </div>
 
 
@@ -632,8 +665,8 @@ $worduser = 'user_' . $externalid;
                             </div>
                         </div>
                     </div>
-                    
-              
+
+
 
                     <div class="row testisec ">
                         <div class="fulltestirow">
@@ -806,27 +839,27 @@ $worduser = 'user_' . $externalid;
                         </div>
                     </div>
 
-                
-                    
 
-                    
+
+
+
 
                     <!--Unload Preloader-->
-                <script>
-                    window.addEventListener("load", function() {
-                        var preloader = document.getElementById('preloader');
-                        preloader.style.display = 'none';
-                        document.body.classList.remove("preloader-active");
-                    });
-                </script>
-                <noscript>
-                    <style>
-                        #preloader {
-                            display: none;
-                        }
-                    </style>
-                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                </noscript>
+                    <script>
+                        window.addEventListener("load", function() {
+                            var preloader = document.getElementById('preloader');
+                            preloader.style.display = 'none';
+                            document.body.classList.remove("preloader-active");
+                        });
+                    </script>
+                    <noscript>
+                        <style>
+                            #preloader {
+                                display: none;
+                            }
+                        </style>
+                        <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+                    </noscript>
 
 
                 </div>
