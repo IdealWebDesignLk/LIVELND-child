@@ -447,9 +447,29 @@ $worduser = 'user_' . $externalid;
 
 
 
-                                            print_r($crosssellProductIds);
+                                            // print_r($crosssellProductIds);
 
                                             ?>
+
+                                             <!-- cross sells section -->
+                                             <div class="kd-cross-sells-wrapper">
+                                                            <!-- <h4 class="sessionttile"><b>You Might Also Like</b></h4> -->
+                                                            <?php
+                                                            global  $woocommerce;
+
+                                                            if ($crosssellProductIds !== null) {
+                                                            foreach ($crosssellProductIds as $crosssell) {
+                                                                $cross_product = wc_get_product($crosssell);
+                                                                $price = $cross_product->get_price();
+                                                                $cross_url = get_the_permalink($crosssell);
+                                                                $product_name = $cross_product->get_name();
+                                                                $product_name_trimmed = preg_replace('/\(.*/', '', $product_name);
+
+                                                                echo "<div class='kd-single-popup-cross-sell'><div class='name'>" . $product_name_trimmed . "</div><div class='price'>" . get_woocommerce_currency_symbol() . $price . "</div></div>";
+                                                                // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
+                                                            }}
+                                                            ?>
+                                                        </div>
 
                                             <?php if (!empty($service[0]->videoViews) && intval($service[0]->videoViews) > 0) { ?>
                                                 <p class="viewscountsingle"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> views</p>
