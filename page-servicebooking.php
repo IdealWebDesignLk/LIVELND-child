@@ -471,7 +471,7 @@ $worduser = 'user_' . $externalid;
                                                             ?>
                                                         </div>
 
-                                            <?php if (!empty($service[0]->videoViews) && intval($service[0]->videoViews) > 0) { ?>
+                                            <?php if (!empty($service[0]->videoViews) && intval($service[0]->videoViews) > 10000) { ?>
                                                 <p class="viewscountsingle"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> views</p>
                                             <?php } ?>
 
