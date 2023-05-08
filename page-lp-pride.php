@@ -483,19 +483,19 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10-white.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
                                                     Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics.
                                                     Discover them by hovering over their talks.
                                                 </div>
 
                                                 <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11-white.png" ?>">
                                                     <h4>2. Check availability</h4>
                                                     All Live L&D speakers have connected their calendar to our site. Check their availability via the search form bellow.
                                                 </div>
                                                 <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
+                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12-white.png" ?>">
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
                                                     Pick a day/time slot for your virtual talk. We will hold that time slot for 72 hours for you and contact you to answer your questions.
                                                 </div>
