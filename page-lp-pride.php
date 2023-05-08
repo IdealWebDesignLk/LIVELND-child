@@ -479,7 +479,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
-                                            <h1>Book a Virtual Live Speaker!</h1>
+                                            <h1>Book a Virtual Live Speaker for <span class="pridetitle">Pride 2023!</span></h1>
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
