@@ -458,10 +458,22 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
                                                     Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
                                                 </div>
-                                                <p class="bottomtext">LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click <a href="https://livelnd.com/pride/">here</a></p>
+                                                <p class="bottomtext">LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here</a></p>
                                             </div>
                                         </div>
 
+                                        <!-- adding new text -->
+                                        <h5>Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
+                                        <div class="unique-features">
+                                            Our unique features:
+                                            <span class="unique-feature-cols">
+                                                <span>Instant availability check</span>
+                                                <span>Direct Booking</span>
+                                                <span>Book now / Pay Later</span>
+                                                <span> Meet experts before booking</span>
+                                            </span>
+
+                                        </div>
 
                                     </div>
                                 </div>
@@ -715,7 +727,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
                                         if (isset($kdsettings->payments->wc->productId)) {
                                             $crosssellProductIds = get_post_meta($kdsettings->payments->wc->productId, '_crosssell_ids');
-                                        
+
                                             if (is_array($crosssellProductIds) && isset($crosssellProductIds[0])) {
                                                 $crosssellProductIds = $crosssellProductIds[0];
                                             } else {
@@ -726,8 +738,8 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                             // Handle the case where the 'productId' property is not set
                                             $crosssellProductIds = null;
                                         }
-                                        
-                                        
+
+
 
                                         // print_r($crosssellProductIds);
 
@@ -825,16 +837,17 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                             global  $woocommerce;
 
                                                             if ($crosssellProductIds !== null) {
-                                                            foreach ($crosssellProductIds as $crosssell) {
-                                                                $cross_product = wc_get_product($crosssell);
-                                                                $price = $cross_product->get_price();
-                                                                $cross_url = get_the_permalink($crosssell);
-                                                                $product_name = $cross_product->get_name();
-                                                                $product_name_trimmed = preg_replace('/\(.*/', '', $product_name);
+                                                                foreach ($crosssellProductIds as $crosssell) {
+                                                                    $cross_product = wc_get_product($crosssell);
+                                                                    $price = $cross_product->get_price();
+                                                                    $cross_url = get_the_permalink($crosssell);
+                                                                    $product_name = $cross_product->get_name();
+                                                                    $product_name_trimmed = preg_replace('/\(.*/', '', $product_name);
 
-                                                                echo "<div class='kd-single-popup-cross-sell'><div class='name'>" . $product_name_trimmed . "</div><div class='price'>" . get_woocommerce_currency_symbol() . $price . "</div></div>";
-                                                                // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
-                                                            }}
+                                                                    echo "<div class='kd-single-popup-cross-sell'><div class='name'>" . $product_name_trimmed . "</div><div class='price'>" . get_woocommerce_currency_symbol() . $price . "</div></div>";
+                                                                    // echo str_replace(' ', '-', $result->name) . '-' . $result->id;
+                                                                }
+                                                            }
                                                             ?>
                                                         </div>
                                                         <p class="staticlabel"> Talks about:</p>
@@ -1071,22 +1084,22 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             </div>
         </div>
     </div>
-      <!--Unload Preloader-->
-      <script>
-                    window.addEventListener("load", function() {
-                        var preloader = document.getElementById('preloader');
-                        preloader.style.display = 'none';
-                        document.body.classList.remove("preloader-active");
-                    });
-                </script>
-                <noscript>
-                    <style>
-                        #preloader {
-                            display: none;
-                        }
-                    </style>
-                    <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                </noscript>
+    <!--Unload Preloader-->
+    <script>
+        window.addEventListener("load", function() {
+            var preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+            document.body.classList.remove("preloader-active");
+        });
+    </script>
+    <noscript>
+        <style>
+            #preloader {
+                display: none;
+            }
+        </style>
+        <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+    </noscript>
 
 
     <script>
