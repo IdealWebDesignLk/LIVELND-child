@@ -439,27 +439,26 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
-                                            <h1>Book a Virtual Live Speaker!</h1>
+                                            <h1>Find expert speakers to celebrate Pride Month <a href="https://livelnd.com/pride/">here!</a></h1>
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about DEI, Mental Wellbeing, Leadership and many more topics.
-                                                    Discover them by hovering over their talks.
+                                                    Our curators have handpicked global experts who speak about Leadership Skills, Diversity & Inclusion, Mental Health & Wellbeing and tens of other topics. Discover 100 speakers by hovering over their talks.
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
-                                                    <h4>2. Check availability</h4>
-                                                    All Live L&D speakers have connected their calendar to our site. Check their availability via the search form bellow.
+                                                    <h4>2. Check availability and fees</h4>
+                                                    All Live L&D speakers have connected their calendar to our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.
                                                 </div>
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
-                                                    Pick a day/time slot for your virtual talk. We will hold that time slot for 72 hours for you and contact you to answer your questions.
+                                                    Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
                                                 </div>
-                                                <p class="bottomtext">Sessions will be held in your company’s own Microsoft Teams, Google Meet, Zoom or Webex environment.</p>
+                                                <p class="bottomtext">LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click <a hef="LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click here">here</a></p>
                                             </div>
                                         </div>
 
