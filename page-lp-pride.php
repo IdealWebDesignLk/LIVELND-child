@@ -502,6 +502,17 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                             </div>
                                         </div>
 
+                                        <!-- adding new text -->
+                                        <div class="kd-new-unique-text">
+                                        <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
+                                            <div class="unique-features">
+                                                <span>Our unique features:</span>
+                                                    <span>Instant availability check</span>
+                                                    <span>Direct Booking</span>
+                                                    <span>Book now / Pay Later</span>
+                                                    <span> Meet experts before booking</span>
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>
