@@ -5,7 +5,7 @@ get_header();
 ?>
 <!--Load Preloader-->
 
-<div id="preloader">
+<div id="preloader" style="background : black">
     <!-- <div class="color-container">
         <div class="color red"></div>
         <div class="color orange"></div>
@@ -500,8 +500,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 </div>
                                                 <p class="bottomtext"> <b>LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here.</a></b></p>
                                             </div>
-                                        </div> 
-                                        <!-- adding new text -->
+                                        </div>
+
+										<!-- adding new text -->
                                         <div class="kd-new-unique-text">
                                         <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
                                             <div class="unique-features">
@@ -512,6 +513,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                     <span> Meet experts before booking</span>
                                             </div>
                                         </div>
+										
 
                                     </div>
                                 </div>
