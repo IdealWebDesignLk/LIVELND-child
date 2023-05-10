@@ -91,8 +91,8 @@ get_header();
 }
 
     #loading-text {
-        font-size: 34px !important;
-        font-weight: 700 !important;
+       /* font-size: 34px !important;
+        font-weight: 700 !important;*/
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
