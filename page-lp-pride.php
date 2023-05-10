@@ -502,10 +502,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
                                             <div class="unique-features">
                                                 
-                                                    <span><u>Instant Availability Check</u></span>
-                                                    <span><u>Direct Booking</u></span>
-                                                    <span><u>Book Now / Pay Later</u></span>
-                                                    <span><u>Meet Experts Before Booking</u></span>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Instant Availability Check</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Direct Booking</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Book Now / Pay Later</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Meet Experts Before Booking</u></a>
                                                 
                                             </div>
                                         </div>
