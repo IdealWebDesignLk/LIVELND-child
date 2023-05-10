@@ -33,70 +33,68 @@ get_header();
         overflow: hidden;
     }
 
- 
-#preloader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-}
+    #test li {
+        font-size: 35px;
+        margin: 15 0 10 0;
+    }
 
-.color-container {
-    display: flex;
-    flex-direction: column; /* Change the flex direction to column */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-}
+    #preloader {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ff8250;
+        z-index: 9999;
+        animation: backgroundFade 2s forwards;
+        transition: opacity 1s ease;
+    }
 
-.color {
-    flex: 1;
-    width: 100%;
-}
+    .preloader-fadeout {
+        opacity: 0;
+    }
 
-.red {
-    background-color: red;
-}
-
-.orange {
-    background-color: orange;
-}
-
-.yellow {
-    background-color: yellow;
-}
-
-.green {
-    background-color: green;
-}
-
-.blue {
-    background-color: blue;
-}
-
-.indigo {
-    background-color: indigo;
-}
-
-.violet {
-    background-color: violet;
-}
+    .preloader-hidden {
+        display: none;
+    }
 
     #loading-text {
+        font-size: 24px !important;
+        font-weight: bold !important;
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
+        color: black;
         position: relative;
-        font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-        /* Change position to relative */
+        animation: textColorFade 2s forwards;
+    }
+
+    @keyframes backgroundFade {
+
+        0%,
+        40% {
+            background-color: #ff8250;
+        }
+
+        100% {
+            background-color: black;
+        }
+    }
+
+    @keyframes textColorFade {
+
+        0%,
+        40% {
+            color: black;
+        }
+
+        100% {
+            color: #ff8250;
+        }
     }
 
     .dot-container {
