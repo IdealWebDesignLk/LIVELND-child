@@ -1151,18 +1151,13 @@ function add_custom_login_button_to_account_management($user)
 add_action('personal_options', 'add_custom_login_button_to_account_management');
 
 
-// Disable default WordPress registration email notifications for Amelia Employee role
-function disable_default_registration_email( $user_id ) {
-    // Get the user object based on user ID
-    $user = get_userdata( $user_id );
-
-    // Check if the user has a role of 'wpamelia-provider'
-    if ( in_array( 'wpamelia-provider', $user->roles ) ) {
-        // Remove the 'wp_new_user_notification_email' action hook
-        remove_action( 'register_new_user', 'wp_send_new_user_notifications' );
-    }
+//Disbale Wordpress email notification for users
+if (!function_exists('wp_new_user_notification')) {
+	function wp_new_user_notification($user_id, $deprecated = null, $notify = '')
+	{
+		return;
+	}
 }
-add_action( 'register_new_user', 'disable_default_registration_email', 1 );
 
 
 function change_update_cart_text($translated, $text, $domain)
