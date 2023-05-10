@@ -1169,24 +1169,5 @@ function change_update_cart_text($translated, $text, $domain)
 }
 add_filter('gettext', 'change_update_cart_text', 20, 3);
 
-function remove_url_parameters() {
-    ?>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            const url = new URL(window.location.href);
-            const params = new URLSearchParams(url.search);
 
-            if (params.has('li_fat_id')) {
-                params.delete('li_fat_id');
-                let newUrl = url.origin + url.pathname;
-                if (params.toString()) {
-                    newUrl += '?' + params.toString();
-                }
-                window.history.replaceState(null, null, newUrl);
-            }
-        });
-    </script>
-    <?php
-}
-add_action('wp_head', 'remove_url_parameters');
 
