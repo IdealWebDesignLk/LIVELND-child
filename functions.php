@@ -1178,7 +1178,10 @@ function remove_url_parameters() {
 
             if (params.has('li_fat_id')) {
                 params.delete('li_fat_id');
-                const newUrl = url.origin + url.pathname + '?' + params.toString();
+                let newUrl = url.origin + url.pathname;
+                if (params.toString()) {
+                    newUrl += '?' + params.toString();
+                }
                 window.history.replaceState(null, null, newUrl);
             }
         });
@@ -1186,3 +1189,4 @@ function remove_url_parameters() {
     <?php
 }
 add_action('wp_head', 'remove_url_parameters');
+
