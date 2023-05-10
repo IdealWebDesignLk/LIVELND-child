@@ -458,7 +458,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
                                                     Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
                                                 </div>
-                                                <p class="bottomtext">LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. For more information on how it works, click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here</a></p>
+                                                <p class="bottomtext"> <b>LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. Click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here </a>to see how it works.</b></p>
                                             </div>
                                         </div>
 
@@ -466,11 +466,12 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                         <div class="kd-new-unique-text">
                                         <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
                                             <div class="unique-features">
-                                                <span>Our unique features:</span>
-                                                    <span>Instant availability check</span>
-                                                    <span>Direct Booking</span>
-                                                    <span>Book now / Pay Later</span>
-                                                    <span> Meet experts before booking</span>
+                                                
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Instant Availability Check</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Direct Booking</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Book Now / Pay Later</u></a>
+                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Meet Experts Before Booking</u></a>
+                                                
                                             </div>
                                         </div>
 
