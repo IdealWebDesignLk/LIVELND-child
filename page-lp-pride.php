@@ -91,12 +91,9 @@ get_header();
 }
 
     #loading-text {
-       /* font-size: 34px !important;
-        font-weight: 700 !important;*/
         text-align: center !important;
         white-space: nowrap;
         letter-spacing: 0.15em !important;
-        color: white;
         position: relative;
         font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
         /* Change position to relative */
