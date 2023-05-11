@@ -605,15 +605,19 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
     <!-- ====================================================================================== -->
 
       <!--Unload Preloader-->
-      <script>
-
+     
+        <!-- Add the custom function hasTrackingParameter() -->
+        <script>
             function hasTrackingParameter() {
                 const queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
                 return urlParams.has('gclid');
             }
+        </script>
 
-                        document.addEventListener("DOMContentLoaded", function() {
+        <!-- Modify the window.addEventListener() -->
+        <script>
+            window.addEventListener("load", function() {
                 if (hasTrackingParameter()) {
                     var preloader = document.getElementById('preloader');
                     preloader.style.display = 'none';
@@ -624,13 +628,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                     setTimeout(function() {
                         preloader.style.display = 'none';
                         document.body.classList.remove("preloader-active");
-                    }, 4000); // 1000ms = 1s
+                    }, 1000); // 1000ms = 1s
                 }
             });
-
-
-                
-    </script>
+        </script>
      <noscript>
                     <style>
                         #preloader {
