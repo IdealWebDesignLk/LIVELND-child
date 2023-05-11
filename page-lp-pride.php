@@ -606,20 +606,25 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
       <!--Unload Preloader-->
       <script>
-                    window.addEventListener("load", function() {
-                        var preloader = document.getElementById('preloader');
-                        preloader.style.display = 'none';
-                        document.body.classList.remove("preloader-active");
-                    });
-                </script>
-                <noscript>
+            document.addEventListener("DOMContentLoaded", function() {
+                var preloader = document.getElementById('preloader');
+                preloader.classList.add("preloader-fadeout");
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                    document.body.classList.remove("preloader-active");
+                }, 3000); // 1000ms = 1s
+            });
+
+                
+    </script>
+     <noscript>
                     <style>
                         #preloader {
                             display: none;
                         }
                     </style>
                     <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-                </noscript>
+        </noscript>
 
     <div class="container-fluidx background-black">
 
