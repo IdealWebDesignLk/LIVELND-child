@@ -31,7 +31,7 @@ get_header();
     function remove_tracking_parameters($url) {
     $parts = parse_url($url);
     parse_str($parts['query'], $query);
-    unset($query['utm_source'], $query['utm_medium'], $query['utm_campaign'], $query['utm_term'], $query['utm_content']);
+    unset($query['utm_source'], $query['utm_medium'], $query['utm_campaign'], $query['utm_term'], $query['gclid']);
     $parts['query'] = http_build_query($query);
     return http_build_url($url, $parts);
 }
