@@ -198,7 +198,8 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
 $is_homepage = is_front_page();
 $landing_page_url = ot_get_option('landing_page_url');
 $current_url = home_url($_SERVER['REQUEST_URI']);
-$is_landing_page = ($current_url === $landing_page_url);
+$is_landing_page = (strpos($current_url, $landing_page_url) !== false);
+
 
 if (function_exists('ot_get_option')) {
     if ($is_homepage || $is_landing_page) {
