@@ -27,6 +27,15 @@ get_header();
 
 <script>
     document.body.classList.add("preloader-active");
+
+    function remove_tracking_parameters($url) {
+    $parts = parse_url($url);
+    parse_str($parts['query'], $query);
+    unset($query['utm_source'], $query['utm_medium'], $query['utm_campaign'], $query['utm_term'], $query['utm_content']);
+    $parts['query'] = http_build_query($query);
+    return http_build_url($url, $parts);
+}
+
 </script>
 <style>
     body.preloader-active {
@@ -230,10 +239,9 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 <!-- taken from rajika -->
 
                 <?php
-                $paramid = '';
+                    $paramid = '';
                 if (isset($_GET['idx']) && $_GET['idx'] != '') {
-                    $paramid = $_GET['idx'];
-                    
+                    $paramid = $_GET['idx'];                 
                 }
                 if ($paramid != "") {
 
@@ -546,7 +554,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                             if (!isset($exclude_cat_id) || !is_array($exclude_cat_id)) {
                                 $exclude_cat_id = array();
                             }
-                            
+
                             foreach ($catResults as $catResult) {
                                 if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                             ?>
