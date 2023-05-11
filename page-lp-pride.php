@@ -233,7 +233,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 $paramid = '';
                 if (isset($_GET['idx']) && $_GET['idx'] != '') {
                     $paramid = $_GET['idx'];
-                    echo "The 'idx' parameter is present in the URL. Value: " . $paramid;
+                    
                 }
                 if ($paramid != "") {
 
@@ -543,6 +543,10 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                               //  $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
                             //}
 
+                            if (!isset($exclude_cat_id) || !is_array($exclude_cat_id)) {
+                                $exclude_cat_id = array();
+                            }
+                            
                             foreach ($catResults as $catResult) {
                                 if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                             ?>
