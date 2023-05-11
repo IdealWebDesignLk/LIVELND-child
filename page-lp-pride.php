@@ -233,6 +233,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                 $paramid = '';
                 if (isset($_GET['idx']) && $_GET['idx'] != '') {
                     $paramid = $_GET['idx'];
+                    echo "The 'idx' parameter is present in the URL. Value: " . $paramid;
                 }
                 if ($paramid != "") {
 
