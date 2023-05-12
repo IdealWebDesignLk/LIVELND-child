@@ -1171,3 +1171,7 @@ add_filter('gettext', 'change_update_cart_text', 20, 3);
 
 
 
+function wc_empty_cart_redirect_url() {
+	return site_url('/pride');
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
