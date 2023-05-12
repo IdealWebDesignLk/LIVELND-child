@@ -18,14 +18,14 @@ $tbprefix = $wpdb->prefix;
 $tbprefix  = trim($tbprefix);
 
 // get excluded categories
-$exclude_cat_id = array();
-if (ot_get_option('exclude_category_id_s')) {
-    $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-}
+// $exclude_cat_id = array();
+// if (ot_get_option('exclude_category_id_s')) {
+//     $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+// }
 
 // get categories
-$categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
-$catResults = $wpdb->get_results($categoriesSql);
+// $categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+// $catResults = $wpdb->get_results($categoriesSql);
 
 // forEach($catResults as $catresult){
 //     print_r($catresult);
@@ -367,6 +367,15 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     <!-- =======================================categories======================== -->
     <div class="container-fluidx background-black">
         <?php
+        $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+        $catResults = $wpdb->get_results($categoriesSql);
+
+        // exclude category ids
+        $exclude_cat_id = array();
+        if (ot_get_option('exclude_category_id_s')) {
+            $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+        }
+
         foreach ($catResults as $catresult) {
             print_r(intval($catResult->id));
             print_r($exclude_cat_id);
