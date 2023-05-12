@@ -18,7 +18,7 @@ $exclude_cat_id_string = implode("' ,'", $exclude_cat_id);
 
 // get categories
 $categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories WHERE id NOT IN('$exclude_cat_id_string') GROUP BY `id` ORDER BY `position`;";
-$catResults = $wpdb->get_results($categoriesSql);
+// $catResults = $wpdb->get_results($categoriesSql);
 
 forEach($catResults as $catresult){
     print_r($catresult);
