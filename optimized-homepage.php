@@ -21,7 +21,7 @@ $categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories WHERE id NOT IN
 $catResults = $wpdb->get_results($categoriesSql);
 
 forEach($catResults as $catresult){
-    echo $catresult;
+    print_r($catresult);
 }
 
 // get all service data
