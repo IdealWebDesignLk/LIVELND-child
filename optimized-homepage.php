@@ -373,10 +373,6 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             print_r($catresult->name); ?>
             <div class="home-demo deskcarousel kd-single-services-category">
             <h3 id="myList" class="hometitle"><?php print_r($catresult->name); ?></h3>
-
-            <!-- <div class="home-demo deskcarousel kd-single-services-category"> -->
-                <h3 id="myList" class="hometitle"><?php echo $catResult->name; ?></h3>
-
                 <div class="kd-single-category-services">
 
                 </div>
