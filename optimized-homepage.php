@@ -360,7 +360,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     <div class="container-fluidx background-black">
         <?php
         foreach ($catResults as $catresult) {
-            print_r($catresult->id);
+            print_r($catresult);
         }
         ?>
     </div>
