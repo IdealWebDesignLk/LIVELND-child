@@ -568,6 +568,24 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
 
     <!-- ====================================================================================== -->
 
+    <!--Unload Preloader-->
+        <script>
+        window.addEventListener("load", function() {
+            var preloader = document.getElementById('preloader');
+            preloader.style.display = 'none';
+            document.body.classList.remove("preloader-active");
+        });
+        </script>
+        <noscript>
+            <style>
+                #preloader {
+                    display: none;
+                }
+            </style>
+            <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
+        </noscript>
+  <!--Unload Preloader end-->
+
     <div class="container-fluidx background-black">
 
         <!-- getting video carousels -->
@@ -1084,22 +1102,6 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
             </div>
         </div>
     </div>
-    <!--Unload Preloader-->
-    <script>
-        window.addEventListener("load", function() {
-            var preloader = document.getElementById('preloader');
-            preloader.style.display = 'none';
-            document.body.classList.remove("preloader-active");
-        });
-    </script>
-    <noscript>
-        <style>
-            #preloader {
-                display: none;
-            }
-        </style>
-        <p>Your browser has JavaScript disabled. Some features on this website may not work properly. Please enable JavaScript for the best experience.</p>
-    </noscript>
 
 
     <script>
