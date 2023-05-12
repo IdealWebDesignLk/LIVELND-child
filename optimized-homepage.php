@@ -18,11 +18,15 @@ print_r($all_sql);
 
 $all_service_data =  $wpdb->get_results($all_sql);
 
-foreach($all_service_data as $single_service_data){
-    echo '<pre>';
-    print_r($all_service_data);
-    echo '</pre>';
+// foreach($all_service_data as $single_service_data){
+//     echo '<pre>';
+//     print_r($all_service_data);
+//     echo '</pre>';
 
+// }
+
+foreach ($catResults as $category) {
+    print_r($category);
 }
 
 
