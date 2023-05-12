@@ -1,4 +1,4 @@
-<?php /* Template Name: Page_home_merged_new_latest */ ?>
+<?php /* Template Name: Page_home_Optimized_speed */ ?>
 <?php
 get_header();
 
