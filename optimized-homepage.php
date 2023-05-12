@@ -16,7 +16,9 @@ $catResults = $wpdb->get_results($categoriesSql);
 $all_sql = "SELECT u.* , s.* FROM " . $tbprefix . "amelia_services s inner join " . $tbprefix . "amelia_providers_to_services p inner join " . $tbprefix . "amelia_users u on s.id=p.serviceId and p.userId=u.id where s.status  = 'visible' ORDER BY s.position ASC";
 print_r($all_sql);
 
-$employees =  $wpdb->get_results();
+$all_service_data =  $wpdb->get_results($all_sql);
+
+print_r($employees);
 
 
 ?>
