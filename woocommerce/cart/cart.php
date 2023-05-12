@@ -39,50 +39,54 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     $cart_ids = [];
     $crosssellProductIdsArr = [];
 
-    foreach ($items as $itm => $val) {
-        $cart_ids[] = $val['data']->get_id();
-    }
+    if(!empty($items)){
+        foreach ($items as $itm => $val) {
+            $cart_ids[] = $val['data']->get_id();
+        }
 
-    foreach ($items as $item => $values) {
-        // $_product =  wc_get_product( $values['data']->get_id()); 
-        $crosssellProductIds = get_post_meta($values['data']->get_id(), '_crosssell_ids');
-        if (isset($crosssellProductIds[0])) { // Check if the first element is set
-            $crosssellProductIds = $crosssellProductIds[0];
-    
-            // Check if $crosssellProductIds is an array before running foreach
-            if (is_array($crosssellProductIds)) {
-                foreach ($crosssellProductIds as $key => $crossId) {
-                    if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
-                        $crosssellProductIdsArr[] = $crossId;
+        foreach ($items as $item => $values) {
+            // $_product =  wc_get_product( $values['data']->get_id()); 
+            $crosssellProductIds = get_post_meta($values['data']->get_id(), '_crosssell_ids');
+            if (isset($crosssellProductIds[0])) { // Check if the first element is set
+                $crosssellProductIds = $crosssellProductIds[0];
+        
+                // Check if $crosssellProductIds is an array before running foreach
+                if (is_array($crosssellProductIds)) {
+                    foreach ($crosssellProductIds as $key => $crossId) {
+                        if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
+                            $crosssellProductIdsArr[] = $crossId;
+                        }
                     }
                 }
             }
         }
-    }
+
+        foreach ($crosssellProductIdsArr as $key => $crossId) {
+            $cross_product = wc_get_product($crossId);
+            $title = $cross_product->get_name();
+            $description = $cross_product->get_description();
+            $price = $cross_product->get_price();
     
-
-
-    foreach ($crosssellProductIdsArr as $key => $crossId) {
-        $cross_product = wc_get_product($crossId);
-        $title = $cross_product->get_name();
-        $description = $cross_product->get_description();
-        $price = $cross_product->get_price();
-
-        $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add Option</a>';
-
-        $return_html .= '<div class="kd-single-croll-sell">
-        <div class="kd-col">
-        <h3>' . $title . '</h3>
-        <p>' . $description . '</p>
-        </div>
-        <div class="kd-col">
-        <p>' . get_woocommerce_currency_symbol() . $price . '</p>
-        </div>
-        <div class="kd-col">
-        ' . $cart_button . '
-        </div>
-        </div>';
+            $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add Option</a>';
+    
+            $return_html .= '<div class="kd-single-croll-sell">
+            <div class="kd-col">
+            <h3>' . $title . '</h3>
+            <p>' . $description . '</p>
+            </div>
+            <div class="kd-col">
+            <p>' . get_woocommerce_currency_symbol() . $price . '</p>
+            </div>
+            <div class="kd-col">
+            ' . $cart_button . '
+            </div>
+            </div>';
+        }
+    
     }
+
+    
+    
 
     $return_html .= '</div><br><br>';
     echo $return_html;
