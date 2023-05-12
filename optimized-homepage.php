@@ -18,7 +18,7 @@ print_r($all_sql);
 
 $all_service_data =  $wpdb->get_results($all_sql);
 
-print_r($employees);
+print_r($all_service_data);
 
 
 ?>
