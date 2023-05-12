@@ -35,11 +35,14 @@ do_action('woocommerce_before_cart_collaterals'); ?>
     <?php
     global $woocommerce;
     $items = $woocommerce->cart->get_cart();
-    $return_html = '<br><br><h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
+    $return_html = '<br><br>';
     $cart_ids = [];
     $crosssellProductIdsArr = [];
 
     if(!empty($items)){
+
+    $return_html .= '<h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
+
         foreach ($items as $itm => $val) {
             $cart_ids[] = $val['data']->get_id();
         }
