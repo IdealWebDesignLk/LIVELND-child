@@ -2,7 +2,6 @@
 <?php
 get_header();
 
-
 // iniiate wpdb
 global $wpdb;
 $tbprefix = $wpdb->prefix;
@@ -18,7 +17,7 @@ $exclude_cat_id_string = implode("' ,'", $exclude_cat_id);
 
 // get categories
 $categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories WHERE id NOT IN('$exclude_cat_id_string') GROUP BY `id` ORDER BY `position`;";
-// $catResults = $wpdb->get_results($categoriesSql);
+$catResults = $wpdb->get_results($categoriesSql);
 
 // forEach($catResults as $catresult){
 //     print_r($catresult);
@@ -71,7 +70,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
 </div>
 
 <script type="text/javascript">
-    window.addEventListener('load', () =>{
+    window.addEventListener('load', () => {
         document.getElementById('preloader').style.display = "none";
     })
 </script>
@@ -226,52 +225,52 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             <!-- controls -->
 
             <div class="container homebodysec">
-                                    <div class="innerhomesecondrow">
-                                        <div class="secondsec">
-                                            <h1>Find expert speakers to celebrate Pride Month <a href="https://livelnd.com/pride/">here!</a></h1>
+                <div class="innerhomesecondrow">
+                    <div class="secondsec">
+                        <h1>Find expert speakers to celebrate Pride Month <a href="https://livelnd.com/pride/">here!</a></h1>
 
-                                            <div class="row textrowdiv">
-                                                <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
-                                                    <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about Leadership Skills, Diversity & Inclusion, Mental Health & Wellbeing and tens of other topics. Discover 100 speakers by hovering over their talks.
-                                                </div>
+                        <div class="row textrowdiv">
+                            <div class="col-md-4">
+                                <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-10.png" ?>">
+                                <h4>1. Find your virtual speaker</h4>
+                                Our curators have handpicked global experts who speak about Leadership Skills, Diversity & Inclusion, Mental Health & Wellbeing and tens of other topics. Discover 100 speakers by hovering over their talks.
+                            </div>
 
-                                                <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
-                                                    <h4>2. Check availability and fees</h4>
-                                                    All Live L&D speakers have connected their calendar to our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
-                                                    <h4>3. Hold Time Slot / Book Instantly</h4>
-                                                    Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
-                                                </div>
-                                                <p class="bottomtext"> <b>LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. Click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here </a>to see how it works.</b></p>
-                                            </div>
-                                        </div>
+                            <div class="col-md-4">
+                                <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-11.png" ?>">
+                                <h4>2. Check availability and fees</h4>
+                                All Live L&D speakers have connected their calendar to our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.
+                            </div>
+                            <div class="col-md-4">
+                                <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/01/Group-12.png" ?>">
+                                <h4>3. Hold Time Slot / Book Instantly</h4>
+                                Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
+                            </div>
+                            <p class="bottomtext"> <b>LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. Click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here </a>to see how it works.</b></p>
+                        </div>
+                    </div>
 
-                                        <!-- adding new text -->
-                                        <div class="kd-new-unique-text">
-                                        <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
-                                            <div class="unique-features">
-                                                
-                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Instant Availability Check</u></a>
-                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Direct Booking</u></a>
-                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Book Now / Pay Later</u></a>
-                                                    <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Meet Experts Before Booking</u></a>
-                                                
-                                            </div>
-                                        </div>
+                    <!-- adding new text -->
+                    <div class="kd-new-unique-text">
+                        <h5 class="text-center">Live L&D is the world’s first direct booking platform for expert speakers and facilitators</h5>
+                        <div class="unique-features">
 
-                                    </div>
-                                </div>
-                                
+                            <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Instant Availability Check</u></a>
+                            <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Direct Booking</u></a>
+                            <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Book Now / Pay Later</u></a>
+                            <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/"><u>Meet Experts Before Booking</u></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </main>
     <!-- ===================main video area================= -->
 
-        <!-- ====================================================================================== -->
+    <!-- ====================================================================================== -->
     <!-- kd new search box -->
     <div class="container-fluidx background-black kd-new-search-box">
         <div class="kd-new-searchbox-inner">
@@ -356,6 +355,16 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     </div>
 
     <!-- ====================================================================================== -->
+
+    <!-- =======================================categories======================== -->
+    <div class="container-fluidx background-black">
+        <?php
+        foreach ($catResults as $catresult) {
+            print_r($catresult->id);
+        }
+        ?>
+    </div>
+    <!-- =======================================categories======================== -->
 
 
 </section>
