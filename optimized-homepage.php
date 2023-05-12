@@ -2,6 +2,16 @@
 <?php
 get_header();
 
+// get server name
+$server_name = "";
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+    $server_name = "https://";
+else
+    $server_name = "http://";
+
+// Append the host(server name) to the URL.   
+$server_name .= $_SERVER['SERVER_NAME'];
+
 // iniiate wpdb
 global $wpdb;
 $tbprefix = $wpdb->prefix;
