@@ -23,10 +23,8 @@ if (ot_get_option('exclude_category_id_s')) {
     $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
 }
 
-$exclude_cat_id_string = implode("' ,'", $exclude_cat_id);
-
 // get categories
-$categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories WHERE id NOT IN('$exclude_cat_id_string') GROUP BY `id` ORDER BY `position`;";
+$categoriesSql = "SELECT id FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
 $catResults = $wpdb->get_results($categoriesSql);
 
 // forEach($catResults as $catresult){
@@ -369,15 +367,19 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     <!-- =======================================categories======================== -->
     <div class="container-fluidx background-black">
         <?php
-        foreach ($catResults as $catresult) { ?>
-            <div class="home-demo deskcarousel kd-single-services-category">
-            <h3 id="myList" class="hometitle"><?php print_r($catresult->name); ?></h3>
-                <div class="kd-single-category-services">
+        foreach ($catResults as $catresult) {
+            if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+        ?>
+
+                <div class="home-demo deskcarousel kd-single-services-category">
+                    <h3 id="myList" class="hometitle"><?php print_r($catresult->name); ?></h3>
+                    <div class="kd-single-category-services">
+
+                    </div>
 
                 </div>
-
-            </div>
         <?php }
+        }
         ?>
     </div>
     <!-- =======================================categories======================== -->
