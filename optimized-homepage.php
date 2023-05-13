@@ -377,8 +377,13 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
         }
 
         foreach ($catResults as $catresult) {
-            // print_r(intval($catResult->id));
-            // print_r($exclude_cat_id);
+            echo '<pre>';
+            print_r(intval($catResult->id));
+            echo '</pre>';
+
+            print_r($exclude_cat_id);
+
+
             if (!in_array(intval($catResult->id), $exclude_cat_id)) {
 
                 print_r(intval($catResult->id));
