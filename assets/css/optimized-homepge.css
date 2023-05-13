@@ -10,5 +10,15 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #ff8250;
+}
+
+.single-category-loader{
+    height: 200px;
+    background: black;
+    color: #ff8250;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
 }

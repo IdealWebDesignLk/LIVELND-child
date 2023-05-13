@@ -385,7 +385,9 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
                 <div class="home-demo deskcarousel kd-single-services-category">
                     <h3 id="myList" class="hometitle"><?php print_r($catresult->name); ?></h3>
                     <div class="kd-single-category-services" data-catid="<?php echo $cat_id; ?>">
-                        <div class=""></div>
+                        <div class="single-category-loader">
+                            <h3>Loading <?php print_r($catresult->name); ?>...</h3>
+                        </div>
                     </div>
 
                 </div>
