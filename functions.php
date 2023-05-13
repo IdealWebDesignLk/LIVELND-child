@@ -962,6 +962,12 @@ if (!function_exists('child_theme_configurator_css')) :
 		// jquery time picker
 		wp_enqueue_style('jquery-time-picker-by-kd', get_stylesheet_directory_uri() . '/kd-date-time-picker/jquery.datetimepicker.css');
 		wp_enqueue_script('jquery-time-picker-sript-by-kd', get_stylesheet_directory_uri() . '/kd-date-time-picker/jquery.datetimepicker.js');
+
+		// new homepage assets
+		wp_enqueue_style('kd-new-homepage-css', get_stylesheet_directory_uri() . '/assets/css/optimized-homepage.css');
+		wp_enqueue_script('kd-main-video-js', get_stylesheet_directory_uri() . '/assets/js/homepage-main-video.js', array(), '', true);
+		wp_enqueue_script('kd-video-carousel-js', get_stylesheet_directory_uri() . '/assets/js/homepage-carousel-loader.js', array(), '', true);
+		wp_enqueue_script('kd-new-home-loaders', get_stylesheet_directory_uri() . '/assets/js/homepage-loader.js', array(), '', true);
 	}
 endif;
 add_action('wp_enqueue_scripts', 'child_theme_configurator_css', 100);
@@ -1063,7 +1069,7 @@ function custom_login_button($user)
 	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; user_id = "' . $user_id . '"</script>';
 ?>
 
-	<input type="date" value="<?php echo $next_date;?>" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
+	<input type="date" value="<?php echo $next_date; ?>" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
 	<a id="custom-login-button" class="custom-login-button">Copy Link</a>
 	<!-- <p id="link-container">Link: <a href="#"></a></p> -->
 
@@ -1171,7 +1177,8 @@ add_filter('gettext', 'change_update_cart_text', 20, 3);
 
 
 
-function wc_empty_cart_redirect_url() {
+function wc_empty_cart_redirect_url()
+{
 	return site_url('/pride');
 }
-add_filter( 'woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url' );
+add_filter('woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url');
