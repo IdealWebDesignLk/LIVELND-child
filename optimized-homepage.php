@@ -377,6 +377,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
         }
 
         foreach ($catResults as $catresult) {
+            $cat_id = floatval($catresult->id);
             echo '<pre>';
             print_r(floatval($catresult->id));
             echo '</pre>';
@@ -384,9 +385,9 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             print_r($exclude_cat_id);
 
 
-            if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+            if (!in_array($cat_id, $exclude_cat_id)) {
 
-                print_r(intval($catResult->id));
+                print_r('this is ok');
         ?>
 
                 <div class="home-demo deskcarousel kd-single-services-category">
