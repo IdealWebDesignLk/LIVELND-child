@@ -378,21 +378,13 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
 
         foreach ($catResults as $catresult) {
             $cat_id = floatval($catresult->id);
-            echo '<pre>';
-            print_r(floatval($catresult->id));
-            echo '</pre>';
-
-            print_r($exclude_cat_id);
-
 
             if (!in_array($cat_id, $exclude_cat_id)) {
-
-                print_r('this is ok');
         ?>
 
                 <div class="home-demo deskcarousel kd-single-services-category">
                     <h3 id="myList" class="hometitle"><?php print_r($catresult->name); ?></h3>
-                    <div class="kd-single-category-services">
+                    <div class="kd-single-category-services" data-catid="<?php echo $cat_id; ?>">
 
                     </div>
 
