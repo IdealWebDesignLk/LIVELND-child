@@ -79,7 +79,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
 
 <script type="text/javascript">
     window.addEventListener('load', () => {
-        document.getElementById('preloader').style.display = "none";
+        document.getElementById('kd-preloader').style.display = "none";
     })
 </script>
 
