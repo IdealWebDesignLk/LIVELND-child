@@ -45,15 +45,15 @@ var tag = document.createElement('script');
         playBtn.addEventListener('click' , ()=>{
             console.log(player)
             player.playVideo();
-            playBtn.classList.add('hidden')
-            pauseBtn.classList.remove('hidden')
+            playBtn.style.display = 'none';
+            pauseBtn.style.display = 'block';
         })
 
         // pause video
         pauseBtn.addEventListener('click' , ()=>{
             console.log(player)
             player.pauseVideo();
-            pauseBtn.classList.add('hidden')
-            playBtn.classList.remove('hidden')
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'block';
         })
     })
