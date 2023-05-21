@@ -7,14 +7,14 @@ var tag = document.createElement('script');
     var player;
 
     function onYouTubeIframeAPIReady() {
+        console.log('onYouTubeIframeAPIReady');
         player = new YT.Player('kd-main-youtube-video', {
             videoId: 'X0N22PMdF1U',
             playerVars: {
                 'autoplay': 1,
                 'loop' : 1,
                 'start' : 1,
-                'rel' : 0,
-                'mute' : 1
+                'rel' : 0
               },
             events: {
                 'onReady': onPlayerReady,
