@@ -40,6 +40,8 @@ var tag = document.createElement('script');
     window.addEventListener('load',()=>{
         let playBtn = document.getElementById('kd-play-video');
         let pauseBtn = document.getElementById('kd-pause-video');
+        let muteBtn = document.querySelector('#mute')
+        let unmuteBtn = document.querySelector('#unmute')
 
         // play video
         playBtn.addEventListener('click' , ()=>{
@@ -55,5 +57,22 @@ var tag = document.createElement('script');
             player.pauseVideo();
             pauseBtn.style.display = 'none';
             playBtn.style.display = 'block';
+        })
+
+        muteBtn.addEventListener('click', () => {
+            player.mute()
+            muteBtn.style.display = 'none'
+            unmuteBtn.style.display = 'block'
+        })
+
+        unmuteBtn.addEventListener('click', () => {
+            player.unMute()
+        muteBtn.style.display = 'block'
+        unmuteBtn.style.display = 'none'
+        })
+
+        document.getElementById('kd-full-screen-video').addEventListener('click',()=>{
+            let videoElement = document.getElementById('kd-main-youtube-video')
+            videoElement.requestFullscreen()
         })
     })
