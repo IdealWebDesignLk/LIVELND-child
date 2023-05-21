@@ -8,6 +8,7 @@ var tag = document.createElement('script');
 
     function onYouTubeIframeAPIReady() {
         console.log('onYouTubeIframeAPIReady');
+        console.log(document.getElementById('kd-main-youtube-video'));
         player = new YT.Player('kd-main-youtube-video', {
             videoId: 'X0N22PMdF1U',
             playerVars: {
