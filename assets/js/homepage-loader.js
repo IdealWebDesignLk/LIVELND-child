@@ -36,3 +36,24 @@ var tag = document.createElement('script');
     }
 
     let videoStarted = 0
+
+    window.addEventListener('load',()=>{
+        let playBtn = document.getElementById('kd-play-video');
+        let pauseBtn = document.getElementById('kd-pause-video');
+
+        // play video
+        playBtn.addEventListener('click' , ()=>{
+            console.log(player)
+            player.playVideo();
+            playBtn.classList.add('hidden')
+            pauseBtn.classList.remove('hidden')
+        })
+
+        // pause video
+        pauseBtn.getElementById('kd-pause-video').addEventListener('click' , ()=>{
+            console.log(player)
+            player.pauseVideo();
+            pauseBtn.classList.add('hidden')
+            playBtn.classList.remove('hidden')
+        })
+    })
