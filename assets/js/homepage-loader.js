@@ -8,9 +8,9 @@ var tag = document.createElement('script');
 
     function onYouTubeIframeAPIReady() {
         console.log('onYouTubeIframeAPIReady');
-        console.log(document.getElementById('kd-main-youtube-video'));
+        videoId = document.getElementById('kd-main-youtube-video').dataset.src;
         player = new YT.Player('kd-main-youtube-video', {
-            videoId: 'X0N22PMdF1U',
+            videoId: videoId,
             playerVars: {
                 'autoplay': 1,
                 'loop' : 1,
