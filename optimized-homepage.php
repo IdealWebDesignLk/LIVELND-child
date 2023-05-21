@@ -231,8 +231,9 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             <!-- full screen  -->
             <p id="kd-full-screen-video" onclick="openFullscreenVideo()" style="width: auto; " class=""><img class="change-src-on-hover" data-hoverimg="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Hover.png' ?>" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Property-1Expand.png' ?>"></p>
             <!-- controls -->
+        </div>
 
-            <div class="container homebodysec">
+        <div class="container homebodysec">
                 <div class="innerhomesecondrow">
                     <div class="secondsec">
                         <h1>Find expert speakers to celebrate Pride Month <a href="https://livelnd.com/pride/">here!</a></h1>
@@ -273,8 +274,6 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
 
                 </div>
             </div>
-
-        </div>
     </main>
     <!-- ===================main video area================= -->
 
