@@ -76,3 +76,17 @@ var tag = document.createElement('script');
             videoElement.requestFullscreen()
         })
     })
+
+
+
+    window.addEventListener('load',()=>{
+    // generating category content
+    let data = {
+        'action': 'get_category_content',
+        'category_id': `222`
+    };
+
+    jQuery.post(ajax_url, data, function(respond) {
+        console.log(respond)
+    })
+});
