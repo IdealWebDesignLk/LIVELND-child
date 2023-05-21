@@ -50,7 +50,7 @@ var tag = document.createElement('script');
         })
 
         // pause video
-        pauseBtn.getElementById('kd-pause-video').addEventListener('click' , ()=>{
+        pauseBtn.addEventListener('click' , ()=>{
             console.log(player)
             player.pauseVideo();
             pauseBtn.classList.add('hidden')
