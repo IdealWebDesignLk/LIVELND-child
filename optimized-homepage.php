@@ -93,7 +93,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             <div class="video-background">
 
                 <div class="video-foreground">
-                    <iframe class="youtube-video" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="youtube-video" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
                 </div>
             </div>
 
