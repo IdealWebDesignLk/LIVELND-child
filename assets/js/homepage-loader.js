@@ -1,9 +1,5 @@
 // setting up header video
-window.addEventListener('load',()=>{
-    document.getElementById('kd-main-youtube-video').src="https://www.youtube.com/embed/X0N22PMdF1U?enablejsapi=1&rel=0&start=18&mute=1&autoplay=1&modestbranding=1"
-
-
-    var tag = document.createElement('script');
+var tag = document.createElement('script');
     tag.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -12,6 +8,14 @@ window.addEventListener('load',()=>{
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('kd-main-youtube-video', {
+            videoId: 'X0N22PMdF1U',
+            playerVars: {
+                'autoplay': 1,
+                'loop' : 1,
+                'start' : 1,
+                'rel' : 0,
+                'mute' : 1
+              },
             events: {
                 'onReady': onPlayerReady,
                 'onStateChange': onPlayerStateChange
@@ -19,8 +23,9 @@ window.addEventListener('load',()=>{
         });
     }
 
-    function onPlayerReady() {
+    function onPlayerReady(event) {
         console.log("hey Im ready");
+        event.target.playVideo();
         //do whatever you want here. Like, player.playVideo();
     }
 
@@ -29,5 +34,3 @@ window.addEventListener('load',()=>{
     }
 
     let videoStarted = 0
-
-})
