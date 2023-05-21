@@ -4,7 +4,7 @@
 if (!function_exists('createCustomers')) {
 
 	// including ks custom ajax class
-	include_once('/includes/kd_custom_ajax.php');
+	include_once('includes/kd_custom_ajax.php');
 	$kd_custom_ajax = new Kd_Custom_Ajax();
 	/**
 	 * @throws \AmeliaBooking\Domain\Common\Exceptions\InvalidArgumentException
