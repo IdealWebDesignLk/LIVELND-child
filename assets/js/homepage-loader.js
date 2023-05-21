@@ -15,7 +15,8 @@ var tag = document.createElement('script');
                 'autoplay': 1,
                 'loop' : 1,
                 'start' : 1,
-                'rel' : 0
+                'rel' : 0,
+                'mute' : 1
               },
             events: {
                 'onReady': onPlayerReady,
