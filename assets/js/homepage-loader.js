@@ -95,15 +95,25 @@ var tag = document.createElement('script');
 
             // }
 
-            let categoryDataPromise = new Promise((resolve, reject) => {
-                setTimeout(() => {
-                    resolve('test')
-                }, 1000);
-            })
+            // let categoryDataPromise = new Promise((resolve, reject) => {
+            //     setTimeout(() => {
+            //         resolve('test')
+            //     }, 1000);
+            // })
 
-            categoryDataPromise.then((respond)=>{
-                console.log(respond);
-            })
+            // categoryDataPromise.then((respond)=>{
+            //     console.log(respond);
+            // })
+
+            async ()=>{
+                const categoy = await new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve('test')
+                    }, 1000);
+                })
+
+                console.log(categoy);
+            }
             
         })
     // generating category content
