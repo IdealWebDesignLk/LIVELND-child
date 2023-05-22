@@ -95,5 +95,6 @@ class Kd_Custom_Ajax
         }
 
         echo $return_html;
+        wp_die();
     }
 }
