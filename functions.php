@@ -971,7 +971,7 @@ if (!function_exists('child_theme_configurator_css')) :
 		wp_enqueue_script('jquery-time-picker-sript-by-kd', get_stylesheet_directory_uri() . '/kd-date-time-picker/jquery.datetimepicker.js');
 
 		// new homepage assets
-		wp_enqueue_style('kd-new-homepage-css', get_stylesheet_directory_uri() . '/assets/css/optimized-homepge.css' , array() , 004 , 'all');
+		wp_enqueue_style('kd-new-homepage-css', get_stylesheet_directory_uri() . '/assets/css/optimized-homepge.css' , array() , '004' , 'all');
 		wp_enqueue_script('kd-main-video-js', get_stylesheet_directory_uri() . '/assets/js/homepage-main-video.js', array(), '', true);
 		wp_enqueue_script('kd-video-carousel-js', get_stylesheet_directory_uri() . '/assets/js/homepage-carousel-video-loader.js', array(), '', true);
 		wp_enqueue_script('kd-new-home-loaders', get_stylesheet_directory_uri() . '/assets/js/homepage-loader.js', array(), '19', true);
