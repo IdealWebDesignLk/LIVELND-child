@@ -100,7 +100,7 @@ var tag = document.createElement('script');
             let categoryWrappers = Array.from(document.getElementsByClassName('kd-single-category-services'))
 
             for (const categoryWrapper of categoryWrappers) {
-                    console.log(await getCategoryCont(categoryWrapper.dataset.catid))
+                    // console.log(await getCategoryCont(categoryWrapper.dataset.catid ))
                     let categoryContent = await getCategoryCont(categoryWrapper.dataset.catid , categoryWrapper.dataset.categoryname);
                     console.log(categoryContent)
                     categoryWrapper.innerHTML = categoryContent;
