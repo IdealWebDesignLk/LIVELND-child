@@ -93,7 +93,7 @@ if(!empty($items)){
 if ($crossSellProductsExist) {
     $return_html .= '</div><br><br>';
 } else {
-    $return_html .= '<p>There are no extra options like sound recording or pre-talk possible for this sessions.</p>';
+    $return_html .= '<p>Extra options like sound recording or pre-talk are not possible for this speaker.</p>';
 }
 
 echo $return_html;
