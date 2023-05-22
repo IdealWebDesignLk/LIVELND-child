@@ -24,6 +24,7 @@ class Kd_Custom_Ajax
         $return_html = '';
         $category_id = $_POST['category_id'];
         $category_name = $_POST['category_name'];
+        
         $results = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and categoryId='" . $category_id . "' ORDER BY `position`;");
 
         if (!empty($results)) {
