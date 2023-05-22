@@ -83,9 +83,15 @@ var tag = document.createElement('script');
 
         const getCategoryCont = (categoryId) => {
             return new Promise(resolve => {
-              setTimeout(() =>
-                resolve(`done ${categoryId}`), 1000);
-            })
+                let data = {
+                            'action': 'get_category_content',
+                            'category_id': `222`
+                        };
+
+                        jQuery.post(ajax_url, data , function (respond){
+                            resolve (respond)
+                        })
+                    })
           }
 
         const initCats = async ()=>{
