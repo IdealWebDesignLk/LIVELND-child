@@ -82,6 +82,7 @@ var tag = document.createElement('script');
     window.addEventListener('load',()=>{
 
         const getCategoryCont = (categoryId , category_name) => {
+            console.log(category_name)
             return new Promise(resolve => {
                 let data = {
                             'action': 'get_category_content',
