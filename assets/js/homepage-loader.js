@@ -88,12 +88,22 @@ var tag = document.createElement('script');
                 'category_id': `222`
             };
 
-            async ()=>{
-            let categoryData = await Promise.resolve(jQuery.post(ajax_url, jQuery.param(data)));
+            // async ()=>{
+            // let categoryData = await Promise.resolve(jQuery.post(ajax_url, data));
 
-            console.log(categoryData)
+            // console.log(categoryData)
 
-            }
+            // }
+
+            let categoryDataPromise = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('test')
+                }, 1000);
+            })
+
+            categoryDataPromise.then((respond)=>{
+                console.log(respond);
+            })
             
         })
     // generating category content
