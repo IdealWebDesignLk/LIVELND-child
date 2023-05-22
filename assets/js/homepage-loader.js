@@ -100,6 +100,7 @@ var tag = document.createElement('script');
             console.log('all done');
         }
         
+        initCats();
 
         
         
