@@ -107,6 +107,34 @@ var tag = document.createElement('script');
             }
 
             console.log('all done');
+            // initiate owl carousel
+            var owl = jQuery(".owl-carousel");
+
+            owl.owlCarousel({
+                margin: 10,
+                loop: true,
+                nav: true,
+                mouseDrag: true,
+                responsiveClass: true,
+                responsiveRefreshRate: 200,
+                responsive: {
+                    0: {
+                        items: 2
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1024: {
+                        items: 4
+                    },
+                    1366: {
+                        items: 6
+                    },
+                    2080: {
+                        items: 7
+                    }
+                }
+            });
         }
         
         initCats();
