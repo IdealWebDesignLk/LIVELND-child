@@ -93,16 +93,8 @@ var tag = document.createElement('script');
 
             console.log(categoryData)
 
+            }
             
-            // async ()=>{
-            //     $catResult = await Promise.resolve(  
-                    
-            //         // console.log('here');
-            //         // jQuery.post(ajax_url, data, function(respond) {
-            //         //     console.log(respond)
-            //         // })
-            //     )
-        //     }
         })
     // generating category content
     
