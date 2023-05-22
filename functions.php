@@ -962,7 +962,7 @@ if (!function_exists('child_theme_configurator_css')) :
 	function child_theme_configurator_css()
 	{
 
-	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; "</script>';
+	echo '<script>let ajax_url = "' . admin_url("admin-ajax.php") . '"; user_id = "' . $user_id . '"</script>';
 
 		wp_enqueue_style('chld_thm_cfg_child', trailingslashit(get_stylesheet_directory_uri()) . 'style.css', array('hello-elementor', 'hello-elementor', 'hello-elementor-theme-style'));
 
@@ -1072,8 +1072,6 @@ function custom_login_button($user)
 
 	$next_date = Date('Y-m-d', strtotime('+3 days'));
 	// $next_date = date('Y-m-d', strtotime($today_date . ' + 3 days'));
-	echo '<script>let user_id = "' . $user_id . '"</script>';
-
 
 ?>
 
