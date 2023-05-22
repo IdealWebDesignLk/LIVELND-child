@@ -136,7 +136,7 @@ var tag = document.createElement('script');
                 }
             });
 
-            document.querySelector('.kd-carouel-area-overlay').style.display = 'none';
+            // document.querySelector('.kd-carouel-area-overlay').style.display = 'none';
         }
         
         initCats();
