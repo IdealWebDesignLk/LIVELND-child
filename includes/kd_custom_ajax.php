@@ -8,6 +8,7 @@ class Kd_Custom_Ajax{
     }
 
     public function create_category_content(){
-        echo 'hkapn';
+        $category_id = $_POST['category_id'];
+        echo $category_id;
     }
 }

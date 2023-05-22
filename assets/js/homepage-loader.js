@@ -80,13 +80,22 @@ var tag = document.createElement('script');
 
 
     window.addEventListener('load',()=>{
+        let categoryWrappers = Array.from(document.getElementsByClassName('kd-single-category-services'))
+        categoryWrappers.forEach((categoryWrapper)=>{
+            let catId = categoryWrapper.catid;
+            let data = {
+                'action': 'get_category_content',
+                'category_id': `222`
+            };
+            
+            async ()=>{
+                $catResult = await Promise.resolve(  
+                    jQuery.post(ajax_url, data, function(respond) {
+                        console.log(respond)
+                    })
+                )
+            }
+        })
     // generating category content
-    let data = {
-        'action': 'get_category_content',
-        'category_id': `222`
-    };
-
-    jQuery.post(ajax_url, data, function(respond) {
-        console.log(respond)
-    })
+    
 });
