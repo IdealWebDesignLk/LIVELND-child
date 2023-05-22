@@ -32,72 +32,74 @@ do_action('woocommerce_before_cart_collaterals'); ?>
 </div> -->
 
 <div class="woocommerce-cross-sels kd-cross-sells-wrapper">
-    <?php
-    global $woocommerce;
-    $items = $woocommerce->cart->get_cart();
-    $return_html = '<br><br>';
-    $cart_ids = [];
-    $crosssellProductIdsArr = [];
+<?php
+global $woocommerce;
+$items = $woocommerce->cart->get_cart();
+$return_html = '<br><br>';
+$cart_ids = [];
+$crosssellProductIdsArr = [];
+$crossSellProductsExist = false; // New variable
 
-    if(!empty($items)){
+if(!empty($items)){
 
-    $return_html .= '<h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
+    foreach ($items as $itm => $val) {
+        $cart_ids[] = $val['data']->get_id();
+    }
 
-        foreach ($items as $itm => $val) {
-            $cart_ids[] = $val['data']->get_id();
-        }
-
-        foreach ($items as $item => $values) {
-            // $_product =  wc_get_product( $values['data']->get_id()); 
-            $crosssellProductIds = get_post_meta($values['data']->get_id(), '_crosssell_ids');
-            if (isset($crosssellProductIds[0])) { // Check if the first element is set
-                $crosssellProductIds = $crosssellProductIds[0];
-        
-                // Check if $crosssellProductIds is an array before running foreach
-                if (is_array($crosssellProductIds)) {
-                    foreach ($crosssellProductIds as $key => $crossId) {
-                        if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
-                            $crosssellProductIdsArr[] = $crossId;
-                        }
+    foreach ($items as $item => $values) {
+        $crosssellProductIds = get_post_meta($values['data']->get_id(), '_crosssell_ids');
+        if (isset($crosssellProductIds[0])) {
+            $crosssellProductIds = $crosssellProductIds[0];
+    
+            if (is_array($crosssellProductIds)) {
+                foreach ($crosssellProductIds as $key => $crossId) {
+                    if (!in_array($crossId, $crosssellProductIdsArr) && !in_array($crossId, $cart_ids)) {
+                        $crosssellProductIdsArr[] = $crossId;
+                        $crossSellProductsExist = true; // Set to true if a cross-sell product is found
                     }
                 }
             }
         }
-
-        foreach ($crosssellProductIdsArr as $key => $crossId) {
-            $cross_product = wc_get_product($crossId);
-            $title = $cross_product->get_name();
-            $description = $cross_product->get_description();
-            $price = $cross_product->get_price();
-    
-            $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add Option</a>';
-    
-            $return_html .= '<div class="kd-single-croll-sell">
-            <div class="kd-col">
-            <h3>' . $title . '</h3>
-            <p>' . $description . '</p>
-            </div>
-            <div class="kd-col">
-            <p>' . get_woocommerce_currency_symbol() . $price . '</p>
-            </div>
-            <div class="kd-col">
-            ' . $cart_button . '
-            </div>
-            </div>';
-        }
-    
     }
 
-    
-    
+    if ($crossSellProductsExist) {
+        $return_html .= '<h2>You may be interested in…</h2><br><div class="kd-cross-sells-wrapper">';
+    }
 
+    foreach ($crosssellProductIdsArr as $key => $crossId) {
+  
+        $cross_product = wc_get_product($crossId);
+        $title = $cross_product->get_name();
+        $description = $cross_product->get_description();
+        $price = $cross_product->get_price();
+    
+        $cart_button = '<a href="?add-to-cart=' . $crossId . '" data-quantity="1" class="button wp-element-button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="' . $crossId . '" data-product_sku="" aria-label="Add “' . $title . '” to your cart" rel="nofollow">Add Option</a>';
+    
+        $return_html .= '<div class="kd-single-croll-sell">
+        <div class="kd-col">
+        <h3>' . $title . '</h3>
+        <p>' . $description . '</p>
+        </div>
+        <div class="kd-col">
+        <p>' . get_woocommerce_currency_symbol() . $price . '</p>
+        </div>
+        <div class="kd-col">
+        ' . $cart_button . '
+        </div>
+        </div>';
+    }
+} // This is the correct placement for the brace
+
+if ($crossSellProductsExist) {
     $return_html .= '</div><br><br>';
-    echo $return_html;
+} else {
+    $return_html .= '<p>There are no extra options like sound recording or pre-talk possible for this sessions.</p>';
+}
 
+echo $return_html;
+?>
 
-    ?>
-    <?php //echo  woocommerce_cross_sell_display(); 
-    ?>
+  
 </div>
 
 <?php do_action('woocommerce_before_cart'); ?>
