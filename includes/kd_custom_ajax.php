@@ -23,6 +23,7 @@ class Kd_Custom_Ajax
         $tbprefix = $wpdb->prefix;
         $return_html = '';
         $category_id = $_POST['category_id'];
+        $category_name = $_POST['category_name'];
         $results = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and categoryId='" . $category_id . "' ORDER BY `position`;");
 
         if (!empty($results)) {
@@ -68,7 +69,7 @@ class Kd_Custom_Ajax
                     }
 
                     $return_html .= 
-                    '<div class="item mainitem kd-service-slide" data-id="'. $servicesingleid .'" data-tags="'.$tagone . $tagtwo . $tagthree . $tagfour . $tagfive.'" data-expert="'.$employeedetails->firstName . " " . $employeedetails->lastName.'" data-category="'.$catResult->name.'" data-price="'.$row->price.'" data-name="'.$row->name.'" data-views="'.$row->videoViews.'">
+                    '<div class="item mainitem kd-service-slide" data-id="'. $servicesingleid .'" data-tags="'.$tagone . $tagtwo . $tagthree . $tagfour . $tagfive.'" data-expert="'.$employeedetails->firstName . " " . $employeedetails->lastName.'" data-category="'.$category_name.'" data-price="'.$row->price.'" data-name="'.$row->name.'" data-views="'.$row->videoViews.'">
 
                                                 <div onmouseleave="kdAdddeactivatedThumb(event)" onmouseenter="kdOpenPopupFunc(event)" class="gallery-video-thumbnail kd-thumbnnail" data-id="'.$servicesingleid.'">
                                                     <a data-id="'.$servicesingleid.'" href="'.$url.'">

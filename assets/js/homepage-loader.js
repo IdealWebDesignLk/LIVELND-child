@@ -81,11 +81,12 @@ var tag = document.createElement('script');
 
     window.addEventListener('load',()=>{
 
-        const getCategoryCont = (categoryId) => {
+        const getCategoryCont = (categoryId , category_name) => {
             return new Promise(resolve => {
                 let data = {
                             'action': 'get_category_content',
-                            'category_id': categoryId
+                            'category_id': categoryId,
+                            'category_name': category_name
                         };
 
                         jQuery.post(ajax_url, data , function (respond){
@@ -99,7 +100,7 @@ var tag = document.createElement('script');
 
             for (const categoryWrapper of categoryWrappers) {
                     console.log(await getCategoryCont(categoryWrapper.dataset.catid))
-                    let categoryContent = await getCategoryCont(categoryWrapper.dataset.catid);
+                    let categoryContent = await getCategoryCont(categoryWrapper.dataset.catid , categoryWrapper.dataset.categoryname);
                     console.log(categoryContent)
                     categoryWrapper.innerHTML = categoryContent;
             }
