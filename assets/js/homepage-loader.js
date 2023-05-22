@@ -90,9 +90,7 @@ var tag = document.createElement('script');
             
             async ()=>{
                 $catResult = await Promise.resolve(  
-                    jQuery.post(ajax_url, data, function(respond) {
-                        console.log(respond)
-                    })
+                    console.log('here')
                 )
             }
         })
