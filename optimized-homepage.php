@@ -401,9 +401,9 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
         }
         ?>
 
-        <div class="kd-carouel-area-overlay">
+        <!-- <div class="kd-carouel-area-overlay">
             <h2>Categories loading...</h2>
-        </div>
+        </div> -->
     </div>
     <!-- =======================================categories======================== -->
 
