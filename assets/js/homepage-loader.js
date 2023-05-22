@@ -89,7 +89,7 @@ var tag = document.createElement('script');
             };
 
             async ()=>{
-            let categoryData = await jQuery.post(ajax_url, jQuery.param(data)).promise()}
+            let categoryData = await Promise.resolve(jQuery.post(ajax_url, jQuery.param(data)));
 
             console.log(categoryData)
 
