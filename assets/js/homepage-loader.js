@@ -80,42 +80,64 @@ var tag = document.createElement('script');
 
 
     window.addEventListener('load',()=>{
-        let categoryWrappers = Array.from(document.getElementsByClassName('kd-single-category-services'))
-        categoryWrappers.forEach((categoryWrapper)=>{
-            let catId = categoryWrapper.catid;
-            let data = {
-                'action': 'get_category_content',
-                'category_id': `222`
-            };
 
-            // async ()=>{
-            // let categoryData = await Promise.resolve(jQuery.post(ajax_url, data));
+        const getCategoryCont = (categoryId) => {
+            return new Promise(resolve => {
+              setTimeout(() =>
+                resolve(`done ${categoryId}`), 1000);
+            })
+          }
 
-            // console.log(categoryData)
+        const initCats = async ()=>{
+            let categoryWrappers = Array.from(document.getElementsByClassName('kd-single-category-services'))
 
-            // }
-
-            // let categoryDataPromise = new Promise((resolve, reject) => {
-            //     setTimeout(() => {
-            //         resolve('test')
-            //     }, 1000);
-            // })
-
-            // categoryDataPromise.then((respond)=>{
-            //     console.log(respond);
-            // })
-
-            async ()=>{
-                const categoy = await new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        resolve('test')
-                    }, 1000);
-                })
-
-                console.log(categoy);
+            for (const categoryWrapper of categoryWrappers) {
+                    console.log(categoryWrapper)
+                    console.log(await getCategoryCont(categoryWrapper.dataset.catid))
+                
             }
+
+            console.log('all done');
+        }
+        
+
+        
+        
+        // categoryWrappers.forEach((categoryWrapper)=>{
+        //     let catId = categoryWrapper.catid;
+        //     let data = {
+        //         'action': 'get_category_content',
+        //         'category_id': `222`
+        //     };
+
+        //     // async ()=>{
+        //     // let categoryData = await Promise.resolve(jQuery.post(ajax_url, data));
+
+        //     // console.log(categoryData)
+
+        //     // }
+
+        //     // let categoryDataPromise = new Promise((resolve, reject) => {
+        //     //     setTimeout(() => {
+        //     //         resolve('test')
+        //     //     }, 1000);
+        //     // })
+
+        //     // categoryDataPromise.then((respond)=>{
+        //     //     console.log(respond);
+        //     // })
+
+        //     async ()=>{
+        //         const categoy = await new Promise((resolve, reject) => {
+        //             setTimeout(() => {
+        //                 resolve('test')
+        //             }, 1000);
+        //         })
+
+        //         console.log(categoy);
+        //     }
             
-        })
+        // })
     // generating category content
     
 });
