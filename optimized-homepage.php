@@ -370,7 +370,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     <!-- ====================================================================================== -->
 
     <!-- =======================================categories======================== -->
-    <div class="container-fluidx background-black kd-categories-wrapper">
+    <div class="container-fluidx background-black">
         <?php
         $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
         $catResults = $wpdb->get_results($categoriesSql);
@@ -400,10 +400,6 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
         <?php }
         }
         ?>
-
-        <!-- <div class="kd-carouel-area-overlay">
-            <h2>Categories loading...</h2>
-        </div> -->
     </div>
     <!-- =======================================categories======================== -->
 
