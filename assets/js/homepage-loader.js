@@ -85,7 +85,7 @@ var tag = document.createElement('script');
             return new Promise(resolve => {
                 let data = {
                             'action': 'get_category_content',
-                            'category_id': `222`
+                            'category_id': categoryId
                         };
 
                         jQuery.post(ajax_url, data , function (respond){
@@ -98,53 +98,15 @@ var tag = document.createElement('script');
             let categoryWrappers = Array.from(document.getElementsByClassName('kd-single-category-services'))
 
             for (const categoryWrapper of categoryWrappers) {
-                    console.log(categoryWrapper)
                     console.log(await getCategoryCont(categoryWrapper.dataset.catid))
-                
+                    let categoryContent = await getCategoryCont(categoryWrapper.dataset.catid);
+                    console.log(categoryContent)
+                    categoryWrapper.innerHTML = categoryContent;
             }
 
             console.log('all done');
         }
         
         initCats();
-
-        
-        
-        // categoryWrappers.forEach((categoryWrapper)=>{
-        //     let catId = categoryWrapper.catid;
-        //     let data = {
-        //         'action': 'get_category_content',
-        //         'category_id': `222`
-        //     };
-
-        //     // async ()=>{
-        //     // let categoryData = await Promise.resolve(jQuery.post(ajax_url, data));
-
-        //     // console.log(categoryData)
-
-        //     // }
-
-        //     // let categoryDataPromise = new Promise((resolve, reject) => {
-        //     //     setTimeout(() => {
-        //     //         resolve('test')
-        //     //     }, 1000);
-        //     // })
-
-        //     // categoryDataPromise.then((respond)=>{
-        //     //     console.log(respond);
-        //     // })
-
-        //     async ()=>{
-        //         const categoy = await new Promise((resolve, reject) => {
-        //             setTimeout(() => {
-        //                 resolve('test')
-        //             }, 1000);
-        //         })
-
-        //         console.log(categoy);
-        //     }
-            
-        // })
-    // generating category content
     
 });
