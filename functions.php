@@ -1073,7 +1073,9 @@ function custom_login_button($user)
 	$next_date = Date('Y-m-d', strtotime('+3 days'));
 	// $next_date = date('Y-m-d', strtotime($today_date . ' + 3 days'));
 
-	echo '<script type="text/javascript>let user_id = "' . $user_id . '"</script>';
+//	echo '<script type="text/javascript>let user_id = "' . $user_id . '"</script>';
+	echo '<script type="text/javascript">let user_id = "' . $user_id . '";</script>';
+
 ?>
 
 	<input type="date" value="<?php echo $next_date; ?>" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">
