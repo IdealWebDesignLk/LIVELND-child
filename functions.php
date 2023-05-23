@@ -1074,7 +1074,8 @@ function custom_login_button($user)
 	// $next_date = date('Y-m-d', strtotime($today_date . ' + 3 days'));
 
 //	echo '<script type="text/javascript>let user_id = "' . $user_id . '"</script>';
-	echo '<script type="text/javascript">let user_id = "' . $user_id . '";</script>';
+echo '<script type="text/javascript">let user_id = "' . $user_id . '"; let ajax_url = "' . admin_url('admin-ajax.php') . '";</script>';
+
 
 ?>
 
