@@ -979,6 +979,10 @@ if (!function_exists('child_theme_configurator_css')) :
 		// remove unnneded scripts on test homepage
 		if(is_page_template('optimized-homepage.php' )){
 			wp_dequeue_style( 'wc-blocks-style' );
+			wp_dequeue_style( 'woocommerce-general' );
+			wp_dequeue_style( 'quform-css' );
+			wp_dequeue_style( 'jquery-time-picker-by-kd' );
+			wp_dequeue_script( 'jquery-time-picker-sript-by-kd' );
 		}
 	
 	}
