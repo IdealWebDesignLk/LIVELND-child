@@ -51,7 +51,7 @@ $tbprefix  = trim($tbprefix);
 // dequeue all unnneded files
 function remove_unnneded_files(){
     if(is_page_template( 'optimized-homepage.php' )){
-        echo 'hukapn';
+        echo '<script>alert("hukapn")</script>';
     }
 }
 
