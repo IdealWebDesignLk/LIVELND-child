@@ -48,7 +48,14 @@ $tbprefix  = trim($tbprefix);
 //     print_r($category);
 // }
 
+// dequeue all unnneded files
+function remove_unnneded_files(){
+    if(is_page_template( get_stylesheet_directory_uri(  ).'/optimized-homepage.php' )){
+        echo 'hukapn';
+    }
+}
 
+add_action( 'wp_enqueue_scripts', 'remove_unnneded_files' );
 
 
 ?>
