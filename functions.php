@@ -976,8 +976,9 @@ if (!function_exists('child_theme_configurator_css')) :
 		wp_enqueue_script('kd-video-carousel-js', get_stylesheet_directory_uri() . '/assets/js/homepage-carousel-video-loader.js', array(), '', true);
 		wp_enqueue_script('kd-new-home-loaders', get_stylesheet_directory_uri() . '/assets/js/homepage-loader.js', array(), '18', true);
 	
+		// remove unnneded scripts on test homepage
 		if(is_page_template('optimized-homepage.php' )){
-			echo '<script>alert("hukapn")</script>';
+			wp_dequeue_style( 'wc-blocks-style' );
 		}
 	
 	}
