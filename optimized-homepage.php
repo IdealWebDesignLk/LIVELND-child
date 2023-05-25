@@ -102,7 +102,7 @@ $serviceid = ot_get_option('featured_video_id');
             <div class="video-background">
 
                 <div class="video-foreground">
-                    <!-- <div class="youtube-video" data-src="<?php echo $service[0]->video; ?>" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div> -->
+                    <!-- <div class="youtube-video" data-src="<?php //echo $service[0]->video; ?>" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div> -->
                 </div>
             </div>
 
