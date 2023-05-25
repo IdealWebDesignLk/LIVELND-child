@@ -49,14 +49,14 @@ $tbprefix  = trim($tbprefix);
 // }
 
 // dequeue all unnneded files
-function remove_unnneded_files(){
-    echo 'here it is';
-    if(is_page_template('optimized-homepage.php' )){
-        echo '<script>alert("hukapn")</script>';
-    }
-}
+// function remove_unnneded_files(){
+//     echo 'here it is';
+//     if(is_page_template('optimized-homepage.php' )){
+//         echo '<script>alert("hukapn")</script>';
+//     }
+// }
 
-add_action( 'wp_enqueue_scripts', 'remove_unnneded_files' );
+// add_action( 'wp_enqueue_scripts', 'remove_unnneded_files' );
 
 
 ?>
