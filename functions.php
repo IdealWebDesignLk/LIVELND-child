@@ -974,7 +974,17 @@ if (!function_exists('child_theme_configurator_css')) :
 		wp_enqueue_style('kd-new-homepage-css', get_stylesheet_directory_uri() . '/assets/css/optimized-homepge.css' , array() , 003 , 'all');
 		wp_enqueue_script('kd-main-video-js', get_stylesheet_directory_uri() . '/assets/js/homepage-main-video.js', array(), '', true);
 		wp_enqueue_script('kd-video-carousel-js', get_stylesheet_directory_uri() . '/assets/js/homepage-carousel-video-loader.js', array(), '', true);
-		wp_enqueue_script('kd-new-home-loaders', get_stylesheet_directory_uri() . '/assets/js/homepage-loader.js', array(), '18', true);
+		// wp_enqueue_script('kd-new-home-loaders', get_stylesheet_directory_uri() . '/assets/js/homepage-loader.js', array(), '18', true);
+	
+		// remove unnneded scripts on test homepage
+		if(is_page_template('optimized-homepage.php' )){
+			wp_dequeue_style( 'wc-blocks-style' );
+			wp_dequeue_style( 'woocommerce-general' );
+			wp_dequeue_style( 'quform-css' );
+			wp_dequeue_style( 'jquery-time-picker-by-kd' );
+			wp_dequeue_script( 'jquery-time-picker-sript-by-kd' );
+		}
+	
 	}
 endif;
 add_action('wp_enqueue_scripts', 'child_theme_configurator_css', 100);
@@ -1073,7 +1083,10 @@ function custom_login_button($user)
 	$next_date = Date('Y-m-d', strtotime('+3 days'));
 	// $next_date = date('Y-m-d', strtotime($today_date . ' + 3 days'));
 
-	echo '<script type="text/javascript>let user_id = "' . $user_id . '"</script>';
+//	echo '<script type="text/javascript>let user_id = "' . $user_id . '"</script>';
+echo '<script type="text/javascript">let user_id = "' . $user_id . '"; let ajax_url = "' . admin_url('admin-ajax.php') . '";</script>';
+
+
 ?>
 
 	<input type="date" value="<?php echo $next_date; ?>" min="<?php echo $today_date; ?>" id="expire-date" placeholder="Expire Date">

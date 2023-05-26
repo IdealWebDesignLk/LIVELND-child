@@ -48,16 +48,21 @@ $tbprefix  = trim($tbprefix);
 //     print_r($category);
 // }
 
+// dequeue all unnneded files
+// function remove_unnneded_files(){
+//     echo 'here it is';
+//     if(is_page_template('optimized-homepage.php' )){
+//         echo '<script>alert("hukapn")</script>';
+//     }
+// }
 
+// add_action( 'wp_enqueue_scripts', 'remove_unnneded_files' );
 
 
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
 
@@ -66,8 +71,6 @@ $tbprefix  = trim($tbprefix);
 // get video placeholder image
 $imgurl =  ot_get_option('top_section_background_image');
 $serviceid = ot_get_option('featured_video_id');
-$service = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and id='$serviceid'");
-$employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$serviceid'");
 
 ?>
 
@@ -99,128 +102,10 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
             <div class="video-background">
 
                 <div class="video-foreground">
-                    <div class="youtube-video" data-src="<?php echo $service[0]->video; ?>" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div>
+                    <!-- <div class="youtube-video" data-src="<?php //echo $service[0]->video; ?>" id="kd-main-youtube-video" width="278" height="154" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></div> -->
                 </div>
             </div>
 
-            <!-- overlays -->
-            <div class="overlay mobioverlay" id="kd-video-overlay1" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
-            <div class="overlay deskoverlay" id="kd-video-overlay" style="background-image:url('<?php echo $service[0]->pictureFullPath ?>')"></div>
-
-            <!-- vsec area -->
-            <div class="vsec">
-                <div class="col-12 col-md">
-                    <div class="text-wrapper">
-                        <h2 class="mbr-section-title mb-3 mbr-fonts-style display-2">
-
-                            <strong><?php echo $service[0]->name; ?></strong>
-
-                        </h2>
-                        <h3 class="headeremployeename">
-
-                            <?php
-                            $employeefullname = $employee[0]->full_name;
-                            $wordpressuserid = $employee[0]->externalId;
-                            $worduser = 'user_' . $wordpressuserid;
-                            ?>
-                            <?php echo $employee[0]->firstName . " " . $employee[0]->lastName; ?>
-                            <?php if (get_field('verifed', $worduser)) : ?>
-                                <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Vector-Stroke.png' ?>"></span>
-                            <?php endif; ?>
-
-
-                        </h3>
-                        <div class="rate">
-                            <?php
-                            $average = 0;
-                            $rate = 0;
-                            $reviewresult = $wpdb->get_results("SELECT * FROM `review_details` where user='$employeefullname'");
-                            foreach ($reviewresult as $row) {
-                                $count = count($reviewresult);
-                                $review = $row->starreview;
-
-                                $rate += $review;
-                                $average = $rate / $count;
-                            }
-                            $rating = round($average);
-                            if ($rating == "1") {
-                            ?>
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-
-
-                            <?php
-                            } else if ($rating == "2") {
-                            ?>
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/09/star-3-1.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                                <img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2022/10/emptystar.png' ?>">
-                            <?php
-                            } else if ($rating == "3") {
-                            ?>
-
-                                <a href="<?php echo $server_name . '/about-us/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starseke.png' ?>"></a>
-                            <?php
-                            } else if ($rating == "4") {
-                            ?>
-
-                                <a href="<?php echo $server_name . '/about-us/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starsyanti.png' ?>"></a>
-                            <?php
-                            } else if ($rating == "5") {
-                            ?>
-
-                                <a href="<?php echo $server_name . '/about-us/#curators' ?>"><img class="star-rating" src="<?php echo $server_name . '/wp-content/uploads/2023/01/starsdanielle.png' ?>"></a>
-
-                            <?php
-                            }
-                            ?>
-
-                        </div>
-                        <div class="sessiondiscription">
-                            <p class="mbr-text mb-3 mbr-fonts-style display-7">
-                                <?php echo do_shortcode($service[0]->description); ?>
-                            </p>
-                        </div>
-                        <div class="price">
-
-                            <?php
-
-                            // generate currency format
-
-                            $oFormatter = new \NumberFormatter('de_DE', \NumberFormatter::CURRENCY);
-                            $formattedPrice = $oFormatter->formatCurrency($service[0]->price, 'EUR');
-
-
-                            ?>
-                            <h3 class="session-price"><?php echo do_shortcode('[woo_multi_currency_exchange price="' . $service[0]->price . '" currency="' . $curr . '"]'); ?></h3>
-                        </div>
-                        <p class="staticlabeltop">60 minutes including Q&A</p>
-                        <div class="views">
-                            <?php if (intval($service[0]->videoViews) > 1000) { ?>
-                                <h3 class="viewscount"> <?php echo number_format($service[0]->videoViews, 0, '.', ','); ?> Youtube views</h3>
-                            <?php } ?>
-                        </div>
-                        <?php
-
-
-
-                        $slug1 = sanitize_title($service[0]->name) . '-' . $serviceid;
-                        $topvideosingle =  $server_name . "/single-service/" . $slug1;
-                        ?>
-                        <a href=<?php echo $topvideosingle; ?>><button type="button" class="btn btn-dark sessionbtn">Instant Booking</button></a>
-                        <?php
-
-                        ?>
-                    </div>
-
-                </div>
-
-            </div>
             <!-- vsec area -->
 
             <!-- controls -->
@@ -370,7 +255,7 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
     <!-- ====================================================================================== -->
 
     <!-- =======================================categories======================== -->
-    <div class="container-fluidx background-black">
+    <!-- <div class="container-fluidx background-black">
         <?php
         $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
         $catResults = $wpdb->get_results($categoriesSql);
@@ -400,12 +285,15 @@ $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $t
         <?php }
         }
         ?>
-    </div>
+    </div> -->
     <!-- =======================================categories======================== -->
 
 
 </section>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 
 
