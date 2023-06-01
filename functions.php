@@ -1178,11 +1178,12 @@ add_action('personal_options', 'add_custom_login_button_to_account_management');
 
 
 //Disbale Wordpress email notification for users
-if (!function_exists('wp_new_user_notification')) {
-	function wp_new_user_notification($user_id, $deprecated = null, $notify = '')
-	{
-		return;
-	}
+add_filter( 'wp_new_user_notification_email', 'disable_new_user_notification_email', 10, 3 );
+
+function disable_new_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {
+    $wp_new_user_notification_email['message'] = '';
+    $wp_new_user_notification_email['headers'] = '';
+    return $wp_new_user_notification_email;
 }
 
 
@@ -1199,6 +1200,6 @@ add_filter('gettext', 'change_update_cart_text', 20, 3);
 
 function wc_empty_cart_redirect_url()
 {
-	return site_url('/pride');
+	return site_url('/');
 }
 add_filter('woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url');
