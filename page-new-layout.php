@@ -508,7 +508,7 @@ $imgurl =  ot_get_option('top_section_background_image');
                                 } ?>
                             </div>
                         </div>
-
+<?php } ?>
                 </div>
 
             
