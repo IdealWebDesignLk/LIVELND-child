@@ -135,12 +135,15 @@ $imgurl =  ot_get_option('top_section_background_image');
     <?php
     global $wpdb;
     $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+
+    print_r($categoriesSql);
+
     $catResults = $wpdb->get_results($categoriesSql);
     $exclude_cat_id = array();
     if (ot_get_option('exclude_category_id_s')) {
         $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
     }
-    foreach ($catResults as $catResult => $key) {
+    foreach ($catResults as $key => $catResult) {
         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
 
             echo $key;
