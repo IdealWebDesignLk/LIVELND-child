@@ -133,7 +133,9 @@ $imgurl =  ot_get_option('top_section_background_image');
 <!-- carousels section -->
 <div class="carousels-section-wrapper">
     <?php
+    
     global $wpdb;
+    $tbprefix = $wpdb->prefix;
     $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
 
     print_r($categoriesSql);
@@ -141,6 +143,7 @@ $imgurl =  ot_get_option('top_section_background_image');
     $catResults = $wpdb->get_results($categoriesSql);
 
     print_r($catResults);
+
     $exclude_cat_id = array();
     if (ot_get_option('exclude_category_id_s')) {
         $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
