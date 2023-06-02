@@ -157,7 +157,7 @@ $imgurl =  ot_get_option('top_section_background_image');
     ?>
 
             <?php
-            if ($index == 1) { ?>
+            if ($index == 2) { ?>
 
                 <div class="easy-steps-wrapper">
                     <h2 class="text-center">
