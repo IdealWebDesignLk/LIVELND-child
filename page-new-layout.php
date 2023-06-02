@@ -142,6 +142,8 @@ $imgurl =  ot_get_option('top_section_background_image');
     }
     foreach ($catResults as $catResult => $key) {
         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+
+            echo $key;
     ?>
 
             <?php
