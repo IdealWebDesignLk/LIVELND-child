@@ -137,6 +137,7 @@ $imgurl =  ot_get_option('top_section_background_image');
     global $wpdb;
     $tbprefix = $wpdb->prefix;
     $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+    $index = 0;
 
     $catResults = $wpdb->get_results($categoriesSql);
 
@@ -147,11 +148,11 @@ $imgurl =  ot_get_option('top_section_background_image');
     foreach ($catResults as $key => $catResult) {
         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
 
-            echo $key;
+            echo $index;
     ?>
 
             <?php
-                if($key==1){ ?>
+                if($index==1){ ?>
 
                 <div class="easy-steps-wrapper">
                     <h2 class="text-center">
@@ -192,6 +193,9 @@ $imgurl =  ot_get_option('top_section_background_image');
             <!-- single carousels -->
 
     <?php
+
+        $index++;
+
         }
     }
     ?>
