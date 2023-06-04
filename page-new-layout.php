@@ -16,8 +16,9 @@ $imgurl =  ot_get_option('top_section_background_image');
 <div class="new-homepage-wrapper">
     <!-- hero area -->
     <div class="hero-area-wrapper" style="background: url('<?php echo $imgurl; ?>');">
+    <div class="hero-area-overlay"></div>
         <div class="hero-area-inner">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-7">
                     <h1>Book the best <br>
                         [topic] speakers for <br>
