@@ -787,6 +787,7 @@ $imgurl =  ot_get_option('top_section_background_image');
             margin: 10,
             loop: true,
             nav: true,
+            margin : 15,
             mouseDrag: true,
             responsiveClass: true,
             responsiveRefreshRate: 200,
