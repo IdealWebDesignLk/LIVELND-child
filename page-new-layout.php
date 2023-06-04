@@ -16,42 +16,42 @@ $imgurl =  ot_get_option('top_section_background_image');
 <div class="new-homepage-wrapper">
     <!-- hero area -->
     <div class="hero-area-wrapper" style="background: url('<?php echo $imgurl; ?>');">
+        <div class="hero-area-inner">
+            <div class="row">
+                <div class="col-md-7">
+                    <h1>Book the best <br>
+                        [topic] speakers for <br>
+                        Your team</h1>
+                    <p>Live, Online & exclusively for your company.</p>
 
-        <div class="row">
-            <div class="col-md-7">
-                <h1>Book the best <br>
-                    [topic] speakers for <br>
-                    Your team</h1>
-                <p>Live, Online & exclusively for your company.</p>
-
-            </div>
-            <div class="col-md-5">
-                <p class="main-session-info">
-                    Like Anotonia Forster,
-                    'LGBTQ' + it's Natural
-                </p>
-                <div class="start-rating-wrapper">
-                    <div class="ratings">
-                        <ul>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                            <li><i class="fa fa-star"></i></li>
-                        </ul>
-                    </div>
-                    <div class="speaker">
-                        By Delottie HR
-                    </div>
-                    <div class="more-about-speaker">
-                        <a href="#">More About This Speaker</a>
+                </div>
+                <div class="col-md-5">
+                    <p class="main-session-info">
+                        Like Anotonia Forster,
+                        'LGBTQ' + it's Natural
+                    </p>
+                    <div class="start-rating-wrapper">
+                        <div class="ratings">
+                            <ul>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="speaker">
+                            By Delottie HR
+                        </div>
+                        <div class="more-about-speaker">
+                            <a href="#">More About This Speaker</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- searching area -->
 
-        <div class="container-fluidx background-black kd-new-search-box">
+        <div class="container-fluidx kd-new-search-box">
             <div class="kd-new-searchbox-inner">
                 <div class="kd-searchbox-inner">
                     <form action="" id="kd-search-form" class="kd-search-form" onkeydown="return checkForEnter(event);">
@@ -528,317 +528,317 @@ $imgurl =  ot_get_option('top_section_background_image');
 </div>
 
 <script>
-        function muteCurrentVideo(e) {
-            let muteSeperated = e.target.previousElementSibling.src.split("&mute=1")
-            muteSeperated.splice(1, 1)
-            e.target.previousElementSibling.src = muteSeperated.join()
-            let muteOverlays = Array.from(document.getElementsByClassName('mute-button-overlay'))
-            muteOverlays.forEach(mutebtn => {
-                mutebtn.remove()
-            })
-        }
-
-        function openFullscreenVideo() {
-            let videoElement = document.getElementById('youtube-video')
-            videoElement.requestFullscreen()
-        }
-
-        // store event on variable
-        let alreadyClicked = false
-        document.addEventListener('click', (e) => {
-            console.log(e.target)
-            if (!e.target.classList.contains("kd-amelia-popup-button-inst")) {
-                console.log('clicked')
-                alreadyClicked = true
-            }
-
+    function muteCurrentVideo(e) {
+        let muteSeperated = e.target.previousElementSibling.src.split("&mute=1")
+        muteSeperated.splice(1, 1)
+        e.target.previousElementSibling.src = muteSeperated.join()
+        let muteOverlays = Array.from(document.getElementsByClassName('mute-button-overlay'))
+        muteOverlays.forEach(mutebtn => {
+            mutebtn.remove()
         })
+    }
 
-        let kdTimeout = null
-        let videoLoaded = []
+    function openFullscreenVideo() {
+        let videoElement = document.getElementById('youtube-video')
+        videoElement.requestFullscreen()
+    }
 
-        function kdAdddeactivatedThumb(e) {
+    // store event on variable
+    let alreadyClicked = false
+    document.addEventListener('click', (e) => {
+        console.log(e.target)
+        if (!e.target.classList.contains("kd-amelia-popup-button-inst")) {
+            console.log('clicked')
+            alreadyClicked = true
+        }
+
+    })
+
+    let kdTimeout = null
+    let videoLoaded = []
+
+    function kdAdddeactivatedThumb(e) {
+        thumbnail = e.target
+        thumbnail.classList.remove('kd-active-thumb')
+    }
+
+    function openSearchPopup(e) {
+        kdOpenPopupFunc(e, "search")
+    }
+
+    function kdOpenPopupFunc(e, location = "normal") {
+        if (window.innerWidth > 1023) {
+
             thumbnail = e.target
-            thumbnail.classList.remove('kd-active-thumb')
-        }
+            thumbnail.classList.add('kd-active-thumb')
+            kdTimeout = setTimeout(() => {
+                if (thumbnail.classList.contains('kd-active-thumb')) {
+                    // console.log('delay works')
+                    let thumbnails = Array.from(document.getElementsByClassName('kd-thumbnnail'))
+                    let id = thumbnail.dataset.id
+                    // 			console.log(id)
 
-        function openSearchPopup(e) {
-            kdOpenPopupFunc(e, "search")
-        }
+                    let poppCont = document.getElementById(`kd-popup-${id}`)
+                    // if (location != "normal") {
+                    //     poppCont = document.getElementById(`kd-search-popup-${id}`)
+                    // }
 
-        function kdOpenPopupFunc(e, location = "normal") {
-            if (window.innerWidth > 1023) {
+                    let poppBtn = poppCont.querySelector(`#amelia-popup-${id}`)
+                    let popupContents = Array.from(document.getElementsByClassName('kd-popup-content'))
+                    let kdCrWidth = document.querySelector('.kd-service-slide').clientWidth
+                    popupContents.forEach(popupContent => {
+                        popupContent.classList.add('hidden')
+                    })
 
-                thumbnail = e.target
-                thumbnail.classList.add('kd-active-thumb')
-                kdTimeout = setTimeout(() => {
-                    if (thumbnail.classList.contains('kd-active-thumb')) {
-                        // console.log('delay works')
-                        let thumbnails = Array.from(document.getElementsByClassName('kd-thumbnnail'))
-                        let id = thumbnail.dataset.id
-                        // 			console.log(id)
+                    thumbnails.forEach(thmb => {
+                        thmb.parentElement.parentElement.classList.remove('kd-active-popup-slide')
+                    })
 
-                        let poppCont = document.getElementById(`kd-popup-${id}`)
-                        // if (location != "normal") {
-                        //     poppCont = document.getElementById(`kd-search-popup-${id}`)
-                        // }
-
-                        let poppBtn = poppCont.querySelector(`#amelia-popup-${id}`)
-                        let popupContents = Array.from(document.getElementsByClassName('kd-popup-content'))
-                        let kdCrWidth = document.querySelector('.kd-service-slide').clientWidth
-                        popupContents.forEach(popupContent => {
-                            popupContent.classList.add('hidden')
-                        })
-
-                        thumbnails.forEach(thmb => {
-                            thmb.parentElement.parentElement.classList.remove('kd-active-popup-slide')
-                        })
-
-                        // 			console.log(poppCont , poppBtn)
-                        console.log(`popup button${poppBtn}`)
-                        poppBtn.click()
-                        poppCont.classList.remove('hidden')
-                        // thumbnail.parentElement.parentElement.classList.add('kd-active-popup-slide')
-                        // console.log(window.innerWidth, getOffset(thumbnail).left)
-                        if ((window.innerWidth - getOffset(thumbnail).left) < 600) {
-                            poppCont.style.left = `auto`
-                            poppCont.style.right = `30px`
-                            poppCont.style.top = `${getOffset(thumbnail).top}px`
-                            // const swiper = thumbnail.parentElement.parentElement.parentElement.parentElement.swiper;
-                            // swiper.slideNext();
-                        } else if (getOffset(thumbnail).left < 100) {
-                            poppCont.style.right = `auto`
-                            poppCont.style.left = `30px`
-                            poppCont.style.top = `${getOffset(thumbnail).top}px`
-                        } else {
-                            console.log(`this is top offset ${getOffset(thumbnail).top}`)
-                            poppCont.style.left = `${getOffset(thumbnail).left}px`
-                            poppCont.style.top = `${getOffset(thumbnail).top}px`
-                        }
-
-                        // const yOffset = -200;
-                        // const y = poppCont.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-                        // window.scrollTo({
-                        //     top: y,
-                        //     behavior: 'smooth'
-                        // });
-
-                        let formElement = poppCont.querySelector('.el-form')
-                        console.log(formElement)
-                        console.log('formElement')
-
-                        // let scrollTimeout = setTimeout(() => {
-                        //     poppCont.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                        //     window.scrollBy(0, -10);
-                        //     window.clearTimeout(scrollTimeout)
-                        // }, 200);
-
-                        // window.scrollBy(0, -30);
-
-                        window.clearTimeout(kdTimeout)
-                        kdTimeout = null
-                        hidePopupOnMouseLeave(poppCont, thumbnail)
-                        loadYoutubeVideo(poppCont)
-                    }
-                }, 700);
-
-            }
-        }
-
-        function getOffset(el) {
-            const rect = el.getBoundingClientRect();
-            return {
-                left: rect.left + window.scrollX,
-                top: rect.top + window.scrollY
-            };
-        }
-
-
-        // add mouseout event to popup content
-        function hidePopupOnMouseLeave(popup, thumbnail) {
-            let hidepopupTimeout = setTimeout(() => {
-                popup.addEventListener('mouseleave', (e) => {
-                    // console.log(e.target)
-                    // var hover_element = $(':hover').last().hasClass('el-select-dropdown__item');
-                    // console.log($(':hover').last())
-                    // console.log($(':hover').last()[0])
-                    // console.log($(':hover').last().hasClass('el-select-dropdown__item'))
-                    // console.log($(':hover').last().hasClass('el-select__popper'))
-                    let parentEl = null
-
-                    if ($(':hover').last().hasClass('el-select__popper') || $(':hover').last().hasClass('el-select-dropdown__item')) {
-                        console.log('inside a  select item')
-                        parentEl = $(':hover').last()[0].parentElement
+                    // 			console.log(poppCont , poppBtn)
+                    console.log(`popup button${poppBtn}`)
+                    poppBtn.click()
+                    poppCont.classList.remove('hidden')
+                    // thumbnail.parentElement.parentElement.classList.add('kd-active-popup-slide')
+                    // console.log(window.innerWidth, getOffset(thumbnail).left)
+                    if ((window.innerWidth - getOffset(thumbnail).left) < 600) {
+                        poppCont.style.left = `auto`
+                        poppCont.style.right = `30px`
+                        poppCont.style.top = `${getOffset(thumbnail).top}px`
+                        // const swiper = thumbnail.parentElement.parentElement.parentElement.parentElement.swiper;
+                        // swiper.slideNext();
+                    } else if (getOffset(thumbnail).left < 100) {
+                        poppCont.style.right = `auto`
+                        poppCont.style.left = `30px`
+                        poppCont.style.top = `${getOffset(thumbnail).top}px`
                     } else {
-                        popup.classList.add('hidden')
-                        thumbnail.parentElement.parentElement.classList.remove('kd-active-popup-slide')
-                        if (videoLoaded.includes(popup.id)) {
-                            let videoWrapper = popup.querySelector('.kd-single-video-container')
-                            let iframe = videoWrapper.querySelector('.kd-iframe-wrapper')
-                            iframe.remove()
-                            let arrIndex = videoLoaded.indexOf(popup.id);
-                            videoLoaded.splice(arrIndex, 1);
-                            if (parentEl != null) {
-                                parentEl.style.display = 'none'
-                            }
-                        }
+                        console.log(`this is top offset ${getOffset(thumbnail).top}`)
+                        poppCont.style.left = `${getOffset(thumbnail).left}px`
+                        poppCont.style.top = `${getOffset(thumbnail).top}px`
                     }
 
-                    window.clearTimeout(hidepopupTimeout)
-                })
-            }, 00);
+                    // const yOffset = -200;
+                    // const y = poppCont.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-        }
+                    // window.scrollTo({
+                    //     top: y,
+                    //     behavior: 'smooth'
+                    // });
 
-        // load video instead of image
+                    let formElement = poppCont.querySelector('.el-form')
+                    console.log(formElement)
+                    console.log('formElement')
 
-        function loadYoutubeVideo(popup) {
-            setTimeout(() => {
-                if (popup.classList.contains('hidden')) {
-                    console.log('hidden popup')
-                } else {
-                    let videoWrapper = popup.querySelector('.kd-single-video-container')
-                    let videoImg = videoWrapper.querySelector('.single-video-paceholder-img')
+                    // let scrollTimeout = setTimeout(() => {
+                    //     poppCont.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    //     window.scrollBy(0, -10);
+                    //     window.clearTimeout(scrollTimeout)
+                    // }, 200);
 
-                    let vidUrl = `${videoImg.dataset.finalurl}`
+                    // window.scrollBy(0, -30);
 
-                    console.log(alreadyClicked)
-                    console.log(vidUrl)
-
-                    if (alreadyClicked) {
-                        let CroppedUrl = videoImg.dataset.finalurl.split("&mute=1")[0]
-                        console.log(CroppedUrl)
-                        vidUrl = `${CroppedUrl}`
-                    }
-
-
-                    console.log(vidUrl)
-
-                    if (!videoLoaded.includes(popup.id)) {
-                        if (videoImg.dataset.finalurl != '') {
-                            let iframeWrapper = document.createElement('div')
-                            iframeWrapper.classList.add('kd-iframe-wrapper')
-                            let iframe = `<iframe class="carouselvideo" width="310" height="170" src=${vidUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="mute-button-overlay" onclick="muteCurrentVideo(event)"></div>`
-                            iframeWrapper.innerHTML = iframe
-                            videoWrapper.insertBefore(iframeWrapper, videoImg)
-                            videoImg.classList.add('hidden')
-                            videoLoaded.push(popup.id)
-                        } else {
-                            console.log('empty')
-                        }
-                    }
+                    window.clearTimeout(kdTimeout)
+                    kdTimeout = null
+                    hidePopupOnMouseLeave(poppCont, thumbnail)
+                    loadYoutubeVideo(poppCont)
                 }
-
             }, 700);
 
         }
+    }
 
-        setInterval(() => {
-            let popups = Array.from(document.getElementsByClassName('kd-popup-content'))
-            popups.forEach(popup => {
-                if (popup.classList.contains('hidden')) {
-                    // console.log('captured a hidden popup')
-                    let videoWrapper = popup.querySelector('.kd-single-video-container')
-                    let iframe = videoWrapper.querySelector('.kd-iframe-wrapper')
-                    if (iframe != null) {
+    function getOffset(el) {
+        const rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+
+
+    // add mouseout event to popup content
+    function hidePopupOnMouseLeave(popup, thumbnail) {
+        let hidepopupTimeout = setTimeout(() => {
+            popup.addEventListener('mouseleave', (e) => {
+                // console.log(e.target)
+                // var hover_element = $(':hover').last().hasClass('el-select-dropdown__item');
+                // console.log($(':hover').last())
+                // console.log($(':hover').last()[0])
+                // console.log($(':hover').last().hasClass('el-select-dropdown__item'))
+                // console.log($(':hover').last().hasClass('el-select__popper'))
+                let parentEl = null
+
+                if ($(':hover').last().hasClass('el-select__popper') || $(':hover').last().hasClass('el-select-dropdown__item')) {
+                    console.log('inside a  select item')
+                    parentEl = $(':hover').last()[0].parentElement
+                } else {
+                    popup.classList.add('hidden')
+                    thumbnail.parentElement.parentElement.classList.remove('kd-active-popup-slide')
+                    if (videoLoaded.includes(popup.id)) {
+                        let videoWrapper = popup.querySelector('.kd-single-video-container')
+                        let iframe = videoWrapper.querySelector('.kd-iframe-wrapper')
                         iframe.remove()
                         let arrIndex = videoLoaded.indexOf(popup.id);
                         videoLoaded.splice(arrIndex, 1);
+                        if (parentEl != null) {
+                            parentEl.style.display = 'none'
+                        }
                     }
-
                 }
-            })
-        }, 1000);
 
-        var owl = $('.brandcarousel');
+                window.clearTimeout(hidepopupTimeout)
+            })
+        }, 00);
+
+    }
+
+    // load video instead of image
+
+    function loadYoutubeVideo(popup) {
+        setTimeout(() => {
+            if (popup.classList.contains('hidden')) {
+                console.log('hidden popup')
+            } else {
+                let videoWrapper = popup.querySelector('.kd-single-video-container')
+                let videoImg = videoWrapper.querySelector('.single-video-paceholder-img')
+
+                let vidUrl = `${videoImg.dataset.finalurl}`
+
+                console.log(alreadyClicked)
+                console.log(vidUrl)
+
+                if (alreadyClicked) {
+                    let CroppedUrl = videoImg.dataset.finalurl.split("&mute=1")[0]
+                    console.log(CroppedUrl)
+                    vidUrl = `${CroppedUrl}`
+                }
+
+
+                console.log(vidUrl)
+
+                if (!videoLoaded.includes(popup.id)) {
+                    if (videoImg.dataset.finalurl != '') {
+                        let iframeWrapper = document.createElement('div')
+                        iframeWrapper.classList.add('kd-iframe-wrapper')
+                        let iframe = `<iframe class="carouselvideo" width="310" height="170" src=${vidUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="mute-button-overlay" onclick="muteCurrentVideo(event)"></div>`
+                        iframeWrapper.innerHTML = iframe
+                        videoWrapper.insertBefore(iframeWrapper, videoImg)
+                        videoImg.classList.add('hidden')
+                        videoLoaded.push(popup.id)
+                    } else {
+                        console.log('empty')
+                    }
+                }
+            }
+
+        }, 700);
+
+    }
+
+    setInterval(() => {
+        let popups = Array.from(document.getElementsByClassName('kd-popup-content'))
+        popups.forEach(popup => {
+            if (popup.classList.contains('hidden')) {
+                // console.log('captured a hidden popup')
+                let videoWrapper = popup.querySelector('.kd-single-video-container')
+                let iframe = videoWrapper.querySelector('.kd-iframe-wrapper')
+                if (iframe != null) {
+                    iframe.remove()
+                    let arrIndex = videoLoaded.indexOf(popup.id);
+                    videoLoaded.splice(arrIndex, 1);
+                }
+
+            }
+        })
+    }, 1000);
+
+    var owl = $('.brandcarousel');
+    owl.owlCarousel({
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+
+            600: {
+                items: 3
+            },
+
+            1024: {
+                items: 4
+            },
+
+            1366: {
+                items: 4
+            }
+        }
+    });
+
+    $(function() {
+        var owl = $(".owl-carousel");
+
         owl.owlCarousel({
-            loop: true,
             margin: 10,
-            autoplay: true,
-            autoplayTimeout: 2000,
-            autoplayHoverPause: true,
+            loop: true,
+            nav: true,
+            mouseDrag: true,
+            responsiveClass: true,
+            responsiveRefreshRate: 200,
             responsive: {
                 0: {
-                    items: 1
+                    items: 2
                 },
-
                 600: {
                     items: 3
                 },
-
                 1024: {
                     items: 4
                 },
-
                 1366: {
-                    items: 4
+                    items: 6
+                },
+                2080: {
+                    items: 7
                 }
             }
         });
 
-        $(function() {
-            var owl = $(".owl-carousel");
 
-            owl.owlCarousel({
-                margin: 10,
-                loop: true,
-                nav: true,
-                mouseDrag: true,
-                responsiveClass: true,
-                responsiveRefreshRate: 200,
-                responsive: {
-                    0: {
-                        items: 2
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1024: {
-                        items: 4
-                    },
-                    1366: {
-                        items: 6
-                    },
-                    2080: {
-                        items: 7
-                    }
+        var owl = $(".onecro");
+        owl.owlCarousel({
+            margin: 10,
+            loop: true,
+            nav: true,
+            mouseDrag: true,
+            responsiveClass: true,
+            responsiveRefreshRate: 200,
+            responsive: {
+                0: {
+                    items: 2
+                },
+                600: {
+                    items: 3
+                },
+                1024: {
+                    items: 4
+                },
+                1366: {
+                    items: 6
+                },
+                2080: {
+                    items: 7
                 }
-            });
-
-
-            var owl = $(".onecro");
-            owl.owlCarousel({
-                margin: 10,
-                loop: true,
-                nav: true,
-                mouseDrag: true,
-                responsiveClass: true,
-                responsiveRefreshRate: 200,
-                responsive: {
-                    0: {
-                        items: 2
-                    },
-                    600: {
-                        items: 3
-                    },
-                    1024: {
-                        items: 4
-                    },
-                    1366: {
-                        items: 6
-                    },
-                    2080: {
-                        items: 7
-                    }
-                }
-            });
-
-
-
-
+            }
         });
-    </script>
+
+
+
+
+    });
+</script>
 
 <?php
 
