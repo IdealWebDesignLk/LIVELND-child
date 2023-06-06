@@ -92,7 +92,7 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                 </select> -->
 
                                 <ul class="kd-custom-select select-category">
-                                    <li data-value="all">All Categories</li>
+                                    <li data-value="all" class="active">All Categories</li>
                                     <?php foreach ($catResults as $catResult) {
                                         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                     ?>
