@@ -72,6 +72,8 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                     <?php
 
                                     global $wpdb;
+                                    $tbprefix = $wpdb->prefix;
+                                    
                                     $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
                                     $catResults = $wpdb->get_results($categoriesSql);
 
@@ -116,8 +118,15 @@ $server_name .= $_SERVER['SERVER_NAME'];
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
 
-                    <div class="kd-searchbox-result home-demo">
+        </div>
+
+    </div>
+
+    <!-- search result area -->
+    <div class="kd-searchbox-result home-demo">
                         <h3 class="hometitle kd-search-title d-none" id="myList">Search results</h3>
                         <div class="kd-search-result-carousel-wrapper">
 
@@ -139,12 +148,6 @@ $server_name .= $_SERVER['SERVER_NAME'];
                             </h4>
                         </div>
                     </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
 
     <!-- carousels section -->
     <div class="carousels-section-wrapper">
