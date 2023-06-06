@@ -81,15 +81,25 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                     $exclude_cat_id;
                                     if (ot_get_option('exclude_category_id_s')) {
                                         $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-                                    }
+                                    } ?>
 
-                                    foreach ($catResults as $catResult) {
+                                 <?php   foreach ($catResults as $catResult) {
                                         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                     ?>
                                             <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
                                     <?php }
                                     } ?>
                                 </select>
+
+                                <ul class="kd-custom-select select-category">
+                                <?php   foreach ($catResults as $catResult) {
+                                        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                    ?>
+                                            <li data-value="<?php echo $catResult->name; ?>" onclick="selectResultCat(event)"><?php echo $catResult->name; ?></li>
+                                    <?php }
+                                    } ?>
+                                </ul>
+
                             </div>
 
                             <div class="kd-form-group">
