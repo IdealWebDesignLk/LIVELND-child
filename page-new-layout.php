@@ -4,7 +4,14 @@
 
 get_header();
 $imgurl =  ot_get_option('top_section_background_image');
+$server_name = "";
+if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on')
+    $server_name = "https://";
+else
+    $server_name = "http://";
 
+// Append the host(server name) to the URL.   
+$server_name .= $_SERVER['SERVER_NAME'];
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
