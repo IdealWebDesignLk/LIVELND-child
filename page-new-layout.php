@@ -66,33 +66,34 @@ $server_name .= $_SERVER['SERVER_NAME'];
                             <div class="kd-form-group">
 
                                 <label>Category</label>
+                                <?php
 
+                                global $wpdb;
+                                $tbprefix = $wpdb->prefix;
+
+                                $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
+                                $catResults = $wpdb->get_results($categoriesSql);
+
+                                //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
+                                $exclude_cat_id;
+                                if (ot_get_option('exclude_category_id_s')) {
+                                    $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
+                                } ?>
+<!-- 
                                 <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)">
                                     <option value="select-category">All Categories</option>
-                                    <?php
 
-                                    global $wpdb;
-                                    $tbprefix = $wpdb->prefix;
-                                    
-                                    $categoriesSql = "SELECT * FROM $tbprefix" . "amelia_categories GROUP BY `id` ORDER BY `position`;";
-                                    $catResults = $wpdb->get_results($categoriesSql);
-
-                                    //$exclude_cat_id = array(17, 23, 19, 12, 9, 8, 18, 4, 12, 44, 28, 29, 42, 41, 40);
-                                    $exclude_cat_id;
-                                    if (ot_get_option('exclude_category_id_s')) {
-                                        $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
-                                    } ?>
-
-                                 <?php   foreach ($catResults as $catResult) {
-                                        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                    <?php //foreach ($catResults as $catResult) {
+                                       // if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                     ?>
-                                            <option value="<?php echo $catResult->name; ?>"><?php echo $catResult->name; ?></option>
-                                    <?php }
-                                    } ?>
-                                </select>
+                                            <option value="<?php //echo $catResult->name; ?>"><?php //echo $catResult->name; ?></option>
+                                    <?php //}
+                                    //} ?>
+                                </select> -->
 
                                 <ul class="kd-custom-select select-category">
-                                <?php   foreach ($catResults as $catResult) {
+                                    <li data-value="all">All Categories</li>
+                                    <?php foreach ($catResults as $catResult) {
                                         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                     ?>
                                             <li data-value="<?php echo $catResult->name; ?>" onclick="selectResultCat(event)"><?php echo $catResult->name; ?></li>
@@ -137,27 +138,27 @@ $server_name .= $_SERVER['SERVER_NAME'];
 
     <!-- search result area -->
     <div class="kd-searchbox-result home-demo">
-                        <h3 class="hometitle kd-search-title d-none" id="myList">Search results</h3>
-                        <div class="kd-search-result-carousel-wrapper">
+        <h3 class="hometitle kd-search-title d-none" id="myList">Search results</h3>
+        <div class="kd-search-result-carousel-wrapper">
 
-                        </div>
+        </div>
 
-                        <div class="kd-search-single-popup-wrapper">
-                            <div class="kd-search-single-popup-inner">
-                            </div>
-                        </div>
+        <div class="kd-search-single-popup-wrapper">
+            <div class="kd-search-single-popup-inner">
+            </div>
+        </div>
 
-                        <div class="kd-searchbox-loading-overlay">
-                            <h4 id="loading-text">Searching
-                                <span class="dot-container">
-                                    <span class="dot-animation">.</span>
-                                    <span class="dot-animation">.</span>
-                                    <span class="dot-animation">.</span>
-                                    <span class="dot-animation">.</span>
-                                </span>
-                            </h4>
-                        </div>
-                    </div>
+        <div class="kd-searchbox-loading-overlay">
+            <h4 id="loading-text">Searching
+                <span class="dot-container">
+                    <span class="dot-animation">.</span>
+                    <span class="dot-animation">.</span>
+                    <span class="dot-animation">.</span>
+                    <span class="dot-animation">.</span>
+                </span>
+            </h4>
+        </div>
+    </div>
 
     <!-- carousels section -->
     <div class="carousels-section-wrapper">
@@ -807,7 +808,7 @@ $server_name .= $_SERVER['SERVER_NAME'];
             margin: 10,
             loop: true,
             nav: true,
-            margin : 15,
+            margin: 15,
             mouseDrag: true,
             responsiveClass: true,
             responsiveRefreshRate: 200,
