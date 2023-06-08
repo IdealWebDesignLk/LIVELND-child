@@ -52,7 +52,7 @@ $session_info = get_field('session_info');
                                 <?php
                                 for ($i = 0; $i < 5; $i++) {
 
-                                    if (intval($speaker_info) > $i) { ?>
+                                    if (intval($speaker_info) < $i) { ?>
  <li><i class="fa fa-star"></i></li>
                                 <?php   } else { ?>
                                     <li><i class="fa fa-star empty"></i></li>
