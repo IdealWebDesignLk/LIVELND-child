@@ -91,7 +91,9 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                     //} ?>
                                 </select> -->
 
-                                <ul class="kd-custom-select select-category">
+                                <div class="custom-select-wrapper">
+                                    <input type="text" id="kd-select-categry-fiels"  value="all">
+                                    <ul class="kd-custom-select select-category">
                                     <li data-value="all" class="active">All Categories</li>
                                     <?php foreach ($catResults as $catResult) {
                                         if (!in_array(intval($catResult->id), $exclude_cat_id)) {
@@ -100,6 +102,7 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                     <?php }
                                     } ?>
                                 </ul>
+                                </div>
 
                             </div>
 
