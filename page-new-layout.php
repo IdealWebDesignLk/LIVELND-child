@@ -12,6 +12,19 @@ else
 
 // Append the host(server name) to the URL.   
 $server_name .= $_SERVER['SERVER_NAME'];
+
+
+// custm fields
+$background_image = get_field('hero_background_image');
+$title = get_field('title');
+$subtitle = get_field('subtitle');
+$speaker_name = get_field('speaker_name');
+$rating = get_field('rating');
+$speaker_url = get_field('speaker_url');
+$session_info = get_field('session_info');
+
+print_r($background_image);
+
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
@@ -22,36 +35,40 @@ $server_name .= $_SERVER['SERVER_NAME'];
 
 <div class="new-homepage-wrapper">
     <!-- hero area -->
-    <div class="hero-area-wrapper" style="background: url('<?php echo $imgurl; ?>');">
+    <div class="light-layout-hero hero-area-wrapper" style="background: url('<?php echo $background_image; ?>');">
         <div class="hero-area-overlay"></div>
         <div class="hero-area-inner">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h1>Book the best <br>
-                        [topic] speakers for <br>
-                        Your team</h1>
-                    <p>Live, Online & exclusively for your company.</p>
+                    <h1><?php echo $title; ?></h1>
+                    <p><?php echo $subtitle; ?></p>
 
                 </div>
                 <div class="col-md-5">
                     <p class="main-session-info">
-                        Like Anotonia Forster,
-                        'LGBTQ' + it's Natural
+                        <?php echo $session_info; ?>
                     </p>
                     <div class="start-rating-wrapper">
                         <div class="ratings">
                             <ul>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
+                                <?php
+                                for ($i = 0; $i < 5; $i++) {
+
+                                    if (intval($speaker_info) > $i) { ?>
+ <li><i class="fa fa-star"></i></li>
+                                <?php   } else { ?>
+                                    <li><i class="fa fa-star empty"></i></li>
+                                <?php    }
+                                }
+
+                                ?>
                             </ul>
                         </div>
                         <div class="speaker">
-                            By Delottie HR
+                            By <?php echo $speaker_name; ?>
                         </div>
                         <div class="more-about-speaker">
-                            <a href="#">More About This Speaker</a>
+                            <a href="<?php echo $speaker_url; ?>">More About This Speaker</a>
                         </div>
                     </div>
                 </div>
@@ -79,29 +96,32 @@ $server_name .= $_SERVER['SERVER_NAME'];
                                 if (ot_get_option('exclude_category_id_s')) {
                                     $exclude_cat_id = explode(',', ot_get_option('exclude_category_id_s'));
                                 } ?>
-<!-- 
+                                <!-- 
                                 <select name="kd-search-category" id="kd-search-ccategory" onchange="selectResultBasedCategory(event)">
                                     <option value="select-category">All Categories</option>
 
                                     <?php //foreach ($catResults as $catResult) {
-                                       // if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                    // if (!in_array(intval($catResult->id), $exclude_cat_id)) {
                                     ?>
-                                            <option value="<?php //echo $catResult->name; ?>"><?php //echo $catResult->name; ?></option>
+                                            <option value="<?php //echo $catResult->name; 
+                                                            ?>"><?php //echo $catResult->name; 
+                                                                                                ?></option>
                                     <?php //}
-                                    //} ?>
+                                    //} 
+                                    ?>
                                 </select> -->
 
                                 <div class="custom-select-wrapper">
-                                    <input type="text" id="kd-select-categry-fiels"  value="All Categories">
+                                    <input type="text" id="kd-select-categry-fiels" value="All Categories">
                                     <ul class="kd-custom-select select-category">
-                                    <li data-value="all" onclick="selectResultCat(event)" class="active">All Categories</li>
-                                    <?php foreach ($catResults as $catResult) {
-                                        if (!in_array(intval($catResult->id), $exclude_cat_id)) {
-                                    ?>
-                                            <li data-value="<?php echo $catResult->name; ?>" onclick="selectResultCat(event)"><?php echo $catResult->name; ?></li>
-                                    <?php }
-                                    } ?>
-                                </ul>
+                                        <li data-value="all" onclick="selectResultCat(event)">All Categories</li>
+                                        <?php foreach ($catResults as $catResult) {
+                                            if (!in_array(intval($catResult->id), $exclude_cat_id)) {
+                                        ?>
+                                                <li data-value="<?php echo $catResult->name; ?>" onclick="selectResultCat(event)"><?php echo $catResult->name; ?></li>
+                                        <?php }
+                                        } ?>
+                                    </ul>
                                 </div>
 
                             </div>
