@@ -23,8 +23,6 @@ $rating = get_field('rating');
 $speaker_url = get_field('speaker_url');
 $session_info = get_field('session_info');
 
-print_r($background_image);
-
 ?>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
