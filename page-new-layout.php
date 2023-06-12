@@ -26,7 +26,7 @@ $session_info = get_field('session_info');
 ?>
 
 <!-- loading div -->
-<div id="preloader">
+<div id="kd-preloader" class="preloader">
     <h4 id="loading-text">Live L&D is loading
         <span class="dot-container">
             <span class="dot-animation">.</span>
