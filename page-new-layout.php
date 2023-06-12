@@ -25,6 +25,18 @@ $session_info = get_field('session_info');
 
 ?>
 
+<!-- loading div -->
+<div id="preloader">
+    <h4 id="loading-text">Live L&D is loading
+        <span class="dot-container">
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+            <span class="dot-animation">.</span>
+        </span>
+    </h4>
+</div>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
@@ -53,7 +65,7 @@ $session_info = get_field('session_info');
                                 for ($i = 0; $i < 5; $i++) {
 
                                     if (intval($rating) < $i) { ?>
- <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
                                 <?php   } else { ?>
                                     <li><i class="fa fa-star empty"></i></li>
                                 <?php    }
