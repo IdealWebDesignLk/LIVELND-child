@@ -580,9 +580,131 @@ $session_info = get_field('session_info');
                         </div>
                     <?php } ?>
                 </div>
-
-
                 <!-- single carousels -->
+
+                <!-- mobile caousels -->
+
+                <div class="home-demo mobicarosel">
+
+
+                    <h3 id="myList" class="hometitle"><?php echo $catResult->name; ?></h3>
+
+                    <!-- taken from rajika -->
+
+
+                    <div class="owl-carousel owl-theme">
+
+
+                        <?php
+
+                        $results = $wpdb->get_results("SELECT * FROM $tbprefix" . "amelia_services where status='visible' and categoryId='" . $catResult->id . "'");
+                        if (!empty($results)) {
+
+                            foreach ($results as $row) {
+                                $servicesingleid = $row->id;
+
+                                $employee =  $wpdb->get_results("SELECT $tbprefix" . "amelia_users.* FROM " . $tbprefix . "amelia_services inner join " . $tbprefix . "amelia_providers_to_services inner join " . $tbprefix . "amelia_users on " . $tbprefix . "amelia_services.id=" . $tbprefix . "amelia_providers_to_services.serviceId and " . $tbprefix . "amelia_providers_to_services.userId=" . $tbprefix . "amelia_users.id where " . $tbprefix . "amelia_services.id='$servicesingleid'");
+
+                                foreach ($employee as $employeedetails) {
+
+                                    $slug7 = sanitize_title($row->name) . '-' . $servicesingleid;
+                                    $url = $server_name . '/single-service/' . $slug7;
+                                    $urlcalender =  $server_name . '/single-service/' . $slug7 . "#calenderbooking";
+
+                                    $externalid = $employeedetails->externalId;
+
+                                    $worduser = 'user_' . $externalid;
+
+                        ?>
+                                    <?php
+                                    //if (get_field('approve', $worduser)) {
+                                    if (1 == 1) {
+                                    ?>
+
+                                        <div class="item mainitem">
+                                            <?php
+                                            $videourl1 =  "https://www.youtube.com/embed/" . $row->video;
+                                            $parameters1 = "?controls=1&showinfo=0&start=" . $row->videoStartTime . "&modestbranding=1&rel=0&loop=1&autoplay=1";
+                                            $finalurl1 = $videourl1 . $parameters1;
+                                            // $video_id1 = explode("https://www.youtube.com/embed/", $videourl1)[1];
+
+                                            // print_r($row);
+                                            ?>
+
+                                            <!-- <img data-finalurl="<?php //echo $finalurl1;
+                                                                        ?>" class="kd-yt-video-img" src="https://img.youtube.com/vi/<?php //echo $video_id1;
+                                                                                                                                    ?>/1.jpg"/> -->
+
+                                            <?php
+                                            if ($row->pictureFullPath != "") {
+                                            ?>
+                                                <a href="<?php echo $url; ?>"><img data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl1; ?>" class="kd-yt-video-img" src=<?php echo $row->pictureFullPath; ?> /> </a>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <a href="<?php echo $url; ?>"><img data-videoid="<?php echo $row->video; ?>" data-starttime="<?php echo $row->videoStartTime; ?>" data-finalurl="<?php echo $finalurl1; ?>" class="kd-yt-video-img" src="<?php echo $server_name . '/wp-content/uploads/2023/01/default-268x172-1.png' ?>" /> </a>
+                                            <?php
+                                            }
+                                            ?>
+                                            <!-- <iframe class="carouselvideo" src=<?php //echo $finalurl1;
+                                                                                    ?>></iframe> -->
+
+
+                                            <div class="container">
+                                                <?php
+                                                $wordpressuserid = $employeedetails->externalId;
+                                                $worduser = 'user_' . $wordpressuserid;
+
+                                                ?>
+
+
+                                                <div class="contentdiv">
+                                                    <div class="firstsecmobi">
+                                                        <a href=<?php echo $url; ?>>
+                                                            <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
+                                                                <?php if (get_field('verifed', $worduser)) : ?>
+                                                                    <span class="verifiedtext"><img class="verifyimg" src="<?php echo $server_name . '/wp-content/uploads/2023/01/Vector-Stroke.png' ?>"></span>
+                                                                <?php endif; ?>
+                                                            </p>
+
+                                                            <h4 class="sessionttile"><b><?php echo $row->name; ?></b></h4>
+
+                                                            <p class="pricesession">60 minutes / <?php echo do_shortcode('[woo_multi_currency_exchange price="' . $row->price . '" currency="' . $curr . '"]'); ?></p>
+
+                                                            <?php if (intval($row->videoViews) > 0) { ?>
+                                                                <p class="views"><img class="views-icon" src="<?php echo $server_name . '/wp-content/uploads/2022/10/eyeball.png' ?>" /> <?php echo number_format($row->videoViews, 0, '.', ',');  ?></p>
+                                                            <?php } ?>
+                                                        </a>
+                                                    </div>
+                                                    <div class="mobiparadiv">
+                                                        <p class="paratext mobi"><?php echo $row->short_excerpt; ?></p>
+                                                    </div>
+
+                                                </div>
+                                                <p class="calender"><a href="<?php echo $urlcalender; ?>"><img class="calender" src="<?php $server_name . '/wp-content/uploads/2022/12/calender1.png' ?>" /></a> </p>
+
+
+                                            </div>
+                                        </div>
+
+
+
+                                    <?php } else { ?>
+                        <?php
+                                        //  }
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+
+                    </div>
+
+                    <!-- taken from rajika -->
+
+                </div>
+
+                <!-- mobile carusels -->
 
         <?php
 
@@ -776,12 +898,7 @@ $session_info = get_field('session_info');
     function hidePopupOnMouseLeave(popup, thumbnail) {
         let hidepopupTimeout = setTimeout(() => {
             popup.addEventListener('mouseleave', (e) => {
-                // console.log(e.target)
-                // var hover_element = $(':hover').last().hasClass('el-select-dropdown__item');
-                // console.log($(':hover').last())
-                // console.log($(':hover').last()[0])
-                // console.log($(':hover').last().hasClass('el-select-dropdown__item'))
-                // console.log($(':hover').last().hasClass('el-select__popper'))
+
                 let parentEl = null
 
                 if ($(':hover').last().hasClass('el-select__popper') || $(':hover').last().hasClass('el-select-dropdown__item')) {
