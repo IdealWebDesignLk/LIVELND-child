@@ -223,6 +223,9 @@ $session_info = get_field('session_info');
                             <!-- steps single column -->
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
+                                    <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
+                                    </div>
                                     <h2>Find your virtual speaker</h2>
                                     <p>Our curators have handpicked global experts who speak about Pride, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over thir talks.</p>
                                 </div>
@@ -230,6 +233,9 @@ $session_info = get_field('session_info');
                             <!-- steps single column -->
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
+                                <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon1.png" alt="" srcset="">
+                                    </div>
                                     <h2>Check availability and fees</h2>
                                     <p>All Live L&D speakers have connected their calendar to our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.</p>
                                 </div>
@@ -237,6 +243,9 @@ $session_info = get_field('session_info');
                             <!-- steps single column -->
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
+                                <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon2.png" alt="" srcset="">
+                                    </div>
                                     <h2>Hold time slot / Book now </h2>
                                     <p>Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will cntact you to answer your questions before youmake a boking.</p>
                                 </div>
