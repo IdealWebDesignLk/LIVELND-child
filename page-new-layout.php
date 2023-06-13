@@ -659,7 +659,7 @@ $session_info = get_field('session_info');
 
 
                                                 <div class="contentdiv">
-                                                    <div class="firstsecmobi">
+                                                    <div class="firstsecmobi kd-mobile-content-wrapper">
                                                         <a href=<?php echo $url; ?>>
                                                             <p class="cardauthor"><?php echo $employeedetails->firstName . " " . $employeedetails->lastName  ?>
                                                                 <?php if (get_field('verifed', $worduser)) : ?>
