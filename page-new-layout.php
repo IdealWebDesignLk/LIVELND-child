@@ -157,7 +157,10 @@ $session_info = get_field('session_info');
 
                             <div class="kd-form-group reset-button">
                                 <label>&nbsp;</label>
-                                <button class="kd-search-btn" onclick="">Search</button>
+                                <button class="kd-search-btn" onclick="return false;">Search</button>
+                             </div>
+                            <div class="kd-form-group reset-button">
+                                <label>&nbsp;</label>
                                 <button class="kd-reset-btn" onclick="resetSearch(event)">Reset Filters</button>
                             </div>
                         </form>
