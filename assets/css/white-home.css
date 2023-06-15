@@ -1,18 +1,21 @@
 @font-face {
   font-family: 'nueHaasRegular';
   src: url('https://livelnd.com/wp-content/themes/LIVELND-child/assets/css/fonts/1492550-NeueHaasUnicaPro-Regular.ttf');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'nueHaasBold';
   src: url('https://livelnd.com/wp-content/themes/LIVELND-child/assets/css/fonts/1492541-NeueHaasUnicaPro-Bold.ttf');
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'nueHaasBlack';
   src: url('https://livelnd.com/wp-content/themes/LIVELND-child/assets/css/fonts/1492541-NeueHaasUnicaPro-Bold_1.ttf');
   font-weight: 900; /* 'black' is not a valid value for font-weight, use 900 instead */
+  font-display: swap;
 }
 
 *{
