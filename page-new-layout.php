@@ -719,6 +719,14 @@ $session_info = get_field('session_info');
         ?>
     </div>
 
+      <!-- How it works section -->
+
+    <div class="how-it-works-content">    
+    echo do_shortcode('[elementor-template id="33561"]');
+    </div>   
+
+    <!-- END ow it works section -->
+    
     <!-- faq section -->
 
     <div class="faq-content-wrapper">
