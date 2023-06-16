@@ -261,6 +261,47 @@ $session_info = get_field('session_info');
                 <?php     }
                 ?>
 
+<?php
+                if ($index == 4) { ?>
+
+                    <div class="easy-steps-wrapper">
+                        <div class="row">
+                            <!-- steps single column -->
+                            <div class="col-md-4">
+                                <div class="steps-col-inner">
+                                    <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
+                                    </div>
+                                    <h2>Availability Check</h2>
+                                    <p>Find your favourite expert speaker and check their availability at a time slot that works for you.  You are able to hold that time slot for 72 hours. No strings attached. We will contact you within 24 hours to discuss your option and answer all your questions. We guarantee to hold the speaker and time slot at the displayed price for 72 hours.</p>
+                                </div>
+                            </div>
+                            <!-- steps single column -->
+                            <div class="col-md-4">
+                                <div class="steps-col-inner">
+                                <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon1.png" alt="" srcset="">
+                                    </div>
+                                    <h2>Direct Booking</h2>
+                                    <p>As mentioned above, you can search for and chose your Live L&D session on our platform. You can check the availability of the speaker instantly online. If you decide it is the right one, you can immediately fill out your details and book the session.</p>
+                                </div>
+                            </div>
+                            <!-- steps single column -->
+                            <div class="col-md-4">
+                                <div class="steps-col-inner">
+                                <div class="steps-col-overlay-img">
+                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon2.png" alt="" srcset="">
+                                    </div>
+                                    <h2>Book Now / Pay Later </h2>
+                                    <p>You can pay for the session directly using pay per invoice, creditcard or iDeal. You can also make use of the "Pay by Invoice" option for which payment terms are 30 days after the invoice is sent. The invoice is sent once a booking is confirmed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <?php     }
+                ?>
+
                 <!-- single carousels -->
 
                 <div class="home-demo deskcarousel kd-single-services-section">
@@ -719,13 +760,7 @@ $session_info = get_field('session_info');
         ?>
     </div>
 
-      <!-- How it works section -->
 
-    <div class="how-it-works-content">    
-    <?php echo do_shortcode('[elementor-template id="33561"]'); ?>
-    </div>   
-
-    <!-- END ow it works section -->
 
     <!-- faq section -->
 
