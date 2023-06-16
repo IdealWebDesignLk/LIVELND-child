@@ -50,7 +50,7 @@ $session_info = get_field('session_info');
         <div class="hero-area-overlay"></div>
         <div class="hero-area-inner">
             <div class="row align-items-center">
-                <div class="col-md-7">
+                <div class="col-md-11">
                     <h1><?php echo $title; ?></h1>
                     <p><?php echo $subtitle; ?></p>
 
