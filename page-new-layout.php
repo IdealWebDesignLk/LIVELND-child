@@ -232,7 +232,7 @@ $session_info = get_field('session_info');
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
                                     </div>
                                     <h2>Find your virtual speaker</h2>
-                                    <p>Our curators have handpicked global experts who speak about Pride, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over thir talks.</p>
+                                    <p>Our curators have handpicked global experts who speak about Pride, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over their talks.</p>
                                 </div>
                             </div>
                             <!-- steps single column -->
