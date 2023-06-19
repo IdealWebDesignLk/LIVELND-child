@@ -152,11 +152,12 @@ function my_services_handler()
 			AND " . $tbprefix2 . "amelia_users.id=" . $tbprefix2 . "amelia_providers_to_services.userId 
 			WHERE " . $tbprefix2 . "amelia_users.full_name=%s 
 			AND " . $tbprefix2 . "amelia_services.name=%s 
-			AND " . $tbprefix2 . "amelia_categories.name=%s",
+			AND " . $tbprefix2 . "amelia_categories.name LIKE %s",
 			$fullname, 
 			$servicename, 
-			$catval
+			$catval . '%'
 		);
+		
 		
 
 		$serviceid = '';
