@@ -140,7 +140,24 @@ function my_services_handler()
 
 		$tbprefix2 = $wpdb->prefix;
 		// echo 'awa3'.$tbprefix2;
-		$serchdataservice = "SELECT " . $tbprefix2 . "amelia_services.id FROM " . $tbprefix2 . "amelia_services INNER JOIN " . $tbprefix2 . "amelia_categories INNER JOIN " . $tbprefix2 . "amelia_users INNER JOIN " . $tbprefix2 . "amelia_providers_to_services ON " . $tbprefix2 . "amelia_services.categoryId=" . $tbprefix2 . "amelia_categories.id and " . $tbprefix2 . "amelia_services.id=" . $tbprefix2 . "amelia_providers_to_services.serviceId and " . $tbprefix2 . "amelia_users.id=" . $tbprefix2 . "amelia_providers_to_services.userId where " . $tbprefix2 . "amelia_users.full_name='" . $fullname . "' and " . $tbprefix2 . "amelia_services.name='" . $servicename . "' and " . $tbprefix2 . "amelia_categories.name='" . $catval . "'";
+		//$serchdataservice = "SELECT " . $tbprefix2 . "amelia_services.id FROM " . $tbprefix2 . "amelia_services INNER JOIN " . $tbprefix2 . "amelia_categories INNER JOIN " . $tbprefix2 . "amelia_users INNER JOIN " . $tbprefix2 . "amelia_providers_to_services ON " . $tbprefix2 . "amelia_services.categoryId=" . $tbprefix2 . "amelia_categories.id and " . $tbprefix2 . "amelia_services.id=" . $tbprefix2 . "amelia_providers_to_services.serviceId and " . $tbprefix2 . "amelia_users.id=" . $tbprefix2 . "amelia_providers_to_services.userId where " . $tbprefix2 . "amelia_users.full_name='" . $fullname . "' and " . $tbprefix2 . "amelia_services.name='" . $servicename . "' and " . $tbprefix2 . "amelia_categories.name='" . $catval . "'";
+		$serchdataservice = $wpdb->prepare(
+			"SELECT " . $tbprefix2 . "amelia_services.id 
+			FROM " . $tbprefix2 . "amelia_services 
+			INNER JOIN " . $tbprefix2 . "amelia_categories 
+			INNER JOIN " . $tbprefix2 . "amelia_users 
+			INNER JOIN " . $tbprefix2 . "amelia_providers_to_services 
+			ON " . $tbprefix2 . "amelia_services.categoryId=" . $tbprefix2 . "amelia_categories.id 
+			AND " . $tbprefix2 . "amelia_services.id=" . $tbprefix2 . "amelia_providers_to_services.serviceId 
+			AND " . $tbprefix2 . "amelia_users.id=" . $tbprefix2 . "amelia_providers_to_services.userId 
+			WHERE " . $tbprefix2 . "amelia_users.full_name=%s 
+			AND " . $tbprefix2 . "amelia_services.name=%s 
+			AND " . $tbprefix2 . "amelia_categories.name=%s",
+			$fullname, 
+			$servicename, 
+			$catval
+		);
+		
 
 		$serviceid = '';
 		$result1 = $wpdb->get_results($serchdataservice);
