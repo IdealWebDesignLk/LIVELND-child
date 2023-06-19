@@ -174,8 +174,14 @@ function my_services_handler()
 		$result = $wpdb->get_results($sql);
 		if (count($result) > 0) {
 			//print_r($result);
-			$rows_affected =  $wpdb->query($wpdb->prepare("UPDATE " . $tbprefix2 . "amelia_services SET video='" . $videourl . "' ,preTalkSessionId='" . $pretalkid . "' , videoStartTime='" . $videoStartTime . "' , videoViews = '" . $videoViews . "' , tag1='" . $tag1 . "' , tag2='" . $tag2 . "' , tag3='" . $tag3 . "' , tag4='" . $tag4 . "' , tag5='" . $tag5 . "' , short_excerpt='" . $excerpt . "', language1='" . $language1 . "' , language2='" . $language2 . "', language3='" . $language3 . "' WHERE id='" . $serviceid . "'"));
-
+		//	$rows_affected =  $wpdb->query($wpdb->prepare("UPDATE " . $tbprefix2 . "amelia_services SET video='" . $videourl . "' ,preTalkSessionId='" . $pretalkid . "' , videoStartTime='" . $videoStartTime . "' , videoViews = '" . $videoViews . "' , tag1='" . $tag1 . "' , tag2='" . $tag2 . "' , tag3='" . $tag3 . "' , tag4='" . $tag4 . "' , tag5='" . $tag5 . "' , short_excerpt='" . $excerpt . "', language1='" . $language1 . "' , language2='" . $language2 . "', language3='" . $language3 . "' WHERE id='" . $serviceid . "'"));
+		$rows_affected =  $wpdb->query($wpdb->prepare(
+			"UPDATE " . $tbprefix2 . "amelia_services 
+			SET video=%s, preTalkSessionId=%s, videoStartTime=%s, videoViews=%s, tag1=%s, tag2=%s, tag3=%s, tag4=%s, tag5=%s, short_excerpt=%s, language1=%s, language2=%s, language3=%s 
+			WHERE id=%s",
+			$videourl, $pretalkid, $videoStartTime, $videoViews, $tag1, $tag2, $tag3, $tag4, $tag5, $excerpt, $language1, $language2, $language3, $serviceid
+		));
+		
 
 
 			echo "Saved";
