@@ -111,9 +111,8 @@ function my_services_handler()
 		$pretalkid = $_POST["pretalkid"];
 		//	$serviceid = $_POST["serviceid"];
 
-
-		$catval = urldecode($_POST["catvalue"]);
-		$servicename = urldecode($_POST["servicenameval"]);
+		$catval = $wpdb->esc_like($_POST["catvalue"]);
+		$servicename = $_POST["servicenameval"]; 
 
 
 
