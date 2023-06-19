@@ -112,8 +112,9 @@ function my_services_handler()
 		//	$serviceid = $_POST["serviceid"];
 
 
-		$catval = $_POST["catvalue"];
-		$servicename = $_POST["servicenameval"];
+		$catval = urldecode($_POST["catvalue"]);
+		$servicename = urldecode($_POST["servicenameval"]);
+
 
 
 		$empval = $_POST["empvalue"];
