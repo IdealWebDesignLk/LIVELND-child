@@ -262,7 +262,7 @@ $session_info = get_field('session_info');
                 ?>
 
 <?php
-                if ($index == 4) { ?>
+                if ($index == 5) { ?>
 
                     <div class="easy-steps-wrapper">
                         <div class="row">
