@@ -778,9 +778,7 @@ $worduser = 'user_' . $externalid;
                                     <div class="revew">
                                         <div class="absec-title">Stewart Gilbert</div>
                                         <div class="revew-description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
-                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
-                                                eros urna, egestas sit amet rhoncus</p>
+                                            <p></p>
                                         </div>
                                         <div class="date">
                                             23 Aug 2022
@@ -799,9 +797,7 @@ $worduser = 'user_' . $externalid;
                                     <div class="revew">
                                         <div class="absec-title">Clement Burgess</div>
                                         <div class="revew-description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
-                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
-                                                eros urna, egestas sit amet rhoncus</p>
+                                            <p></p>
                                         </div>
                                         <div class="date">
                                             23 Aug 2022
@@ -819,9 +815,7 @@ $worduser = 'user_' . $externalid;
                                     <div class="revew">
                                         <div class="absec-title">Emma Hill</div>
                                         <div class="revew-description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
-                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
-                                                eros urna, egestas sit amet rhoncus</p>
+                                            <p></p>
                                         </div>
                                         <div class="date">
                                             23 Aug 2022
@@ -838,9 +832,7 @@ $worduser = 'user_' . $externalid;
                                     <div class="revew">
                                         <div class="absec-title">Tony DDD</div>
                                         <div class="revew-description">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum
-                                                posuere tristique. Curabitur ac consequat lectus. Proin id odio sapien. Aenean
-                                                eros urna, egestas sit amet rhoncus</p>
+                                            <p></p>
                                         </div>
                                         <div class="date">
 
