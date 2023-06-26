@@ -222,7 +222,7 @@ $session_info = get_field('session_info');
 
                     <div class="easy-steps-wrapper">
                         <h2 class="text-center">
-                            Check Calendars and fees in 3 easy steps
+                        Find your Live Learning Session in 3 Easy Steps
                         </h2>
                         <div class="row rp-first">
                             <!-- steps single column -->
