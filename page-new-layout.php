@@ -231,8 +231,8 @@ $session_info = get_field('session_info');
                                     <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
                                     </div>
-                                    <h2>Find your virtual speaker</h2>
-                                    <p>Our curators have handpicked global experts who speak about Pride, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over their talks.</p>
+                                    <h2>Find Your Virtual Speaker</h2>
+                                    <p>Our curators have carefully selected global experts who specialize in speaking about Diversity & Inclusion, Mental Health, Leadership, and various other topics. Explore the speakers by hovering over their talks and choose your favorite expert speaker.</p>
                                 </div>
                             </div>
                             <!-- steps single column -->
@@ -241,8 +241,8 @@ $session_info = get_field('session_info');
                                 <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon1.png" alt="" srcset="">
                                     </div>
-                                    <h2>Check availability and fees</h2>
-                                    <p>All Live L&D speakers have connected their calendar to our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.</p>
+                                    <h2>Check Availability & Fees</h2>
+                                    <p>All Live L&D speakers have synchronized their calendars with our platform. Search for speakers based on availability and budget. Or schedule a Meet & Greet with the expert before booking.</p>
                                 </div>
                             </div>
                             <!-- steps single column -->
@@ -252,7 +252,7 @@ $session_info = get_field('session_info');
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon2.png" alt="" srcset="">
                                     </div>
                                     <h2>Hold time slot / Book now </h2>
-                                    <p>Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will cntact you to answer your questions before youmake a boking.</p>
+                                    <p>Choose a day and time slot for your Talk. Book now and pay later, or reserve the slot for 72 hours with no obligations. We'll contact you within 24 hours to answer your questions and discuss options. Speaker and time slot guaranteed at the displayed price for 72 hours.</p>
                                 </div>
                             </div>
                         </div>
@@ -265,6 +265,9 @@ $session_info = get_field('session_info');
                 if ($index == 5) { ?>
 
                     <div class="easy-steps-wrapper">
+                    <h2 class="text-center">
+                    Educate & Inspire Your Team or Company
+                        </h2>
                         <div class="row">
                             <!-- steps single column -->
                             <div class="col-md-4">
@@ -272,8 +275,8 @@ $session_info = get_field('session_info');
                                     <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
                                     </div>
-                                    <h2>Availability Check</h2>
-                                    <p>Find your favourite expert speaker and check their availability at a time slot that works for you.  You are able to hold that time slot for 72 hours. No strings attached. We will contact you within 24 hours to discuss your option and answer all your questions. We guarantee to hold the speaker and time slot at the displayed price for 72 hours.</p>
+                                    <h2>Why</h2>
+                                    <p>Educating and inspiring your workforce creates a continuous learning culture, fosters personal and professional growth, and positively impacts the organization's performance, innovation, and long-term success.</p>
                                 </div>
                             </div>
                             <!-- steps single column -->
@@ -282,8 +285,8 @@ $session_info = get_field('session_info');
                                 <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon1.png" alt="" srcset="">
                                     </div>
-                                    <h2>Direct Booking</h2>
-                                    <p>As mentioned above, you can search for and chose your Live L&D session on our platform. You can check the availability of the speaker instantly online. If you decide it is the right one, you can immediately fill out your details and book the session.</p>
+                                    <h2>How</h2>
+                                    <p>By leveraging the expertise and inspiration of global expert speakers, organizations can create impactful learning experiences that educate employees, stimulate their creativity, and inspire them to reach their full potential.</p>
                                 </div>
                             </div>
                             <!-- steps single column -->
@@ -292,8 +295,8 @@ $session_info = get_field('session_info');
                                 <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon2.png" alt="" srcset="">
                                     </div>
-                                    <h2>Book Now / Pay Later </h2>
-                                    <p>You can pay for the session directly using pay per invoice, creditcard or iDeal. You can also make use of the "Pay by Invoice" option for which payment terms are 30 days after the invoice is sent. The invoice is sent once a booking is confirmed.</p>
+                                    <h2>What</h2>
+                                    <p>Immerse your workforce in a captivating 60-minute live, online learning session led by a global expert. Through dynamic virtual interaction, participants will gain invaluable insights, practical knowledge, and actionable strategies. Harness the expertise of global experts and unlock the full potential of your team with this transformative virtual learning session.</p>
                                 </div>
                             </div>
                         </div>
