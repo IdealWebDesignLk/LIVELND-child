@@ -224,10 +224,10 @@ $session_info = get_field('session_info');
                         <h2 class="text-center">
                             Check Calendars and fees in 3 easy steps
                         </h2>
-                        <div class="row">
+                        <div class="row rp-first">
                             <!-- steps single column -->
                             <div class="col-md-4">
-                                <div class="steps-col-inner rp-first">
+                                <div class="steps-col-inner">
                                     <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
                                     </div>
@@ -268,10 +268,10 @@ $session_info = get_field('session_info');
                     <h2 class="text-center">
                     Educate & Inspire Your Team or Company
                         </h2>
-                        <div class="row">
+                        <div class="row rp-second">
                             <!-- steps single column -->
                             <div class="col-md-4">
-                                <div class="steps-col-inner rp-second">
+                                <div class="steps-col-inner">
                                     <div class="steps-col-overlay-img">
                                       <!--  <img src="#" alt="" srcset=""> -->
                                     </div>
