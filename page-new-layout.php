@@ -273,7 +273,7 @@ $session_info = get_field('session_info');
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
                                     <div class="steps-col-overlay-img">
-                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
+                                      <!--  <img src="#" alt="" srcset=""> -->
                                     </div>
                                     <h2>Why</h2>
                                     <p>Educating and inspiring your workforce creates a continuous learning culture, fosters personal and professional growth, and positively impacts the organization's performance, innovation, and long-term success.</p>
@@ -283,7 +283,7 @@ $session_info = get_field('session_info');
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
                                 <div class="steps-col-overlay-img">
-                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon1.png" alt="" srcset="">
+                                        <!--  <img src="#" alt="" srcset=""> -->
                                     </div>
                                     <h2>How</h2>
                                     <p>By leveraging the expertise and inspiration of global expert speakers, organizations can create impactful learning experiences that educate employees, stimulate their creativity, and inspire them to reach their full potential.</p>
@@ -293,7 +293,7 @@ $session_info = get_field('session_info');
                             <div class="col-md-4">
                                 <div class="steps-col-inner">
                                 <div class="steps-col-overlay-img">
-                                        <img src="https://livelnd.com/wp-content/uploads/2023/06/icon2.png" alt="" srcset="">
+                                      <!--  <img src="#" alt="" srcset=""> -->
                                     </div>
                                     <h2>What</h2>
                                     <p>Immerse your workforce in a captivating 60-minute live, online learning session led by a global expert. Through dynamic virtual interaction, participants will gain invaluable insights, practical knowledge, and actionable strategies. Harness the expertise of global experts and unlock the full potential of your team with this transformative virtual learning session.</p>
