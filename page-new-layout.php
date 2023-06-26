@@ -227,7 +227,7 @@ $session_info = get_field('session_info');
                         <div class="row">
                             <!-- steps single column -->
                             <div class="col-md-4">
-                                <div class="steps-col-inner">
+                                <div class="steps-col-inner rp-first">
                                     <div class="steps-col-overlay-img">
                                         <img src="https://livelnd.com/wp-content/uploads/2023/06/icon3.png" alt="" srcset="">
                                     </div>
@@ -271,7 +271,7 @@ $session_info = get_field('session_info');
                         <div class="row">
                             <!-- steps single column -->
                             <div class="col-md-4">
-                                <div class="steps-col-inner">
+                                <div class="steps-col-inner rp-second">
                                     <div class="steps-col-overlay-img">
                                       <!--  <img src="#" alt="" srcset=""> -->
                                     </div>
