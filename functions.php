@@ -1233,12 +1233,5 @@ function theme_setup() {
     add_image_size( 'thumbnailimg', 120 ); // 120 pixels wide (and unlimited height)
 }
 
-add_filter( 'rocket_delay_js_exclusions', function( $exclusions ) {
-    if ( is_page( 'single-service' ) || is_page( 'speakers-panel' ) ) {
-        $exclusions[] = '/.*/';
-    }
-
-    return $exclusions;
-} );
 
 
