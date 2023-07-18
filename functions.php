@@ -1227,3 +1227,9 @@ function wc_empty_cart_redirect_url()
 	return site_url('/');
 }
 add_filter('woocommerce_return_to_shop_redirect', 'wc_empty_cart_redirect_url');
+
+add_action( 'after_setup_theme', 'theme_setup' );
+function theme_setup() {
+    add_image_size( 'thumbnailimg', 120 ); // 120 pixels wide (and unlimited height)
+}
+
