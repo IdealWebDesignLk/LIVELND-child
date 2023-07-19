@@ -777,32 +777,32 @@ $session_info = get_field('session_info');
                 <div class="col-md-8">
                     <div class="container">
                         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                            <button class="accordion white-back">What is Live L&D?</button>
+                            <button class="accordion white-back" role="tab">What is Live L&D?</button>
                             <div class="panel white-back">
                                 <p>Live L&D is a platform where you can find your curated guest expert speakers for your organization or team. You can take an option on a specific timeslot for 72 hrs or instantly book your session of choice. </p>
                             </div>
 
-                            <button class="accordion white-back">Are the Live L&D recorded?</button>
+                            <button class="accordion white-back" role="tab">Are the Live L&D recorded?</button>
                             <div class="panel white-back">
                                 <p>Live L&D sessions cannot be recorded, unless you agree on this specifically with the expert speaker. If a speaker has agreed to the recording of the session, you can choose this as an extra option during the booking process. </p>
                             </div>
 
-                            <button class="accordion white-back">I am not sure yet I am able to make the booking, can I take an option on a specific timeslot?</button>
+                            <button class="accordion white-back" role="tab">I am not sure yet I am able to make the booking, can I take an option on a specific timeslot?</button>
                             <div class="panel white-back">
                                 <p>Yes, in the booking process, you can choose to make a reservation for a specific session and timeslot. We will hold this timeslot for you for 72 hrs and will contact you as soon as possible after you have made the reservation.</p>
                             </div>
 
-                            <button class="accordion white-back">Are Live L&D online only?</button>
+                            <button class="accordion white-back" role="tab">Are Live L&D online only?</button>
                             <div class="panel white-back">
                                 <p>Yes, the Live L&D are online only, and always live and interactive.</p>
                             </div>
 
-                            <button class="accordion white-back">How do I make sure the expert speaker is informed about any specifics before the session (e.g. size and type of audience, context in which the session takes place)?</button>
+                            <button class="accordion white-back" role="tab">How do I make sure the expert speaker is informed about any specifics before the session (e.g. size and type of audience, context in which the session takes place)?</button>
                             <div class="panel white-back">
                                 <p>In the booking process (on the details page) you have the possibility to leave important information that will be shared with the expert speaker upon booking.</p>
                             </div>
 
-                            <button class="accordion white-back">Is there a limit to the number of people attending a Live L&D session?</button>
+                            <button class="accordion white-back" role="tab">Is there a limit to the number of people attending a Live L&D session?</button>
                             <div class="panel white-back">
                                 <p>In principle no, this is up to you. Two things to take into account: 1) the technical limitations of the video conferencing tool you use and 2) the level of interaction you desire for your audience. </p>
                             </div>
