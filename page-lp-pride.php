@@ -15,7 +15,7 @@ get_header();
         <div class="color indigo"></div>
         <div class="color violet"></div>
     </div> -->
-    <h4 id="loading-text">Live L&D is loading the Pride page
+    <h4 id="loading-text">Live L&D is loading
     <span class="dot-container">
             <span class="dot-animation">.</span>
             <span class="dot-animation">.</span>
@@ -484,13 +484,13 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                 <div class="container homebodysec">
                                     <div class="innerhomesecondrow">
                                         <div class="secondsec">
-                                            <h1>Book an expert speaker to celebrate <span class="pridetitle">Pride Month!</span></h1>
+                                            <h1>Book an expert speaker to celebrate <span class="pridetitle">Mentalhealth</span></h1>
 
                                             <div class="row textrowdiv">
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/04/Group-10-white.png" ?>">
                                                     <h4>1. Find your virtual speaker</h4>
-                                                    Our curators have handpicked global experts who speak about Pride, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over their talks.
+                                                    Our curators have handpicked global experts who speak about mentalhealth, LGBTQ rights, biases, inclusion and tens of other topics. Discover speakers by hovering over their talks.
                                                 </div>
 
                                                 <div class="col-md-4">
@@ -501,7 +501,7 @@ $videosrc =  $server_name . '/wp-content/uploads/2022/09/pexels-artem-podrez-575
                                                 <div class="col-md-4">
                                                     <img class="threeblurbimg" src="<?php echo $server_name . "/wp-content/uploads/2023/04/Group-12-white.png" ?>">
                                                     <h4>3. Hold Time Slot / Book Instantly</h4>
-                                                    Pick a day/time slot for your Pride Month Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
+                                                    Pick a day/time slot for Talk. Book immediately and pay later. Or pick a time slot for the speaker to hold for 72 hours and we will contact you instantly to answer all your questions before you make an actual booking.
                                                 </div>
                                                 <p class="bottomtext"> <b>LIVE L&D Sessions are held in your company's own Microsoft Teams, Google Meet, Zoom or Webex environment. Click <a href="https://livelnd.com/how-it-works-live-l-and-d-explained/">here </a>to see how it works.</b></p>
                                             </div>
