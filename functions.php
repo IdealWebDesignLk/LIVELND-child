@@ -1236,5 +1236,12 @@ function theme_setup() {
     add_image_size( 'thumbnailimg', 120 ); // 120 pixels wide (and unlimited height)
 }
 
+function get_attachment_id_from_url( $url ) {
+    global $wpdb;
+    $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $url )); 
+    return $attachment[0]; 
+}
+
+
 
 
