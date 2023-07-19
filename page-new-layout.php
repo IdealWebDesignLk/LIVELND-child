@@ -363,8 +363,8 @@ $session_info = get_field('session_info');
                                         <?php
                                         // if (get_field('approve', $worduser)) {
                                         if (1 == 1) {
-                                            if ($row->pictureThumbPath != "") {
-                                                $image_url = $row->pictureThumbPath;
+                                            if ($row->pictureFullPath != "") {
+                                                $image_url = $row->pictureFullPath;
                                             } else {
                                                 $image_url =  $server_name . '/wp-content/uploads/2023/01/default-268x172-1.png';
                                             }
